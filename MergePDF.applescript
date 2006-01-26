@@ -1,6 +1,6 @@
 --libraryies
 property LibraryFolder : "Macintosh HD:Users:tkurita:Factories:Script factory:ProjectsX:MergePDF:Library Scripts:"
-property FileSorter : load script file (LibraryFolder & "FileSorter")
+property FileSorter : load script file (LibraryFolder & "FileSorter.scpt")
 property PathAnalyzer : load script file (LibraryFolder & "PathAnalyzer")
 property StyleStripper : load script file (LibraryFolder & "StyleStripper")
 property UniqueNamer : load script file (LibraryFolder & "UniqueNamer")
@@ -52,7 +52,6 @@ on newPDFsorter(theContainer)
 			tell application "Finder"
 				set theWindow to container window of targetContainer
 				set theView to current view of theWindow
-				
 				if theView is icon view then
 					set theArrangement to arrangement of icon view options of theWindow
 					if theArrangement is in {not arranged, snap to grid} then
