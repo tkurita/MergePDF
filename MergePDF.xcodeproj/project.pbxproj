@@ -20,9 +20,10 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
+		2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A20509874594003BE6E4 /* InfoPlist.strings */; };
+		2C31A28909876608003BE6E4 /* setuphelp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A28809876608003BE6E4 /* setuphelp.sh */; };
 		2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5981F0098712B2003D230C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
-		2C5981F1098712B2003D230C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		2C5981F2098712B2003D230C /* MergePDF.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CB1697A0711703000A527B5 /* MergePDF.icns */; };
 		2C5981F3098712B2003D230C /* ColumnDirection.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7BDAB6071183220032351D /* ColumnDirection.png */; };
 		2C5981F4098712B2003D230C /* RowDirection.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7BDAB7071183220032351D /* RowDirection.png */; };
@@ -59,12 +60,13 @@
 /* End PBXBuildStyle section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2C5981FF098712B3003D230C /* Info-MergePDF.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; lineEnding = 0; path = "Info-MergePDF.plist"; sourceTree = "<group>"; };
+		2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Info-MergePDF.plist"; sourceTree = "<group>"; };
+		2C31A20609874594003BE6E4 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C31A28809876608003BE6E4 /* setuphelp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setuphelp.sh; sourceTree = "<group>"; };
 		2C598200098712B3003D230C /* MergePDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MergePDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				2C5981FF098712B3003D230C /* Info-MergePDF.plist */,
+				2C31A28809876608003BE6E4 /* setuphelp.sh */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -147,12 +149,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C31A20509874594003BE6E4 /* InfoPlist.strings */,
+				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
 				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
 				2C7BDAB6071183220032351D /* ColumnDirection.png */,
 				2C7BDAB7071183220032351D /* RowDirection.png */,
 				2CB1697A0711703000A527B5 /* MergePDF.icns */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
 			);
 			name = Resources;
@@ -243,11 +246,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5981F0098712B2003D230C /* MainMenu.nib in Resources */,
-				2C5981F1098712B2003D230C /* InfoPlist.strings in Resources */,
 				2C5981F2098712B2003D230C /* MergePDF.icns in Resources */,
 				2C5981F3098712B2003D230C /* ColumnDirection.png in Resources */,
 				2C5981F4098712B2003D230C /* RowDirection.png in Resources */,
 				2C5981F5098712B2003D230C /* Localizable.strings in Resources */,
+				2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */,
+				2C31A28909876608003BE6E4 /* setuphelp.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,20 +269,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2C7BDB350711A0380032351D /* Japanese */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		2C31A20509874594003BE6E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C31A20609874594003BE6E4 /* Japanese */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		2CD9CDE00711A295001CBF53 /* Localizable.strings */ = {
@@ -353,7 +357,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "Info-MergePDF_____________.plist";
+				INFOPLIST_FILE = "English.lproj/Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
@@ -379,6 +383,7 @@
 		2CAA8C6E0933698B009EC6A1 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Deployment;
