@@ -47,5 +47,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>MergePDFHelp</string>
 </dict>
 </plist>
