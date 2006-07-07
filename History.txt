@@ -1,1 +1,186 @@
-MergePDF�K�v��OSAX���܂̂Ƃ���Ȃ��B(2006.07.07)=2006.07.07* �t�@�C���ۑ��_�C�A���O�� modal �ŕ\�������Bmode less �ɂȂ�Ȃ����̂��H	* Objective-C ���� AppleScript ���ĂԂ��Ƃ��ł���Ή����ł���B* donation �Ñ� window ��ǉ��B* PDF �� Acrobat �ŊJ���Ă���ꍇ�Ainfo for �R�}���h�Ńt�@�C���� busy status �ɔ��f����Ȃ��Blsof �R�}���h���g���悤�ɂ���B=2004.12.22png �Ȃǂ̉摜�t�@�C����������悤�ɂ������������AinsertPages �ŉ摜�������Ȃ��悤���B=2004.09.031.6.3b1���{���bookmark�������邱�Ƃ�����s����C���BTEC OSAX �ł͂Ȃ��Aiconv ���g���悤�ɂ����BPDF�t�@�C����C�ӂ̏ꏊ�ɕۑ��ł��Ȃ��s����C���K�v��OSAXTextInfo OSAX2003.09.091.6.1b1�ŐV��FileSorterTEC OSAX��s�K�v�ɂ����Bditto��������2byte code�̖��O�̃t�@�C�����R�s�[�����Acrobat�ŊJ���������������Ȃ�悤���BFinder��dupulicate�����������E�E�E���O�̂����ẴR�s�[���ł��Ȃ��BAcrobat�ōŏ���file��save as����BShellUtils������Ȃ��Ȃ����K�v��OSAXTextInfo OSAXTEC OSAX2003.05.311.6b1bookmark�̑}���͂ł���悤�ɂȂ������A�}������page�����J�E���g����Ƃ���ŁA�ǂ����Ă��ł܂�B����͂���Ȃ��Ƃ͂Ȃ������B�ǂ����āHmerge�ł���PDF��1page�̕������ɐ������悤�Bmerge����pdf��page�����͂��炩���ߒ��ׂĂ���merge����悤�ɂ�����Aerror������ł����B2003.05.30page�̑}����javascript�łȂ��Aapplescript�Ŏ��s�ł���bookmark�̐������ǂ����Ă��ł��Ȃ��BTo DoMarge PDF��Bookmark�����邩�ǂ����̐ݒ��������B�K�v��OSAXTextInfo OSAXAkua Sweets2003.01.081.5.4b1�t�@�C���_�C�A���O�Ńt�@�C��������͂��Ă��A���ꂪ���f����Ȃ��s����C��2002.09.131.5.3b2path��double quote��single quote�����������Ă���Ƃ��́A���߂邱�Ƃɂ����Boverwrite���file���g�p���̎���error������ǉ���������PDF�Ɠ������O��PDF��merge���悤�Ƃ���Ƃ��܂������Ȃ�bug���C��OSAX Checker�̋@�\�����2002.09.12overwrite���file���g�p���̎���error����1.5.3b1pdfpath, bookmarkname�ɓ��ꕶ�������鎞error���N��������C��bookmark�̒ǉ��̎��Abookmark name��single quoate���܂܂�Ă��鎞�́Adouble quoate�ŁAdouble quote�̎���single quoate�ň͂܂Ȃ���΂����Ȃ��B�ł́A���������Ă��鎞�́H�ǂ����Aescape�������Ȃ��݂����� bookmark�̎��͉��Ƃ��Ȃ����B�ł��Afile path��sigle��double�̗������܂܂�Ă��鎞�͂ǂ�����΂����񂶂�I�I2002.09.11image file��������PDF file��Merge�ł��Ȃ�bug�𔭌�����͐��������������Bpath��../�������Ă����̂������Ȃ�����2002.08.22��������PDF�Ɠ������O��PDF��merge���悤�Ƃ���Ƃ��܂������Ȃ�bug�𔭌��B2002.06.221.5.2�Ȃ���AkuaCopy��to��string���󂯕t���Ȃ��Ȃ����B1.8��version up��������H���̂ւ���C��2002.03.121.5.1UniqueNamer���g�ݍ��܂�Ă��炸�A��������t�@�C�����ɐ���������error���N����s����C��2002.02.251.5.1b2Acrobat 5.0.5��error���łȂ��悤�ɂ����BAcrobat��5.0.5��version up�����B��������Ȃ��Ƃ��낪����Bdocument class�̎Q�Ƃ𓾂悤�Ƃ���ƁAAVPageView class�������Ă���B	1.5.1b1����page��PDF�����˂���悤�ɂ����Bcount bookmarks�Ƃ��ƁA���bookmark����document�̏ꍇ�ł�1���Ԃ��Ă���B�Ȃ���������������Ԃ��Ă���݂�����Acrobat��document ?��?�̕����̐����́A���ʑO�ʂ�document����J�������ԂŔԍ����ӂ��邪�AAcrobat�̏ꍇ��document�̊J�������Ԃ̂悤��2001.09.081.5b1Acrobat 5�ɑΉ������B���̂����AAcrobat 4�ł͓����Ȃ��BText Info OSAX������Ȃ��Ȃ����B2001.01.03AkuaCopy��cooy�������ƁAfinder location��{-1,-1}�ɐݒ肵�Ă��邪�AAcrobat��save�����Ƃ��ɁAAcrobat��{0,0}�ɏ��������Ă��܂��Ă���悤���B�ł��Alist�\����folder��copy�����Ƃ��Afinder location��{-1,-1}�ɂȂ�̂ŁA{-1,-1}�Ƃ����ݒ�́A�����Ȃ��̂��ȁH2000.11.141.4.3b1Finder�ŁA�V���������PDF file��reveal���鎞�ɋN����error���C��2000.07.011.4.2b3Jon�s Commands�ɂ��copy��AkuaCopy�ɂ��ꂩ�����BTEC OSAX�͂͂����Ȃ��B2000.06.291.4.2b2�Ɨ�FileSorter���ŐV�̂��̂ɂ����Bbookmark�̖��O�����Ƃ���ŁAtext item delimiter's�ɗ���Ȃ��悤�ɂ����B2000.06.06Merge PDF 1.4.2b1Path Analyzer�𓱓�����desktop���item��������悤�ɂ����B1999�N 9�� 28��Marge PDF 1.4.1Drag & Drop�ŋN�������Ƃ���error���N����s����C��File Sorter��item lister��override�̕�����bug���������B1999�N 8�� 21�� �y�j�� 1:14:36 AMMarge PDF 1.4Script Tools��Choose Files&Folders���g���̂��~�߂āAJon's Commands 2.1��CopyFile command��replacing ask���g���悤�ɂ����B���̑����X�A�����I�ȑ�����B File Sorter���g���悤�ɂ����B ���܂�run�̎��́Acontainer window 1���������A���ꂩ���insertion location1999�N 8�� 21�� �y�j�� 0:42:25 AMMarge PDF 1.3.3�܂Ƃ߂�file��Finder���reveal����悤�ɂ����B1999�N 8�� 20��PDF Tools 1.5�Ƃ���Release1999�N 8�� 14�� �y�j�� 2:02:19 AMCMScript�̂��߂�script Merge PDF in this container������Ă݂����A�͂����Ė{���ɕK�v���낤���B�B���΂炭�g��Ȃ��ŁA�l�q������B1999�N 8�� 13�� ���j�� 11:34:58 PMMerge PDF 1.3.2�ΏۂƂ���folder�̒��Ɉ��PDF file���܂܂�Ȃ��ꍇ��error�������{�����B1999�N 8�� 13�� ���j�� 10:28:27 PMPDF Tools 1.5�Ƃ��Č��J1999�N 6�� 8�� �Ηj�� 5:15:09 PMMarge PDF 1.3.1Desktop���item�𐳂�����舵���Ȃ�bug���C��Finder Spec��direct�ɕ�����ɕϊ��ł��Ȃ����ƂɋN������B1998�N 12�� 5�� �y�j��Merge PDF1.3a2script��ʂ��č�����Athumb nail�͉��̂������Bthumb nail�����̂���߂��BMerge�I����ABookmark��\������悤�ɂ����B1998�N 11�� 30�� ���j��MargePDF1.3a1�����I��thumb nail��Bookmark�������悤�ɂ����BBookmark�͌���FIle name����suffix ".pdf"������������Bookmark��UNICODE-1-1�ɕϊ����āA�����܂�"��"�Ȃ���̂�����K�v������悤�ŁBTEC OSAX�ɒ������̕�����i���Ȃ킿file name�j��Encoding�𔻕ʂ������ϊ����悤�Ƃ������A���\������ԈႦ�āA�������ϊ�����Ȃ��B�d������������Afile name��encoding��X-MAC-JAPANESE�ɌŒ�TEC OSAX���K�v�ɂȂ����B98.11.23.MonVersion 1.2�Ƃ��Č��J98.11.16.MonMarge PDF -- 1.0.1���ɁA������PDF file�����݂����ꍇ�A���O��ς��č�Ƃ𑱂��鎖�����܂������Ȃ�bug���C���B
+MergePDF
+
+必要なOSAX
+いまのところなし。(2006.07.07)
+
+=2006.07.07
+ASKNibObjectInfo から script name を取得
+ASKScriptCache から script name で ASKScript を取得
+ASKScript は OSAScript のサブクラス
+script name はきめうちでよかろう。
+
+* ファイル保存ダイアログが modal で表示される。mode less にならないものか？
+	* Objective-C から AppleScript を呼ぶことができれば解決できる。
+* donation 催促 window を追加。
+* PDF を Acrobat で開いている場合、info for コマンドでファイルの busy status に反映されない。
+lsof コマンドを使うようにする。
+
+=2004.12.22
+png などの画像ファイルも扱えるようにしたかったが、insertPages で画像を扱えないようだ。
+
+=2004.09.03
+1.6.3b1
+日本語のbookmarkが化けることがある不具合を修正。
+TEC OSAX ではなく、iconv を使うようにした。
+PDFファイルを任意の場所に保存できない不具合を修正
+
+必要なOSAX
+TextInfo OSAX
+
+2003.09.09
+1.6.1b1
+最新のFileSorter
+TEC OSAXを不必要にした。
+dittoをつかって2byte codeの名前のファイルをコピーするとAcrobatで開いた時おかしくなるようだ。Finderのdupulicateをつかいたい・・・名前のかえてのコピーができない。Acrobatで最初のfileをsave asする。
+ShellUtilsがいらなくなった
+
+必要なOSAX
+TextInfo OSAX
+TEC OSAX
+
+2003.05.31
+1.6b1
+bookmarkの挿入はできるようになったが、挿入するpage数をカウントするところで、どうしても固まる。
+昨日はそんなことはなかった。どうして？
+mergeできるPDFは1pageの物だけに制限しよう。
+mergeするpdfのpageすうはあらかじめ調べてからmergeするようにしたら、errorが回避できた。
+2003.05.30
+pageの挿入はjavascriptでなく、applescriptで実行できた
+bookmarkの生成がどうしてもできない。
+To Do
+Marge PDFにBookmarkをつけるかどうかの設定を加える。
+
+必要なOSAX
+TextInfo OSAX
+Akua Sweets
+
+2003.01.08
+1.5.4b1
+ファイルダイアログでファイル名を入力しても、それが反映されない不具合を修正
+
+2002.09.13
+1.5.3b2
+pathにdouble quoteとsingle quoteが両方入っているときは、諦めることにした。
+overwrite先のfileが使用中の時のerror処理を追加
+生成するPDFと同じ名前のPDFをmergeしようとするとうまくいかないbugを修正
+OSAX Checkerの機能を内蔵
+
+2002.09.12
+overwrite先のfileが使用中の時のerror処理
+1.5.3b1
+pdfpath, bookmarknameに特殊文字がある時errorが起きる問題を修正
+bookmarkの追加の時、bookmark nameにsingle quoateが含まれている時は、double quoateで、double quoteの時はsingle quoateで囲まなければいけない。では、両方入っている時は？どうも、escapeが効かないみたいだ
+ bookmarkの時は何とかなった。
+でも、file pathにsigleとdoubleの両方が含まれている時はどうすればいいんじゃ！！
+
+2002.09.11
+image fileから作ったPDF fileをMergeできないbugを発見
+これは正しく無かった。pathに../が入っていたのがいけなかった
+
+2002.08.22
+生成するPDFと同じ名前のPDFをmergeしようとするとうまくいかないbugを発見。
+
+2002.06.22
+1.5.2
+なぜかAkuaCopyのtoでstringを受け付けなくなった。
+1.8にversion upしたから？
+そのへんを修正
+
+2002.03.12
+1.5.1
+UniqueNamerが組み込まれておらず、長すぎるファイル名に生成されるとerrorが起きる不具合を修正
+
+2002.02.25
+1.5.1b2
+Acrobat 5.0.5でerrorがでないようにした。
+Acrobatを5.0.5にversion upした。幾つか動かないところがあり。
+document classの参照を得ようとすると、AVPageView classが入ってくる。	
+1.5.1b1
+複数pageのPDFも束ねられるようにした。
+count bookmarksとやると、一つもbookmarkが内documentの場合でも1が返ってくる。なぜか一つ多い数字が返ってくるみたいだ
+Acrobatのdocument ?の?の部分の数字は、普通前面のdocumentから開いた順番で番号がふられるが、Acrobatの場合はdocumentの開いた順番のようだ
+
+2001.09.08
+1.5b1
+Acrobat 5に対応した。そのかわり、Acrobat 4では動かない。
+Text Info OSAXがいらなくなった。
+
+2001.01.03
+AkuaCopyでcooyしたあと、finder locationを{-1,-1}に設定しているが、Acrobatでsaveしたときに、Acrobatが{0,0}に書き換えてしまっているようだ。
+でも、list表示のfolderにcopyしたとき、finder locationは{-1,-1}になるので、{-1,-1}という設定は、悪くないのかな？
+
+2000.11.14
+1.4.3b1
+Finderで、新しく作ったPDF fileをrevealする時に起きるerrorを修正
+
+2000.07.01
+1.4.2b3
+Jonﾕs CommandsによるcopyはAkuaCopyにいれかえた。
+TEC OSAXははずせない。
+
+2000.06.29
+1.4.2b2
+独立
+FileSorterを最新のものにした。
+bookmarkの名前を作るところで、text item delimiter'sに頼らないようにした。
+
+2000.06.06
+Merge PDF 1.4.2b1
+Path Analyzerを導入してdesktop上のitemも扱えるようにした。
+1999年 9月 28日
+Marge PDF 1.4.1
+Drag & Dropで起動したときにerrorが起こる不具合を修正
+File Sorterのitem listerのoverrideの部分にbugがあった。
+1999年 8月 21日 土曜日 1:14:36 AM
+Marge PDF 1.4
+Script ToolsのChoose Files&Foldersを使うのを止めて、Jon's Commands 2.1のCopyFile commandのreplacing askを使うようにした。
+その他諸々、内部的な大改造。
+ File Sorterを使うようにした。
+ 今までrunの時は、container window 1だったが、これからはinsertion location
+
+1999年 8月 21日 土曜日 0:42:25 AM
+Marge PDF 1.3.3
+まとめたfileをFinder上でrevealするようにした。
+
+1999年 8月 20日
+PDF Tools 1.5としてRelease
+
+1999年 8月 14日 土曜日 2:02:19 AM
+CMScriptのためのscript Merge PDF in this containerを作ってみたが、はたして本当に必要だろうか。。
+しばらく使わないで、様子を見る。
+
+1999年 8月 13日 金曜日 11:34:58 PM
+Merge PDF 1.3.2
+対象とするfolderの中に一つもPDF fileが含まれない場合のerror処理を施した。
+
+1999年 8月 13日 金曜日 10:28:27 PM
+PDF Tools 1.5として公開
+
+1999年 6月 8日 火曜日 5:15:09 PM
+Marge PDF 1.3.1
+Desktop上のitemを正しく取り扱えないbugを修正
+Finder Specをdirectに文字列に変換できないことに起因する。
+
+1998年 12月 5日 土曜日
+Merge PDF1.3a2
+scriptを通して作った、thumb nailは何故か汚い。
+thumb nailを作るのをやめた。
+Merge終了後、Bookmarkを表示するようにした。
+
+1998年 11月 30日 月曜日
+MargePDF1.3a1
+自動的にthumb nailとBookmarkが作られるようにした。
+Bookmarkは元のFIle nameからsuffix ".pdf"を除いたもの
+BookmarkはUNICODE-1-1に変換して、あたまに"™…"なるものをつける必要があるようで。
+TEC OSAXに逐次元の文字列（すなわちfile name）のEncodingを判別させて
+変換しようとしたが、結構判定を間違えて、正しく変換されない。
+仕方が無いから、file nameのencodingはX-MAC-JAPANESEに固定
+TEC OSAXが必要になった。
+
+98.11.23.Mon
+Version 1.2として公開
+
+98.11.16.Mon
+Marge PDF -- 1.0.1
+既に、同名のPDF fileが存在した場合、名前を変えて作業を続ける事がうまくいかないbugを修正。
+
