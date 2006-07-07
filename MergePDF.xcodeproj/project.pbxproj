@@ -33,32 +33,6 @@
 		2C5981FA098712B2003D230C /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				OTHER_OSAFLAGS = "-x";
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -195,22 +169,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
-				HEADER_SEARCH_PATHS = "";
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = MergePDF;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
 			dependencies = (
 			);
 			name = MergePDF;
@@ -225,12 +183,6 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 2CAA8C6C0933698B009EC6A1 /* Build configuration list for PBXProject "MergePDF" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				4A9504CCFFE6A4B311CA0CBA /* Development */,
-				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
-			);
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			projectDirPath = "";
@@ -296,7 +248,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2C5981FC098712B2003D230C /* Development */ = {
+		2C5981FC098712B2003D230C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -321,9 +273,9 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
-			name = Development;
+			name = Debug;
 		};
-		2C5981FD098712B2003D230C /* Deployment */ = {
+		2C5981FD098712B2003D230C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -350,7 +302,7 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
-			name = Deployment;
+			name = Release;
 		};
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
@@ -373,20 +325,20 @@
 			};
 			name = Default;
 		};
-		2CAA8C6D0933698B009EC6A1 /* Development */ = {
+		2CAA8C6D0933698B009EC6A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Development;
+			name = Debug;
 		};
-		2CAA8C6E0933698B009EC6A1 /* Deployment */ = {
+		2CAA8C6E0933698B009EC6A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Deployment;
+			name = Release;
 		};
 		2CAA8C6F0933698B009EC6A1 /* Default */ = {
 			isa = XCBuildConfiguration;
@@ -401,8 +353,8 @@
 		2C5981FB098712B2003D230C /* Build configuration list for PBXNativeTarget "MergePDF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2C5981FC098712B2003D230C /* Development */,
-				2C5981FD098712B2003D230C /* Deployment */,
+				2C5981FC098712B2003D230C /* Debug */,
+				2C5981FD098712B2003D230C /* Release */,
 				2C5981FE098712B2003D230C /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -411,8 +363,8 @@
 		2CAA8C6C0933698B009EC6A1 /* Build configuration list for PBXProject "MergePDF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2CAA8C6D0933698B009EC6A1 /* Development */,
-				2CAA8C6E0933698B009EC6A1 /* Deployment */,
+				2CAA8C6D0933698B009EC6A1 /* Debug */,
+				2CAA8C6E0933698B009EC6A1 /* Release */,
 				2CAA8C6F0933698B009EC6A1 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;

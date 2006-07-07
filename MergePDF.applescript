@@ -1,9 +1,11 @@
---libraryies
-property LibraryFolder : "Macintosh HD:Users:tkurita:Factories:Script factory:ProjectsX:MergePDF:Library Scripts:"
-property FileSorter : load script file (LibraryFolder & "FileSorter.scpt")
-property PathAnalyzer : load script file (LibraryFolder & "PathAnalyzer")
-property StyleStripper : load script file (LibraryFolder & "StyleStripper")
-property UniqueNamer : load script file (LibraryFolder & "UniqueNamer")
+on loadLib(theName)
+	return loadLib(theName) of application (get "MergePDFLib")
+end loadLib
+
+property FileSorter : loadLib("FileSorter")
+property PathAnalyzer : loadLib("PathAnalyzer")
+property StyleStripper : loadLib("StyleStripper")
+property UniqueNamer : loadLib("UniqueNamer")
 
 --property imageSuffixList : {".png"}
 property imageSuffixList : {}
@@ -308,6 +310,18 @@ on getName(theItem)
 	end tell
 end getName
 
+on isFileBusy(filePath)
+	set isBusy to busy status of (info for (alias filePath))
+	if not isBusy then
+		try
+			set theResult to do shell script "lsof -F c " & quoted form of POSIX path of filePath
+			--set processName to text 2 thru -1 of paragraph 2 of theResult
+			set isBusy to true
+		end try
+	end if
+	return isBusy
+end isFileBusy
+
 on checkDestinationFile(destinationFile, theName)
 	--log "start checkDestinationFile"
 	if isExists(destinationFile) then
@@ -324,12 +338,16 @@ on checkDestinationFile(destinationFile, theName)
 		set newDestinationFile to newDestinationFile as Unicode text
 		
 		if (newDestinationFile as Unicode text) is (destinationFile) then
-			set isBusy to busy status of (info for (alias destinationFile))
+			--log "destinationFile is same"
+			set isBusy to isFileBusy(destinationFile)
 			if isBusy then
+				--log "is busy"
 				set dot to localized string "dot"
 				set isBusyMessage to localized string "isBusyMessage"
 				display dialog dQ & destinationFile & dQ & space & isBusyMessage & return & chooseNewLocationMessage & dot with icon note
 				set destinationFile to checkDestinationFile(destinationFile, theName)
+			else
+				--log "is not busy"
 			end if
 		else
 			set destinationFile to newDestinationFile
@@ -366,8 +384,8 @@ on jsStringFilter(theString)
 end jsStringFilter
 
 on savePDFAs(theDoc, theDistinationFile)
-	log "start savePDFAs"
-	log theDistinationFile
+	--log "start savePDFAs"
+	--log theDistinationFile
 	local thePDFPath
 	
 	-- can't accept long file name
@@ -415,7 +433,6 @@ on AddBookmark(theDoc, theBookmarkName, destinationPage)
 	(*
 	TECConvertText theBookmarkName fromCode "macintosh" toCode "UNICODE-1-1"
 	--TECConvertText theBookmarkName fromCode "X-MAC-JAPANESE" toCode "UNICODE-1-1"
-	set theBookmarkName to ("β„‘β€χο‹Ώ" & the result)
 	*)
 	set theBookmarkName to do shell script "echo '" & theBookmarkName & "'|iconv -f UTF-8 -t UTF-16"
 	tell application "Adobe Acrobat 7.0 Standard"
