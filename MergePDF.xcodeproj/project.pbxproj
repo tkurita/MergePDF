@@ -22,6 +22,13 @@
 /* Begin PBXBuildFile section */
 		2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A20509874594003BE6E4 /* InfoPlist.strings */; };
 		2C31A28909876608003BE6E4 /* setuphelp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A28809876608003BE6E4 /* setuphelp.sh */; };
+		2C473ED00A5E65D400096E8A /* History.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C473ECF0A5E65D400096E8A /* History.txt */; };
+		2C4740980A5E6E0D00096E8A /* DonationReminder.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740920A5E6E0C00096E8A /* DonationReminder.nib */; };
+		2C47409B0A5E6E3500096E8A /* DonationReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740990A5E6E3500096E8A /* DonationReminder.m */; };
+		2C47409C0A5E6E3500096E8A /* DonationReminder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C47409A0A5E6E3500096E8A /* DonationReminder.h */; };
+		2C4740A80A5E71B000096E8A /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4740A60A5E71B000096E8A /* AppController.h */; };
+		2C4740A90A5E71B000096E8A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740A70A5E71B000096E8A /* AppController.m */; };
+		2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */; };
 		2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5981F0098712B2003D230C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		2C5981F2098712B2003D230C /* MergePDF.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CB1697A0711703000A527B5 /* MergePDF.icns */; };
@@ -41,6 +48,13 @@
 		2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Info-MergePDF.plist"; sourceTree = "<group>"; };
 		2C31A20609874594003BE6E4 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C31A28809876608003BE6E4 /* setuphelp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setuphelp.sh; sourceTree = "<group>"; };
+		2C473ECF0A5E65D400096E8A /* History.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = History.txt; sourceTree = "<group>"; };
+		2C4740930A5E6E0C00096E8A /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/DonationReminder.nib; sourceTree = "<group>"; };
+		2C4740990A5E6E3500096E8A /* DonationReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationReminder.m; sourceTree = "<group>"; };
+		2C47409A0A5E6E3500096E8A /* DonationReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonationReminder.h; sourceTree = "<group>"; };
+		2C4740A60A5E71B000096E8A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		2C4740A70A5E71B000096E8A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		2C4740B20A5E773500096E8A /* FactorySetting.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = FactorySetting.plist; sourceTree = "<group>"; };
 		2C598200098712B3003D230C /* MergePDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MergePDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
@@ -102,6 +116,7 @@
 		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2C473ECF0A5E65D400096E8A /* History.txt */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -115,7 +130,11 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2C4740990A5E6E3500096E8A /* DonationReminder.m */,
+				2C47409A0A5E6E3500096E8A /* DonationReminder.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				2C4740A60A5E71B000096E8A /* AppController.h */,
+				2C4740A70A5E71B000096E8A /* AppController.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -123,12 +142,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C4740B20A5E773500096E8A /* FactorySetting.plist */,
 				2C31A20509874594003BE6E4 /* InfoPlist.strings */,
 				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
 				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
 				2C7BDAB6071183220032351D /* ColumnDirection.png */,
 				2C7BDAB7071183220032351D /* RowDirection.png */,
 				2CB1697A0711703000A527B5 /* MergePDF.icns */,
+				2C4740920A5E6E0C00096E8A /* DonationReminder.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
 			);
@@ -151,6 +172,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C47409C0A5E6E3500096E8A /* DonationReminder.h in Headers */,
+				2C4740A80A5E71B000096E8A /* AppController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +227,9 @@
 				2C5981F5098712B2003D230C /* Localizable.strings in Resources */,
 				2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */,
 				2C31A28909876608003BE6E4 /* setuphelp.sh in Resources */,
+				2C473ED00A5E65D400096E8A /* History.txt in Resources */,
+				2C4740980A5E6E0D00096E8A /* DonationReminder.nib in Resources */,
+				2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5981F7098712B2003D230C /* main.m in Sources */,
+				2C47409B0A5E6E3500096E8A /* DonationReminder.m in Sources */,
+				2C4740A90A5E71B000096E8A /* AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +263,14 @@
 				2C31A20609874594003BE6E4 /* Japanese */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2C4740920A5E6E0C00096E8A /* DonationReminder.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C4740930A5E6E0C00096E8A /* Japanese */,
+			);
+			name = DonationReminder.nib;
 			sourceTree = "<group>";
 		};
 		2CD9CDE00711A295001CBF53 /* Localizable.strings */ = {
