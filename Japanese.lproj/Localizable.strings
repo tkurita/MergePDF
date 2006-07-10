@@ -3,4 +3,5 @@
     dot = "\U3002"; 
     isBusyMessage = "\U306f\U4f7f\U7528\U4e2d\U3067\U3059\U3002"; 
     notFoundPDFs = "PDF \U30d5\U30a1\U30a4\U30eb\U304c\U3042\U308a\U307e\U305b\U3093\U3002"; 
+    "this software" = MeergePDF; 
 }

@@ -540,6 +540,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {822, 1432}}";
 			sepNavSelRange = "{1709, 6}";
 			sepNavVisRect = "{{0, 766}, {822, 648}}";
+			sepNavWindowFrame = "{{61, 192}, {867, 746}}";
 		};
 	};
 	2C47419A0A5FA77A00096E8A /* PBXTextBookmark */ = {
