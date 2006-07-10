@@ -99,6 +99,11 @@ on readDefaultValue(entryName, defaultValue)
 	end tell
 end readDefaultValue
 
+(*
+on sayHello()
+	display dialog "hello"
+end sayHello
+*)
 on will open theObject
 	activate
 	center theObject
@@ -116,6 +121,10 @@ on clicked theObject
 	end if
 	quit
 end clicked
+
+on should quit theObject
+	return (count windows is 0)
+end should quit
 
 on newPDFObj for theFile given closedoc:closeFlag
 	local theFileName
@@ -186,22 +195,7 @@ on prepareMerging(theContainer)
 	end if
 end prepareMerging
 
-on mergePDF()
-	local pdfObjList
-	set pdfList to item 1 of sortByView() of thePDFsorter
-	if pdfList is {} then
-		set theFolder to (targetContainer of thePDFsorter) as Unicode text
-		set notFoundPDFs to localized string "notFoundPDFs"
-		display dialog notFoundPDFs & return & theFolder buttons {"OK"} default button "OK"
-		return false
-	end if
-	
-	set pathRecord to do(targetContainer of thePDFsorter) of PathAnalyzer
-	
-	set theName to (name of pathRecord) & ".pdf"
-	set destinationFile to (((folderReference of pathRecord) as Unicode text) & theName)
-	set destinationFile to checkDestinationFile(destinationFile, theName)
-	
+on mergePDFto(destinationFile)
 	tell application "Adobe Acrobat 7.0 Standard"
 		set acrobatVersion to (version as string)
 		activate
@@ -291,6 +285,30 @@ on mergePDF()
 	end tell
 	
 	beep
+end mergePDFto
+
+on mergePDF()
+	local pdfObjList
+	set pdfList to item 1 of sortByView() of thePDFsorter
+	if pdfList is {} then
+		set theFolder to (targetContainer of thePDFsorter) as Unicode text
+		set notFoundPDFs to localized string "notFoundPDFs"
+		display dialog notFoundPDFs & return & theFolder buttons {"OK"} default button "OK"
+		return false
+	end if
+	
+	set pathRecord to do(targetContainer of thePDFsorter) of PathAnalyzer
+	
+	set theName to (name of pathRecord) & ".pdf"
+	set destinationFile to (((folderReference of pathRecord) as Unicode text) & theName)
+	set destinationFile to checkDestinationFile(destinationFile, theName)
+	if destinationFile is not missing value then
+		mergePDFto(destinationFile)
+	else
+		if (count windows is 0) then
+			quit
+		end if
+	end if
 end mergePDF
 
 
@@ -332,7 +350,7 @@ on checkDestinationFile(destinationFile, theName)
 			set newDestinationFile to (choose file name default name theName with prompt chooseNewLocationMessage & " :")
 			--log (newDestinationFile as Unicode text)
 		on error errMsg number errNum
-			quit
+			set destinationFile to missing value
 			error errMsg number errNum
 		end try
 		set newDestinationFile to newDestinationFile as Unicode text
@@ -355,6 +373,7 @@ on checkDestinationFile(destinationFile, theName)
 	end if
 	--log "end checkDestinationFile"
 	return destinationFile
+	
 end checkDestinationFile
 
 on isExists(thePath)

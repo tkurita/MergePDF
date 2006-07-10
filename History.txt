@@ -3,8 +3,12 @@ MergePDF
 必要なOSAX
 いまのところなし。(2006.07.07)
 
+=2006.07.10
+modal でない save panel は sheet にしないと表示できない。
+Cocoa でも AppleScript Studio　でもかんけいない。
+
 =2006.07.07
-ASKNibObjectInfo から script name を取得
+ASKNibObjectInfo から script name を取得 -- これは難しそう
 ASKScriptCache から script name で ASKScript を取得
 ASKScript は OSAScript のサブクラス
 script name はきめうちでよかろう。
