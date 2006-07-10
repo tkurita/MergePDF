@@ -8,7 +8,7 @@
 			2C5981EB098712B2003D230C /* MergePDF */,
 		);
 		breakpoints = (
-			2C4741BA0A613F5A00096E8A /* AppController.m:13 */,
+			2C4741BA0A613F5A00096E8A /* AppController.m:18 */,
 		);
 		codeSenseManager = 2C58634F071160DA00BCE699 /* Code sense */;
 		executables = (
@@ -387,11 +387,19 @@
 			sepNavWindowFrame = "{{17, 171}, {697, 682}}";
 		};
 	};
+	2C4740A60A5E71B000096E8A /* AppController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {769, 487}}";
+			sepNavSelRange = "{121, 0}";
+			sepNavVisRect = "{{0, 0}, {769, 487}}";
+			sepNavWindowFrame = "{{131, 290}, {814, 585}}";
+		};
+	};
 	2C4740A70A5E71B000096E8A /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {769, 500}}";
-			sepNavSelRange = "{654, 0}";
-			sepNavVisRect = "{{0, 11}, {769, 487}}";
+			sepNavIntBoundsRect = "{{0, 0}, {769, 562}}";
+			sepNavSelRange = "{109, 36}";
+			sepNavVisRect = "{{0, 0}, {769, 487}}";
 			sepNavWindowFrame = "{{131, 290}, {814, 585}}";
 		};
 	};
@@ -412,7 +420,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: applicationWillFinishLaunching:";
 		rLen = 0;
-		rLoc = 147;
+		rLoc = 222;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
@@ -426,7 +434,7 @@
 		comments = "error: ‘ASKScriptCache’ undeclared (first use in this function)";
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		rLen = 1;
-		rLoc = 12;
+		rLoc = 17;
 		rType = 1;
 	};
 	2C47416A0A5FA58900096E8A /* PBXTextBookmark */ = {
@@ -434,7 +442,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "id scriptCash = [ASKScriptCache sharedScriptCache];";
 		rLen = 355;
-		rLoc = 295;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 154;
 		vrLoc = 195;
@@ -451,7 +459,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "@implementation AppController";
-		rLen = 30;
+		rLen = 105;
 		rLoc = 79;
 		rType = 0;
 		vrLen = 219;
@@ -462,7 +470,7 @@
 		comments = "error: ‘ASKScriptCache’ undeclared (first use in this function)";
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		rLen = 1;
-		rLoc = 12;
+		rLoc = 17;
 		rType = 1;
 	};
 	2C4741770A5FA5B400096E8A /* PBXTextBookmark */ = {
@@ -470,7 +478,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "id scriptCash = [ASKScriptCache sharedScriptCache];";
 		rLen = 355;
-		rLoc = 295;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 154;
 		vrLoc = 217;
@@ -480,7 +488,7 @@
 		comments = "warning: will be assumed to return ‘id’ and accept";
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		rLen = 1;
-		rLoc = 12;
+		rLoc = 17;
 		rType = 1;
 	};
 	2C47418C0A5FA77000096E8A /* PBXTextBookmark */ = {
@@ -488,7 +496,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "id scriptCash = [ASKScriptCache sharedScriptCache];";
 		rLen = 355;
-		rLoc = 295;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 154;
 		vrLoc = 218;
@@ -564,12 +572,12 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "id scriptCash = [ASKScriptCache sharedScriptCache];";
 		rLen = 355;
-		rLoc = 295;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 154;
 		vrLoc = 218;
 	};
-	2C4741BA0A613F5A00096E8A /* AppController.m:13 */ = {
+	2C4741BA0A613F5A00096E8A /* AppController.m:18 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -579,7 +587,7 @@
 		fileReference = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		functionName = "-applicationDidFinishLaunching:";
 		hitCount = 1;
-		lineNumber = 13;
+		lineNumber = 18;
 		location = AppController.ob;
 		modificationTime = 174145466.831814;
 		state = 1;
@@ -589,7 +597,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 16";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 0;
@@ -629,7 +637,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 17";
 		rLen = 0;
-		rLoc = 649;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 218;
@@ -639,7 +647,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 17";
 		rLen = 0;
-		rLoc = 649;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 218;
@@ -649,7 +657,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 16";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 922;
 		vrLoc = 0;
@@ -679,7 +687,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 16";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 0;
@@ -723,7 +731,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 16";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 922;
 		vrLoc = 0;
@@ -753,7 +761,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 649;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 218;
@@ -773,7 +781,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 16";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 922;
 		vrLoc = 0;
@@ -813,7 +821,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 0;
@@ -853,7 +861,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 0;
@@ -893,7 +901,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 0;
@@ -933,7 +941,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 0;
@@ -973,7 +981,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 0;
@@ -1013,7 +1021,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 0;
@@ -1043,7 +1051,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 20";
 		rLen = 0;
-		rLoc = 649;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 309;
 		vrLoc = 218;
@@ -1083,7 +1091,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 26;
@@ -1117,7 +1125,7 @@
 		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
 		name = "AppController.m: 18";
 		rLen = 0;
-		rLoc = 536;
+		rLoc = 611;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 26;

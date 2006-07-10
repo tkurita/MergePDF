@@ -3,6 +3,11 @@
 
 @class ASKScriptCache;
 @implementation AppController
+- (IBAction)makeDonation:(id)sender
+{
+	[DonationReminder goToDonation];
+}
+
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
 	[DonationReminder remindDonation];
