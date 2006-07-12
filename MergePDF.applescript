@@ -4,7 +4,7 @@ end loadLib
 
 property FileSorter : loadLib("FileSorter")
 property PathAnalyzer : loadLib("PathAnalyzer")
-property StyleStripper : loadLib("StyleStripper")
+property StyleStripper : StringEngine of PathAnalyzer
 property UniqueNamer : loadLib("UniqueNamer")
 
 --property imageSuffixList : {".png"}
