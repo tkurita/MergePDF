@@ -122,10 +122,6 @@ on clicked theObject
 	quit
 end clicked
 
-on should quit theObject
-	return (count windows is 0)
-end should quit
-
 on newPDFObj for theFile given closedoc:closeFlag
 	local theFileName
 	local theFile
@@ -191,7 +187,10 @@ on prepareMerging(theContainer)
 		show window "directionChooser"
 	else
 		mergePDF()
-		quit
+		set nWin to count (windows whose visible is true)
+		if (nWin is 0) then
+			quit
+		end if
 	end if
 end prepareMerging
 
@@ -285,6 +284,7 @@ on mergePDFto(destinationFile)
 	end tell
 	
 	beep
+	return true
 end mergePDFto
 
 on mergePDF()
@@ -293,7 +293,7 @@ on mergePDF()
 	if pdfList is {} then
 		set theFolder to (targetContainer of thePDFsorter) as Unicode text
 		set notFoundPDFs to localized string "notFoundPDFs"
-		display dialog notFoundPDFs & return & theFolder buttons {"OK"} default button "OK"
+		display dialog notFoundPDFs & return & return & theFolder buttons {"OK"} default button "OK"
 		return false
 	end if
 	
@@ -303,12 +303,12 @@ on mergePDF()
 	set destinationFile to (((folderReference of pathRecord) as Unicode text) & theName)
 	set destinationFile to checkDestinationFile(destinationFile, theName)
 	if destinationFile is not missing value then
-		mergePDFto(destinationFile)
+		set theResult to mergePDFto(destinationFile)
 	else
-		if (count windows is 0) then
-			quit
-		end if
+		set theResult to false
 	end if
+	
+	return theResult
 end mergePDF
 
 

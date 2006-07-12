@@ -9,7 +9,7 @@ copyHelp() {
 	manual_path=$1;
 	helpdir=$2;
 	mkdir -p "$helpdir"
-	perl "$sitetear_path" "$manual_path" "$helpdir"
+	$sitetear_path -F PageFilterAbs "$manual_path" "$helpdir"
 	open -a 'Help Indexer' "$helpdir"
 	cp "$iconPath" "$helpdir"
 }

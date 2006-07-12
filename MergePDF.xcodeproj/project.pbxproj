@@ -122,7 +122,6 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				2C31A28809876608003BE6E4 /* setuphelp.sh */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -142,6 +141,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C31A28809876608003BE6E4 /* setuphelp.sh */,
 				2C4740B20A5E773500096E8A /* FactorySetting.plist */,
 				2C31A20509874594003BE6E4 /* InfoPlist.strings */,
 				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
