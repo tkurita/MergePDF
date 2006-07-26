@@ -24,7 +24,9 @@
 	<key>CFBundleExecutable</key>
 	<string>MergePDF</string>
 	<key>CFBundleGetInfoString</key>
-	<string>1.7.3 copyright 1998-2006, Tetsuro KURITA</string>
+	<string>1.7.4 copyright 1998-2006, Tetsuro KURITA</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>MergePDFHelp</string>
 	<key>CFBundleIconFile</key>
 	<string>MergePDF.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -36,18 +38,16 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7.3</string>
+	<string>1.7.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.7.3</string>
+	<string>1.7.4</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>CFBundleHelpBookFolder</key>
-	<string>MergePDFHelp</string>
 </dict>
 </plist>

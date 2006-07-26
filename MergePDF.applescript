@@ -194,7 +194,7 @@ on prepareMerging(theContainer)
 	end if
 end prepareMerging
 
-on mergePDFto(destinationFile)
+on mergePDFto(destinationFile, pdfList)
 	tell application "Adobe Acrobat 7.0 Standard"
 		set acrobatVersion to (version as string)
 		activate
@@ -288,7 +288,6 @@ on mergePDFto(destinationFile)
 end mergePDFto
 
 on mergePDF()
-	local pdfObjList
 	set pdfList to item 1 of sortByView() of thePDFsorter
 	if pdfList is {} then
 		set theFolder to (targetContainer of thePDFsorter) as Unicode text
@@ -303,7 +302,7 @@ on mergePDF()
 	set destinationFile to (((folderReference of pathRecord) as Unicode text) & theName)
 	set destinationFile to checkDestinationFile(destinationFile, theName)
 	if destinationFile is not missing value then
-		set theResult to mergePDFto(destinationFile)
+		set theResult to mergePDFto(destinationFile, pdfList)
 	else
 		set theResult to false
 	end if
