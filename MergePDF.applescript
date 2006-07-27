@@ -214,7 +214,8 @@ on mergePDFto(destinationFile, pdfList)
 	if isSinglePage of firstPDFObj then
 		openPDF() of firstPDFObj
 		tell application "Adobe Acrobat 7.0 Standard"
-			set theDoc to a reference to document 1
+			--set theDoc to a reference to document 1
+			set theDoc to a reference to active doc
 		end tell
 	else
 		tell application "Adobe Acrobat 7.0 Standard"
@@ -361,7 +362,12 @@ on checkDestinationFile(destinationFile, theName)
 				--log "is busy"
 				set dot to localized string "dot"
 				set isBusyMessage to localized string "isBusyMessage"
-				display dialog dQ & destinationFile & dQ & space & isBusyMessage & return & chooseNewLocationMessage & dot with icon note
+				try
+					display dialog dQ & destinationFile & dQ & space & isBusyMessage & return & changeNewLocationMessage & dot with icon note
+				on error
+					quit
+					return
+				end try
 				set destinationFile to checkDestinationFile(destinationFile, theName)
 			else
 				--log "is not busy"
