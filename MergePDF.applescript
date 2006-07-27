@@ -127,7 +127,7 @@ on newPDFObj for theFile given closedoc:closeFlag
 	local theFile
 	local theBookmarkName
 	
-	set theFileName to getName(theFile)
+	set theFileName to nameOf(theFile) of PathAnalyzer
 	set theFile to (theFile as alias)
 	
 	set theBookmarkName to removeSuffix(theFileName)
@@ -176,6 +176,10 @@ on newPDFObj for theFile given closedoc:closeFlag
 end newPDFObj
 
 on prepareMerging(theContainer)
+	tell application "Adobe Acrobat 7.0 Standard"
+		set acrobatVersion to (version as string)
+	end tell
+	
 	try
 		set thePDFsorter to newPDFsorter(theContainer)
 	on error errMsg number 777
@@ -195,12 +199,8 @@ on prepareMerging(theContainer)
 end prepareMerging
 
 on mergePDFto(destinationFile, pdfList)
-	tell application "Adobe Acrobat 7.0 Standard"
-		set acrobatVersion to (version as string)
-		activate
-	end tell
-	
 	---build pdfobj List
+	tell application "Adobe Acrobat 7.0 Standard" to activate
 	set pdfObjList to {}
 	repeat with i from 2 to (length of pdfList)
 		-- get porperties of pdf document to add
@@ -293,7 +293,8 @@ on mergePDF()
 	if pdfList is {} then
 		set theFolder to (targetContainer of thePDFsorter) as Unicode text
 		set notFoundPDFs to localized string "notFoundPDFs"
-		display dialog notFoundPDFs & return & return & theFolder buttons {"OK"} default button "OK"
+		set locationText to localized string "Location :"
+		display alert notFoundPDFs message (locationText & return & theFolder)
 		return false
 	end if
 	
@@ -322,12 +323,6 @@ on removeSuffix(theString)
 	return theString
 end removeSuffix
 
-on getName(theItem)
-	tell application "Finder"
-		return name of theItem as Unicode text
-	end tell
-end getName
-
 on isFileBusy(filePath)
 	set isBusy to busy status of (info for (alias filePath))
 	if not isBusy then
@@ -340,13 +335,34 @@ on isFileBusy(filePath)
 	return isBusy
 end isFileBusy
 
+(*!= closeFileInAcrobat
+Acrobat で開かれているファイルを閉じる。
+
+== Result
+とにかくファイルを閉じることに成功したら ture。
+Acrobat で開いているファイルが見つからなかったり、起動していないときは false。
+*)
+on closeFileInAcrobat(theFile)
+	set theResult to false
+	tell application "Adobe Acrobat 7.0 Standard"
+		repeat with ith from 1 to count documents
+			set fileAlias to file alias of document ith
+			if (fileAlias as Unicode text is theFile) then
+				close document ith saving "No"
+				set theResult to true
+				exit repeat
+			end if
+		end repeat
+	end tell
+	return theResult
+end closeFileInAcrobat
+
 on checkDestinationFile(destinationFile, theName)
 	--log "start checkDestinationFile"
 	if isExists(destinationFile) then
 		activate
 		set chooseNewLocationMessage to localized string "chooseNewLocationMessage"
 		try
-			--set newDestinationFile to (choose file name default name theName with prompt chooseNewLocationMessage & " :") as file specification
 			set newDestinationFile to (choose file name default name theName with prompt chooseNewLocationMessage & " :")
 			--log (newDestinationFile as Unicode text)
 		on error errMsg number errNum
@@ -355,25 +371,32 @@ on checkDestinationFile(destinationFile, theName)
 		end try
 		set newDestinationFile to newDestinationFile as Unicode text
 		
-		if (newDestinationFile as Unicode text) is (destinationFile) then
+		if (newDestinationFile is destinationFile) then
 			--log "destinationFile is same"
 			set isBusy to isFileBusy(destinationFile)
+			if isBusy then
+				if closeFileInAcrobat(destinationFile) then
+					set isBusy to false
+				end if
+			end if
+			
 			if isBusy then
 				--log "is busy"
 				set dot to localized string "dot"
 				set isBusyMessage to localized string "isBusyMessage"
+				set changeNewLocationMessage to localized string "changeNewLocationMessage"
 				try
 					display dialog dQ & destinationFile & dQ & space & isBusyMessage & return & changeNewLocationMessage & dot with icon note
+					set destinationFile to checkDestinationFile(destinationFile, theName)
 				on error
-					quit
-					return
+					set destinationFile to missing value
 				end try
-				set destinationFile to checkDestinationFile(destinationFile, theName)
 			else
 				--log "is not busy"
 			end if
 		else
-			set destinationFile to newDestinationFile
+			set theName to nameOf(newDestinationFile) of PathAnalyzer
+			set destinationFile to checkDestinationFile(newDestinationFile, theName)
 		end if
 	end if
 	--log "end checkDestinationFile"
