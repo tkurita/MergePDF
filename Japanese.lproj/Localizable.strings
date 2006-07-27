@@ -1,7 +1,0 @@
-"Location :" = "場所 :";
-changeNewLocationMessage = "保存場所もしくはファイル名を変更して下さい";
-chooseNewLocationMessage = "保存場所とファイル名を入力して下さい";
-dot = "。";
-isBusyMessage = "は使用中です。";
-notFoundPDFs = "PDF ファイルがありません。";
-"this software" = MergePDF;
