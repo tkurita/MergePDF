@@ -20,8 +20,8 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
+		2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */; };
 		2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A20509874594003BE6E4 /* InfoPlist.strings */; };
-		2C31A28909876608003BE6E4 /* setuphelp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A28809876608003BE6E4 /* setuphelp.sh */; };
 		2C473ED00A5E65D400096E8A /* History.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C473ECF0A5E65D400096E8A /* History.txt */; };
 		2C4740980A5E6E0D00096E8A /* DonationReminder.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740920A5E6E0C00096E8A /* DonationReminder.nib */; };
 		2C47409B0A5E6E3500096E8A /* DonationReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740990A5E6E3500096E8A /* DonationReminder.m */; };
@@ -45,9 +45,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-MergePDF.plist"; sourceTree = "<group>"; };
 		2C31A20609874594003BE6E4 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2C31A28809876608003BE6E4 /* setuphelp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setuphelp.sh; sourceTree = "<group>"; };
 		2C473ECF0A5E65D400096E8A /* History.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = History.txt; sourceTree = "<group>"; };
 		2C4740930A5E6E0C00096E8A /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/DonationReminder.nib; sourceTree = "<group>"; };
 		2C4740990A5E6E3500096E8A /* DonationReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationReminder.m; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2C31A28809876608003BE6E4 /* setuphelp.sh */,
+				2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */,
 				2C4740B20A5E773500096E8A /* FactorySetting.plist */,
 				2C31A20509874594003BE6E4 /* InfoPlist.strings */,
 				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
@@ -226,10 +226,10 @@
 				2C5981F4098712B2003D230C /* RowDirection.png in Resources */,
 				2C5981F5098712B2003D230C /* Localizable.strings in Resources */,
 				2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */,
-				2C31A28909876608003BE6E4 /* setuphelp.sh in Resources */,
 				2C473ED00A5E65D400096E8A /* History.txt in Resources */,
 				2C4740980A5E6E0D00096E8A /* DonationReminder.nib in Resources */,
 				2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */,
+				2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

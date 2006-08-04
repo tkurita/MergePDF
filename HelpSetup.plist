@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppleIcon</key>
+	<string>MergePDF16.png</string>
+	<key>IsLocalized</key>
+	<true/>
+	<key>ManualFolder</key>
+	<string>/Users/tkurita/Factories/Websites/scriptfactory/scriptfactory/ScriptGallery/TheOtherScripts/MergePDF/manual</string>
+	<key>ManualPage</key>
+	<string>index.html</string>
+</dict>
+</plist>
