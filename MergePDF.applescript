@@ -1,11 +1,13 @@
-on loadLib(theName)
-	return loadLib(theName) of application (get "MergePDFLib")
-end loadLib
+property loader : proxy_with({autocollect:true}) of application (get "MergePDFLib")
 
-property FileSorter : loadLib("FileSorter")
-property PathAnalyzer : loadLib("PathAnalyzer")
+on load(theName)
+	return loader's load(theName)
+end load
+
+property FileSorter : load("FileSorter")
+property PathAnalyzer : load("PathAnalyzer")
 property StyleStripper : StringEngine of PathAnalyzer
-property UniqueNamer : loadLib("UniqueNamer")
+property UniqueNamer : load("UniqueNamer")
 
 --property imageSuffixList : {".png"}
 property imageSuffixList : {}
@@ -127,7 +129,7 @@ on newPDFObj for theFile given closedoc:closeFlag
 	local theFile
 	local theBookmarkName
 	
-	set theFileName to nameOf(theFile) of PathAnalyzer
+	set theFileName to name_of(theFile) of PathAnalyzer
 	set theFile to (theFile as alias)
 	
 	set theBookmarkName to removeSuffix(theFileName)
@@ -395,7 +397,7 @@ on checkDestinationFile(destinationFile, theName)
 				--log "is not busy"
 			end if
 		else
-			set theName to nameOf(newDestinationFile) of PathAnalyzer
+			set theName to name_of(newDestinationFile) of PathAnalyzer
 			set destinationFile to checkDestinationFile(newDestinationFile, theName)
 		end if
 	end if
@@ -464,7 +466,7 @@ on insertPagesToLast(theDoc, thePDFToAddObj)
 	
 	set thePDFPath to quoted form of POSIX path of fileAlias of thePDFToAddObj as Unicode text
 	--log thePDFPath
-	set thePDFPath to getPlainText of StyleStripper from thePDFPath
+	set thePDFPath to StyleStripper's plain_text(thePDFPath)
 	--log thePDFPath
 	set endPage to (nPages of thePDFToAddObj) - 1
 	set insertCommand to "var lastPage = this.numPages-1;this.insertPages(lastPage," & thePDFPath & ",0," & endPage & ");"
@@ -495,7 +497,7 @@ end AddBookmark
 
 on addBookmarkToThePageAtLast(theDoc, theBookmarkName, destinationPage)
 	set theBookmarkName to (my jsStringFilter(theBookmarkName)) as Unicode text
-	set theBookmarkName to getPlainText of StyleStripper from theBookmarkName
+	set theBookmarkName to StyleStripper's plain_text(theBookmarkName)
 	set theJS to "bookmarkRoot.createChild(" & theBookmarkName & ", 'this.pageNum=" & destinationPage & "',bookmarkRoot.children.length)"
 	--set theJS to "bookmarkRoot.createChild(" & theBookmarkName & ", null,bookmarkRoot.children.length)"
 	tell application "Adobe Acrobat 7.0 Standard"
