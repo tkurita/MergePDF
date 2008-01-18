@@ -123,7 +123,8 @@ end prepare_merging
 
 on merge_pdf_to(dest_file, pdf_list)
 	--log "start merge_pdf_to"
-	tell application "Adobe Acrobat 7.0 Standard" to activate
+	--tell application "Adobe Acrobat 7.0 Standard" to activate
+	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.adobe.Acrobat"
 	
 	set pdf_controllers to {}
 	repeat with a_file in pdf_list
@@ -163,8 +164,8 @@ on merge_pdf_to(dest_file, pdf_list)
 		save new_doc
 	end tell
 	
+	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.apple.finder"
 	tell application "Finder"
-		activate
 		reveal (dest_file's as_alias())
 	end tell
 	

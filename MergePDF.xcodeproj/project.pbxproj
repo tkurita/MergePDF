@@ -66,8 +66,6 @@
 		2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-MergePDF.plist"; sourceTree = "<group>"; };
 		2C473ECF0A5E65D400096E8A /* History.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = History.txt; sourceTree = "<group>"; };
-		2C4740990A5E6E3500096E8A /* DonationReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationReminder.m; sourceTree = "<group>"; };
-		2C47409A0A5E6E3500096E8A /* DonationReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonationReminder.h; sourceTree = "<group>"; };
 		2C4740A60A5E71B000096E8A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C4740A70A5E71B000096E8A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C4740B20A5E773500096E8A /* FactorySetting.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = FactorySetting.plist; sourceTree = "<group>"; };
@@ -167,8 +165,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2C4740990A5E6E3500096E8A /* DonationReminder.m */,
-				2C47409A0A5E6E3500096E8A /* DonationReminder.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				2C4740A60A5E71B000096E8A /* AppController.h */,
 				2C4740A70A5E71B000096E8A /* AppController.m */,
