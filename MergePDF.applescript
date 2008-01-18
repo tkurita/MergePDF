@@ -1,90 +1,77 @@
 property loader : proxy_with({autocollect:true}) of application (get "MergePDFLib")
 
-on load(theName)
-	return loader's load(theName)
+on load(a_name)
+	return loader's load(a_name)
 end load
 
 property FileSorter : load("FileSorter")
+property XFile : load("XFile")
 property PathAnalyzer : load("PathAnalyzer")
 property StyleStripper : StringEngine of PathAnalyzer
 property UniqueNamer : load("UniqueNamer")
 
---property imageSuffixList : {".png"}
-property imageSuffixList : {}
-property suffixList : {".pdf", ".ai"} & imageSuffixList
-property acrobatVersion : missing value
+property appController : missing value
+property UtilityHandlers : missing value
+property PDFController : missing value
 
-property dQ : ASCII character 34
+--property image_pdf_suffixes : {".png"}
+property _image_suffixes : {}
+property _pdf_suffixes : {".pdf", ".ai"}
+property _acrobat_version : missing value
 
-property thePDFsorter : missing value
+property a_pdf_sorter : missing value
 
-on newPDFsorter(theContainer)
-	script PDFSorter
-		property parent : FileSorter
-		property directionForPosition : missing value
+on import_script(a_name)
+	tell main bundle
+		set a_path to path for script a_name extension "scpt"
+	end tell
+	return load script POSIX file a_path
+end import_script
+
+on make_pdf_sorter(a_container)
+	script SorterHelper
+		on resolve_container()
+			if a_container is "Insertion Location" then
+				error number -1708 -- continue FileSorter's resolve_container()
+			else
+				return a_container
+			end if
+		end resolve_container
 		
-		on getTargetItems()
-			set thelist to list folder my targetContainer without invisibles
-			set itemList to {}
-			set containerPath to my targetContainer as Unicode text
-			repeat with ith from 1 to length of thelist
-				set theName to item ith of thelist
-				repeat with theSuffix in suffixList
-					if theName ends with theSuffix then
-						set end of itemList to (containerPath & theName) as alias
+		on target_items_at(a_location)
+			--log "target_items_at"
+			set a_list to list folder a_location without invisibles
+			set pdf_list to {}
+			set container_path to a_location as Unicode text
+			repeat with ith from 1 to length of a_list
+				set a_name to item ith of a_list
+				repeat with a_suffix in _pdf_suffixes
+					if a_name ends with a_suffix then
+						set end of pdf_list to (container_path & a_name) as alias
 						exit repeat
 					end if
 				end repeat
 			end repeat
-			return itemList
-		end getTargetItems
+			--log "end target_items_at"
+			return pdf_list
+		end target_items_at
 		
-		on getContainer()
-			if theContainer is "Insertion Location" then
-				return continue getContainer()
-			else
-				return theContainer
-			end if
-		end getContainer
-		
-		on sortDirectionOfIconView()
-			return directionForPosition
-		end sortDirectionOfIconView
-		
-		on isPositionSort()
-			set targetContainer to getContainer()
-			tell application "Finder"
-				set theWindow to container window of targetContainer
-				set theView to current view of theWindow
-				if theView is icon view then
-					set theArrangement to arrangement of icon view options of theWindow
-					if theArrangement is in {not arranged, snap to grid} then
-						return true
-					end if
-				else
-					return false
-				end if
-			end tell
-		end isPositionSort
 	end script
 	
-	return PDFSorter
-	
-end newPDFsorter
+	return FileSorter's make_with_delegate(SorterHelper)
+end make_pdf_sorter
 
 on launched
-	
-	prepareMerging("Insertion Location")
+	prepare_merging("Insertion Location")
 end launched
 
-on open thelist
-	
-	repeat with theItem in thelist
-		if (theItem as Unicode text) ends with ":" then
+on open a_list
+	repeat with an_item in a_list
+		if (an_item as Unicode text) ends with ":" then
 			tell application "Finder"
-				open theItem
+				open an_item
 			end tell
-			prepareMerging(theItem)
+			prepare_merging(an_item)
 		end if
 	end repeat
 	return true
@@ -101,11 +88,6 @@ on readDefaultValue(entryName, defaultValue)
 	end tell
 end readDefaultValue
 
-(*
-on sayHello()
-	display dialog "hello"
-end sayHello
-*)
 on will open theObject
 	activate
 	center theObject
@@ -114,420 +96,223 @@ on will open theObject
 end will open
 
 on clicked theObject
-	set theName to name of theObject
+	set a_name to name of theObject
 	hide window of theObject
-	if theName is not "Cancel" then
-		set directionForPosition of thePDFsorter to theName
-		set contents of default entry "DirectionForPosition" of user defaults to theName
-		mergePDF()
+	if a_name is not "Cancel" then
+		set directionForPosition of a_pdf_sorter to a_name
+		set contents of default entry "DirectionForPosition" of user defaults to a_name
+		merge_pdf()
 	end if
 	quit
 end clicked
 
-on newPDFObj for theFile given closedoc:closeFlag
-	local theFileName
-	local theFile
-	local theBookmarkName
-	
-	set theFileName to name_of(theFile) of PathAnalyzer
-	set theFile to (theFile as alias)
-	
-	set theBookmarkName to removeSuffix(theFileName)
-	
-	if theFileName ends with ".pdf" then
-		tell application "Adobe Acrobat 7.0 Standard"
-			activate
-			open theFile
-			set theNPages to count every page of document -1
-			if closeFlag then
-				close document -1
-			end if
-		end tell
-		set singlePageFlag to false
-	else
-		set theNPages to 1
-		set singlePageFlag to true
-	end if
-	
-	set thePDFName to theFileName
-	
-	repeat with theSuffix in imageSuffixList
-		if theFileName ends with theSuffix then
-			set thePDFName to theBookmarkName & ".pdf"
-			exit repeat
-		end if
-	end repeat
-	
-	script PDFToAddObj
-		property name : theFileName
-		property isSinglePage : singlePageFlag
-		property pdfName : thePDFName
-		property fileAlias : theFile
-		property bookmarkName : theBookmarkName
-		property nPages : theNPages
-		
-		on openPDF()
-			tell application "Adobe Acrobat 7.0 Standard"
-				activate
-				open fileAlias
-			end tell
-		end openPDF
-	end script
-	
-	return PDFToAddObj
-end newPDFObj
+on will finish launching theObject
+	set appController to call method "sharedAppController" of class "AppController"
+	set UtilityHandlers to import_script("UtilityHandlers")
+	set PDFController to import_script("PDFController")
+end will finish launching
 
-on prepareMerging(theContainer)
+on prepare_merging(theContainer)
 	tell application "Adobe Acrobat 7.0 Standard"
-		set acrobatVersion to (version as string)
+		set _acrobat_version to (version as string)
 	end tell
 	
 	try
-		set thePDFsorter to newPDFsorter(theContainer)
+		set a_pdf_sorter to make_pdf_sorter(theContainer)
 	on error errMsg number 777
 		activate
 		display dialog errMsg buttons {"OK"} default button "OK" with icon note
 		return false
 	end try
-	if isPositionSort() of thePDFsorter then
-		show window "directionChooser"
-	else
-		mergePDF()
-		set nWin to count (windows whose visible is true)
-		if (nWin is 0) then
-			quit
-		end if
+	merge_pdf(a_pdf_sorter)
+	if ((count (windows whose visible is true)) is 0) then
+		quit
 	end if
-end prepareMerging
+end prepare_merging
 
-on mergePDFto(destinationFile, pdfList)
-	---build pdfobj List
+on merge_pdf_to(dest_file, pdf_list)
+	--log "start merge_pdf_to"
 	tell application "Adobe Acrobat 7.0 Standard" to activate
-	set pdfObjList to {}
-	repeat with i from 2 to (length of pdfList)
-		-- get porperties of pdf document to add
-		set end of pdfObjList to newPDFObj of me for item i of pdfList with closedoc
+	
+	set pdf_controllers to {}
+	repeat with a_file in pdf_list
+		set end of pdf_controllers to PDFController's make_with(a_file)
 	end repeat
 	
-	--save first pdf file as new pdf document
-	--set beginning of pdfObjList to newPDFObj of me for item 1 of pdfList without closedoc
-	set firstPDFObj to newPDFObj of me for item 1 of pdfList without closedoc
-	set firstItemName to pdfName of firstPDFObj
-	if isSinglePage of firstPDFObj then
-		openPDF() of firstPDFObj
-		tell application "Adobe Acrobat 7.0 Standard"
-			--set theDoc to a reference to document 1
-			set theDoc to a reference to active doc
-		end tell
-	else
-		tell application "Adobe Acrobat 7.0 Standard"
-			set theDoc to a reference to document firstItemName
-		end tell
-	end if
-	savePDFAs(theDoc, destinationFile)
-	--	tell application "Adobe Acrobat 7.0 Standard"
-	--		set theName to name of theDoc
-	--	end tell
-	--	log theName
-	--build infomation for new pdf file
-	set newPDFPathRecord to (do(destinationFile as alias) of PathAnalyzer)
-	set newPDF to itemReference of newPDFPathRecord
-	set newDocName to name of newPDFPathRecord
-	
+	pdf_controllers's item 1's open_pdf()
 	tell application "Adobe Acrobat 7.0 Standard"
-		set newDoc to a reference to document newDocName
-		set totalPages to count every page of newDoc
+		set a_doc to a reference to active doc
 	end tell
 	
-	--make Bookmark for first page	
-	--set thePDFName to my getName(item 1 of pdfList)
-	--set theBookmarkName to my removeSuffix(thePDFName)
-	set theBookmarkName to bookmarkName of firstPDFObj
+	save_pdf_as(a_doc, dest_file)
+	set new_doc_name to dest_file's item_name()
 	
-	(*
 	tell application "Adobe Acrobat 7.0 Standard"
-		set nBookmarks to count every bookmark of newDoc
+		set new_doc to a reference to active doc
+		set total_pages to count every page of new_doc
 	end tell
 	
-	if nBookmarks > 1 then
-		addBookmarkToThePageAtLast(newDoc, theBookmarkName, 0)
-	else
-		addBookmarkToThePageAtFirst(newDoc, theBookmarkName, 0)
-	end if
-	*)
-	AddBookmark(newDoc, theBookmarkName, 1)
+	--make Bookmark for first page		
+	add_bookmark(new_doc, pdf_controllers's item 1's bookmark_name(), 1)
 	
 	--insert every pages
-	repeat with i from 1 to (length of pdfObjList)
-		-- get porperties of pdf document to add
-		set thePDFToAddObj to item i of pdfObjList
-		
-		--insert pdf document
-		my insertPagesToLast(newDoc, thePDFToAddObj)
+	repeat with a_pdf_controller in pdf_controllers
+		my insert_pages_at_end(new_doc, a_pdf_controller)
 		
 		--make bookmark
-		--addBookmarkToThePageAtLast(newDoc, bookmarkName of thePDFToAddObj, totalPages)
-		AddBookmark(newDoc, bookmarkName of thePDFToAddObj, totalPages + 1)
-		set totalPages to totalPages + (nPages of thePDFToAddObj)
+		add_bookmark(new_doc, a_pdf_controller's bookmark_name(), total_pages + 1)
+		set total_pages to total_pages + (a_pdf_controller's page_count())
 		
 	end repeat
 	
 	tell application "Adobe Acrobat 7.0 Standard"
-		create thumbs newDoc
+		create thumbs new_doc
 		
-		set view mode of newDoc to pages and bookmarks
-		--display dialog (finder location of (basic info for newPDF)) as string
-		save newDoc
+		set view mode of new_doc to pages and bookmarks
+		save new_doc
 	end tell
-	--display dialog (finder location of (basic info for newPDF)) as string
 	
 	tell application "Finder"
 		activate
-		reveal newPDF
+		reveal (dest_file's as_alias())
 	end tell
 	
 	beep
+	--log "end merge_pdf_to"
 	return true
-end mergePDFto
+end merge_pdf_to
 
-on mergePDF()
-	set pdfList to item 1 of sortByView() of thePDFsorter
-	if pdfList is {} then
-		set theFolder to (targetContainer of thePDFsorter) as Unicode text
-		set notFoundPDFs to localized string "notFoundPDFs"
-		set locationText to localized string "Location :"
-		display alert notFoundPDFs message (locationText & return & theFolder)
+on merge_pdf(a_pdf_sorter)
+	set pdf_list to a_pdf_sorter's sorted_items()
+	if pdf_list is {} then
+		set a_folder to (a_pdf_sorter's resolve_container()) as Unicode text
+		set no_found_msg to localized string "notFoundPDFs"
+		display alert no_found_msg message (UtilityHandlers's localized_string("Location :", {a_folder}))
 		return false
 	end if
 	
-	set pathRecord to do(targetContainer of thePDFsorter) of PathAnalyzer
-	
-	set theName to (name of pathRecord) & ".pdf"
-	set destinationFile to (((folderReference of pathRecord) as Unicode text) & theName)
-	set destinationFile to checkDestinationFile(destinationFile, theName)
-	if destinationFile is not missing value then
-		set theResult to mergePDFto(destinationFile, pdfList)
+	set target_folder to XFile's make_with(a_pdf_sorter's resolve_container())
+	set dest_location to target_folder's parent_folder()
+	set dest_file to target_folder's change_path_extension(".pdf")
+	set dest_file to check_destination(dest_file)
+	if dest_file is not missing value then
+		set a_result to merge_pdf_to(dest_file, pdf_list)
 	else
-		set theResult to false
+		set a_result to false
 	end if
-	
-	return theResult
-end mergePDF
+	--log "end merge_pdf"
+	return a_result
+end merge_pdf
 
-
-on removeSuffix(theString)
-	repeat with theSuffix in suffixList
-		if theString ends with theSuffix then
-			return text 1 thru -((length of theSuffix) + 1) of theString
-		end if
-	end repeat
-	
-	return theString
-end removeSuffix
-
-on isFileBusy(filePath)
-	set isBusy to busy status of (info for (alias filePath))
-	if not isBusy then
+on is_file_busy(a_path)
+	set is_busy to busy status of (info for (alias a_path))
+	if not is_busy then
 		try
-			set theResult to do shell script "lsof -F c " & quoted form of POSIX path of filePath
+			set theresult to do shell script "lsof -F c " & quoted form of POSIX path of a_path
 			--set processName to text 2 thru -1 of paragraph 2 of theResult
-			set isBusy to true
+			set is_busy to true
 		end try
 	end if
-	return isBusy
-end isFileBusy
+	return is_busy
+end is_file_busy
 
-(*!= closeFileInAcrobat
+(*!= close_in_acrobat
 Acrobat で開かれているファイルを閉じる。
 
 == Result
 とにかくファイルを閉じることに成功したら ture。
 Acrobat で開いているファイルが見つからなかったり、起動していないときは false。
 *)
-on closeFileInAcrobat(theFile)
-	set theResult to false
+on close_in_acrobat(a_path)
+	set a_result to false
 	tell application "Adobe Acrobat 7.0 Standard"
 		repeat with ith from 1 to count documents
-			set fileAlias to file alias of document ith
-			if (fileAlias as Unicode text is theFile) then
+			set an_alias to file alias of document ith
+			if (an_alias as Unicode text is a_path) then
 				close document ith saving "No"
-				set theResult to true
+				set a_result to true
 				exit repeat
 			end if
 		end repeat
 	end tell
-	return theResult
-end closeFileInAcrobat
+	return a_result
+end close_in_acrobat
 
-on checkDestinationFile(destinationFile, theName)
-	--log "start checkDestinationFile"
-	if isExists(destinationFile) then
+on check_destination(dest_file)
+	--log "start check_destination"
+	if dest_file's item_exists() then
 		activate
-		set chooseNewLocationMessage to localized string "chooseNewLocationMessage"
+		set a_msg to localized string "chooseNewLocationMessage"
 		try
-			set newDestinationFile to (choose file name default name theName with prompt chooseNewLocationMessage & " :")
-			--log (newDestinationFile as Unicode text)
-		on error errMsg number errNum
-			set destinationFile to missing value
-			error errMsg number errNum
+			set new_file to (choose file name default name (dest_file's item_name()) with prompt a_msg & " :" default location (dest_file's parent_folder()'s as_alias()))
+			--log (newdest_file as Unicode text)
+		on error msg number errnum
+			set dest_file to missing value
+			error msg number errnum
 		end try
-		set newDestinationFile to newDestinationFile as Unicode text
 		
-		if (newDestinationFile is destinationFile) then
-			--log "destinationFile is same"
-			set isBusy to isFileBusy(destinationFile)
-			if isBusy then
-				if closeFileInAcrobat(destinationFile) then
-					set isBusy to false
+		set new_file to XFile's make_with(new_file)
+		if new_file's item_exists() then
+			set a_path to new_file's hfs_path()
+			if is_file_busy(a_path) then
+				if not close_in_acrobat(a_path) then
+					try
+						display dialog (UtilityHandler's localized_string("fileIsBusyMessage", {a_path}) & (localized string "changeNewLocationMessage"))
+						set new_file to check_destination(new_file)
+					on error
+						set new_file to missing value
+					end try
 				end if
 			end if
-			
-			if isBusy then
-				--log "is busy"
-				set dot to localized string "dot"
-				set isBusyMessage to localized string "isBusyMessage"
-				set changeNewLocationMessage to localized string "changeNewLocationMessage"
-				try
-					display dialog dQ & destinationFile & dQ & space & isBusyMessage & return & changeNewLocationMessage & dot with icon note
-					set destinationFile to checkDestinationFile(destinationFile, theName)
-				on error
-					set destinationFile to missing value
-				end try
-			else
-				--log "is not busy"
-			end if
-		else
-			set theName to name_of(newDestinationFile) of PathAnalyzer
-			set destinationFile to checkDestinationFile(newDestinationFile, theName)
 		end if
+		set dest_file to new_file
 	end if
-	--log "end checkDestinationFile"
-	return destinationFile
-	
-end checkDestinationFile
+	--log "end check_destination"
+	return dest_file
+end check_destination
 
-on isExists(thePath)
-	try
-		thePath as alias
-		return true
-	on error
-		return false
-	end try
-end isExists
-
---Javascript wrapper functions
-on jsStringFilter(theString)
-	set sqFlag to "'" is in theString
-	set dqFlag to dQ is in theString
-	
-	if sqFlag and dqFlag then
-		display dialog "There are invalid charactes in" & return & dQ & "theString" & dQ & "." buttons {"OK"} default button "OK" with icon stop
-		error number -128
-	else if sqFlag then
-		set jQuote to dQ
-	else
-		set jQuote to "'"
-	end if
-	
-	return (jQuote & theString & jQuote)
-end jsStringFilter
-
-on savePDFAs(theDoc, theDistinationFile)
-	--log "start savePDFAs"
-	--log theDistinationFile
+on save_pdf_as(a_doc, dest_file)
+	--log "start save_pdf_as"
+	--log dest_file
 	local thePDFPath
 	
 	-- can't accept long file name
 	tell application "Adobe Acrobat 7.0 Standard"
-		save theDoc to file (theDistinationFile as Unicode text) -- conveting into unicode text is required
-		--save theDoc to (theDistinationFile as Unicode text)
+		save a_doc to file (dest_file's hfs_path()) -- conveting into unicode text is required
 	end tell
 	
-	(*	
-	--japanese file name are chenged into invalid code
-	jsStringFilter(theDistinationFile)
-	set thePDFPath to POSIX path of theDistinationFile as Unicode text
-	set thePDFPath to jsStringFilter(thePDFPath)
-	set thePDFPath to getPlainText of StyleStripper from thePDFPath
-	
+end save_pdf_as
+
+on insert_pages_at_end(a_doc, a_pdf_controller)
+	set a_pdf_path to quoted form of (a_pdf_controller's posix_path())
+	--log a_pdf_path
+	set a_pdf_path to StyleStripper's plain_text(a_pdf_path)
+	--log a_pdf_path
+	set end_page to (a_pdf_controller's page_count()) - 1
+	set a_command to "var lastPage = this.numPages-1;this.insertPages(lastPage," & a_pdf_path & ",0," & end_page & ");"
+	--log a_command
 	tell application "Adobe Acrobat 7.0 Standard"
-		tell theDoc
-			do script "this.saveAs(" & thePDFPath & ");"
+		tell a_doc
+			do script a_command
 		end tell
 	end tell
-*)
-	
-end savePDFAs
+end insert_pages_at_end
 
-on insertPagesToLast(theDoc, thePDFToAddObj)
-	local theFile
-	local endPage
-	local thePDFPath
-	
-	set thePDFPath to quoted form of POSIX path of fileAlias of thePDFToAddObj as Unicode text
-	--log thePDFPath
-	set thePDFPath to StyleStripper's plain_text(thePDFPath)
-	--log thePDFPath
-	set endPage to (nPages of thePDFToAddObj) - 1
-	set insertCommand to "var lastPage = this.numPages-1;this.insertPages(lastPage," & thePDFPath & ",0," & endPage & ");"
-	--log insertCommand
+on add_bookmark(a_doc, a_bookmark_name, dest_page)
+	set a_bookmark_name to do shell script "echo '" & a_bookmark_name & "'|iconv -f UTF-8 -t UTF-16"
 	tell application "Adobe Acrobat 7.0 Standard"
-		tell theDoc
-			do script insertCommand
-		end tell
-	end tell
-end insertPagesToLast
-
-on AddBookmark(theDoc, theBookmarkName, destinationPage)
-	(*
-	TECConvertText theBookmarkName fromCode "macintosh" toCode "UNICODE-1-1"
-	--TECConvertText theBookmarkName fromCode "X-MAC-JAPANESE" toCode "UNICODE-1-1"
-	*)
-	set theBookmarkName to do shell script "echo '" & theBookmarkName & "'|iconv -f UTF-8 -t UTF-16"
-	tell application "Adobe Acrobat 7.0 Standard"
-		tell theDoc
+		tell a_doc
 			make new PDBookmark at end
 			tell PDBookmark -1
-				set name to theBookmarkName
-				set destination page number to destinationPage
+				set name to a_bookmark_name
+				set destination page number to dest_page
 			end tell
 		end tell
 	end tell
-end AddBookmark
-
-on addBookmarkToThePageAtLast(theDoc, theBookmarkName, destinationPage)
-	set theBookmarkName to (my jsStringFilter(theBookmarkName)) as Unicode text
-	set theBookmarkName to StyleStripper's plain_text(theBookmarkName)
-	set theJS to "bookmarkRoot.createChild(" & theBookmarkName & ", 'this.pageNum=" & destinationPage & "',bookmarkRoot.children.length)"
-	--set theJS to "bookmarkRoot.createChild(" & theBookmarkName & ", null,bookmarkRoot.children.length)"
-	tell application "Adobe Acrobat 7.0 Standard"
-		tell theDoc
-			do script theJS
-		end tell
-	end tell
-end addBookmarkToThePageAtLast
-
-on addBookmarkToThePageAtFirst(theDoc, theBookmarkName, destinationPage)
-	set theBookmarkName to (my jsStringFilter(theBookmarkName)) as Unicode text
-	set theBookmarkName to getPlainText of StyleStripper from theBookmarkName
-	set theJS to "bookmarkRoot.createChild(" & theBookmarkName & ", 'this.pageNum=" & destinationPage & "')"
-	
-	tell application "Adobe Acrobat 7.0 Standard"
-		tell theDoc
-			do script theJS
-		end tell
-	end tell
-end addBookmarkToThePageAtFirst
+end add_bookmark
 
 
-on addBookmarkToLastAtLast(theDoc, theBookmarkName)
-	set theBookmarkName to (my jsStringFilter(theBookmarkName)) as Unicode text
-	set theBookmarkName to getPlainText of StyleStripper from theBookmarkName
-	set theJS to "var lastPage = this.numPages-1;bookmarkRoot.createChild(" & theBookmarkName & ", 'this.pageNum='+lastPage,bookmarkRoot.children.length);"
-	
-	tell application "Adobe Acrobat 7.0 Standard"
-		tell theDoc
-			do script theJS
-		end tell
-	end tell
-end addBookmarkToLastAtLast
+
+
+
+

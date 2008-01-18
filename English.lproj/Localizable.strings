@@ -1,0 +1,7 @@
+"Location :" = "Location : $1";
+changeNewLocationMessage = "Change a saving location or a file name";
+chooseNewLocationMessage = "Choose a new loacation or a file name.";
+dot = ".";
+fileIsBusyMessage = "\"$1\" is busy.";
+"notFoundPDFs" = "No PDF files.\nLocation : $1";
+"this software" = "MergePDF";
