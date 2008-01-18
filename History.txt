@@ -4,7 +4,14 @@ MergePDF
 いまのところなし。(2006.07.07)
 
 To Do
-* FileSorter に横にlabel が並んでいる場合を考慮できるようにする。
+DonationReminder.framework を使う
+SmartActivate を活用する。
+image を PDF に変換して取り込めるようにする。
+progress window
+
+= 2008.01.18
+以下済み
+* FileSorter に横にlabel が並んでいる場合を考慮できるようにする。 
 * SortEngine を Quick Sort にする。
 * Localize は English を default にする。
 

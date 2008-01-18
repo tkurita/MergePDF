@@ -6,9 +6,8 @@ end load
 
 property FileSorter : load("FileSorter")
 property XFile : load("XFile")
-property PathAnalyzer : load("PathAnalyzer")
-property StyleStripper : StringEngine of PathAnalyzer
-property UniqueNamer : load("UniqueNamer")
+property StringEngine : StringEngine of PathAnalyzer of XFile
+property UniqueNamer : XFile's UniqueNamer
 
 property appController : missing value
 property UtilityHandlers : missing value
@@ -77,22 +76,14 @@ on open a_list
 	return true
 end open
 
-on readDefaultValue(entryName, defaultValue)
-	tell user defaults
-		if exists default entry entryName then
-			return contents of default entry entryName
-		else
-			make new default entry at end of default entries with properties {name:entryName, contents:defaultValue}
-			return defaultValue
-		end if
-	end tell
-end readDefaultValue
 
-on will open theObject
+on will open theObject -- deprecated
 	activate
 	center theObject
+	(*
 	set directionForPosition to readDefaultValue("DirectionForPosition", "column direction")
 	set first responder of theObject to button directionForPosition of theObject
+	*)
 end will open
 
 on clicked theObject
@@ -286,7 +277,7 @@ end save_pdf_as
 on insert_pages_at_end(a_doc, a_pdf_controller)
 	set a_pdf_path to quoted form of (a_pdf_controller's posix_path())
 	--log a_pdf_path
-	set a_pdf_path to StyleStripper's plain_text(a_pdf_path)
+	set a_pdf_path to StringEngine's plain_text(a_pdf_path)
 	--log a_pdf_path
 	set end_page to (a_pdf_controller's page_count()) - 1
 	set a_command to "var lastPage = this.numPages-1;this.insertPages(lastPage," & a_pdf_path & ",0," & end_page & ");"
