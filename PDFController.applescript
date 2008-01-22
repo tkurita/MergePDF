@@ -1,13 +1,15 @@
 global XFile
 global appController
+global TemporaryItem
+global MainScript
 
 on posix_path()
 	return my _xfile's posix_path()
 end posix_path
 
 on open_pdf()
+	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.adobe.Acrobat"
 	tell application "Adobe Acrobat 7.0 Standard"
-		activate
 		open my _xfile's as_alias()
 	end tell
 end open_pdf
@@ -34,9 +36,21 @@ on bookmark_name()
 end bookmark_name
 
 on make_with(a_file)
+	set a_xfile to XFile's make_with(a_file)
+	set a_bookmark_name to a_xfile's basename()
+	set a_page_count to missing value
+	if MainScript's is_image(info for a_file) then
+		set tmp_file to TemporaryItem's make_with(a_xfile's change_path_extension(".pdf")'s item_name())
+		set a_page_count to call method "convertImage:toPDF:" of appController with parameters {a_xfile's posix_path(), tmp_file's posix_path()}
+		if a_page_count is 0 then
+			error "Failt to convert " & quoted form of (tmp_file's posix_path()) & " into a PDF."
+		end if
+		set a_xfile to tmp_file
+	end if
+	
 	script PDFController
-		property _xfile : XFile's make_with(a_file)
-		property _page_count : missing value
-		property _bookmark_name : missing value
+		property _xfile : a_xfile
+		property _page_count : a_page_count
+		property _bookmark_name : a_bookmark_name
 	end script
 end make_with

@@ -5,16 +5,19 @@ on load(a_name)
 end load
 
 property FileSorter : load("FileSorter")
-property XFile : load("XFile")
+property TemporaryItem : load("TemporaryItem")
+property XFile : TemporaryItem's XFile
 property StringEngine : StringEngine of PathAnalyzer of XFile
 property UniqueNamer : XFile's UniqueNamer
+
 
 property appController : missing value
 property UtilityHandlers : missing value
 property PDFController : missing value
+property MainScript : me
 
 --property image_pdf_suffixes : {".png"}
-property _image_suffixes : {}
+property _image_suffixes : {".png", ".jpg", ".jpeg", ".tiff"}
 property _pdf_suffixes : {".pdf", ".ai"}
 property _acrobat_version : missing value
 
@@ -27,6 +30,23 @@ on import_script(a_name)
 	return load script POSIX file a_path
 end import_script
 
+on is_pdf(info_record)
+	--log "start is_pdf"
+	if file type of info_record is "PDF " then
+		return true
+	else if type identifier of info_record is "com.adobe.pdf" then
+		return true
+	else if name extension of info_record is "pdf" then
+		return true
+	end if
+	return false
+end is_pdf
+
+on is_image(info_record)
+	--log "start is_image"
+	return type identifier of info_record is in {"public.jpeg", "public.png", "public.tiff", "com.apple.pict", "com.microsoft.bmp"}
+end is_image
+
 on make_pdf_sorter(a_container)
 	script SorterHelper
 		on resolve_container()
@@ -38,20 +58,19 @@ on make_pdf_sorter(a_container)
 		end resolve_container
 		
 		on target_items_at(a_location)
-			--log "target_items_at"
-			set a_list to list folder a_location without invisibles
+			--log "start target_items_at of SortHelper"
+			tell application "Finder"
+				set a_list to every file of a_location
+			end tell
 			set pdf_list to {}
-			set container_path to a_location as Unicode text
-			repeat with ith from 1 to length of a_list
-				set a_name to item ith of a_list
-				repeat with a_suffix in _pdf_suffixes
-					if a_name ends with a_suffix then
-						set end of pdf_list to (container_path & a_name) as alias
-						exit repeat
-					end if
-				end repeat
+			repeat with an_item in a_list
+				set an_alias to an_item as alias
+				set info_rec to info for an_alias
+				if is_pdf(info_rec) or is_image(info_rec) then
+					set end of pdf_list to an_alias
+				end if
 			end repeat
-			--log "end target_items_at"
+			--log "end target_items_at of SortHelper"
 			return pdf_list
 		end target_items_at
 		
@@ -123,7 +142,6 @@ end prepare_merging
 
 on merge_pdf_to(dest_file, pdf_list)
 	--log "start merge_pdf_to"
-	--tell application "Adobe Acrobat 7.0 Standard" to activate
 	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.adobe.Acrobat"
 	
 	set pdf_controllers to {}
@@ -144,11 +162,11 @@ on merge_pdf_to(dest_file, pdf_list)
 		set total_pages to count every page of new_doc
 	end tell
 	
-	--make Bookmark for first page		
+	--make Bookmark for first page
 	add_bookmark(new_doc, pdf_controllers's item 1's bookmark_name(), 1)
 	
 	--insert every pages
-	repeat with a_pdf_controller in pdf_controllers
+	repeat with a_pdf_controller in (rest of pdf_controllers)
 		my insert_pages_at_end(new_doc, a_pdf_controller)
 		
 		--make bookmark
@@ -168,7 +186,7 @@ on merge_pdf_to(dest_file, pdf_list)
 	tell application "Finder"
 		reveal (dest_file's as_alias())
 	end tell
-	
+	TemporaryItem's clear()
 	beep
 	--log "end merge_pdf_to"
 	return true
@@ -200,7 +218,7 @@ on is_file_busy(a_path)
 	set is_busy to busy status of (info for (alias a_path))
 	if not is_busy then
 		try
-			set theresult to do shell script "lsof -F c " & quoted form of POSIX path of a_path
+			set theResult to do shell script "lsof -F c " & quoted form of POSIX path of a_path
 			--set processName to text 2 thru -1 of paragraph 2 of theResult
 			set is_busy to true
 		end try

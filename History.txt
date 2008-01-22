@@ -4,13 +4,26 @@ MergePDF
 いまのところなし。(2006.07.07)
 
 To Do
-DonationReminder.framework を使う
-SmartActivate を活用する。
-image を PDF に変換して取り込めるようにする。
-progress window
+* progress window
+
+= 2008-01-22
+以下済み
+* image を UTI で判別できないか？info for の type identifier が使えるかも
+		* file type が "PDF "
+		* type identifier が "com.adobe.pdf"
+		* name extension が pdf
+		* public.jpeg
+		* public.png
+		* public.tiff
+		* com.compuserve.gif
+		* com.microsoft.bmp -- CGImageSourceCreateWithURL で読み込めない
+		* com.apple.pict
+* image を PDF に変換して取り込めるようにする。
 
 = 2008.01.18
 以下済み
+* DonationReminder.framework を使う
+* SmartActivate を活用する。
 * FileSorter に横にlabel が並んでいる場合を考慮できるようにする。 
 * SortEngine を Quick Sort にする。
 * Localize は English を default にする。
