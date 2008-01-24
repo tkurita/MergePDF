@@ -14,14 +14,13 @@ property UniqueNamer : XFile's UniqueNamer
 property appController : missing value
 property UtilityHandlers : missing value
 property PDFController : missing value
+property DefaultsManager : missing value
 property MainScript : me
 
---property image_pdf_suffixes : {".png"}
 property _image_suffixes : {".png", ".jpg", ".jpeg", ".tiff"}
 property _pdf_suffixes : {".pdf", ".ai"}
 property _acrobat_version : missing value
-
-property a_pdf_sorter : missing value
+property _pdf_sorter : missing value
 
 on import_script(a_name)
 	tell main bundle
@@ -48,7 +47,7 @@ on is_image(info_record)
 end is_image
 
 on make_pdf_sorter(a_container)
-	script SorterHelper
+	script SorterDelegate
 		on resolve_container()
 			if a_container is "Insertion Location" then
 				error number -1708 -- continue FileSorter's resolve_container()
@@ -57,26 +56,47 @@ on make_pdf_sorter(a_container)
 			end if
 		end resolve_container
 		
+		on resolve_info(an_alias)
+			set info_rec to info for an_alias
+			if (folder of info_rec) then
+				set info_rec to missing value
+			else
+				if alias of info_rec then
+					tell application "Finder"
+						set an_original to original item of an_alias as alias
+					end tell
+					set info_rec to resolve_info(an_original)
+				end if
+			end if
+			return info_rec
+		end resolve_info
+		
 		on target_items_at(a_location)
-			--log "start target_items_at of SortHelper"
+			--log "start target_items_at of SorterDelegate"
 			tell application "Finder"
-				set a_list to every file of a_location
+				set a_list to every item of a_location
 			end tell
 			set pdf_list to {}
 			repeat with an_item in a_list
 				set an_alias to an_item as alias
-				set info_rec to info for an_alias
-				if is_pdf(info_rec) or is_image(info_rec) then
-					set end of pdf_list to an_alias
+				set info_rec to resolve_info(an_alias)
+				if info_rec is not missing value then
+					if is_pdf(info_rec) or is_image(info_rec) then
+						set end of pdf_list to an_alias
+					end if
 				end if
 			end repeat
-			--log "end target_items_at of SortHelper"
+			--log "end target_items_at of SorterDelegate"
 			return pdf_list
 		end target_items_at
 		
+		on is_rowwise_for_iconview(view_options)
+			set a_direction to contents of default entry "DirectionForPosition" of user defaults
+			return a_direction is "row direction"
+		end is_rowwise_for_iconview
 	end script
 	
-	return FileSorter's make_with_delegate(SorterHelper)
+	return FileSorter's make_with_delegate(SorterDelegate)
 end make_pdf_sorter
 
 on launched
@@ -95,23 +115,19 @@ on open a_list
 	return true
 end open
 
-
-on will open theObject -- deprecated
+on will open theObject
 	activate
 	center theObject
-	(*
-	set directionForPosition to readDefaultValue("DirectionForPosition", "column direction")
-	set first responder of theObject to button directionForPosition of theObject
-	*)
+	set a_direction to DefaultsManager's value_with_default("DirectionForPosition", "column direction")
+	set first responder of theObject to button a_direction of theObject
 end will open
 
 on clicked theObject
 	set a_name to name of theObject
 	hide window of theObject
 	if a_name is not "Cancel" then
-		set directionForPosition of a_pdf_sorter to a_name
 		set contents of default entry "DirectionForPosition" of user defaults to a_name
-		merge_pdf()
+		merge_pdf(_pdf_sorter)
 	end if
 	quit
 end clicked
@@ -120,23 +136,45 @@ on will finish launching theObject
 	set appController to call method "sharedAppController" of class "AppController"
 	set UtilityHandlers to import_script("UtilityHandlers")
 	set PDFController to import_script("PDFController")
+	set DefaultsManager to import_script("DefaultsManager")
 end will finish launching
 
-on prepare_merging(theContainer)
+on will_position_sort(a_sorter)
+	set a_container to a_sorter's resolve_container()
+	tell application "Finder"
+		set a_window to container window of a_container
+		set a_view to current view of a_window
+		if a_view is icon view then
+			set icon_arrangement to arrangement of icon view options of a_window
+			if icon_arrangement is in {not arranged, snap to grid} then
+				return true
+			end if
+		else
+			return false
+		end if
+	end tell
+end will_position_sort
+
+on prepare_merging(a_container)
 	tell application "Adobe Acrobat 7.0 Standard"
 		set _acrobat_version to (version as string)
 	end tell
 	
 	try
-		set a_pdf_sorter to make_pdf_sorter(theContainer)
-	on error errMsg number 777
+		set _pdf_sorter to make_pdf_sorter(a_container)
+	on error msg number 777
 		activate
-		display dialog errMsg buttons {"OK"} default button "OK" with icon note
+		display dialog msg buttons {"OK"} default button "OK" with icon note
 		return false
 	end try
-	merge_pdf(a_pdf_sorter)
-	if ((count (windows whose visible is true)) is 0) then
-		quit
+	
+	if will_position_sort(_pdf_sorter) then
+		show window "directionChooser"
+	else
+		merge_pdf(_pdf_sorter)
+		if ((count (windows whose visible is true)) is 0) then
+			quit
+		end if
 	end if
 end prepare_merging
 
@@ -283,21 +321,14 @@ end check_destination
 
 on save_pdf_as(a_doc, dest_file)
 	--log "start save_pdf_as"
-	--log dest_file
-	local thePDFPath
-	
-	-- can't accept long file name
 	tell application "Adobe Acrobat 7.0 Standard"
 		save a_doc to file (dest_file's hfs_path()) -- conveting into unicode text is required
 	end tell
-	
 end save_pdf_as
 
 on insert_pages_at_end(a_doc, a_pdf_controller)
 	set a_pdf_path to quoted form of (a_pdf_controller's posix_path())
-	--log a_pdf_path
 	set a_pdf_path to StringEngine's plain_text(a_pdf_path)
-	--log a_pdf_path
 	set end_page to (a_pdf_controller's page_count()) - 1
 	set a_command to "var lastPage = this.numPages-1;this.insertPages(lastPage," & a_pdf_path & ",0," & end_page & ");"
 	--log a_command
@@ -320,7 +351,6 @@ on add_bookmark(a_doc, a_bookmark_name, dest_page)
 		end tell
 	end tell
 end add_bookmark
-
 
 
 

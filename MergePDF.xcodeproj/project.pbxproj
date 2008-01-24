@@ -15,6 +15,7 @@
 				2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */,
 				2CB36E230D3F544D003C516E /* UtilityHandlers.applescript in AppleScript */,
 				2CD126120D4034B9004BF0C5 /* PDFController.applescript in AppleScript */,
+				2C52D81E0D48E52300A1945C /* DefaultsManager.applescript in AppleScript */,
 			);
 			isSharedContext = 0;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -27,6 +28,7 @@
 		2C4740A80A5E71B000096E8A /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4740A60A5E71B000096E8A /* AppController.h */; };
 		2C4740A90A5E71B000096E8A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740A70A5E71B000096E8A /* AppController.m */; };
 		2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */; };
+		2C52D81E0D48E52300A1945C /* DefaultsManager.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CB36E090D3F540E003C516E /* DefaultsManager.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5981F0098712B2003D230C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		2C5981F2098712B2003D230C /* MergePDF.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CB1697A0711703000A527B5 /* MergePDF.icns */; };
