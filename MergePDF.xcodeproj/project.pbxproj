@@ -16,6 +16,7 @@
 				2CB36E230D3F544D003C516E /* UtilityHandlers.applescript in AppleScript */,
 				2CD126120D4034B9004BF0C5 /* PDFController.applescript in AppleScript */,
 				2C52D81E0D48E52300A1945C /* DefaultsManager.applescript in AppleScript */,
+				2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in AppleScript */,
 			);
 			isSharedContext = 0;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,6 +39,7 @@
 		2C5981F7098712B2003D230C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		2C5981F9098712B2003D230C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		2C5981FA098712B2003D230C /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */; };
+		2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C77B9640CFD576A00C4E9D3 /* Quartz.framework */; };
 		2CB36E1D0D3F5442003C516E /* SmartActivate.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB36E120D3F541E003C516E /* SmartActivate.c */; };
 		2CB36E200D3F5448003C516E /* SmartActivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB36E140D3F541E003C516E /* SmartActivate.m */; };
@@ -72,6 +74,7 @@
 		2C4740A70A5E71B000096E8A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C4740B20A5E773500096E8A /* FactorySetting.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = FactorySetting.plist; sourceTree = "<group>"; };
 		2C598200098712B3003D230C /* MergePDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MergePDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = SorterDelegate.applescript; sourceTree = "<group>"; };
 		2C77B9640CFD576A00C4E9D3 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			children = (
 				DA206CF3015C4E8B03C91932 /* MergePDF.applescript */,
 				2CD126110D4034B9004BF0C5 /* PDFController.applescript */,
+				2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";

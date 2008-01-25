@@ -1,7 +1,7 @@
 global XFile
 global appController
 global TemporaryItem
-global MainScript
+global SorterDelegate
 
 on posix_path()
 	return my _xfile's posix_path()
@@ -40,7 +40,7 @@ on make_with(a_file)
 	set a_bookmark_name to a_xfile's basename()
 	set a_page_count to missing value
 	set a_xfile to a_xfile's resolve_alias()
-	if MainScript's is_image(a_xfile's info()) then
+	if SorterDelegate's is_image(a_xfile's info()) then
 		set tmp_file to TemporaryItem's make_with(a_xfile's change_path_extension(".pdf")'s item_name())
 		set a_page_count to call method "convertImage:toPDF:" of appController with parameters {a_xfile's posix_path(), tmp_file's posix_path()}
 		if a_page_count is 0 then

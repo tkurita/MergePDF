@@ -10,11 +10,11 @@ property XFile : TemporaryItem's XFile
 property StringEngine : StringEngine of PathAnalyzer of XFile
 property UniqueNamer : XFile's UniqueNamer
 
-
 property appController : missing value
 property UtilityHandlers : missing value
 property PDFController : missing value
 property DefaultsManager : missing value
+property SorterDelegate : missing value
 property MainScript : me
 
 property _image_suffixes : {".png", ".jpg", ".jpeg", ".tiff"}
@@ -28,76 +28,6 @@ on import_script(a_name)
 	end tell
 	return load script POSIX file a_path
 end import_script
-
-on is_pdf(info_record)
-	--log "start is_pdf"
-	if file type of info_record is "PDF " then
-		return true
-	else if type identifier of info_record is "com.adobe.pdf" then
-		return true
-	else if name extension of info_record is "pdf" then
-		return true
-	end if
-	return false
-end is_pdf
-
-on is_image(info_record)
-	--log "start is_image"
-	return type identifier of info_record is in {"public.jpeg", "public.png", "public.tiff", "com.apple.pict", "com.microsoft.bmp"}
-end is_image
-
-on make_pdf_sorter(a_container)
-	script SorterDelegate
-		on resolve_container()
-			if a_container is "Insertion Location" then
-				error number -1708 -- continue FileSorter's resolve_container()
-			else
-				return a_container
-			end if
-		end resolve_container
-		
-		on resolve_info(an_alias)
-			set info_rec to info for an_alias
-			if (folder of info_rec) then
-				set info_rec to missing value
-			else
-				if alias of info_rec then
-					tell application "Finder"
-						set an_original to original item of an_alias as alias
-					end tell
-					set info_rec to resolve_info(an_original)
-				end if
-			end if
-			return info_rec
-		end resolve_info
-		
-		on target_items_at(a_location)
-			--log "start target_items_at of SorterDelegate"
-			tell application "Finder"
-				set a_list to every item of a_location
-			end tell
-			set pdf_list to {}
-			repeat with an_item in a_list
-				set an_alias to an_item as alias
-				set info_rec to resolve_info(an_alias)
-				if info_rec is not missing value then
-					if is_pdf(info_rec) or is_image(info_rec) then
-						set end of pdf_list to an_alias
-					end if
-				end if
-			end repeat
-			--log "end target_items_at of SorterDelegate"
-			return pdf_list
-		end target_items_at
-		
-		on is_rowwise_for_iconview(view_options)
-			set a_direction to contents of default entry "DirectionForPosition" of user defaults
-			return a_direction is "row direction"
-		end is_rowwise_for_iconview
-	end script
-	
-	return FileSorter's make_with_delegate(SorterDelegate)
-end make_pdf_sorter
 
 on launched
 	prepare_merging("Insertion Location")
@@ -137,7 +67,12 @@ on will finish launching theObject
 	set UtilityHandlers to import_script("UtilityHandlers")
 	set PDFController to import_script("PDFController")
 	set DefaultsManager to import_script("DefaultsManager")
+	set SorterDelegate to import_script("SorterDelegate")
 end will finish launching
+
+on awake from nib theObject
+	(*Add your script here.*)
+end awake from nib
 
 on will_position_sort(a_sorter)
 	set a_container to a_sorter's resolve_container()
@@ -161,7 +96,7 @@ on prepare_merging(a_container)
 	end tell
 	
 	try
-		set _pdf_sorter to make_pdf_sorter(a_container)
+		set _pdf_sorter to FileSorter's make_with_delegate(SorterDelegate's make_with(a_container))
 	on error msg number 777
 		activate
 		display dialog msg buttons {"OK"} default button "OK" with icon note

@@ -2,6 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>New item</key>
+	<string></string>
+	<key>ProgressReports</key>
+	<array>
+		<dict>
+			<key>levelIncrement</key>
+			<string>10</string>
+			<key>status</key>
+			<string>Checking files</string>
+		</dict>
+		<dict>
+			<key>levelIncrement</key>
+			<string>20</string>
+			<key>status</key>
+			<string>Sorting files</string>
+		</dict>
+		<dict>
+			<key>levelIncrement</key>
+			<string>20</string>
+			<key>status</key>
+			<string>Creating a new PDF</string>
+		</dict>
+		<dict>
+			<key>levelIncrement</key>
+			<string>10</string>
+			<key>status</key>
+			<string>Merging PDF files</string>
+		</dict>
+	</array>
 	<key>donationURL</key>
 	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
 </dict>
