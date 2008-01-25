@@ -9,8 +9,8 @@
 		);
 		breakpoints = (
 			2C4741BA0A613F5A00096E8A /* AppController.m:105 */,
-			2CD127F80D408450004BF0C5 /* MergePDF.applescript:250 */,
-			2CD128100D408650004BF0C5 /* MergePDF.applescript:254 */,
+			2CD127F80D408450004BF0C5 /* MergePDF.applescript:251 */,
+			2CD128100D408650004BF0C5 /* MergePDF.applescript:255 */,
 			2C6245100D49A979002F2745 /* ProgressWindowController.applescript:14 */,
 			2C6245A50D49ADCC002F2745 /* MergePDF.applescript:195 */,
 			2C6245B40D49AE22002F2745 /* MergePDF.applescript:119 */,
@@ -366,6 +366,13 @@
 			2C5B26530D49B9BF0097A0F9 /* PBXTextBookmark */ = 2C5B26530D49B9BF0097A0F9 /* PBXTextBookmark */;
 			2C5B26540D49B9BF0097A0F9 /* PBXTextBookmark */ = 2C5B26540D49B9BF0097A0F9 /* PBXTextBookmark */;
 			2C5B26550D49B9BF0097A0F9 /* PBXTextBookmark */ = 2C5B26550D49B9BF0097A0F9 /* PBXTextBookmark */;
+			2C5B265E0D49BCFA0097A0F9 /* PBXBookmark */ = 2C5B265E0D49BCFA0097A0F9 /* PBXBookmark */;
+			2C5B26610D49BE850097A0F9 /* PBXBookmark */ = 2C5B26610D49BE850097A0F9 /* PBXBookmark */;
+			2C5B26650D49BEEA0097A0F9 /* PBXTextBookmark */ = 2C5B26650D49BEEA0097A0F9 /* PBXTextBookmark */;
+			2C5B26680D49BEEB0097A0F9 /* PBXTextBookmark */ = 2C5B26680D49BEEB0097A0F9 /* PBXTextBookmark */;
+			2C5B266B0D49BEEB0097A0F9 /* PBXTextBookmark */ = 2C5B266B0D49BEEB0097A0F9 /* PBXTextBookmark */;
+			2C5B266E0D49BF8C0097A0F9 /* PBXTextBookmark */ = 2C5B266E0D49BF8C0097A0F9 /* PBXTextBookmark */;
+			2C5B266F0D49BF8C0097A0F9 /* PBXTextBookmark */ = 2C5B266F0D49BF8C0097A0F9 /* PBXTextBookmark */;
 			2C6242C90D4978E8002F2745 = 2C6242C90D4978E8002F2745 /* PBXTextBookmark */;
 			2C6242CC0D4978E8002F2745 = 2C6242CC0D4978E8002F2745 /* PBXTextBookmark */;
 			2C6242D90D49796C002F2745 = 2C6242D90D49796C002F2745 /* PBXTextBookmark */;
@@ -738,7 +745,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1241;
 		vrLoc = 0;
@@ -748,7 +755,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 80;
@@ -792,7 +799,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1241;
 		vrLoc = 0;
@@ -802,7 +809,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1123;
 		vrLoc = 454;
@@ -812,7 +819,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 80;
@@ -842,7 +849,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 80;
@@ -852,7 +859,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 40";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 178;
@@ -902,7 +909,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1577;
@@ -952,7 +959,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 40";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 178;
@@ -962,7 +969,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1577;
@@ -1006,7 +1013,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 5228;
@@ -1016,7 +1023,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 46";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 0;
@@ -1046,7 +1053,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 48";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 0;
@@ -1066,7 +1073,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 5228;
@@ -1096,7 +1103,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 48";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1110;
 		vrLoc = 0;
@@ -1116,7 +1123,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 5228;
@@ -1146,7 +1153,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 5228;
@@ -1156,7 +1163,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 316";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 3751;
@@ -1166,7 +1173,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 49";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 437;
@@ -1206,7 +1213,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 49";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 437;
@@ -1256,7 +1263,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 316";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1430;
 		vrLoc = 5078;
@@ -1266,7 +1273,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 49";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 437;
@@ -1306,7 +1313,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 49";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 268;
@@ -1316,7 +1323,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 316";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1430;
 		vrLoc = 5078;
@@ -1356,7 +1363,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 316";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 3788;
@@ -1366,7 +1373,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 49";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 268;
@@ -1406,7 +1413,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 50";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1177;
 		vrLoc = 268;
@@ -1440,7 +1447,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 322";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1491;
 		vrLoc = 1824;
@@ -1450,7 +1457,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 50";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 225;
@@ -1480,7 +1487,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 51";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 0;
@@ -1490,7 +1497,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 322";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1491;
 		vrLoc = 1824;
@@ -1520,7 +1527,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 53";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1382;
 		vrLoc = 0;
@@ -1530,7 +1537,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 322";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1491;
 		vrLoc = 1824;
@@ -1560,9 +1567,9 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 53";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
-		vrLen = 1156;
+		vrLen = 1052;
 		vrLoc = 579;
 	};
 	2C5B264D0D49B91E0097A0F9 /* PBXTextBookmark */ = {
@@ -1570,7 +1577,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 322";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1491;
 		vrLoc = 1824;
@@ -1600,7 +1607,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 52";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1276;
 		vrLoc = 0;
@@ -1620,10 +1627,68 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 322";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1491;
 		vrLoc = 1824;
+	};
+	2C5B265E0D49BCFA0097A0F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
+	};
+	2C5B26610D49BE850097A0F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
+	};
+	2C5B26650D49BEEA0097A0F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
+		name = "English: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	2C5B26680D49BEEB0097A0F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
+		name = "MergePDF.applescript: 323";
+		rLen = 0;
+		rLoc = 9543;
+		rType = 0;
+		vrLen = 1347;
+		vrLoc = 5458;
+	};
+	2C5B266B0D49BEEB0097A0F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
+		name = "ProgressWindowController.applescript: 62";
+		rLen = 0;
+		rLoc = 1923;
+		rType = 0;
+		vrLen = 965;
+		vrLoc = 879;
+	};
+	2C5B266E0D49BF8C0097A0F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
+		name = "English: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	2C5B266F0D49BF8C0097A0F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
+		name = "ProgressWindowController.applescript: 63";
+		rLen = 0;
+		rLoc = 1923;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 0;
 	};
 	2C6242C90D4978E8002F2745 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1684,7 +1749,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 363";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1328;
 		vrLoc = 6280;
@@ -1702,9 +1767,9 @@
 	2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {771, 1292}}";
-			sepNavSelRange = "{2096, 0}";
-			sepNavVisRect = "{{0, 419}, {771, 693}}";
-			sepNavWindowFrame = "{{15, 233}, {939, 700}}";
+			sepNavSelRange = "{960, 0}";
+			sepNavVisRect = "{{0, 0}, {771, 693}}";
+			sepNavWindowFrame = "{{15, 167}, {810, 766}}";
 		};
 	};
 	2C6242F30D4984ED002F2745 /* PBXTextBookmark */ = {
@@ -1722,7 +1787,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 363";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 1328;
 		vrLoc = 6280;
@@ -1732,7 +1797,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 473;
 		vrLoc = 1198;
@@ -1752,7 +1817,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 473;
 		vrLoc = 1198;
@@ -1826,9 +1891,10 @@
 	};
 	2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 884}}";
-			sepNavSelRange = "{1631, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 1071}}";
+			sepNavSelRange = "{1923, 0}";
 			sepNavVisRect = "{{0, 0}, {761, 612}}";
+			sepNavWindowFrame = "{{479, 109}, {800, 685}}";
 		};
 	};
 	2C6244D70D49A86B002F2745 /* PBXTextBookmark */ = {
@@ -1856,7 +1922,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 268;
@@ -1876,7 +1942,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 1997;
@@ -1896,7 +1962,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 2263;
@@ -1905,7 +1971,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 	};
 	2C6244E50D49A86B002F2745 /* PBXTextBookmark */ = {
@@ -1913,7 +1979,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 22";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 734;
 		vrLoc = 0;
@@ -1953,7 +2019,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 268;
@@ -1963,7 +2029,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 1997;
@@ -1973,7 +2039,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 2263;
@@ -1983,7 +2049,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 22";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 734;
 		vrLoc = 0;
@@ -2013,7 +2079,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 268;
@@ -2023,7 +2089,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2033,7 +2099,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2043,7 +2109,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 22";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 734;
 		vrLoc = 0;
@@ -2103,7 +2169,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 268;
@@ -2113,7 +2179,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2123,7 +2189,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2167,7 +2233,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 25";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 0;
@@ -2177,7 +2243,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 268;
@@ -2187,7 +2253,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2197,7 +2263,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2227,7 +2293,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 25";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 0;
@@ -2237,7 +2303,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 268;
@@ -2247,7 +2313,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2257,7 +2323,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 312";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2311,7 +2377,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 268;
@@ -2321,7 +2387,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2331,7 +2397,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2341,7 +2407,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2351,7 +2417,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 16";
 		rLen = 0;
-		rLoc = 832;
+		rLoc = 995;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -2391,7 +2457,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2401,7 +2467,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2411,7 +2477,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2421,7 +2487,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 16";
 		rLen = 0;
-		rLoc = 832;
+		rLoc = 995;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -2451,7 +2517,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 34";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 0;
@@ -2471,7 +2537,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2481,7 +2547,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2491,7 +2557,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2521,7 +2587,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 33";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -2541,7 +2607,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2551,7 +2617,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2561,7 +2627,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2591,7 +2657,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 33";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -2611,7 +2677,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2621,7 +2687,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2631,7 +2697,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2661,7 +2727,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 34";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 0;
@@ -2681,7 +2747,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2691,7 +2757,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2701,7 +2767,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2731,7 +2797,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 35";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1063;
 		vrLoc = 0;
@@ -2751,7 +2817,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2761,7 +2827,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2771,7 +2837,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2801,7 +2867,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 37";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 0;
@@ -2821,7 +2887,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2831,7 +2897,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2841,7 +2907,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2881,7 +2947,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 0;
@@ -2901,7 +2967,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2911,7 +2977,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2921,7 +2987,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -2951,7 +3017,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1122;
 		vrLoc = 0;
@@ -2971,7 +3037,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -2981,7 +3047,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1997;
@@ -2991,7 +3057,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 2263;
@@ -3021,7 +3087,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 0;
@@ -3041,7 +3107,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -3051,7 +3117,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 604;
 		vrLoc = 1997;
@@ -3061,7 +3127,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 462;
 		vrLoc = 2263;
@@ -3115,7 +3181,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 313";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -3125,7 +3191,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -3135,7 +3201,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 604;
 		vrLoc = 1997;
@@ -3145,7 +3211,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 473;
 		vrLoc = 5194;
@@ -3155,7 +3221,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 80;
@@ -3209,7 +3275,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 141;
@@ -3229,7 +3295,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 314";
 		rLen = 0;
-		rLoc = 9500;
+		rLoc = 9543;
 		rType = 0;
 		vrLen = 473;
 		vrLoc = 5194;
@@ -3239,7 +3305,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 38";
 		rLen = 0;
-		rLoc = 1631;
+		rLoc = 1923;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 80;
@@ -3266,8 +3332,8 @@
 		name = "プロジェクトブレークポイント";
 		objects = (
 			2C4741BA0A613F5A00096E8A /* AppController.m:105 */,
-			2CD127F80D408450004BF0C5 /* MergePDF.applescript:250 */,
-			2CD128100D408650004BF0C5 /* MergePDF.applescript:254 */,
+			2CD127F80D408450004BF0C5 /* MergePDF.applescript:251 */,
+			2CD128100D408650004BF0C5 /* MergePDF.applescript:255 */,
 			2C6245100D49A979002F2745 /* ProgressWindowController.applescript:14 */,
 			2C6245A50D49ADCC002F2745 /* MergePDF.applescript:195 */,
 			2C6245B40D49AE22002F2745 /* MergePDF.applescript:119 */,
@@ -3297,8 +3363,8 @@
 	2CB36E090D3F540E003C516E /* DefaultsManager.applescript */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {900, 1326}}";
-			sepNavSelRange = "{1280, 18}";
-			sepNavVisRect = "{{0, 0}, {900, 627}}";
+			sepNavSelRange = "{1316, 108}";
+			sepNavVisRect = "{{0, 469}, {900, 627}}";
 			sepNavWindowFrame = "{{15, 233}, {939, 700}}";
 		};
 	};
@@ -3330,7 +3396,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 509";
 		rLen = 0;
-		rLoc = 9424;
+		rLoc = 9467;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 0;
@@ -3370,7 +3436,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		name = "MergePDF.applescript: 509";
 		rLen = 0;
-		rLoc = 9424;
+		rLoc = 9467;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 0;
@@ -3548,7 +3614,7 @@
 			sepNavWindowFrame = "{{314, 98}, {939, 700}}";
 		};
 	};
-	2CD127F80D408450004BF0C5 /* MergePDF.applescript:250 */ = {
+	2CD127F80D408450004BF0C5 /* MergePDF.applescript:251 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3558,11 +3624,11 @@
 		fileReference = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		functionName = "on check_destination";
 		hitCount = 1;
-		lineNumber = 250;
+		lineNumber = 251;
 		modificationTime = 222933374.469859;
 		state = 1;
 	};
-	2CD128100D408650004BF0C5 /* MergePDF.applescript:254 */ = {
+	2CD128100D408650004BF0C5 /* MergePDF.applescript:255 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3572,15 +3638,15 @@
 		fileReference = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */;
 		functionName = "on check_destination";
 		hitCount = 1;
-		lineNumber = 254;
+		lineNumber = 255;
 		modificationTime = 222933374.469921;
 		state = 1;
 	};
 	DA206CF3015C4E8B03C91932 /* MergePDF.applescript */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {628, 5576}}";
-			sepNavSelRange = "{9500, 0}";
-			sepNavVisRect = "{{0, 1151}, {628, 698}}";
+			sepNavIntBoundsRect = "{{0, 0}, {628, 5593}}";
+			sepNavSelRange = "{9543, 0}";
+			sepNavVisRect = "{{0, 3175}, {628, 698}}";
 			sepNavWindowFrame = "{{382, 140}, {667, 756}}";
 		};
 	};

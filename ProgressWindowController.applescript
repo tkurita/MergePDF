@@ -11,7 +11,13 @@ on init_with_window(a_window)
 	set floating of a_window to true
 	set hides when deactivated of a_window to false
 	set _window to a_window
-	set _progress_reports to contents of default entry "ProgressMessages" of user defaults
+	tell user defaults
+		set _progress_reports to contents of default entry "ProgressMessages"
+	end tell
+	set a_result to call method "setFrameUsingName:" of a_window with parameter (name of a_window)
+	if a_result is not 1 then
+		center a_window
+	end if
 	--log "end init_with_window"
 end init_with_window
 
@@ -50,3 +56,8 @@ on show_window()
 	show _window
 	--animate _progress_indicator
 end show_window
+
+on close_window()
+	call method "saveFrameUsingName:" of _window with parameter (name of _window)
+	hide _window
+end close_window

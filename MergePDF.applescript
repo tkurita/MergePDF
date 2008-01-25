@@ -211,6 +211,7 @@ on merge_pdf(a_pdf_sorter)
 	else
 		set a_result to false
 	end if
+	ProgressWindowController's close_window()
 	--log "end merge_pdf"
 	return a_result
 end merge_pdf
