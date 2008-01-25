@@ -1,3 +1,5 @@
+global ProgressWindowController
+
 on is_pdf(info_record)
 	--log "start is_pdf"
 	if file type of info_record is "PDF " then
@@ -40,6 +42,8 @@ end resolve_info
 
 on target_items_at(a_location)
 	--log "start target_items_at of SorterDelegate"
+	ProgressWindowController's set_source_location(POSIX path of a_location)
+	ProgressWindowController's update_status()
 	tell application "Finder"
 		set a_list to every item of a_location
 	end tell
@@ -54,6 +58,7 @@ on target_items_at(a_location)
 		end if
 	end repeat
 	--log "end target_items_at of SorterDelegate"
+	ProgressWindowController's update_status()
 	return pdf_list
 end target_items_at
 

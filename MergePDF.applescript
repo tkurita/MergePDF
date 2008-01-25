@@ -15,12 +15,15 @@ property UtilityHandlers : missing value
 property PDFController : missing value
 property DefaultsManager : missing value
 property SorterDelegate : missing value
+property ProgressWindowController : missing value
 property MainScript : me
 
 property _image_suffixes : {".png", ".jpg", ".jpeg", ".tiff"}
 property _pdf_suffixes : {".pdf", ".ai"}
 property _acrobat_version : missing value
 property _pdf_sorter : missing value
+
+property _direction_chooser_window : missing value
 
 on import_script(a_name)
 	tell main bundle
@@ -68,10 +71,31 @@ on will finish launching theObject
 	set PDFController to import_script("PDFController")
 	set DefaultsManager to import_script("DefaultsManager")
 	set SorterDelegate to import_script("SorterDelegate")
+	set ProgressWindowController to import_script("ProgressWindowController")
 end will finish launching
 
 on awake from nib theObject
-	(*Add your script here.*)
+	set a_class to class of theObject
+	if a_class is in {window, panel} then
+		set a_name to name of theObject
+		if a_name is "DirectionChooserWindow" then
+			set _direction_chooser_window to theObject
+		else if a_name is "ProgressWindow" then
+			ProgressWindowController's init_with_window(theObject)
+		end if
+	else if a_class is text field then
+		set a_tag to tag of theObject
+		if a_tag is 1 then
+			ProgressWindowController's awake_from_nib(theObject)
+			
+		end if
+	else
+		set a_name to name of theObject
+		if a_name is "ProgressIndicator" then
+			ProgressWindowController's awake_from_nib(theObject)
+		end if
+	end if
+	
 end awake from nib
 
 on will_position_sort(a_sorter)
@@ -104,7 +128,7 @@ on prepare_merging(a_container)
 	end try
 	
 	if will_position_sort(_pdf_sorter) then
-		show window "directionChooser"
+		show _direction_chooser_window
 	else
 		merge_pdf(_pdf_sorter)
 		if ((count (windows whose visible is true)) is 0) then
@@ -117,6 +141,7 @@ on merge_pdf_to(dest_file, pdf_list)
 	--log "start merge_pdf_to"
 	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.adobe.Acrobat"
 	
+	ProgressWindowController's update_status()
 	set pdf_controllers to {}
 	repeat with a_file in pdf_list
 		set end of pdf_controllers to PDFController's make_with(a_file)
@@ -137,7 +162,7 @@ on merge_pdf_to(dest_file, pdf_list)
 	
 	--make Bookmark for first page
 	add_bookmark(new_doc, pdf_controllers's item 1's bookmark_name(), 1)
-	
+	ProgressWindowController's update_status()
 	--insert every pages
 	repeat with a_pdf_controller in (rest of pdf_controllers)
 		my insert_pages_at_end(new_doc, a_pdf_controller)
@@ -166,6 +191,8 @@ on merge_pdf_to(dest_file, pdf_list)
 end merge_pdf_to
 
 on merge_pdf(a_pdf_sorter)
+	log "start merge_pdf"
+	ProgressWindowController's show_window()
 	set pdf_list to a_pdf_sorter's sorted_items()
 	if pdf_list is {} then
 		set a_folder to (a_pdf_sorter's resolve_container()) as Unicode text
@@ -178,6 +205,7 @@ on merge_pdf(a_pdf_sorter)
 	set dest_location to target_folder's parent_folder()
 	set dest_file to target_folder's change_path_extension(".pdf")
 	set dest_file to check_destination(dest_file)
+	ProgressWindowController's set_new_file_path(dest_file's posix_path())
 	if dest_file is not missing value then
 		set a_result to merge_pdf_to(dest_file, pdf_list)
 	else
