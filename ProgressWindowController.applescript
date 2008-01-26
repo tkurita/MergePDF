@@ -11,9 +11,6 @@ on init_with_window(a_window)
 	set floating of a_window to true
 	set hides when deactivated of a_window to false
 	set _window to a_window
-	tell user defaults
-		set _progress_reports to contents of default entry "ProgressMessages"
-	end tell
 	set a_result to call method "setFrameUsingName:" of a_window with parameter (name of a_window)
 	if a_result is not 1 then
 		center a_window
@@ -22,6 +19,11 @@ on init_with_window(a_window)
 end init_with_window
 
 on update_status()
+	if _progress_reports is missing value then
+		tell user defaults
+			set _progress_reports to contents of default entry "ProgressMessages"
+		end tell
+	end if
 	set an_item to first item of _progress_reports
 	tell _progress_indicator to increment by |levelIncrement| of an_item
 	set content of _status_message_field to (status of an_item)
@@ -60,4 +62,5 @@ end show_window
 on close_window()
 	call method "saveFrameUsingName:" of _window with parameter (name of _window)
 	hide _window
+	set _progress_reports to missing value
 end close_window

@@ -191,13 +191,16 @@ on merge_pdf_to(dest_file, pdf_list)
 end merge_pdf_to
 
 on merge_pdf(a_pdf_sorter)
-	log "start merge_pdf"
+	--log "start merge_pdf"
 	ProgressWindowController's show_window()
 	set pdf_list to a_pdf_sorter's sorted_items()
 	if pdf_list is {} then
-		set a_folder to (a_pdf_sorter's resolve_container()) as Unicode text
-		set no_found_msg to localized string "notFoundPDFs"
-		display alert no_found_msg message (UtilityHandlers's localized_string("Location :", {a_folder}))
+		set a_folder to (a_pdf_sorter's resolve_container())
+		set a_folder to POSIX path of a_folder
+		--set no_found_msg to localized string "notFoundPDFs"
+		ProgressWindowController's close_window()
+		--display alert no_found_msg message (UtilityHandlers's localized_string("Location :", {a_folder}))
+		call method "noPDFAlert:" of appController with parameter a_folder
 		return false
 	end if
 	
