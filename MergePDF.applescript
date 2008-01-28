@@ -208,8 +208,8 @@ on merge_pdf(a_pdf_sorter)
 	set dest_location to target_folder's parent_folder()
 	set dest_file to target_folder's change_path_extension(".pdf")
 	set dest_file to check_destination(dest_file)
-	ProgressWindowController's set_new_file_path(dest_file's posix_path())
 	if dest_file is not missing value then
+		ProgressWindowController's set_new_file_path(dest_file's posix_path())
 		set a_result to merge_pdf_to(dest_file, pdf_list)
 	else
 		set a_result to false
@@ -263,7 +263,10 @@ on check_destination(dest_file)
 			--log (newdest_file as Unicode text)
 		on error msg number errnum
 			set dest_file to missing value
-			error msg number errnum
+			if errnum is not -128 then
+				error msg number errnum
+			end if
+			return dest_file
 		end try
 		
 		set new_file to XFile's make_with(new_file)
