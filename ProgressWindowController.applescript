@@ -26,7 +26,7 @@ on update_status()
 	end if
 	set an_item to first item of _progress_reports
 	tell _progress_indicator to increment by |levelIncrement| of an_item
-	set content of _status_message_field to (status of an_item)
+	set content of _status_message_field to (localized string (status of an_item))
 	set _progress_reports to rest of _progress_reports
 end update_status
 
