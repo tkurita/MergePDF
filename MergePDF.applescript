@@ -7,8 +7,9 @@ end load
 property FileSorter : load("FileSorter")
 property TemporaryItem : load("TemporaryItem")
 property XFile : TemporaryItem's XFile
-property StringEngine : StringEngine of PathAnalyzer of XFile
+--property StringEngine : StringEngine of PathAnalyzer of XFile
 property UniqueNamer : XFile's UniqueNamer
+property PlainText : load("PlainText")
 
 property appController : missing value
 property UtilityHandlers : missing value
@@ -115,7 +116,7 @@ on will_position_sort(a_sorter)
 end will_position_sort
 
 on prepare_merging(a_container)
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		set _acrobat_version to (version as string)
 	end tell
 	
@@ -139,7 +140,7 @@ end prepare_merging
 
 on merge_pdf_to(dest_file, pdf_list)
 	--log "start merge_pdf_to"
-	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.adobe.Acrobat"
+	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.adobe.Acrobat.Pro"
 	
 	ProgressWindowController's update_status()
 	set pdf_controllers to {}
@@ -148,14 +149,14 @@ on merge_pdf_to(dest_file, pdf_list)
 	end repeat
 	
 	pdf_controllers's item 1's open_pdf()
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		set a_doc to a reference to active doc
 	end tell
 	
 	save_pdf_as(a_doc, dest_file)
 	set new_doc_name to dest_file's item_name()
 	
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		set new_doc to a reference to active doc
 		set total_pages to count every page of new_doc
 	end tell
@@ -173,7 +174,7 @@ on merge_pdf_to(dest_file, pdf_list)
 		
 	end repeat
 	
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		create thumbs new_doc
 		
 		set view mode of new_doc to pages and bookmarks
@@ -232,15 +233,15 @@ on is_file_busy(a_path)
 end is_file_busy
 
 (*!= close_in_acrobat
-Acrobat ‚ÅŠJ‚©‚ê‚Ä‚¢‚éƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚éB
+Acrobat ã§é–‹ã‹ã‚Œã¦ã„ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹ã€‚
 
 == Result
-‚Æ‚É‚©‚­ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é‚±‚Æ‚É¬Œ÷‚µ‚½‚ç tureB
-Acrobat ‚ÅŠJ‚¢‚Ä‚¢‚éƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚ç‚È‚©‚Á‚½‚èA‹N“®‚µ‚Ä‚¢‚È‚¢‚Æ‚«‚Í falseB
+ã¨ã«ã‹ããƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹ã“ã¨ã«æˆåŠŸã—ãŸã‚‰ tureã€‚
+Acrobat ã§é–‹ã„ã¦ã„ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸã‚Šã€èµ·å‹•ã—ã¦ã„ãªã„ã¨ãã¯ falseã€‚
 *)
 on close_in_acrobat(a_path)
 	set a_result to false
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		repeat with ith from 1 to count documents
 			set an_alias to file alias of document ith
 			if (an_alias as Unicode text is a_path) then
@@ -291,18 +292,19 @@ end check_destination
 
 on save_pdf_as(a_doc, dest_file)
 	--log "start save_pdf_as"
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		save a_doc to file (dest_file's hfs_path()) -- conveting into unicode text is required
 	end tell
 end save_pdf_as
 
 on insert_pages_at_end(a_doc, a_pdf_controller)
 	set a_pdf_path to quoted form of (a_pdf_controller's posix_path())
-	set a_pdf_path to StringEngine's plain_text(a_pdf_path)
+	--set a_pdf_path to StringEngine's plain_text(a_pdf_path)
+	set a_pdf_path to PlainText's do(a_pdf_path)
 	set end_page to (a_pdf_controller's page_count()) - 1
 	set a_command to "var lastPage = this.numPages-1;this.insertPages(lastPage," & a_pdf_path & ",0," & end_page & ");"
 	--log a_command
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		tell a_doc
 			do script a_command
 		end tell
@@ -311,7 +313,7 @@ end insert_pages_at_end
 
 on add_bookmark(a_doc, a_bookmark_name, dest_page)
 	set a_bookmark_name to do shell script "echo '" & a_bookmark_name & "'|iconv -f UTF-8 -t UTF-16"
-	tell application "Adobe Acrobat 7.0 Standard"
+	tell application "Adobe Acrobat Professional"
 		tell a_doc
 			make new PDBookmark at end
 			tell PDBookmark -1
