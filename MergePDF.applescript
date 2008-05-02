@@ -7,7 +7,6 @@ end load
 property FileSorter : load("FileSorter")
 property TemporaryItem : load("TemporaryItem")
 property XFile : TemporaryItem's XFile
---property StringEngine : StringEngine of PathAnalyzer of XFile
 property UniqueNamer : XFile's UniqueNamer
 property PlainText : load("PlainText")
 

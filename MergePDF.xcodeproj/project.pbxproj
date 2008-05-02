@@ -88,7 +88,6 @@
 		2CB36E0A0D3F540E003C516E /* MessageUtility.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = MessageUtility.applescript; sourceTree = "<group>"; };
 		2CB36E0B0D3F540E003C516E /* SheetManager.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = SheetManager.applescript; sourceTree = "<group>"; };
 		2CB36E0C0D3F540E003C516E /* TerminalCommander.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = TerminalCommander.applescript; sourceTree = "<group>"; };
-		2CB36E0D0D3F540E003C516E /* TerminalSettingObj.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = TerminalSettingObj.applescript; sourceTree = "<group>"; };
 		2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = UtilityHandlers.applescript; sourceTree = "<group>"; };
 		2CB36E120D3F541E003C516E /* SmartActivate.c */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.c; path = SmartActivate.c; sourceTree = "<group>"; };
 		2CB36E130D3F541E003C516E /* SmartActivate.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = SmartActivate.h; sourceTree = "<group>"; };
@@ -217,7 +216,6 @@
 				2CB36E0A0D3F540E003C516E /* MessageUtility.applescript */,
 				2CB36E0B0D3F540E003C516E /* SheetManager.applescript */,
 				2CB36E0C0D3F540E003C516E /* TerminalCommander.applescript */,
-				2CB36E0D0D3F540E003C516E /* TerminalSettingObj.applescript */,
 				2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */,
 			);
 			path = ASStudioScriptLib;
