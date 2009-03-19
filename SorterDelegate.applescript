@@ -58,7 +58,6 @@ on target_items_at(a_location)
 		end if
 	end repeat
 	--log "end target_items_at of SorterDelegate"
-	--ProgressWindowController's update_status()
 	return pdf_list
 end target_items_at
 
@@ -67,7 +66,6 @@ on set_direction_for_position(a_direction)
 end set_direction_for_position
 
 on is_rowwise_for_iconview(view_options)
-	--set a_direction to contents of default entry "DirectionForPosition" of user defaults
 	return my _direction_for_position is "row direction"
 end is_rowwise_for_iconview
 

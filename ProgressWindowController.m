@@ -125,8 +125,7 @@
 
 - (void)cancelTask
 {
-	//[progressIndicator setDoubleValue:[progressIndicator minValue]];
-	[progressIndicator setDoubleValue:0];
+	[progressIndicator setDoubleValue:[progressIndicator minValue]];
 	NSString *message = NSLocalizedString(@"Canceled", @"");
 	[statusField setStringValue:message];
 	processStarted = NO;

@@ -99,7 +99,6 @@
 		2CB36E6F0D3F8C4A003C516E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CB36E830D3F8C7E003C516E /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CB36E870D3F8DB4003C516E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		2CD126110D4034B9004BF0C5 /* PDFController.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = PDFController.applescript; sourceTree = "<group>"; };
 		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF3015C4E8B03C91932 /* MergePDF.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MergePDF.applescript; sourceTree = "<group>"; wrapsLines = 1; };
@@ -224,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				2CB36E060D3F540E003C516E /* ASStudioScriptLib */,
-				2CD126110D4034B9004BF0C5 /* PDFController.applescript */,
 			);
 			name = "will remove";
 			sourceTree = "<group>";

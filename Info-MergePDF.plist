@@ -28,7 +28,7 @@
 	<key>CFBundleExecutable</key>
 	<string>MergePDF</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.0b copyright 1998-2009, Tetsuro KURITA</string>
+	<string>2.0b1 copyright 1998-2009, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>MergePDFHelp</string>
 	<key>CFBundleIconFile</key>
