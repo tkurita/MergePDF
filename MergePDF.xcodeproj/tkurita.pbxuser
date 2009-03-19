@@ -21685,15 +21685,13 @@
 		vrLen = 693;
 		vrLoc = 0;
 	};
-	2CB36E090D3F540E003C516E /* DefaultsManager.applescript */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {900, 1326}}";
-			sepNavSelRange = "{1316, 108}";
-			sepNavVisRect = "{{0, 469}, {900, 627}}";
-			sepNavWindowFrame = "{{15, 233}, {939, 700}}";
-		};
-	};
 	2CB36E0B0D3F540E003C516E /* SheetManager.applescript */ = {
+		isa = PBXFileReference;
+		fileEncoding = 2147483649;
+		lastKnownFileType = sourcecode.applescript;
+		name = SheetManager.applescript;
+		path = /Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/ASStudioScriptLib/SheetManager.applescript;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {579, 964}}";
 			sepNavSelRange = "{2142, 0}";
@@ -21701,6 +21699,12 @@
 		};
 	};
 	2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */ = {
+		isa = PBXFileReference;
+		fileEncoding = 2147483649;
+		lastKnownFileType = sourcecode.applescript;
+		name = UtilityHandlers.applescript;
+		path = /Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/ASStudioScriptLib/UtilityHandlers.applescript;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {762, 1819}}";
 			sepNavSelRange = "{1823, 41}";

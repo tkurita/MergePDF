@@ -86,13 +86,6 @@
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
 		2CB1697A0711703000A527B5 /* MergePDF.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MergePDF.icns; sourceTree = "<group>"; };
-		2CB36E070D3F540E003C516E /* ColorSwitch.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = ColorSwitch.applescript; sourceTree = "<group>"; };
-		2CB36E080D3F540E003C516E /* CommandBuilder.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = CommandBuilder.applescript; sourceTree = "<group>"; };
-		2CB36E090D3F540E003C516E /* DefaultsManager.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = DefaultsManager.applescript; sourceTree = "<group>"; };
-		2CB36E0A0D3F540E003C516E /* MessageUtility.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = MessageUtility.applescript; sourceTree = "<group>"; };
-		2CB36E0B0D3F540E003C516E /* SheetManager.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = SheetManager.applescript; sourceTree = "<group>"; };
-		2CB36E0C0D3F540E003C516E /* TerminalCommander.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = TerminalCommander.applescript; sourceTree = "<group>"; };
-		2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = UtilityHandlers.applescript; sourceTree = "<group>"; };
 		2CB36E120D3F541E003C516E /* SmartActivate.c */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.c; path = SmartActivate.c; sourceTree = "<group>"; };
 		2CB36E130D3F541E003C516E /* SmartActivate.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = SmartActivate.h; sourceTree = "<group>"; };
 		2CB36E140D3F541E003C516E /* SmartActivate.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = SmartActivate.m; sourceTree = "<group>"; };
@@ -160,7 +153,6 @@
 		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				2C26B1A80F71D3C1002129BD /* will remove */,
 				2C26AF190F713193002129BD /* Active Files */,
 				2C473ECF0A5E65D400096E8A /* History.txt */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
@@ -219,14 +211,6 @@
 			name = "Active Files";
 			sourceTree = "<group>";
 		};
-		2C26B1A80F71D3C1002129BD /* will remove */ = {
-			isa = PBXGroup;
-			children = (
-				2CB36E060D3F540E003C516E /* ASStudioScriptLib */,
-			);
-			name = "will remove";
-			sourceTree = "<group>";
-		};
 		2C3F62B30F6E6DD400C42308 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,20 +220,6 @@
 				2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		2CB36E060D3F540E003C516E /* ASStudioScriptLib */ = {
-			isa = PBXGroup;
-			children = (
-				2CB36E070D3F540E003C516E /* ColorSwitch.applescript */,
-				2CB36E080D3F540E003C516E /* CommandBuilder.applescript */,
-				2CB36E090D3F540E003C516E /* DefaultsManager.applescript */,
-				2CB36E0A0D3F540E003C516E /* MessageUtility.applescript */,
-				2CB36E0B0D3F540E003C516E /* SheetManager.applescript */,
-				2CB36E0C0D3F540E003C516E /* TerminalCommander.applescript */,
-				2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */,
-			);
-			path = ASStudioScriptLib;
 			sourceTree = "<group>";
 		};
 		2CB36E110D3F541E003C516E /* SmartActivateLib */ = {
