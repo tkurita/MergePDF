@@ -1,4 +1,4 @@
-global ProgressWindowController
+--global ProgressWindowController
 
 on is_pdf(info_record)
 	--log "start is_pdf"
@@ -21,7 +21,7 @@ on resolve_container()
 	if my _target_container is "Insertion Location" then
 		error number -1708 -- continue FileSorter's resolve_container()
 	else
-		return my _target_container
+		return POSIX file (my _target_container)
 	end if
 end resolve_container
 
@@ -42,8 +42,8 @@ end resolve_info
 
 on target_items_at(a_location)
 	--log "start target_items_at of SorterDelegate"
-	ProgressWindowController's set_source_location(POSIX path of a_location)
-	ProgressWindowController's update_status()
+	--ProgressWindowController's set_source_location(POSIX path of a_location)
+	--ProgressWindowController's update_status()
 	tell application "Finder"
 		set a_list to every item of a_location
 	end tell
@@ -58,18 +58,23 @@ on target_items_at(a_location)
 		end if
 	end repeat
 	--log "end target_items_at of SorterDelegate"
-	ProgressWindowController's update_status()
+	--ProgressWindowController's update_status()
 	return pdf_list
 end target_items_at
 
+on set_direction_for_position(a_direction)
+	set my _direction_for_position to a_direction
+end set_direction_for_position
+
 on is_rowwise_for_iconview(view_options)
-	set a_direction to contents of default entry "DirectionForPosition" of user defaults
-	return a_direction is "row direction"
+	--set a_direction to contents of default entry "DirectionForPosition" of user defaults
+	return my _direction_for_position is "row direction"
 end is_rowwise_for_iconview
 
 on make_with(a_container)
 	script SorterDelegate
 		property _target_container : a_container
+		property _direction_for_position : missing value
 	end script
 	
 	return SorterDelegate

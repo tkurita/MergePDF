@@ -7,16 +7,17 @@ end load
 property FileSorter : load("FileSorter")
 property TemporaryItem : load("TemporaryItem")
 property XFile : TemporaryItem's XFile
-property UniqueNamer : XFile's UniqueNamer
-property PlainText : load("PlainText")
+--property PlainText : load("PlainText")
 
 property appController : missing value
+(*
 property UtilityHandlers : missing value
 property PDFController : missing value
 property DefaultsManager : missing value
 property SorterDelegate : missing value
 property ProgressWindowController : missing value
 property MainScript : me
+*)
 
 property _image_suffixes : {".png", ".jpg", ".jpeg", ".tiff"}
 property _pdf_suffixes : {".pdf", ".ai"}
@@ -33,28 +34,33 @@ on import_script(a_name)
 end import_script
 
 on launched
-	prepare_merging("Insertion Location")
+	--log "launched"
+	process_location("Insertion Location")
 end launched
 
 on open a_list
+	--log "start open"
 	repeat with an_item in a_list
 		if (an_item as Unicode text) ends with ":" then
 			tell application "Finder"
 				open an_item
 			end tell
-			prepare_merging(an_item)
+			process_location(an_item)
 		end if
 	end repeat
 	return true
 end open
 
 on will open theObject
+	(*
 	activate
 	center theObject
 	set a_direction to DefaultsManager's value_with_default("DirectionForPosition", "column direction")
 	set first responder of theObject to button a_direction of theObject
+	*)
 end will open
 
+(*
 on clicked theObject
 	set a_name to name of theObject
 	hide window of theObject
@@ -64,40 +70,47 @@ on clicked theObject
 	end if
 	quit
 end clicked
+*)
 
 on will finish launching theObject
+	--log "will finish launching"
 	set appController to call method "sharedAppController" of class "AppController"
+	(*
 	set UtilityHandlers to import_script("UtilityHandlers")
 	set PDFController to import_script("PDFController")
 	set DefaultsManager to import_script("DefaultsManager")
 	set SorterDelegate to import_script("SorterDelegate")
-	set ProgressWindowController to import_script("ProgressWindowController")
+	*)
+	--set ProgressWindowController to import_script("ProgressWindowController")
 end will finish launching
 
+(*
 on awake from nib theObject
+	log "awake from nib"
 	set a_class to class of theObject
 	if a_class is in {window, panel} then
 		set a_name to name of theObject
 		if a_name is "DirectionChooserWindow" then
 			set _direction_chooser_window to theObject
 		else if a_name is "ProgressWindow" then
-			ProgressWindowController's init_with_window(theObject)
+			--ProgressWindowController's init_with_window(theObject)
 		end if
 	else if a_class is text field then
 		set a_tag to tag of theObject
 		if a_tag is 1 then
-			ProgressWindowController's awake_from_nib(theObject)
+			--ProgressWindowController's awake_from_nib(theObject)
 			
 		end if
 	else
 		set a_name to name of theObject
 		if a_name is "ProgressIndicator" then
-			ProgressWindowController's awake_from_nib(theObject)
+			--ProgressWindowController's awake_from_nib(theObject)
 		end if
 	end if
 	
 end awake from nib
-
+*)
+(*
 on will_position_sort(a_sorter)
 	set a_container to a_sorter's resolve_container()
 	tell application "Finder"
@@ -113,12 +126,18 @@ on will_position_sort(a_sorter)
 		end if
 	end tell
 end will_position_sort
+*)
 
-on prepare_merging(a_container)
+on process_location(a_container)
+	--log "start process_location"
+	(*
 	tell application "Adobe Acrobat Professional"
 		set _acrobat_version to (version as string)
 	end tell
+	*)
+	call method "processFolder:" of appController with parameter a_container
 	
+	(*
 	try
 		set _pdf_sorter to FileSorter's make_with_delegate(SorterDelegate's make_with(a_container))
 	on error msg number 777
@@ -131,16 +150,20 @@ on prepare_merging(a_container)
 		show _direction_chooser_window
 	else
 		merge_pdf(_pdf_sorter)
+		(*
 		if ((count (windows whose visible is true)) is 0) then
 			quit
 		end if
+		*)
 	end if
-end prepare_merging
-
+	*)
+end process_location
+(*
 on merge_pdf_to(dest_file, pdf_list)
 	--log "start merge_pdf_to"
+	(*
 	call method "activateAppOfIdentifer:" of class "SmartActivate" with parameter "com.adobe.Acrobat.Pro"
-	
+	*)
 	ProgressWindowController's update_status()
 	set pdf_controllers to {}
 	repeat with a_file in pdf_list
@@ -168,7 +191,7 @@ on merge_pdf_to(dest_file, pdf_list)
 		my insert_pages_at_end(new_doc, a_pdf_controller)
 		
 		--make bookmark
-		add_bookmark(new_doc, a_pdf_controller's bookmark_name(), total_pages + 1)
+		--add_bookmark(new_doc, a_pdf_controller's bookmark_name(), total_pages + 1)
 		set total_pages to total_pages + (a_pdf_controller's page_count())
 		
 	end repeat
@@ -191,14 +214,14 @@ on merge_pdf_to(dest_file, pdf_list)
 end merge_pdf_to
 
 on merge_pdf(a_pdf_sorter)
-	--log "start merge_pdf"
-	ProgressWindowController's show_window()
+	log "start merge_pdf"
+	--ProgressWindowController's show_window()
 	set pdf_list to a_pdf_sorter's sorted_items()
 	if pdf_list is {} then
 		set a_folder to (a_pdf_sorter's resolve_container())
 		set a_folder to POSIX path of a_folder
 		--set no_found_msg to localized string "notFoundPDFs"
-		ProgressWindowController's close_window()
+		--ProgressWindowController's close_window()
 		--display alert no_found_msg message (UtilityHandlers's localized_string("Location :", {a_folder}))
 		call method "noPDFAlert:" of appController with parameter a_folder
 		return false
@@ -209,12 +232,14 @@ on merge_pdf(a_pdf_sorter)
 	set dest_file to target_folder's change_path_extension(".pdf")
 	set dest_file to check_destination(dest_file)
 	if dest_file is not missing value then
-		ProgressWindowController's set_new_file_path(dest_file's posix_path())
-		set a_result to merge_pdf_to(dest_file, pdf_list)
+		--ProgressWindowController's set_new_file_path(dest_file's posix_path())
+		call method "mergeFiles:to:" of class "PDFMerger" with parameters {pdf_list, dest_file's posix_path()}
+		set a_result to true
+		--set a_result to merge_pdf_to(dest_file, pdf_list)
 	else
 		set a_result to false
 	end if
-	ProgressWindowController's close_window()
+	--ProgressWindowController's close_window()
 	--log "end merge_pdf"
 	return a_result
 end merge_pdf
@@ -231,13 +256,7 @@ on is_file_busy(a_path)
 	return is_busy
 end is_file_busy
 
-(*!= close_in_acrobat
-Acrobat で開かれているファイルを閉じる。
 
-== Result
-とにかくファイルを閉じることに成功したら ture。
-Acrobat で開いているファイルが見つからなかったり、起動していないときは false。
-*)
 on close_in_acrobat(a_path)
 	set a_result to false
 	tell application "Adobe Acrobat Professional"
@@ -272,6 +291,7 @@ on check_destination(dest_file)
 		set new_file to XFile's make_with(new_file)
 		if new_file's item_exists() then
 			set a_path to new_file's hfs_path()
+			(*
 			if is_file_busy(a_path) then
 				if not close_in_acrobat(a_path) then
 					try
@@ -282,6 +302,7 @@ on check_destination(dest_file)
 					end try
 				end if
 			end if
+			*)
 		end if
 		set dest_file to new_file
 	end if
@@ -297,15 +318,15 @@ on save_pdf_as(a_doc, dest_file)
 end save_pdf_as
 
 on insert_pages_at_end(a_doc, a_pdf_controller)
+	log "start insert_pages_at_end"
 	set a_pdf_path to quoted form of (a_pdf_controller's posix_path())
-	--set a_pdf_path to StringEngine's plain_text(a_pdf_path)
 	set a_pdf_path to PlainText's do(a_pdf_path)
 	set end_page to (a_pdf_controller's page_count()) - 1
 	set a_command to "var lastPage = this.numPages-1;this.insertPages(lastPage," & a_pdf_path & ",0," & end_page & ");"
-	--log a_command
+	log a_command
 	tell application "Adobe Acrobat Professional"
 		tell a_doc
-			do script a_command
+			do script (a_command as «class utf8»)
 		end tell
 	end tell
 end insert_pages_at_end
@@ -322,8 +343,4 @@ on add_bookmark(a_doc, a_bookmark_name, dest_page)
 		end tell
 	end tell
 end add_bookmark
-
-
-
-
-
+*)

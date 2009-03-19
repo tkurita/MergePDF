@@ -1,5 +1,24 @@
 MergePDF
 
+
+= 2009-03-17
+* pdf の作成はできるようになった。
+To Do
+* NSWindowController をつかって、複数の window を開けるようにする。
+* WindowController に処理するフォルダを与える。
+* AppleScript も object 単位でアサインする。
+* daialog は全部 progress window のシートにする。
+* だからとりあえず、progres window を表示する。
+* AppController に、フォルダ参照を渡して progress window をひらく
+* window controller が folder 参照を保持する。
+* progress window が開いてから実作業がスタートする。
+
+* progres window への状態の表示
+* error message の表示
+* progress window を floating でなくす
+* icon view の merge 方向のデフォルトボタンをラベルの位置で決定する。
+* Sparkle の組み込み
+
 必要なOSAX
 いまのところなし。(2006.07.07)
 

@@ -13,9 +13,6 @@
 			contextName = "";
 			files = (
 				2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */,
-				2CB36E230D3F544D003C516E /* UtilityHandlers.applescript in AppleScript */,
-				2CD126120D4034B9004BF0C5 /* PDFController.applescript in AppleScript */,
-				2C52D81E0D48E52300A1945C /* DefaultsManager.applescript in AppleScript */,
 				2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in AppleScript */,
 				2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in AppleScript */,
 			);
@@ -27,10 +24,14 @@
 /* Begin PBXBuildFile section */
 		2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */; };
 		2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A20509874594003BE6E4 /* InfoPlist.strings */; };
+		2C3F62BA0F6E6E6600C42308 /* PDFMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */; };
+		2C3F62BB0F6E6E6600C42308 /* PDFMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */; };
+		2C3F658E0F6FBCFC00C42308 /* ProgressWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */; };
+		2C3F658F0F6FBCFC00C42308 /* ProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */; };
+		2C3F66910F700C9900C42308 /* ProgressWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F668F0F700C9900C42308 /* ProgressWindow.nib */; };
 		2C4740A80A5E71B000096E8A /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4740A60A5E71B000096E8A /* AppController.h */; };
 		2C4740A90A5E71B000096E8A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740A70A5E71B000096E8A /* AppController.m */; };
 		2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */; };
-		2C52D81E0D48E52300A1945C /* DefaultsManager.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CB36E090D3F540E003C516E /* DefaultsManager.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5981F0098712B2003D230C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		2C5981F2098712B2003D230C /* MergePDF.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CB1697A0711703000A527B5 /* MergePDF.icns */; };
@@ -45,8 +46,6 @@
 		2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C77B9640CFD576A00C4E9D3 /* Quartz.framework */; };
 		2CB36E1D0D3F5442003C516E /* SmartActivate.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB36E120D3F541E003C516E /* SmartActivate.c */; };
 		2CB36E200D3F5448003C516E /* SmartActivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB36E140D3F541E003C516E /* SmartActivate.m */; };
-		2CB36E230D3F544D003C516E /* UtilityHandlers.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
-		2CD126120D4034B9004BF0C5 /* PDFController.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CD126110D4034B9004BF0C5 /* PDFController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2CD128D10D40A437004BF0C5 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */; };
 		2CD12A870D40A4AE004BF0C5 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */; };
 /* End PBXBuildFile section */
@@ -69,8 +68,13 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HelpSetup.plist; sourceTree = "<group>"; };
+		2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-MergePDF.plist"; sourceTree = "<group>"; };
+		2C3F62B80F6E6E6600C42308 /* PDFMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFMerger.h; sourceTree = "<group>"; };
+		2C3F62B90F6E6E6600C42308 /* PDFMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFMerger.m; sourceTree = "<group>"; };
+		2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWindowController.h; sourceTree = "<group>"; };
+		2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressWindowController.m; sourceTree = "<group>"; };
+		2C3F66900F700C9900C42308 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
 		2C473ECF0A5E65D400096E8A /* History.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = History.txt; sourceTree = "<group>"; };
 		2C4740A60A5E71B000096E8A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C4740A70A5E71B000096E8A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
@@ -82,21 +86,21 @@
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
 		2CB1697A0711703000A527B5 /* MergePDF.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MergePDF.icns; sourceTree = "<group>"; };
-		2CB36E070D3F540E003C516E /* ColorSwitch.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = ColorSwitch.applescript; sourceTree = "<group>"; };
-		2CB36E080D3F540E003C516E /* CommandBuilder.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = CommandBuilder.applescript; sourceTree = "<group>"; };
-		2CB36E090D3F540E003C516E /* DefaultsManager.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = DefaultsManager.applescript; sourceTree = "<group>"; };
-		2CB36E0A0D3F540E003C516E /* MessageUtility.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = MessageUtility.applescript; sourceTree = "<group>"; };
-		2CB36E0B0D3F540E003C516E /* SheetManager.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = SheetManager.applescript; sourceTree = "<group>"; };
-		2CB36E0C0D3F540E003C516E /* TerminalCommander.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = TerminalCommander.applescript; sourceTree = "<group>"; };
-		2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = UtilityHandlers.applescript; sourceTree = "<group>"; };
-		2CB36E120D3F541E003C516E /* SmartActivate.c */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.c; path = SmartActivate.c; sourceTree = "<group>"; };
-		2CB36E130D3F541E003C516E /* SmartActivate.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = SmartActivate.h; sourceTree = "<group>"; };
-		2CB36E140D3F541E003C516E /* SmartActivate.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = SmartActivate.m; sourceTree = "<group>"; };
+		2CB36E070D3F540E003C516E /* ColorSwitch.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = ColorSwitch.applescript; sourceTree = "<group>"; };
+		2CB36E080D3F540E003C516E /* CommandBuilder.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = CommandBuilder.applescript; sourceTree = "<group>"; };
+		2CB36E090D3F540E003C516E /* DefaultsManager.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = DefaultsManager.applescript; sourceTree = "<group>"; };
+		2CB36E0A0D3F540E003C516E /* MessageUtility.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = MessageUtility.applescript; sourceTree = "<group>"; };
+		2CB36E0B0D3F540E003C516E /* SheetManager.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = SheetManager.applescript; sourceTree = "<group>"; };
+		2CB36E0C0D3F540E003C516E /* TerminalCommander.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = TerminalCommander.applescript; sourceTree = "<group>"; };
+		2CB36E0E0D3F540E003C516E /* UtilityHandlers.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = UtilityHandlers.applescript; sourceTree = "<group>"; };
+		2CB36E120D3F541E003C516E /* SmartActivate.c */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.c; path = SmartActivate.c; sourceTree = "<group>"; };
+		2CB36E130D3F541E003C516E /* SmartActivate.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = SmartActivate.h; sourceTree = "<group>"; };
+		2CB36E140D3F541E003C516E /* SmartActivate.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = SmartActivate.m; sourceTree = "<group>"; };
 		2CB36E6F0D3F8C4A003C516E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CB36E830D3F8C7E003C516E /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CB36E870D3F8DB4003C516E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2CD126110D4034B9004BF0C5 /* PDFController.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = PDFController.applescript; sourceTree = "<group>"; };
-		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../Frameworks/DonationReminder.framework; sourceTree = SOURCE_ROOT; };
+		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF3015C4E8B03C91932 /* MergePDF.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MergePDF.applescript; sourceTree = "<group>"; wrapsLines = 1; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -121,9 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				DA206CF3015C4E8B03C91932 /* MergePDF.applescript */,
-				2CD126110D4034B9004BF0C5 /* PDFController.applescript */,
 				2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */,
-				2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */,
 			);
@@ -140,7 +143,6 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */,
 				2C77B9640CFD576A00C4E9D3 /* Quartz.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
@@ -159,9 +161,11 @@
 		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2C26B1A80F71D3C1002129BD /* will remove */,
+				2C26AF190F713193002129BD /* Active Files */,
 				2C473ECF0A5E65D400096E8A /* History.txt */,
+				2C3F62B30F6E6DD400C42308 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
-				2CB36E060D3F540E003C516E /* ASStudioScriptLib */,
 				2CB36E110D3F541E003C516E /* SmartActivateLib */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -175,8 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				2C4740A60A5E71B000096E8A /* AppController.h */,
-				2C4740A70A5E71B000096E8A /* AppController.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -188,10 +190,10 @@
 				2C4740B20A5E773500096E8A /* FactorySetting.plist */,
 				2C31A20509874594003BE6E4 /* InfoPlist.strings */,
 				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
-				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
 				2C7BDAB6071183220032351D /* ColumnDirection.png */,
 				2C7BDAB7071183220032351D /* RowDirection.png */,
 				2CB1697A0711703000A527B5 /* MergePDF.icns */,
+				2C3F668F0F700C9900C42308 /* ProgressWindow.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
 			);
@@ -205,6 +207,37 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C26AF190F713193002129BD /* Active Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
+				2C3F62B90F6E6E6600C42308 /* PDFMerger.m */,
+				2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */,
+				2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */,
+			);
+			name = "Active Files";
+			sourceTree = "<group>";
+		};
+		2C26B1A80F71D3C1002129BD /* will remove */ = {
+			isa = PBXGroup;
+			children = (
+				2CB36E060D3F540E003C516E /* ASStudioScriptLib */,
+				2CD126110D4034B9004BF0C5 /* PDFController.applescript */,
+			);
+			name = "will remove";
+			sourceTree = "<group>";
+		};
+		2C3F62B30F6E6DD400C42308 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2C4740A60A5E71B000096E8A /* AppController.h */,
+				2C4740A70A5E71B000096E8A /* AppController.m */,
+				2C3F62B80F6E6E6600C42308 /* PDFMerger.h */,
+				2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		2CB36E060D3F540E003C516E /* ASStudioScriptLib */ = {
@@ -239,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4740A80A5E71B000096E8A /* AppController.h in Headers */,
+				2C3F62BA0F6E6E6600C42308 /* PDFMerger.h in Headers */,
+				2C3F658E0F6FBCFC00C42308 /* ProgressWindowController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +307,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 2CAA8C6C0933698B009EC6A1 /* Build configuration list for PBXProject "MergePDF" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				2C5981EB098712B2003D230C /* MergePDF */,
 			);
@@ -294,6 +331,7 @@
 				2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */,
 				2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */,
 				2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */,
+				2C3F66910F700C9900C42308 /* ProgressWindow.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +346,8 @@
 				2C4740A90A5E71B000096E8A /* AppController.m in Sources */,
 				2CB36E1D0D3F5442003C516E /* SmartActivate.c in Sources */,
 				2CB36E200D3F5448003C516E /* SmartActivate.m in Sources */,
+				2C3F62BB0F6E6E6600C42308 /* PDFMerger.m in Sources */,
+				2C3F658F0F6FBCFC00C42308 /* ProgressWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +370,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		2C3F668F0F700C9900C42308 /* ProgressWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C3F66900F700C9900C42308 /* English */,
+			);
+			name = ProgressWindow.nib;
+			sourceTree = "<group>";
+		};
 		2CD9CDE00711A295001CBF53 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -349,7 +397,7 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -384,7 +432,7 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MergePDF.plist";
@@ -435,7 +483,7 @@
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Debug;
 		};
@@ -444,7 +492,7 @@
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Release;
 		};
@@ -452,7 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Default;
 		};
