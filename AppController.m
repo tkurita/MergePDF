@@ -49,26 +49,6 @@ static id sharedObj;
 	[wcontroller showWindow:self];
 }
 
-/*
-- (BOOL)alertShowHelp:(NSAlert *)alert {
-	[NSApp showHelp:self];
-	return YES;
-}
-
-
-- (void)noPDFAlert:(NSString *)aPath
-{
-	NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"notFoundPDFs",nil)
-						defaultButton:@"OK"
-						alternateButton:nil
-						otherButton:nil
-						informativeTextWithFormat:
-						[NSString stringWithFormat:NSLocalizedString(@"Location :",nil), aPath]];
-	[alert setShowsHelp:YES];
-	[alert setDelegate:self];
-	[alert runModal];
-}
-*/
 - (IBAction)makeDonation:(id)sender
 {
 	[DonationReminder goToDonation];
