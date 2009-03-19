@@ -164,8 +164,13 @@
 
 - (void)appendErrorMessage:(NSNotification *)notification
 {
-	NSString *msg = [[[notification userInfo] objectForKey:@"message"] stringByAppendingString:@"\n"];
-	[errorTextView insertText:msg];
+	NSString *msg = [[[[notification userInfo] objectForKey:@"error"] localizedDescription] stringByAppendingString:@"\n"];
+	NSLog(msg);
+	NSTextStorage *textStorage;
+	textStorage = [errorTextView textStorage];
+	[textStorage beginEditing];
+	[textStorage appendAttributedString:[[[NSAttributedString alloc] initWithString:msg] autorelease]];
+	[textStorage endEditing];
 }
 
 - (void)windowWillClose:(NSNotification *)aNotification

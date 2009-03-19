@@ -9,7 +9,7 @@
 + (PDFDocument *)pdfDocumentWithPath:(NSString *)path;
 + (PDFDocument *)pdfDocumentWithImageFile:(NSString *)path;
 - (PDFOutline *)appendBookmark:(NSString *)label atPageIndex:(NSUInteger)index;
-- (void)mergeFile:(NSString *)path;
+- (BOOL)mergeFile:(NSString *)path error:(NSError **)error;
 @end
 
 @interface PDFMerger : NSObject {

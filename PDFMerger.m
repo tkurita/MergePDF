@@ -140,15 +140,18 @@ bail:
 	return newoutline;
 }
 
-- (void)mergeFile:(NSString *)path
+- (BOOL)mergeFile:(NSString *)path error:(NSError **)error
 {
 #if useLog
 	NSLog(@"start mergeFile for %@", path);
 #endif
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithPath:path];
 	if (!pdf_doc) {
-		NSLog(@"Fail to get PDF for %@", path);
-		return;
+		//NSLog(@"Fail to get PDF for %@", path);
+		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+							  [NSString stringWithFormat:@"Fail to get PDF for %@.",path], NSLocalizedDescriptionKey, nil];
+		*error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
+		return NO;
 	}
 	NSInteger npages = [pdf_doc pageCount];
 #if useLog
@@ -173,6 +176,7 @@ bail:
 		[self appendBookmark:[[path lastPathComponent] stringByDeletingPathExtension]
 										   atPageIndex:destpage_index];
 	}
+	return YES;
 }
 
 @end
@@ -214,6 +218,13 @@ bail:
 	[noticenter postNotificationName:@"UpdateProgressMessage" object:self userInfo:dict];
 }
 
+- (void)postErrorNotification:(NSError *)error
+{
+	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
+	[noticenter postNotificationName:@"AppendErrorMessage" object:self userInfo:
+		[NSDictionary dictionaryWithObject:error forKey:@"error"]];
+}
+
 - (BOOL)checkCanceled
 {
 	if (!canceled) {
@@ -229,12 +240,21 @@ bail:
 - (void)start:(id)sender
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	NSError *error;
 	if ([self checkCanceled]) goto bail;
 	double incstep = 85.0/[targetFiles count];
 	NSEnumerator *enumerator = [targetFiles objectEnumerator];
 	NSString *path = [enumerator nextObject];
 	[self postProgressNotificationWithFile:path increment:incstep];
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithPath:path];
+	if (!pdf_doc) {
+		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+						  [NSString stringWithFormat:@"Fail to get PDF for %@.",path], NSLocalizedDescriptionKey, nil];
+		error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
+		[self postErrorNotification:error];
+		return;
+	}
+	
 	PDFOutline *outline = [[pdf_doc outlineRoot] retain];
 	[pdf_doc setOutlineRoot:[[[PDFOutline alloc] init] autorelease]];
 	NSString *label = [[path lastPathComponent] stringByDeletingPathExtension];
@@ -251,7 +271,9 @@ bail:
 	while (path = [enumerator nextObject]) {
 		if ([self checkCanceled]) goto bail;
 		[self postProgressNotificationWithFile:path increment:incstep];
-		[pdf_doc mergeFile:path];
+		if (![pdf_doc mergeFile:path error:&error] ) {
+			[self postErrorNotification:error];
+		}
 	}
 	if ([self checkCanceled]) goto bail;
 	[self postProgressNotificationWithMessage:NSLocalizedString(@"Saving a new PDF file", @"") increment:5];
