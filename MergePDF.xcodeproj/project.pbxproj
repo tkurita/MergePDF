@@ -123,6 +123,7 @@
 		080E96DDFE201D6D7F000001 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */,
 				DA206CF3015C4E8B03C91932 /* MergePDF.applescript */,
 				2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */,
 			);
@@ -215,7 +216,6 @@
 				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
 				2C3F62B90F6E6E6600C42308 /* PDFMerger.m */,
 				2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */,
-				2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */,
 			);
 			name = "Active Files";
 			sourceTree = "<group>";

@@ -4,9 +4,12 @@
 
 #import <Quartz/Quartz.h>
 
+#define useLog 0
+
 #define DEFAULT_DPI 72
 
 static id sharedObj;
+static BOOL isFirstOpen = YES;
 
 @implementation AppController
 
@@ -49,6 +52,18 @@ static id sharedObj;
 	[wcontroller showWindow:self];
 }
 
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
+{
+#if useLog
+	NSLog([NSString stringWithFormat:@"start openFiles for :%@",[filenames description]]);
+#endif	
+	for (NSString *filename in filenames) {
+		[self processFolder:filename];
+	}
+		
+	isFirstOpen = NO;
+}
+
 - (IBAction)makeDonation:(id)sender
 {
 	[DonationReminder goToDonation];
@@ -57,6 +72,17 @@ static id sharedObj;
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
 	[DonationReminder remindDonation];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+#if useLog
+	NSLog(@"start applicationDidFinishLaunching");
+#endif
+	if (isFirstOpen) {
+		[self processFolder:@"Insertion Location"];
+		isFirstOpen = NO;
+	}
 }
 
 - (void)awakeFromNib

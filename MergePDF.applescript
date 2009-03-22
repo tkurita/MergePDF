@@ -2,7 +2,10 @@ property _appController : missing value
 
 on launched
 	--log "launched"
-	process_location("Insertion Location")
+	--do shell script "syslog -l 5 -s 'start launched'"
+	if ((count windows) < 1) then
+		process_location("Insertion Location")
+	end if
 end launched
 
 on open a_list
@@ -17,8 +20,6 @@ on open a_list
 	end repeat
 	return true
 end open
-
-
 
 on will finish launching theObject
 	--log "will finish launching"
