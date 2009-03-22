@@ -40,6 +40,7 @@ BOOL is_image_file(NSString *path)
 
 + (PDFDocument *)pdfDocumentWithImageFile:(NSString *)path // it looks PDFPage's initWithImage cause same result.
 {
+	PDFDocument *doc = nil;
 	size_t img_count;
 	NSURL *url = [NSURL fileURLWithPath:path];
 	CGImageSourceRef image_source =  CGImageSourceCreateWithURL((CFURLRef)url, NULL);
@@ -87,7 +88,9 @@ BOOL is_image_file(NSString *path)
 		
 	}
 	CGContextRelease(out_context);
-	PDFDocument *doc = [[PDFDocument alloc] initWithData:(NSData *)data];
+	if (CFDataGetLength(data)) {
+		doc = [[PDFDocument alloc] initWithData:(NSData *)data];
+	}
 bail:
 	CFRelease(image_source);
 	CGDataConsumerRelease(data_consumer);

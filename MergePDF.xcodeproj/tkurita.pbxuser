@@ -14,11 +14,11 @@
 			2C6245B40D49AE22002F2745 /* MergePDF.applescript:28 */,
 			2C5B25C70D49B01C0097A0F9 /* MergePDF.applescript:28 */,
 			2C48EC590F30123D00540CFD /* MergePDF.applescript:28 */,
-			2C3F64150F6E831F00C42308 /* PDFMerger.m:148 */,
-			2C3F65190F6F53D800C42308 /* PDFMerger.m:186 */,
-			2C3F65340F6F580800C42308 /* PDFMerger.m:112 */,
-			2C3F65560F6F912A00C42308 /* PDFMerger.m:44 */,
-			2C3F655B0F6F91BC00C42308 /* PDFMerger.m:91 */,
+			2C3F64150F6E831F00C42308 /* PDFMerger.m:151 */,
+			2C3F65190F6F53D800C42308 /* PDFMerger.m:189 */,
+			2C3F65340F6F580800C42308 /* PDFMerger.m:115 */,
+			2C3F65560F6F912A00C42308 /* PDFMerger.m:45 */,
+			2C3F655B0F6F91BC00C42308 /* PDFMerger.m:94 */,
 			2C3F663C0F6FE0DC00C42308 /* ProgressWindowController.m:113 */,
 			2C26AF680F7146E4002129BD /* ProgressWindowController.m:35 */,
 			2C26B0FC0F71C61A002129BD /* ProgressWindowController.m:24 */,
@@ -328,6 +328,16 @@
 			2CD405430F75CBB800B96300 /* PBXTextBookmark */ = 2CD405430F75CBB800B96300 /* PBXTextBookmark */;
 			2CD405440F75CBB800B96300 /* PBXTextBookmark */ = 2CD405440F75CBB800B96300 /* PBXTextBookmark */;
 			2CD405450F75CBB800B96300 /* PBXTextBookmark */ = 2CD405450F75CBB800B96300 /* PBXTextBookmark */;
+			2CD405690F75D48500B96300 /* PBXTextBookmark */ = 2CD405690F75D48500B96300 /* PBXTextBookmark */;
+			2CD4056A0F75D48500B96300 /* PBXTextBookmark */ = 2CD4056A0F75D48500B96300 /* PBXTextBookmark */;
+			2CD405770F75D49C00B96300 /* PBXTextBookmark */ = 2CD405770F75D49C00B96300 /* PBXTextBookmark */;
+			2CD405780F75D49C00B96300 /* PBXTextBookmark */ = 2CD405780F75D49C00B96300 /* PBXTextBookmark */;
+			2CD405790F75D49C00B96300 /* PlistBookmark */ = 2CD405790F75D49C00B96300 /* PlistBookmark */;
+			2CD4057A0F75D49C00B96300 /* PlistBookmark */ = 2CD4057A0F75D49C00B96300 /* PlistBookmark */;
+			2CD4057B0F75D49C00B96300 /* PBXTextBookmark */ = 2CD4057B0F75D49C00B96300 /* PBXTextBookmark */;
+			2CD4057C0F75D49C00B96300 /* PlistBookmark */ = 2CD4057C0F75D49C00B96300 /* PlistBookmark */;
+			2CD4057D0F75D49C00B96300 /* PlistBookmark */ = 2CD4057D0F75D49C00B96300 /* PlistBookmark */;
+			2CD4057E0F75D49C00B96300 /* PBXTextBookmark */ = 2CD4057E0F75D49C00B96300 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 2C58634E071160DA00BCE699 /* Source Control */;
 		userBookmarkGroup = 2C82DA120CFC1A1C00BC6AF7 /* PBXBookmarkGroup */;
@@ -356,7 +366,7 @@
 		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
 		name = "PDFMerger.m: 222";
 		rLen = 0;
-		rLoc = 7606;
+		rLoc = 7652;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 8010;
@@ -620,7 +630,7 @@
 		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
 		name = "PDFMerger.m: 246";
 		rLen = 0;
-		rLoc = 8156;
+		rLoc = 8202;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 7962;
@@ -643,9 +653,9 @@
 	};
 	2C3F62B90F6E6E6600C42308 /* PDFMerger.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {792, 4144}}";
-			sepNavSelRange = "{7606, 0}";
-			sepNavVisRange = "{8010, 608}";
+			sepNavIntBoundsRect = "{{0, 0}, {792, 4088}}";
+			sepNavSelRange = "{3327, 0}";
+			sepNavVisRange = "{3031, 355}";
 			sepNavWindowFrame = "{{15, 163}, {758, 710}}";
 		};
 	};
@@ -693,7 +703,7 @@
 		path = /System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h;
 		sourceTree = "<absolute>";
 	};
-	2C3F64150F6E831F00C42308 /* PDFMerger.m:148 */ = {
+	2C3F64150F6E831F00C42308 /* PDFMerger.m:151 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -705,12 +715,12 @@
 		functionName = "-mergeFile:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 148;
+		lineNumber = 151;
 		location = MergePDF;
 		modificationTime = 259130295.02743;
 		state = 2;
 	};
-	2C3F65190F6F53D800C42308 /* PDFMerger.m:186 */ = {
+	2C3F65190F6F53D800C42308 /* PDFMerger.m:189 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -722,12 +732,12 @@
 		functionName = "-postProgressNotificationWithFile:increment:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 186;
+		lineNumber = 189;
 		location = MergePDF;
 		modificationTime = 259130295.0275889;
 		state = 2;
 	};
-	2C3F65340F6F580800C42308 /* PDFMerger.m:112 */ = {
+	2C3F65340F6F580800C42308 /* PDFMerger.m:115 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -739,12 +749,12 @@
 		functionName = "+pdfDocumentWithPath:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 112;
+		lineNumber = 115;
 		location = MergePDF;
 		modificationTime = 259130295.027654;
 		state = 2;
 	};
-	2C3F65560F6F912A00C42308 /* PDFMerger.m:44 */ = {
+	2C3F65560F6F912A00C42308 /* PDFMerger.m:45 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -756,12 +766,12 @@
 		functionName = "+pdfDocumentWithImageFile:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 44;
+		lineNumber = 45;
 		location = MergePDF;
 		modificationTime = 259130295.027717;
 		state = 1;
 	};
-	2C3F655B0F6F91BC00C42308 /* PDFMerger.m:91 */ = {
+	2C3F655B0F6F91BC00C42308 /* PDFMerger.m:94 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -773,7 +783,7 @@
 		functionName = "+pdfDocumentWithImageFile:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 91;
+		lineNumber = 94;
 		location = MergePDF;
 		modificationTime = 259130295.027789;
 		state = 1;
@@ -973,9 +983,9 @@
 	};
 	2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {792, 2752}}";
+			sepNavIntBoundsRect = "{{0, 0}, {792, 2749}}";
 			sepNavSelRange = "{6235, 0}";
-			sepNavVisRange = "{688, 490}";
+			sepNavVisRange = "{688, 423}";
 			sepNavVisRect = "{{0, 281}, {761, 612}}";
 			sepNavWindowFrame = "{{232, 179}, {949, 699}}";
 		};
@@ -1255,7 +1265,7 @@
 		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
 		name = "PDFMerger.m: 222";
 		rLen = 0;
-		rLoc = 7606;
+		rLoc = 7652;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 8010;
@@ -1275,7 +1285,7 @@
 		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
 		name = "PDFMerger.m: 222";
 		rLen = 0;
-		rLoc = 7606;
+		rLoc = 7652;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 8010;
@@ -1295,7 +1305,7 @@
 		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
 		name = "PDFMerger.m: 222";
 		rLen = 0;
-		rLoc = 7606;
+		rLoc = 7652;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 8010;
@@ -1309,6 +1319,110 @@
 		rType = 0;
 		vrLen = 217;
 		vrLoc = 0;
+	};
+	2CD405690F75D48500B96300 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: ‘doc’ may be used uninitialized in this function";
+		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
+		rLen = 1;
+		rLoc = 91;
+		rType = 1;
+	};
+	2CD4056A0F75D48500B96300 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
+		name = "PDFMerger.m: 90";
+		rLen = 0;
+		rLoc = 3173;
+		rType = 0;
+		vrLen = 476;
+		vrLoc = 2996;
+	};
+	2CD405770F75D49C00B96300 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
+		name = "ProgressWindowController.applescript: 182";
+		rLen = 0;
+		rLoc = 6235;
+		rType = 0;
+		vrLen = 423;
+		vrLoc = 688;
+	};
+	2CD405780F75D49C00B96300 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 23;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 217;
+		vrLoc = 0;
+	};
+	2CD405790F75D49C00B96300 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			SUFeedURL,
+		);
+		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD4057A0F75D49C00B96300 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/FactorySetting.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD4057B0F75D49C00B96300 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 23;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 217;
+		vrLoc = 0;
+	};
+	2CD4057C0F75D49C00B96300 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			SUFeedURL,
+		);
+		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD4057D0F75D49C00B96300 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/FactorySetting.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD4057E0F75D49C00B96300 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
+		name = "PDFMerger.m: 96";
+		rLen = 0;
+		rLoc = 3327;
+		rType = 0;
+		vrLen = 355;
+		vrLoc = 3031;
 	};
 	DA206CF3015C4E8B03C91932 /* MergePDF.applescript */ = {
 		uiCtxt = {
