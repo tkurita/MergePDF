@@ -4,7 +4,7 @@
 
 #import <Quartz/Quartz.h>
 
-#define useLog 1
+#define useLog 0
 
 #define DEFAULT_DPI 72
 
@@ -52,20 +52,6 @@ static BOOL isFirstOpen = YES;
 	[wcontroller showWindow:self];
 	isFirstOpen = NO;
 }
-
-/*
-- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
-{
-#if useLog
-	NSLog([NSString stringWithFormat:@"start openFiles for :%@",[filenames description]]);
-#endif	
-	for (NSString *filename in filenames) {
-		[self processFolder:filename];
-	}
-		
-	isFirstOpen = NO;
-}
- */
 
 - (IBAction)makeDonation:(id)sender
 {
