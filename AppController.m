@@ -4,7 +4,7 @@
 
 #import <Quartz/Quartz.h>
 
-#define useLog 0
+#define useLog 1
 
 #define DEFAULT_DPI 72
 
@@ -50,8 +50,10 @@ static BOOL isFirstOpen = YES;
 	ProgressWindowController *wcontroller = [[ProgressWindowController alloc] initWithWindowNibName:@"ProgressWindow"];
 	[wcontroller setSourceLocation:path];
 	[wcontroller showWindow:self];
+	isFirstOpen = NO;
 }
 
+/*
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
 #if useLog
@@ -63,6 +65,7 @@ static BOOL isFirstOpen = YES;
 		
 	isFirstOpen = NO;
 }
+ */
 
 - (IBAction)makeDonation:(id)sender
 {
