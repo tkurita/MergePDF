@@ -1,4 +1,5 @@
 #import "ProgressWindowController.h"
+
 #define useLog 0
 
 @implementation ProgressWindowController
@@ -165,7 +166,9 @@
 - (void)appendErrorMessage:(NSNotification *)notification
 {
 	NSString *msg = [[[[notification userInfo] objectForKey:@"error"] localizedDescription] stringByAppendingString:@"\n"];
+#if useLog
 	NSLog(msg);
+#endif
 	NSTextStorage *textStorage;
 	textStorage = [errorTextView textStorage];
 	[textStorage beginEditing];

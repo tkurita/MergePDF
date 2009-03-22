@@ -70,7 +70,7 @@ static BOOL isFirstOpen = YES;
 #endif
 	if (isFirstOpen) {
 		[self processFolder:@"Insertion Location"];
-		isFirstOpen = NO;
+		//[self processFolder:@"/Users/tkurita/Dev/Projects/MergePDF/testpdfs/"];
 	}
 }
 
