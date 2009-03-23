@@ -17,7 +17,7 @@
 			<string>Finish</string>
 		</dict>
 	</array>
-	<key>donationURL</key>
+	<key>DonationURL</key>
 	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
