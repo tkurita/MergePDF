@@ -140,7 +140,7 @@
 	if ([message isEqualToString:@"Success"]) {
 		message = NSLocalizedString(message, @"");
 		[progressIndicator setDoubleValue:[progressIndicator maxValue]];
-		[statusField setStringValue:message];
+		[statusField setStringValue:NSLocalizedString(message, @"")];
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Success to merge files into a PDF file.", @"")
 										 defaultButton:NSLocalizedString(@"Open", @"")
 									   alternateButton:NSLocalizedString(@"Cancel", @"")
@@ -158,7 +158,7 @@
 		return;
 	} else {
 		[progressIndicator incrementBy:[[info objectForKey:@"levelIncrement"] doubleValue]];
-		[statusField setStringValue:message];
+		[statusField setStringValue:NSLocalizedString(message, @"")];
 	}
 	
 }
