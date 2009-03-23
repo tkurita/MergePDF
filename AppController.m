@@ -1,6 +1,7 @@
 #import "AppController.h"
 #import "DonationReminder/DonationReminder.h"
 #import "ProgressWindowController.h"
+#import "SmartActivate.h"
 
 #import <Quartz/Quartz.h>
 
@@ -44,6 +45,19 @@ static BOOL isFirstOpen = YES;
 	return NO;
 }
 
+- (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
+{
+	BOOL is_dir;
+	if (! [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&is_dir]) 
+		return NO;
+	if (!is_dir) return NO;
+	
+	if (! [[NSWorkspace sharedWorkspace] openFile:filename]) return NO;
+	[SmartActivate activateSelf];
+	[self processFolder:filename];
+	return YES;
+}
+
 - (void)processFolder:(NSString *)path
 {
 	if ([self activateWindowForFolder:path]) return;
@@ -51,6 +65,7 @@ static BOOL isFirstOpen = YES;
 	[wcontroller setSourceLocation:path];
 	[wcontroller showWindow:self];
 	isFirstOpen = NO;
+	[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:path]];
 }
 
 - (IBAction)makeDonation:(id)sender
