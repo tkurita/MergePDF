@@ -57,5 +57,7 @@
 	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
 	<string>http://homepage.mac.com/tkurita/scriptfactory/appcast/MergePDF.xml</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© Tetsuro KURITA, 1998-2009</string>
 </dict>
 </plist>
