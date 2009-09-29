@@ -164,8 +164,8 @@
 		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				2C26AF190F713193002129BD /* Active Files */,
 				2C473ECF0A5E65D400096E8A /* History.txt */,
+				2C26AF190F713193002129BD /* Active Files */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
 				2CB36E110D3F541E003C516E /* SmartActivateLib */,

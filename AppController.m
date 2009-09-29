@@ -5,7 +5,7 @@
 
 #import <Quartz/Quartz.h>
 
-#define useLog 0
+#define useLog 1
 
 #define DEFAULT_DPI 72
 
@@ -36,10 +36,12 @@ static BOOL isFirstOpen = YES;
 - (BOOL)activateWindowForFolder:(NSString *)path
 {
 	for (NSWindow *window in [NSApp windows]) {
-		NSString *location = [window.windowController sourceLocation];
-		if ([location isEqualToString:path]) {
-			[window.windowController showWindow:self];
-			return YES;
+		if ([window.windowController isKindOfClass:[ProgressWindowController class]]) {
+			NSString *location = [window.windowController sourceLocation];
+			if ([location isEqualToString:path]) {
+				[window.windowController showWindow:self];
+				return YES;
+			}
 		}
 	}
 	return NO;

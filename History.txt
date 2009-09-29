@@ -1,5 +1,11 @@
 MergePDF
 
+
+= 2009-09-29
+DonationWindow が開かれる時、次のようなエラーが発生している。 -- 済み
+2009-09-29 09:03:54.021 MergePDF[24292:10b] *** -[DonationReminder sourceLocation]: unrecognized selector sent to instance 0x237ec0
+このため、DonationWindow が開くと、MergePDF Window が開かれない。
+
 = 2009-03-19
 機能は全部 implement した
 あとは、Sparkle のみ
