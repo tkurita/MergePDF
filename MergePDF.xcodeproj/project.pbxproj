@@ -29,6 +29,7 @@
 		2C3F658E0F6FBCFC00C42308 /* ProgressWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */; };
 		2C3F658F0F6FBCFC00C42308 /* ProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */; };
 		2C3F66910F700C9900C42308 /* ProgressWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F668F0F700C9900C42308 /* ProgressWindow.nib */; };
+		2C4545961071820A00AD3397 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2C4545951071820A00AD3397 /* Credits.rtf */; };
 		2C4740A80A5E71B000096E8A /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4740A60A5E71B000096E8A /* AppController.h */; };
 		2C4740A90A5E71B000096E8A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740A70A5E71B000096E8A /* AppController.m */; };
 		2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */; };
@@ -51,7 +52,6 @@
 		2CD405350F75CB9100B96300 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD405340F75CB9100B96300 /* Sparkle.framework */; };
 		2CD405380F75CBA300B96300 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CD405340F75CB9100B96300 /* Sparkle.framework */; };
 		2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CD4055D0F75D11100B96300 /* dsa_pub.pem */; };
-		2CD407A90F785CF000B96300 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CD407A80F785CEE00B96300 /* Credits.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +80,7 @@
 		2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWindowController.h; sourceTree = "<group>"; };
 		2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressWindowController.m; sourceTree = "<group>"; };
 		2C3F66900F700C9900C42308 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
+		2C4545951071820A00AD3397 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		2C473ECF0A5E65D400096E8A /* History.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = History.txt; sourceTree = "<group>"; };
 		2C4740A60A5E71B000096E8A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C4740A70A5E71B000096E8A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2CD405340F75CB9100B96300 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle.framework; sourceTree = SOURCE_ROOT; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		2CD407820F785A6300B96300 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF3015C4E8B03C91932 /* MergePDF.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MergePDF.applescript; sourceTree = "<group>"; wrapsLines = 1; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -188,7 +188,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2CD407A80F785CEE00B96300 /* Credits.html */,
+				2C4545951071820A00AD3397 /* Credits.rtf */,
 				2CD4055D0F75D11100B96300 /* dsa_pub.pem */,
 				2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */,
 				2C4740B20A5E773500096E8A /* FactorySetting.plist */,
@@ -313,7 +313,7 @@
 				2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */,
 				2C3F66910F700C9900C42308 /* ProgressWindow.nib in Resources */,
 				2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */,
-				2CD407A90F785CF000B96300 /* Credits.html in Resources */,
+				2C4545961071820A00AD3397 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,14 +358,6 @@
 				2C3F66900F700C9900C42308 /* English */,
 			);
 			name = ProgressWindow.nib;
-			sourceTree = "<group>";
-		};
-		2CD407A80F785CEE00B96300 /* Credits.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CD407820F785A6300B96300 /* English */,
-			);
-			name = Credits.html;
 			sourceTree = "<group>";
 		};
 		2CD9CDE00711A295001CBF53 /* Localizable.strings */ = {

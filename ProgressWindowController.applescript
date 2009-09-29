@@ -83,6 +83,7 @@ on will_position_sort(a_sorter)
 				end if
 				return true
 			end if
+			return false
 		else
 			return false
 		end if
