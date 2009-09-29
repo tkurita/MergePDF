@@ -1,7 +1,7 @@
 // !$*UTF8*$!
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 2C598201098712B3003D230C /* MergePDF */;
 		activeTarget = 2C5981EB098712B2003D230C /* MergePDF */;
 		addToTargets = (
@@ -365,6 +365,9 @@
 			2C4545F010718D3400AD3397 /* PBXTextBookmark */ = 2C4545F010718D3400AD3397 /* PBXTextBookmark */;
 			2C4545F110718D3400AD3397 /* PBXTextBookmark */ = 2C4545F110718D3400AD3397 /* PBXTextBookmark */;
 			2C4545F210718D3400AD3397 /* PBXTextBookmark */ = 2C4545F210718D3400AD3397 /* PBXTextBookmark */;
+			2C4545F310718D5900AD3397 /* PBXTextBookmark */ = 2C4545F310718D5900AD3397 /* PBXTextBookmark */;
+			2C4545FB10718D9600AD3397 /* PBXTextBookmark */ = 2C4545FB10718D9600AD3397 /* PBXTextBookmark */;
+			2C4545FC10718D9600AD3397 /* PBXTextBookmark */ = 2C4545FC10718D9600AD3397 /* PBXTextBookmark */;
 			2CB36E270D3F54EF003C516E = 2CB36E270D3F54EF003C516E /* PBXTextBookmark */;
 			2CB36E290D3F54EF003C516E = 2CB36E290D3F54EF003C516E /* PBXTextBookmark */;
 			2CB36E2D0D3F54EF003C516E = 2CB36E2D0D3F54EF003C516E /* PBXTextBookmark */;
@@ -1390,6 +1393,36 @@
 		vrLen = 345;
 		vrLoc = 415;
 	};
+	2C4545F310718D5900AD3397 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
+		name = "AppController.m: 29";
+		rLen = 0;
+		rLoc = 489;
+		rType = 0;
+		vrLen = 594;
+		vrLoc = 380;
+	};
+	2C4545FB10718D9600AD3397 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C473ECF0A5E65D400096E8A /* History.txt */;
+		name = "History.txt: 5";
+		rLen = 0;
+		rLoc = 68;
+		rType = 0;
+		vrLen = 578;
+		vrLoc = 0;
+	};
+	2C4545FC10718D9600AD3397 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
+		name = "AppController.m: 8";
+		rLen = 0;
+		rLoc = 179;
+		rType = 0;
+		vrLen = 258;
+		vrLoc = 0;
+	};
 	2C473ECF0A5E65D400096E8A /* History.txt */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {798, 3456}}";
@@ -1410,9 +1443,9 @@
 	};
 	2C4740A70A5E71B000096E8A /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {792, 1708}}";
-			sepNavSelRange = "{874, 0}";
-			sepNavVisRange = "{415, 345}";
+			sepNavIntBoundsRect = "{{0, 0}, {792, 1694}}";
+			sepNavSelRange = "{179, 0}";
+			sepNavVisRange = "{0, 258}";
 			sepNavVisRect = "{{0, 749}, {882, 352}}";
 			sepNavWindowFrame = "{{198, 232}, {814, 585}}";
 		};
