@@ -1,11 +1,6 @@
-property loader : proxy_with({autocollect:true}) of application (get "MergePDFLib")
-
-on load(a_name)
-	return loader's load(a_name)
-end load
-
-property FileSorter : load("FileSorter")
-property XFile : load("XFile")
+property FileSorter : module
+property XFile : module
+property loader : boot (module loader of application (get "MergePDFLib")) for me
 
 property SorterDelegate : missing value
 
@@ -150,7 +145,7 @@ on opened theObject
 	set string value of my _source_location_field to source_location
 	call method "setSourceLocation:" of my _window_controller with parameter source_location
 	set dest_location to target_folder's parent_folder()
-	set my _destination to target_folder's change_path_extension(".pdf")
+	set my _destination to target_folder's change_path_extension("pdf")
 	set string value of my _new_file_field to _destination's posix_path()
 end opened
 

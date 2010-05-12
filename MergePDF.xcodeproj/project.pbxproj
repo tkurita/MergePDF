@@ -375,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -394,6 +395,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MergePDF;
 				SECTORDER_FLAGS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -412,6 +414,7 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -429,6 +432,7 @@
 				OTHER_OSAFLAGS = "-x";
 				PRODUCT_NAME = MergePDF;
 				SECTORDER_FLAGS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -442,6 +446,7 @@
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -457,6 +462,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MergePDF;
 				SECTORDER_FLAGS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
