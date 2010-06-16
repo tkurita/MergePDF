@@ -7,7 +7,7 @@
 	<key>IsLocalized</key>
 	<true/>
 	<key>ManualFolder</key>
-	<string>/Users/tkurita/Factories/Websites/scriptfactory/web-content/Softwares/misc/MergePDF/manual</string>
+	<string>/Users/tkurita/Factories/Websites/scriptfactory/web-content/software/misc/MergePDF/manual</string>
 	<key>ManualPage</key>
 	<string>index.html</string>
 </dict>
