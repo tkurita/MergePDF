@@ -165,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				2C473ECF0A5E65D400096E8A /* History.txt */,
-				2C26AF190F713193002129BD /* Active Files */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
 				2CB36E110D3F541E003C516E /* SmartActivateLib */,
@@ -188,6 +187,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
 				2C4545951071820A00AD3397 /* Credits.rtf */,
 				2CD4055D0F75D11100B96300 /* dsa_pub.pem */,
 				2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */,
@@ -213,22 +213,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2C26AF190F713193002129BD /* Active Files */ = {
-			isa = PBXGroup;
-			children = (
-				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
-				2C3F62B90F6E6E6600C42308 /* PDFMerger.m */,
-				2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */,
-			);
-			name = "Active Files";
-			sourceTree = "<group>";
-		};
 		2C3F62B30F6E6DD400C42308 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2C3F62B80F6E6E6600C42308 /* PDFMerger.h */,
+				2C3F62B90F6E6E6600C42308 /* PDFMerger.m */,
+				2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */,
 				2C4740A60A5E71B000096E8A /* AppController.h */,
 				2C4740A70A5E71B000096E8A /* AppController.m */,
-				2C3F62B80F6E6E6600C42308 /* PDFMerger.h */,
 				2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */,
 			);
 			name = Classes;
@@ -375,7 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -414,7 +406,7 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -446,7 +438,7 @@
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",

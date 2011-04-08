@@ -18,29 +18,55 @@
 
 @implementation PDFDocument (MergePDF)
 
-BOOL is_image_file(NSString *path)
+typedef enum {
+	NotImage,
+	GenericImage, 
+	PDFImage,
+	JpegImage } ImageKind;
+	
+ImageKind image_type(NSString *path)
 {
 	CFStringRef a_uti = nil;
 	OSStatus status = noErr;
 	FSRef fileref;
+	ImageKind result = NotImage;
     status = FSPathMakeRef((UInt8 *)[path fileSystemRepresentation], &fileref, NULL); 
 	if (status != noErr) {
 		NSLog(@"Fail to FSPathMakeRef for %@", path);
-		return NO;
+		goto bail;
 	}
 	status = LSCopyItemAttribute(&fileref, kLSRolesAll, kLSItemContentType, (CFTypeRef *)&a_uti );
 	if (status != noErr) {
 		NSLog(@"Fail to LSCopyItemAttribute for %@", path);
-		return NO;
+		goto bail;
 	}
-	if (UTTypeConformsTo(a_uti, CFSTR("com.adobe.pdf"))) return NO;
-	if ([(NSString *)a_uti isEqualToString:@"com.adobe.illustrator.ai-image"]) return NO;
-	return UTTypeConformsTo(a_uti, CFSTR("public.image"));
+	if (UTTypeConformsTo(a_uti, CFSTR("com.adobe.pdf"))){
+		result = PDFImage;
+		goto bail;
+	}
+	if ([(NSString *)a_uti isEqualToString:@"com.adobe.illustrator.ai-image"]) {
+		result = PDFImage;
+		goto bail;
+	}
+		
+	if (UTTypeConformsTo(a_uti, CFSTR("public.jpeg"))) {
+		result = JpegImage;
+		goto bail;
+	}
+
+	if (UTTypeConformsTo(a_uti, CFSTR("public.image"))) result = GenericImage;
+bail:
+	return result;
 }
 
-+ (PDFDocument *)pdfDocumentWithImageFile:(NSString *)path // it looks PDFPage's initWithImage cause same result.
+
+// it looks PDFPage's initWithImage cause same result in almost
+// But CGPDFContext help to keep file size of jpeg in Mac OS X 10.5
+// In Mac OS X 10.6, initWithImage does not increse data size of jpeg.
++ (PDFDocument *)pdfDocumentWithImageFile:(NSString *)path 
 {
 	PDFDocument *doc = nil;
+	CGContextRef out_context = NULL;
 	size_t img_count;
 	NSURL *url = [NSURL fileURLWithPath:path];
 	CGImageSourceRef image_source =  CGImageSourceCreateWithURL((CFURLRef)url, NULL);
@@ -50,18 +76,18 @@ BOOL is_image_file(NSString *path)
 		img_count = 0;
 		goto bail;
 	}
-	CGContextRef out_context = CGPDFContextCreate(data_consumer, NULL, NULL);
+	out_context = CGPDFContextCreate(data_consumer, NULL, NULL);
 	img_count = CGImageSourceGetCount(image_source);
 	for (size_t i = 0; i<img_count; i++) {
 		CFDictionaryRef image_info = CGImageSourceCopyPropertiesAtIndex(image_source, i, NULL );
 		CGImageRef image = CGImageSourceCreateImageAtIndex( image_source, i, NULL );
-		/*
+#if useLog
 		 CFShow(image_info);
 		 CFShow(CFDictionaryGetValue(image_info, kCGImagePropertyDPIHeight));
 		 CFShow(CFDictionaryGetValue(image_info, kCGImagePropertyDPIWidth));
 		 CFShow(CFDictionaryGetValue(image_info, kCGImagePropertyPixelHeight));
 		 CFShow(CFDictionaryGetValue(image_info, kCGImagePropertyPixelWidth));
-		 */
+#endif
 		float dpi_w;
 		CFNumberGetValue(CFDictionaryGetValue(image_info, kCGImagePropertyDPIWidth), 
 						 kCFNumberFloat32Type, &dpi_w);
@@ -81,9 +107,11 @@ BOOL is_image_file(NSString *path)
 		
 		
 		CGContextBeginPage(out_context, &img_rect);
+		//CGPDFContextBeginPage(out_context, &img_rect);
 		// Draw the image into the rect.
 		CGContextDrawImage(out_context, img_rect, image);
-		CGContextEndPage(out_context);
+		//CGContextEndPage(out_context);
+		CGPDFContextEndPage(out_context);
 		CFRelease(image);
 		
 	}
@@ -92,6 +120,7 @@ BOOL is_image_file(NSString *path)
 		doc = [[PDFDocument alloc] initWithData:(NSData *)data];
 	}
 bail:
+	CGPDFContextClose(out_context);
 	CFRelease(image_source);
 	CGDataConsumerRelease(data_consumer);
 	CFRelease(data);	
@@ -101,26 +130,32 @@ bail:
 + (PDFDocument *)pdfDocumentWithPath:(NSString *)path
 {
 	PDFDocument *result = NULL;
-	if (is_image_file(path)) {
-		result = [[PDFDocument alloc] init];
-		NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
-		NSEnumerator *enumerator = [[image representations] objectEnumerator];
-		NSImageRep *imagerep;
-		NSUInteger ind = 0;
-		PDFPage *page = NULL;
-		NSImage *single_image = NULL;
-		while (imagerep = [enumerator nextObject]) { //support for multipage tiff
-			single_image = [NSImage new];
-			[single_image addRepresentation:imagerep];
-			page = [[PDFPage alloc] initWithImage:[single_image autorelease]];
-			[result insertPage:[page autorelease] atIndex:ind];
-			ind++;
-		}
-		[image autorelease];
-		//result = [PDFDocument pdfDocumentWithImageFile:path];
-	} else {
-		result = [[[PDFDocument alloc] initWithURL: [NSURL fileURLWithPath: path]] autorelease];
+	switch (image_type(path)) {
+		case JpegImage:
+			result = [PDFDocument pdfDocumentWithImageFile:path];
+			break;
+		case GenericImage:
+			result = [[PDFDocument alloc] init];
+			NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
+			NSEnumerator *enumerator = [[image representations] objectEnumerator];
+			NSImageRep *imagerep;
+			NSUInteger ind = 0;
+			PDFPage *page = NULL;
+			NSImage *single_image = NULL;
+			while (imagerep = [enumerator nextObject]) { //support for multipage tiff
+				single_image = [NSImage new];
+				[single_image addRepresentation:imagerep];
+				page = [[PDFPage alloc] initWithImage:[single_image autorelease]];
+				[result insertPage:[page autorelease] atIndex:ind];
+				ind++;
+			}
+			[image autorelease];
+			break;
+		default:
+			result = [[[PDFDocument alloc] initWithURL: [NSURL fileURLWithPath: path]] autorelease];
+			break;
 	}
+
 	return result;
 }
 

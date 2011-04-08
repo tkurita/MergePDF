@@ -1,5 +1,24 @@
 MergePDF
 
+= 2011-04-08
+
+PDFKit の　initwithImage ではなく、Core Graphics の PDFContext を使ったら、jpeg のファイルサイズは変わらない。
+jpeg だけ、PDFContext で、ほかは initwithImage を使う。
+
+Mac OS X 10.6 ではどうなるのか。
+Mac OS X 10.6.6 では、initwithImage で jpeg ファイルはでっかくならない。Mac OS X 10.5 から、改良されいるのか？
+
+以下解決
+* jpeg をmerge するとサイズが爆発的に増える。
+* 保存時に quartz filter を用いると、再圧縮できるらしい。
+* merge するまえに、写真は jpeg ではなく あらかじめ PDF にしておけば大きくならない。
+
+
+jpeg から PDF への変換の比較
+
+* プレビュー : ファイルサイズ変化なし、DPI 変化
+* Automator : ファイルサイズ大、DPI 変化なし
+* sips : ファイルサイズ変化なし、DPI 変化
 
 = 2009-09-29
 DonationWindow が開かれる時、次のようなエラーが発生している。 -- 済み
@@ -28,8 +47,6 @@ To Do
 * icon view の merge 方向のデフォルトボタンをラベルの位置で決定する。
 * Sparkle の組み込み
 
-必要なOSAX
-いまのところなし。(2006.07.07)
 
 To Do
 * progress window
