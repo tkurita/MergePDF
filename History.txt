@@ -16,9 +16,11 @@ Mac OS X 10.6.6 では、initwithImage で jpeg ファイルはでっかくな�
 
 jpeg から PDF への変換の比較
 
-* プレビュー : ファイルサイズ変化なし、DPI 変化
+* プレビュー : ファイルサイズ変化なし、DPI 変化 <-- Mac OS X 10.6 なら DPIは保存される。
 * Automator : ファイルサイズ大、DPI 変化なし
 * sips : ファイルサイズ変化なし、DPI 変化
+
+Mac OS X 10.6 なら ファイルサイズ変化なし、DPI 保存。
 
 = 2009-09-29
 DonationWindow が開かれる時、次のようなエラーが発生している。 -- 済み

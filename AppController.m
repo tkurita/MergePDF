@@ -10,7 +10,6 @@
 #define DEFAULT_DPI 72
 
 static id sharedObj;
-static BOOL isFirstOpen = YES;
 
 @implementation AppController
 
@@ -66,7 +65,6 @@ static BOOL isFirstOpen = YES;
 	ProgressWindowController *wcontroller = [[ProgressWindowController alloc] initWithWindowNibName:@"ProgressWindow"];
 	[wcontroller setSourceLocation:path];
 	[wcontroller showWindow:self];
-	isFirstOpen = NO;
 	[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:path]];
 }
 
@@ -80,12 +78,37 @@ static BOOL isFirstOpen = YES;
 	[DonationReminder remindDonation];
 }
 
+OSType getLauchedMethod()
+{
+	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
+	AEEventID evid = [ev eventID];
+	NSAppleEventDescriptor *propData;
+	OSType result = kAEOpenApplication;
+	switch (evid) {
+		case kAEOpenDocuments:
+			result = evid;
+			break;
+		case kAEOpenApplication:
+			propData = [ev paramDescriptorForKeyword: keyAEPropData];
+			DescType type = propData ? [propData descriptorType] : typeNull;
+			if(type == typeType) {
+				result = [propData typeCodeValue];
+				// keyAELaunchedAsLogInItem or keyAELaunchedAsServiceItem
+			} else {
+				result = evid;
+			}
+			break;
+	}
+	return result;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 #if useLog
 	NSLog(@"start applicationDidFinishLaunching");
 #endif
-	if (isFirstOpen) {
+	OSType evid = getLauchedMethod();
+	if (kAEOpenApplication == evid) {
 		[self processFolder:@"Insertion Location"];
 		//[self processFolder:@"/Users/tkurita/Dev/Projects/MergePDF/testpdfs/"];
 	}
