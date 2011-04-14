@@ -46,17 +46,27 @@ static id sharedObj;
 	return NO;
 }
 
-- (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-	BOOL is_dir;
-	if (! [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&is_dir]) 
-		return NO;
-	if (!is_dir) return NO;
-	
-	if (! [[NSWorkspace sharedWorkspace] openFile:filename]) return NO;
+#if useLog
+	NSLog([NSString stringWithFormat:@"start application:openFiles: for :%@",[filenames description]]);
+#endif	
+	NSEnumerator *enumerator = [filenames objectEnumerator];
+	NSString *filename = nil;
+	while (filename = [enumerator nextObject]) {
+		BOOL is_dir;
+		if (! [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&is_dir]) 
+			continue;
+		if (!is_dir) continue;
+		
+		if (! [[NSWorkspace sharedWorkspace] openFile:filename]) continue;
+		[self processFolder:filename];
+	}
 	[SmartActivate activateSelf];
-	[self processFolder:filename];
-	return YES;
+
+#if useLog
+	NSLog(@"end application:openFiles:");
+#endif	
 }
 
 - (void)processFolder:(NSString *)path
@@ -80,7 +90,16 @@ static id sharedObj;
 
 OSType getLauchedMethod()
 {
+#if useLog
+	NSLog(@"start getLauchedMethod");
+#endif	
 	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
+#if useLog
+	NSLog([ev description]);
+#endif
+	if (!ev) {
+		return typeNull;
+	}
 	AEEventID evid = [ev eventID];
 	NSAppleEventDescriptor *propData;
 	OSType result = kAEOpenApplication;
@@ -107,7 +126,10 @@ OSType getLauchedMethod()
 #if useLog
 	NSLog(@"start applicationDidFinishLaunching");
 #endif
+	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
+	NSLog([NSString stringWithFormat:@"event :%@\n", [ev description]]);
 	OSType evid = getLauchedMethod();
+	NSLog(@"after getLauchedMethod");
 	if (kAEOpenApplication == evid) {
 		[self processFolder:@"Insertion Location"];
 		//[self processFolder:@"/Users/tkurita/Dev/Projects/MergePDF/testpdfs/"];
