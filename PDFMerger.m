@@ -17,12 +17,6 @@
 @end
 
 @implementation PDFDocument (MergePDF)
-
-typedef enum {
-	NotImage,
-	GenericImage, 
-	PDFImage,
-	JpegImage } ImageKind;
 	
 ImageKind image_type(NSString *path)
 {
@@ -135,7 +129,7 @@ bail:
 			result = [PDFDocument pdfDocumentWithImageFile:path];
 			break;
 		case GenericImage:
-			result = [[PDFDocument alloc] init];
+			result = [[[PDFDocument alloc] init] autorelease];
 			NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
 			NSEnumerator *enumerator = [[image representations] objectEnumerator];
 			NSImageRep *imagerep;

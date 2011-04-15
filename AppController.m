@@ -2,6 +2,7 @@
 #import "DonationReminder/DonationReminder.h"
 #import "ProgressWindowController.h"
 #import "SmartActivate.h"
+#import "PDFMerger.h"
 
 #import <Quartz/Quartz.h>
 
@@ -46,6 +47,76 @@ static id sharedObj;
 	return NO;
 }
 
+- (void)processFolder:(NSString *)path
+{
+	if ([self activateWindowForFolder:path]) return;
+	ProgressWindowController *wcontroller = [[ProgressWindowController alloc] initWithWindowNibName:@"ProgressWindow"];
+	[wcontroller setSourceLocation:path];
+	[wcontroller showWindow:self];
+	[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:path]];
+}
+
+- (IBAction)makeDonation:(id)sender
+{
+	[DonationReminder goToDonation];
+}
+
+#pragma mark Services
+void saveImageAsPDF(NSString *path)
+{
+	PDFDocument *pdfdoc = NULL;
+	switch (image_type(path)) {
+		case JpegImage:
+			pdfdoc = [PDFDocument pdfDocumentWithImageFile:path];
+			break;
+		case GenericImage:
+			pdfdoc = [[PDFDocument new] autorelease];
+			NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
+			NSEnumerator *enumerator = [[image representations] objectEnumerator];
+			NSImageRep *imagerep;
+			NSUInteger ind = 0;
+			PDFPage *page = NULL;
+			NSImage *single_image = NULL;
+			while (imagerep = [enumerator nextObject]) { //support for multipage tiff
+				single_image = [NSImage new];
+				[single_image addRepresentation:imagerep];
+				page = [[PDFPage alloc] initWithImage:[single_image autorelease]];
+				[pdfdoc insertPage:[page autorelease] atIndex:ind];
+				ind++;
+			}
+			pdfdoc = [image autorelease];
+			break;
+		default:
+			break;
+	}
+	
+	if (!pdfdoc) return;
+	
+	NSString *pdfpath = [[path stringByDeletingPathExtension] stringByAppendingPathExtension:@"pdf"];
+	[pdfdoc writeToFile:pdfpath];
+}
+
+- (void)imageToPDF:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
+{
+	NSArray *types = [pboard types];
+	NSArray *file_names;
+	if (![types containsObject:NSFilenamesPboardType] 
+		|| !(file_names = [pboard propertyListForType:NSFilenamesPboardType])) {
+        *error = NSLocalizedString(@"Error: Pasteboard doesn't contain file paths.",
+								   @"Pasteboard couldn't give string.");
+        return;
+    }
+	
+	NSEnumerator *enumerator = [file_names objectEnumerator];
+	NSString *a_path;
+	while (a_path = [enumerator nextObject]) {
+		saveImageAsPDF(a_path);
+	}
+}
+
+#pragma mark Delegate methods
+
+
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
 #if useLog
@@ -63,24 +134,10 @@ static id sharedObj;
 		[self processFolder:filename];
 	}
 	[SmartActivate activateSelf];
-
+	
 #if useLog
 	NSLog(@"end application:openFiles:");
 #endif	
-}
-
-- (void)processFolder:(NSString *)path
-{
-	if ([self activateWindowForFolder:path]) return;
-	ProgressWindowController *wcontroller = [[ProgressWindowController alloc] initWithWindowNibName:@"ProgressWindow"];
-	[wcontroller setSourceLocation:path];
-	[wcontroller showWindow:self];
-	[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:path]];
-}
-
-- (IBAction)makeDonation:(id)sender
-{
-	[DonationReminder goToDonation];
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -143,10 +200,12 @@ OSType getLauchedMethod()
 	
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults registerDefaults:defautlsDict];
+	[NSApp setServicesProvider:self];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
 	return YES;
 }
+
 @end

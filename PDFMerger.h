@@ -1,6 +1,14 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
+typedef enum {
+	NotImage,
+	GenericImage, 
+	PDFImage,
+JpegImage } ImageKind;
+
+ImageKind image_type(NSString *path);
+
 @interface PDFDestination (MergePDF)
 + (PDFDestination *)destinationWithPage:(PDFPage *)page;
 @end

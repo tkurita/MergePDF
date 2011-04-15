@@ -59,6 +59,24 @@
 	<string>dsa_pub.pem</string>
 	<key>DonationURL</key>
 	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>MergePDF/Convert images to PDFs</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>imageToPDF</string>
+			<key>NSPortName</key>
+			<string>MergePDFService</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+		</dict>
+	</array>
 	<key>SUFeedURL</key>
 	<string>http://homepage.mac.com/tkurita/scriptfactory/appcast/MergePDF.xml</string>
 </dict>

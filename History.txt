@@ -1,6 +1,15 @@
 MergePDF
 
-= 2011-04-08
+== To Do
+イメージを PDF に変換するサービスメニューを追加する。
+
+== 2011-04-14
+なぜが、フォルダのドロップで起動すると、curerentEvent が null になる。
+QuickFileType ではそんなことはない勝った。
+DocumentBasedApplication じゃないから？
+AppleScript Studio だから？
+
+== 2011-04-08
 
 PDFKit の　initwithImage ではなく、Core Graphics の PDFContext を使ったら、jpeg のファイルサイズは変わらない。
 jpeg だけ、PDFContext で、ほかは initwithImage を使う。
@@ -22,16 +31,16 @@ jpeg から PDF への変換の比較
 
 Mac OS X 10.6 なら ファイルサイズ変化なし、DPI 保存。
 
-= 2009-09-29
+== 2009-09-29
 DonationWindow が開かれる時、次のようなエラーが発生している。 -- 済み
 2009-09-29 09:03:54.021 MergePDF[24292:10b] *** -[DonationReminder sourceLocation]: unrecognized selector sent to instance 0x237ec0
 このため、DonationWindow が開くと、MergePDF Window が開かれない。
 
-= 2009-03-19
+== 2009-03-19
 機能は全部 implement した
 あとは、Sparkle のみ
 
-= 2009-03-17
+== 2009-03-17
 * pdf の作成はできるようになった。
 To Do
 * NSWindowController をつかって、複数の window を開けるようにする。
@@ -50,10 +59,10 @@ To Do
 * Sparkle の組み込み
 
 
-To Do
+== To Do
 * progress window
 
-= 2008-01-22
+== 2008-01-22
 以下済み
 * image を UTI で判別できないか？info for の type identifier が使えるかも
 		* file type が "PDF "
@@ -67,7 +76,7 @@ To Do
 		* com.apple.pict
 * image を PDF に変換して取り込めるようにする。
 
-= 2008.01.18
+== 2008.01.18
 以下済み
 * DonationReminder.framework を使う
 * SmartActivate を活用する。
@@ -75,14 +84,14 @@ To Do
 * SortEngine を Quick Sort にする。
 * Localize は English を default にする。
 
-= 2006.07.26
+== 2006.07.26
 mergePDFto を導入したおかげで、動作しなくなっていたようだ。
 
-= 2006.07.10
+== 2006.07.10
 modal でない save panel は sheet にしないと表示できない。
 Cocoa でも AppleScript Studio　でもかんけいない。
 
-= 2006.07.07
+== 2006.07.07
 ASKNibObjectInfo から script name を取得 -- これは難しそう
 ASKScriptCache から script name で ASKScript を取得
 ASKScript は OSAScript のサブクラス
@@ -94,10 +103,10 @@ script name はきめうちでよかろう。
 * PDF を Acrobat で開いている場合、info for コマンドでファイルの busy status に反映されない。
 lsof コマンドを使うようにする。
 
-=2004.12.22
+== 2004.12.22
 png などの画像ファイルも扱えるようにしたかったが、insertPages で画像を扱えないようだ。
 
-=2004.09.03
+== 2004.09.03
 1.6.3b1
 日本語のbookmarkが化けることがある不具合を修正。
 TEC OSAX ではなく、iconv を使うようにした。
@@ -106,7 +115,7 @@ PDFファイルを任意の場所に保存できない不具合を修正
 必要なOSAX
 TextInfo OSAX
 
-2003.09.09
+== 2003.09.09
 1.6.1b1
 最新のFileSorter
 TEC OSAXを不必要にした。
@@ -117,7 +126,7 @@ ShellUtilsがいらなくなった
 TextInfo OSAX
 TEC OSAX
 
-2003.05.31
+== 2003.05.31
 1.6b1
 bookmarkの挿入はできるようになったが、挿入するpage数をカウントするところで、どうしても固まる。
 昨日はそんなことはなかった。どうして？
@@ -133,18 +142,18 @@ Marge PDFにBookmarkをつけるかどうかの設定を加える。
 TextInfo OSAX
 Akua Sweets
 
-2003.01.08
+== 2003.01.08
 1.5.4b1
 ファイルダイアログでファイル名を入力しても、それが反映されない不具合を修正
 
-2002.09.13
+== 2002.09.13
 1.5.3b2
 pathにdouble quoteとsingle quoteが両方入っているときは、諦めることにした。
 overwrite先のfileが使用中の時のerror処理を追加
 生成するPDFと同じ名前のPDFをmergeしようとするとうまくいかないbugを修正
 OSAX Checkerの機能を内蔵
 
-2002.09.12
+== 2002.09.12
 overwrite先のfileが使用中の時のerror処理
 1.5.3b1
 pdfpath, bookmarknameに特殊文字がある時errorが起きる問題を修正
@@ -152,24 +161,24 @@ bookmarkの追加の時、bookmark nameにsingle quoateが含まれている時�
  bookmarkの時は何とかなった。
 でも、file pathにsigleとdoubleの両方が含まれている時はどうすればいいんじゃ！！
 
-2002.09.11
+== 2002.09.11
 image fileから作ったPDF fileをMergeできないbugを発見
 これは正しく無かった。pathに../が入っていたのがいけなかった
 
-2002.08.22
+== 2002.08.22
 生成するPDFと同じ名前のPDFをmergeしようとするとうまくいかないbugを発見。
 
-2002.06.22
+== 2002.06.22
 1.5.2
 なぜかAkuaCopyのtoでstringを受け付けなくなった。
 1.8にversion upしたから？
 そのへんを修正
 
-2002.03.12
+== 2002.03.12
 1.5.1
 UniqueNamerが組み込まれておらず、長すぎるファイル名に生成されるとerrorが起きる不具合を修正
 
-2002.02.25
+== 2002.02.25
 1.5.1b2
 Acrobat 5.0.5でerrorがでないようにした。
 Acrobatを5.0.5にversion upした。幾つか動かないところがあり。
@@ -179,31 +188,31 @@ document classの参照を得ようとすると、AVPageView classが入って�
 count bookmarksとやると、一つもbookmarkが内documentの場合でも1が返ってくる。なぜか一つ多い数字が返ってくるみたいだ
 Acrobatのdocument ?の?の部分の数字は、普通前面のdocumentから開いた順番で番号がふられるが、Acrobatの場合はdocumentの開いた順番のようだ
 
-2001.09.08
+== 2001.09.08
 1.5b1
 Acrobat 5に対応した。そのかわり、Acrobat 4では動かない。
 Text Info OSAXがいらなくなった。
 
-2001.01.03
+== 2001.01.03
 AkuaCopyでcooyしたあと、finder locationを{-1,-1}に設定しているが、Acrobatでsaveしたときに、Acrobatが{0,0}に書き換えてしまっているようだ。
 でも、list表示のfolderにcopyしたとき、finder locationは{-1,-1}になるので、{-1,-1}という設定は、悪くないのかな？
 
-2000.11.14
+== 2000.11.14
 1.4.3b1
 Finderで、新しく作ったPDF fileをrevealする時に起きるerrorを修正
 
-2000.07.01
+== 2000.07.01
 1.4.2b3
 Jonﾕs CommandsによるcopyはAkuaCopyにいれかえた。
 TEC OSAXははずせない。
 
-2000.06.29
+== 2000.06.29
 1.4.2b2
 独立
 FileSorterを最新のものにした。
 bookmarkの名前を作るところで、text item delimiter'sに頼らないようにした。
 
-2000.06.06
+== 2000.06.06
 Merge PDF 1.4.2b1
 Path Analyzerを導入してdesktop上のitemも扱えるようにした。
 1999年 9月 28日
