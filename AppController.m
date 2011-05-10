@@ -90,9 +90,34 @@ void saveImageAsPDF(NSString *path)
 			break;
 	}
 	
-	if (!pdfdoc) return;
+	if (!pdfdoc) {
+		[NSApp activateIgnoringOtherApps:YES];
+		[[NSAlert alertWithMessageText:NSLocalizedString(@"Not image files", @"message of alert")
+				defaultButton:@"OK" alternateButton:nil otherButton:nil 
+				informativeTextWithFormat:NSLocalizedString(@"Passed files to MergePDF are not images files.",
+				@"invomative text of alert")]
+		 runModal];
+		
+		return;
+	}
 	
 	NSString *pdfpath = [[path stringByDeletingPathExtension] stringByAppendingPathExtension:@"pdf"];
+	NSFileManager *fm = [NSFileManager defaultManager];
+	if ([fm fileExistsAtPath:pdfpath]) {
+		NSSavePanel *sp = [NSSavePanel savePanel];
+		[sp setMessage:NSLocalizedString(@"Choose location to save a PDF file.",
+						@"message of save panel")];
+		[sp setTitle:NSLocalizedString(@"Convert an image to a PDF.",
+						@"title of save panel")];
+		[NSApp activateIgnoringOtherApps:YES];
+		if (NSFileHandlingPanelCancelButton == 
+				[sp runModalForDirectory:[pdfpath stringByDeletingLastPathComponent] 
+									file:[pdfpath lastPathComponent]]) {
+			return;
+		}
+		pdfpath = [sp filename];
+	}
+	
 	[pdfdoc writeToFile:pdfpath];
 }
 
@@ -186,7 +211,6 @@ OSType getLauchedMethod()
 	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
 	NSLog([NSString stringWithFormat:@"event :%@\n", [ev description]]);
 	OSType evid = getLauchedMethod();
-	NSLog(@"after getLauchedMethod");
 	if (kAEOpenApplication == evid) {
 		[self processFolder:@"Insertion Location"];
 		//[self processFolder:@"/Users/tkurita/Dev/Projects/MergePDF/testpdfs/"];
