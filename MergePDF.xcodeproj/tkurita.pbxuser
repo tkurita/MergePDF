@@ -116,7 +116,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 326741213;
+			PBXPerProjectTemplateStateSaveDate = 326855735;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -293,30 +293,19 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 326741213;
+			PBXWorkspaceStateSaveDate = 326855735;
 		};
 		perUserProjectItems = {
 			2C2417B31366C4B40084492D = 2C2417B31366C4B40084492D /* PBXTextBookmark */;
-			2C2417B41366C4B40084492D = 2C2417B41366C4B40084492D /* PBXTextBookmark */;
-			2C2417B51366C4B40084492D = 2C2417B51366C4B40084492D /* PBXTextBookmark */;
-			2C2417B61366C4B40084492D = 2C2417B61366C4B40084492D /* PBXTextBookmark */;
-			2C2417B71366C4B40084492D = 2C2417B71366C4B40084492D /* PlistBookmark */;
-			2C2417C213684E600084492D = 2C2417C213684E600084492D /* PBXTextBookmark */;
-			2C2417C313684E600084492D = 2C2417C313684E600084492D /* PlistBookmark */;
-			2C2417C71379A7380084492D = 2C2417C71379A7380084492D /* PBXTextBookmark */;
-			2C2417C81379A7390084492D = 2C2417C81379A7390084492D /* PlistBookmark */;
-			2C2417CA1379A77D0084492D = 2C2417CA1379A77D0084492D /* PBXTextBookmark */;
-			2C2417CB1379A77D0084492D = 2C2417CB1379A77D0084492D /* PlistBookmark */;
-			2C2417CC1379A79F0084492D = 2C2417CC1379A79F0084492D /* PBXBookmark */;
 			2C2417CE1379AAB50084492D = 2C2417CE1379AAB50084492D /* PBXTextBookmark */;
 			2C2417CF1379AAB50084492D = 2C2417CF1379AAB50084492D /* PBXTextBookmark */;
-			2C2417D01379AAB50084492D = 2C2417D01379AAB50084492D /* PBXTextBookmark */;
-			2C2417D11379AAB50084492D = 2C2417D11379AAB50084492D /* PBXTextBookmark */;
-			2C2417D21379AAB50084492D = 2C2417D21379AAB50084492D /* PBXTextBookmark */;
-			2C2417D31379AAB50084492D = 2C2417D31379AAB50084492D /* PlistBookmark */;
-			2C2417D61379AAB50084492D = 2C2417D61379AAB50084492D /* PBXTextBookmark */;
-			2C2417F11379ACF20084492D /* PlistBookmark */ = 2C2417F11379ACF20084492D /* PlistBookmark */;
-			2C2417F21379ACF20084492D /* PlistBookmark */ = 2C2417F21379ACF20084492D /* PlistBookmark */;
+			2C2417FB1379B2CA0084492D = 2C2417FB1379B2CA0084492D /* PBXTextBookmark */;
+			2C2417FC1379B2CA0084492D = 2C2417FC1379B2CA0084492D /* PBXTextBookmark */;
+			2C2417FD1379B2CA0084492D = 2C2417FD1379B2CA0084492D /* PlistBookmark */;
+			2C2417FE1379B2CA0084492D = 2C2417FE1379B2CA0084492D /* PlistBookmark */;
+			2C2417FF1379B2CA0084492D = 2C2417FF1379B2CA0084492D /* PBXTextBookmark */;
+			2C2418001379B2CA0084492D = 2C2418001379B2CA0084492D /* PBXTextBookmark */;
+			2C2418011379B2CA0084492D = 2C2418011379B2CA0084492D /* PlistBookmark */;
 			2C26AF550F7136C0002129BD = 2C26AF550F7136C0002129BD /* PBXTextBookmark */;
 			2C26AF580F7136C0002129BD = 2C26AF580F7136C0002129BD /* PBXTextBookmark */;
 			2C26AF590F7136C0002129BD = 2C26AF590F7136C0002129BD /* PBXTextBookmark */;
@@ -333,7 +322,6 @@
 			2C26B3790F7200E3002129BD = 2C26B3790F7200E3002129BD /* PBXTextBookmark */;
 			2C39BD12134ED65D00FCFFBC = 2C39BD12134ED65D00FCFFBC /* PBXTextBookmark */;
 			2C39BD14134ED65D00FCFFBC = 2C39BD14134ED65D00FCFFBC /* PBXTextBookmark */;
-			2C39BD15134ED65D00FCFFBC = 2C39BD15134ED65D00FCFFBC /* PBXTextBookmark */;
 			2C39BD16134ED65D00FCFFBC = 2C39BD16134ED65D00FCFFBC /* PBXTextBookmark */;
 			2C39BD42134F10CE00FCFFBC = 2C39BD42134F10CE00FCFFBC /* PBXTextBookmark */;
 			2C39BD45134F10CE00FCFFBC = 2C39BD45134F10CE00FCFFBC /* PBXTextBookmark */;
@@ -356,31 +344,11 @@
 			2CAC67A51357BFFA001D05E8 = 2CAC67A51357BFFA001D05E8 /* PBXTextBookmark */;
 			2CAC67A61357BFFA001D05E8 = 2CAC67A61357BFFA001D05E8 /* PlistBookmark */;
 			2CAC67A71357BFFA001D05E8 = 2CAC67A71357BFFA001D05E8 /* PBXTextBookmark */;
-			2CAC67A91357BFFA001D05E8 = 2CAC67A91357BFFA001D05E8 /* PBXTextBookmark */;
 			2CAC67AA1357BFFA001D05E8 = 2CAC67AA1357BFFA001D05E8 /* PBXTextBookmark */;
-			2CAC67AB1357BFFA001D05E8 = 2CAC67AB1357BFFA001D05E8 /* PBXTextBookmark */;
-			2CAC67AC1357BFFA001D05E8 = 2CAC67AC1357BFFA001D05E8 /* PlistBookmark */;
-			2CAC67AD1357BFFA001D05E8 = 2CAC67AD1357BFFA001D05E8 /* PBXTextBookmark */;
 			2CAC67C31357C74B001D05E8 = 2CAC67C31357C74B001D05E8 /* PBXTextBookmark */;
-			2CAC67C51357C74B001D05E8 = 2CAC67C51357C74B001D05E8 /* PBXTextBookmark */;
-			2CAC67C61357C74B001D05E8 = 2CAC67C61357C74B001D05E8 /* PBXTextBookmark */;
-			2CAC67C71357C74B001D05E8 = 2CAC67C71357C74B001D05E8 /* PBXTextBookmark */;
-			2CAC67C81357C74B001D05E8 = 2CAC67C81357C74B001D05E8 /* PlistBookmark */;
-			2CAC67C91357C74B001D05E8 = 2CAC67C91357C74B001D05E8 /* PBXTextBookmark */;
-			2CAC67CA1357C74B001D05E8 = 2CAC67CA1357C74B001D05E8 /* PBXTextBookmark */;
-			2CAC67CB1357C74B001D05E8 = 2CAC67CB1357C74B001D05E8 /* PBXTextBookmark */;
-			2CAC67DB1357CC9B001D05E8 = 2CAC67DB1357CC9B001D05E8 /* PBXTextBookmark */;
 			2CAC67DC1357CC9B001D05E8 = 2CAC67DC1357CC9B001D05E8 /* PBXTextBookmark */;
-			2CAC67DD1357CC9B001D05E8 = 2CAC67DD1357CC9B001D05E8 /* PlistBookmark */;
-			2CAC67DE1357CC9B001D05E8 = 2CAC67DE1357CC9B001D05E8 /* PBXTextBookmark */;
-			2CAC67DF1357CC9B001D05E8 = 2CAC67DF1357CC9B001D05E8 /* PBXTextBookmark */;
 			2CAC67EC1357CD7B001D05E8 = 2CAC67EC1357CD7B001D05E8 /* PBXTextBookmark */;
 			2CAC67ED1357CD7B001D05E8 = 2CAC67ED1357CD7B001D05E8 /* PBXTextBookmark */;
-			2CAC67EE1357CD7B001D05E8 = 2CAC67EE1357CD7B001D05E8 /* PBXTextBookmark */;
-			2CAC67EF1357CD7B001D05E8 = 2CAC67EF1357CD7B001D05E8 /* PBXTextBookmark */;
-			2CAC67F01357CD7B001D05E8 = 2CAC67F01357CD7B001D05E8 /* PBXTextBookmark */;
-			2CAC6811136006B1001D05E8 = 2CAC6811136006B1001D05E8 /* PBXTextBookmark */;
-			2CAC6812136006B1001D05E8 = 2CAC6812136006B1001D05E8 /* PlistBookmark */;
 			2CB36E270D3F54EF003C516E = 2CB36E270D3F54EF003C516E /* PBXTextBookmark */;
 			2CB36E290D3F54EF003C516E = 2CB36E290D3F54EF003C516E /* PBXTextBookmark */;
 			2CB36E2D0D3F54EF003C516E = 2CB36E2D0D3F54EF003C516E /* PBXTextBookmark */;
@@ -442,131 +410,6 @@
 		vrLen = 70;
 		vrLoc = 0;
 	};
-	2C2417B41366C4B40084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 113";
-		rLen = 0;
-		rLoc = 3914;
-		rType = 0;
-		vrLen = 1275;
-		vrLoc = 883;
-	};
-	2C2417B51366C4B40084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2CAC67A11356C620001D05E8 /* English */;
-		name = "ServicesMenu.strings: 3";
-		rLen = 0;
-		rLoc = 70;
-		rType = 0;
-		vrLen = 70;
-		vrLoc = 0;
-	};
-	2C2417B61366C4B40084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 108";
-		rLen = 0;
-		rLoc = 3329;
-		rType = 0;
-		vrLen = 1106;
-		vrLoc = 2217;
-	};
-	2C2417B71366C4B40084492D /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMenuItem,
-			default,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	2C2417C213684E600084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 99";
-		rLen = 0;
-		rLoc = 3081;
-		rType = 0;
-		vrLen = 1199;
-		vrLoc = 1939;
-	};
-	2C2417C313684E600084492D /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMenuItem,
-			default,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	2C2417C71379A7380084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 97";
-		rLen = 0;
-		rLoc = 2588;
-		rType = 0;
-		vrLen = 1228;
-		vrLoc = 1804;
-	};
-	2C2417C81379A7390084492D /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMenuItem,
-			default,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	2C2417CA1379A77D0084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 94";
-		rLen = 0;
-		rLoc = 2288;
-		rType = 0;
-		vrLen = 1059;
-		vrLoc = 556;
-	};
-	2C2417CB1379A77D0084492D /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMenuItem,
-			default,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	2C2417CC1379A79F0084492D /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
-		name = "Localizable.strings (English)";
-	};
 	2C2417CE1379AAB50084492D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
@@ -587,83 +430,76 @@
 		vrLen = 1200;
 		vrLoc = 2483;
 	};
-	2C2417D01379AAB50084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 94";
-		rLen = 0;
-		rLoc = 2288;
-		rType = 0;
-		vrLen = 939;
-		vrLoc = 3567;
-	};
-	2C2417D11379AAB50084492D /* PBXTextBookmark */ = {
+	2C2417FB1379B2CA0084492D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
-		name = "Localizable.strings: 12";
-		rLen = 6;
-		rLoc = 378;
+		name = "Localizable.strings: 25";
+		rLen = 0;
+		rLoc = 810;
 		rType = 0;
-		vrLen = 623;
+		vrLen = 810;
 		vrLoc = 0;
 	};
-	2C2417D21379AAB50084492D /* PBXTextBookmark */ = {
+	2C2417FC1379B2CA0084492D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 98";
+		fRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */;
+		name = "PDFMerger.h: 10";
 		rLen = 0;
-		rLoc = 2573;
+		rLoc = 165;
 		rType = 0;
-		vrLen = 1326;
-		vrLoc = 1804;
+		vrLen = 785;
+		vrLoc = 0;
 	};
-	2C2417D31379AAB50084492D /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMenuItem,
-			default,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	2C2417D61379AAB50084492D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
-		name = "Localizable.strings: 23";
-		rLen = 0;
-		rLoc = 808;
-		rType = 0;
-		vrLen = 639;
-		vrLoc = 171;
-	};
-	2C2417F11379ACF20084492D /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMenuItem,
-			default,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 31;
-		rLoc = 0;
-	};
-	2C2417F21379ACF20084492D /* PlistBookmark */ = {
+	2C2417FD1379B2CA0084492D /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
 		fallbackIsa = PBXBookmark;
 		isK = 0;
 		kPath = (
 			DonationURL,
+		);
+		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
+		rLen = 64;
+		rLoc = 0;
+	};
+	2C2417FE1379B2CA0084492D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			DonationURL,
+		);
+		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2C2417FF1379B2CA0084492D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
+		name = "Localizable.strings: 25";
+		rLen = 0;
+		rLoc = 810;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 0;
+	};
+	2C2418001379B2CA0084492D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */;
+		name = "PDFMerger.h: 10";
+		rLen = 0;
+		rLoc = 165;
+		rType = 0;
+		vrLen = 785;
+		vrLoc = 0;
+	};
+	2C2418011379B2CA0084492D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
 		);
 		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
 		rLen = 0;
@@ -889,16 +725,6 @@
 		vrLen = 168;
 		vrLoc = 0;
 	};
-	2C39BD15134ED65D00FCFFBC /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2CB36E6F0D3F8C4A003C516E /* English */;
-		name = "Localizable.strings: 12";
-		rLen = 6;
-		rLoc = 378;
-		rType = 0;
-		vrLen = 623;
-		vrLoc = 0;
-	};
 	2C39BD16134ED65D00FCFFBC /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */;
@@ -941,9 +767,9 @@
 	};
 	2C3F62B80F6E6E6600C42308 /* PDFMerger.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {792, 490}}";
+			sepNavIntBoundsRect = "{{0, 0}, {792, 484}}";
 			sepNavSelRange = "{165, 0}";
-			sepNavVisRange = "{0, 643}";
+			sepNavVisRange = "{0, 785}";
 			sepNavWindowFrame = "{{266, 119}, {758, 710}}";
 		};
 	};
@@ -1488,16 +1314,6 @@
 		vrLen = 1082;
 		vrLoc = 952;
 	};
-	2CAC67A91357BFFA001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C473ECF0A5E65D400096E8A /* History.txt */;
-		name = "History.txt: 5";
-		rLen = 0;
-		rLoc = 132;
-		rType = 0;
-		vrLen = 768;
-		vrLoc = 0;
-	};
 	2CAC67AA1357BFFA001D05E8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2CAC67A11356C620001D05E8 /* English */;
@@ -1507,41 +1323,6 @@
 		rType = 0;
 		vrLen = 70;
 		vrLoc = 0;
-	};
-	2CAC67AB1357BFFA001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2CB36E830D3F8C7E003C516E /* English */;
-		name = "InfoPlist.strings: 2";
-		rLen = 0;
-		rLoc = 40;
-		rType = 0;
-		vrLen = 40;
-		vrLoc = 0;
-	};
-	2CAC67AC1357BFFA001D05E8 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSSendTypes,
-			0,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	2CAC67AD1357BFFA001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C4740A70A5E71B000096E8A /* AppController.m */;
-		name = "AppController.m: 79";
-		rLen = 0;
-		rLoc = 3914;
-		rType = 0;
-		vrLen = 1082;
-		vrLoc = 952;
 	};
 	2CAC67C31357C74B001D05E8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1553,125 +1334,7 @@
 		vrLen = 719;
 		vrLoc = 419;
 	};
-	2CAC67C51357C74B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
-		name = "PDFMerger.m: 176";
-		rLen = 0;
-		rLoc = 5495;
-		rType = 0;
-		vrLen = 950;
-		vrLoc = 5301;
-	};
-	2CAC67C61357C74B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */;
-		name = "PDFMerger.h: 10";
-		rLen = 24;
-		rLoc = 373;
-		rType = 0;
-		vrLen = 669;
-		vrLoc = 0;
-	};
-	2CAC67C71357C74B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
-		name = "PDFMerger.m: 138";
-		rLen = 0;
-		rLoc = 4184;
-		rType = 0;
-		vrLen = 802;
-		vrLoc = 4180;
-	};
-	2CAC67C81357C74B001D05E8 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMessage,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	2CAC67C91357C74B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
-		name = "PDFMerger.m: 20";
-		rLen = 0;
-		rLoc = 464;
-		rType = 0;
-		vrLen = 719;
-		vrLoc = 419;
-	};
-	2CAC67CA1357C74B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */;
-		name = "PDFMerger.h: 10";
-		rLen = 0;
-		rLoc = 166;
-		rType = 0;
-		vrLen = 621;
-		vrLoc = 0;
-	};
-	2CAC67CB1357C74B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
-		name = "PDFMerger.m: 21";
-		rLen = 36;
-		rLoc = 466;
-		rType = 0;
-		vrLen = 719;
-		vrLoc = 419;
-	};
-	2CAC67DB1357CC9B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */;
-		name = "PDFMerger.h: 10";
-		rLen = 0;
-		rLoc = 165;
-		rType = 0;
-		vrLen = 643;
-		vrLoc = 0;
-	};
 	2CAC67DC1357CC9B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2CAC67A11356C620001D05E8 /* English */;
-		name = "ServicesMenu.strings: 2";
-		rLen = 0;
-		rLoc = 69;
-		rType = 0;
-		vrLen = 70;
-		vrLoc = 0;
-	};
-	2CAC67DD1357CC9B001D05E8 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMessage,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 10;
-		rLoc = 0;
-	};
-	2CAC67DE1357CC9B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */;
-		name = "PDFMerger.h: 10";
-		rLen = 0;
-		rLoc = 165;
-		rType = 0;
-		vrLen = 643;
-		vrLoc = 0;
-	};
-	2CAC67DF1357CC9B001D05E8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2CAC67A11356C620001D05E8 /* English */;
 		name = "ServicesMenu.strings: 2";
@@ -1700,61 +1363,6 @@
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 0;
-	};
-	2CAC67EE1357CD7B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2CAC67A11356C620001D05E8 /* English */;
-		name = "ServicesMenu.strings: 2";
-		rLen = 0;
-		rLoc = 69;
-		rType = 0;
-		vrLen = 70;
-		vrLoc = 0;
-	};
-	2CAC67EF1357CD7B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */;
-		name = "PDFMerger.m: 157";
-		rLen = 0;
-		rLoc = 4950;
-		rType = 0;
-		vrLen = 1198;
-		vrLoc = 4353;
-	};
-	2CAC67F01357CD7B001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C473ECF0A5E65D400096E8A /* History.txt */;
-		name = "History.txt: 5";
-		rLen = 0;
-		rLoc = 81;
-		rType = 0;
-		vrLen = 798;
-		vrLoc = 0;
-	};
-	2CAC6811136006B1001D05E8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2CAC67A11356C620001D05E8 /* English */;
-		name = "ServicesMenu.strings: 3";
-		rLen = 0;
-		rLoc = 70;
-		rType = 0;
-		vrLen = 70;
-		vrLoc = 0;
-	};
-	2CAC6812136006B1001D05E8 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			NSServices,
-			0,
-			NSMenuItem,
-			default,
-		);
-		name = "/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/Info-MergePDF.plist";
-		rLen = 0;
-		rLoc = 2147483647;
 	};
 	2CB36E120D3F541E003C516E /* SmartActivate.c */ = {
 		uiCtxt = {
@@ -1832,9 +1440,9 @@
 	};
 	2CB36E6F0D3F8C4A003C516E /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {600, 350}}";
-			sepNavSelRange = "{808, 0}";
-			sepNavVisRange = "{171, 639}";
+			sepNavIntBoundsRect = "{{0, 0}, {792, 484}}";
+			sepNavSelRange = "{810, 0}";
+			sepNavVisRange = "{0, 810}";
 			sepNavVisRect = "{{0, 0}, {689, 382}}";
 			sepNavWindowFrame = "{{461, 410}, {655, 377}}";
 		};
