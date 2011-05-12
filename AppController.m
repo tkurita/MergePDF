@@ -84,7 +84,7 @@ void saveImageAsPDF(NSString *path)
 				[pdfdoc insertPage:[page autorelease] atIndex:ind];
 				ind++;
 			}
-			pdfdoc = [image autorelease];
+			[image autorelease];
 			break;
 		default:
 			break;
@@ -207,9 +207,9 @@ OSType getLauchedMethod()
 {
 #if useLog
 	NSLog(@"start applicationDidFinishLaunching");
-#endif
 	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
 	NSLog([NSString stringWithFormat:@"event :%@\n", [ev description]]);
+#endif	
 	OSType evid = getLauchedMethod();
 	if (kAEOpenApplication == evid) {
 		[self processFolder:@"Insertion Location"];

@@ -238,8 +238,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -293,9 +291,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
-									<integer>18</integer>
-									<integer>17</integer>
+									<integer>7</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -495,12 +492,14 @@
 							<string>132pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ServicesMenu.strings</string>
+								<string>AppController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -508,7 +507,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ServicesMenu.strings</string>
+										<string>AppController.m</string>
+										<key>_historyCapacity</key>
+										<integer>0</integer>
+										<key>bookmark</key>
+										<string>2C241896137B73060084492D</string>
 										<key>history</key>
 										<array>
 											<string>2CB36E290D3F54EF003C516E</string>
@@ -528,10 +531,10 @@
 											<string>2C39BD16134ED65D00FCFFBC</string>
 											<string>2CC0943F1356098F009E648C</string>
 											<string>2CAC67A31357BFFA001D05E8</string>
-											<string>2CAC67A71357BFFA001D05E8</string>
-											<string>2CAC67C31357C74B001D05E8</string>
 											<string>2C2417FB1379B2CA0084492D</string>
-											<string>2C2417FC1379B2CA0084492D</string>
+											<string>2C241874137B71E90084492D</string>
+											<string>2C241893137B73060084492D</string>
+											<string>2C24188C137B73030084492D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -559,6 +562,10 @@
 											<string>2C39BD45134F10CE00FCFFBC</string>
 											<string>2C39BD7C134F30F400FCFFBC</string>
 											<string>2CAC67AA1357BFFA001D05E8</string>
+											<string>2C241876137B71E90084492D</string>
+											<string>2C241877137B71E90084492D</string>
+											<string>2C241894137B73060084492D</string>
+											<string>2C241895137B73060084492D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -762,6 +769,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2C48EC1A0F30058700540CFD</string>
 		<string>/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/MergePDF.xcodeproj</string>
 	</array>
@@ -782,12 +791,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>AppController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -965,13 +976,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>2C241840137B6C360084492D</string>
+				<string>2C241866137B71DE0084492D</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>2C241841137B6C360084492D</string>
-				<string>2C241842137B6C360084492D</string>
-				<string>2C241843137B6C360084492D</string>
-				<string>2C241844137B6C360084492D</string>
-				<string>2C241845137B6C360084492D</string>
+				<string>2C241867137B71DE0084492D</string>
+				<string>2C241868137B71DE0084492D</string>
+				<string>2C241869137B71DE0084492D</string>
+				<string>2C24186A137B71DE0084492D</string>
+				<string>2C24186B137B71DE0084492D</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -998,6 +1009,8 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -1024,8 +1037,6 @@
 							<string>434pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1061,8 +1072,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>2C39BD40134F0F9000FCFFBC</string>
-				<string>2C39BD41134F0F9000FCFFBC</string>
+				<string>2C241872137B71DE0084492D</string>
+				<string>2C241873137B71DE0084492D</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

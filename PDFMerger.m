@@ -50,6 +50,9 @@ ImageKind image_type(NSString *path)
 
 	if (UTTypeConformsTo(a_uti, CFSTR("public.image"))) result = GenericImage;
 bail:
+#if useLog	
+	NSLog(@"image type : %d", result); 
+#endif	
 	return result;
 }
 
