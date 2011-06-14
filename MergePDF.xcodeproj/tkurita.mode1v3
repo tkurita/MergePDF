@@ -238,6 +238,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -291,8 +293,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>2</integer>
+									<integer>28</integer>
+									<integer>17</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -492,14 +494,12 @@
 							<string>132pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AppController.m</string>
+								<string>Info-MergePDF.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -507,11 +507,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AppController.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>2C241896137B73060084492D</string>
+										<string>Info-MergePDF.plist</string>
 										<key>history</key>
 										<array>
 											<string>2CB36E290D3F54EF003C516E</string>
@@ -528,13 +524,12 @@
 											<string>2C7FF3D6134E8CD5008716A7</string>
 											<string>2C39BD12134ED65D00FCFFBC</string>
 											<string>2C39BD14134ED65D00FCFFBC</string>
-											<string>2C39BD16134ED65D00FCFFBC</string>
 											<string>2CC0943F1356098F009E648C</string>
 											<string>2CAC67A31357BFFA001D05E8</string>
 											<string>2C2417FB1379B2CA0084492D</string>
 											<string>2C241874137B71E90084492D</string>
 											<string>2C241893137B73060084492D</string>
-											<string>2C24188C137B73030084492D</string>
+											<string>2C2418A2137B73900084492D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -562,10 +557,6 @@
 											<string>2C39BD45134F10CE00FCFFBC</string>
 											<string>2C39BD7C134F30F400FCFFBC</string>
 											<string>2CAC67AA1357BFFA001D05E8</string>
-											<string>2C241876137B71E90084492D</string>
-											<string>2C241877137B71E90084492D</string>
-											<string>2C241894137B73060084492D</string>
-											<string>2C241895137B73060084492D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -625,9 +616,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2C24185D137B6C4B0084492D</string>
+				<string>2C4316E913A742D30009AA09</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2C24185E137B6C4B0084492D</string>
+				<string>2C4316EA13A742D30009AA09</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
@@ -769,7 +760,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2C48EC1A0F30058700540CFD</string>
 		<string>/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/MergePDF.xcodeproj</string>
@@ -791,14 +781,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AppController.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -856,7 +844,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>2C48EC1A0F30058700540CFD</string>
-				<string>2C24185F137B6C4B0084492D</string>
+				<string>2C4316EB13A742D30009AA09</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -976,13 +964,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>2C241866137B71DE0084492D</string>
+				<string>2C4316EC13A742D30009AA09</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>2C241867137B71DE0084492D</string>
-				<string>2C241868137B71DE0084492D</string>
-				<string>2C241869137B71DE0084492D</string>
-				<string>2C24186A137B71DE0084492D</string>
-				<string>2C24186B137B71DE0084492D</string>
+				<string>2C4316ED13A742D30009AA09</string>
+				<string>2C4316EE13A742D30009AA09</string>
+				<string>2C4316EF13A742D30009AA09</string>
+				<string>2C4316F013A742D30009AA09</string>
+				<string>2C4316F113A742D30009AA09</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1138,7 +1126,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>2CAC67E31357CC9B001D05E8</string>
+				<string>2C4316CD13A742CD0009AA09</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
