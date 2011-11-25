@@ -118,12 +118,12 @@ bail:
 		CFRelease(image);
 		
 	}
+	CGPDFContextClose(out_context);
 	CGContextRelease(out_context);
 	if (CFDataGetLength(data)) {
 		doc = [[PDFDocument alloc] initWithData:(NSData *)data];
 	}
 bail:
-	CGPDFContextClose(out_context);
 	CFRelease(image_source);
 	CGDataConsumerRelease(data_consumer);
 	CFRelease(data);	

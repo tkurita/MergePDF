@@ -238,6 +238,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -291,8 +293,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
-									<integer>2</integer>
+									<integer>28</integer>
+									<integer>17</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -492,14 +494,12 @@
 							<string>132pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDFMerger.m</string>
+								<string>Info-MergePDF.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -507,11 +507,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDFMerger.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>2C1A90E3147F337B00B486C5</string>
+										<string>Info-MergePDF.plist</string>
 										<key>history</key>
 										<array>
 											<string>2CB36E290D3F54EF003C516E</string>
@@ -531,10 +527,8 @@
 											<string>2CC0943F1356098F009E648C</string>
 											<string>2CAC67A31357BFFA001D05E8</string>
 											<string>2C2417FB1379B2CA0084492D</string>
-											<string>2C1A90B9147E596900B486C5</string>
 											<string>2C1A90BA147E596900B486C5</string>
 											<string>2C1A90CF147E5CDC00B486C5</string>
-											<string>2C1A90D0147E5CDC00B486C5</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -562,10 +556,6 @@
 											<string>2C39BD45134F10CE00FCFFBC</string>
 											<string>2C39BD7C134F30F400FCFFBC</string>
 											<string>2CAC67AA1357BFFA001D05E8</string>
-											<string>2C1A90BD147E596900B486C5</string>
-											<string>2C1A90BE147E596900B486C5</string>
-											<string>2C1A90BF147E596900B486C5</string>
-											<string>2C1A90D1147E5CDC00B486C5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -625,9 +615,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2C1A90AC147E56AD00B486C5</string>
+				<string>2C1A910B147F4E8600B486C5</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2C1A90AD147E56AD00B486C5</string>
+				<string>2C1A910C147F4E8600B486C5</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
@@ -769,13 +759,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>2C1A90C4147E596900B486C5</string>
-		<string>2C1A90C5147E596900B486C5</string>
 		<string>2C48EC1A0F30058700540CFD</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/MergePDF.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/MergePDF.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>90 150 1125 725 0 0 1440 878 </string>
@@ -857,7 +843,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>2C48EC1A0F30058700540CFD</string>
-				<string>2C1A90C1147E596900B486C5</string>
+				<string>2C1A911B147F4E9C00B486C5</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -899,8 +885,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {261, 186}}</string>
-											<string>{{261, 0}, {573, 186}}</string>
+											<string>{{0, 0}, {260, 240}}</string>
+											<string>{{260, 0}, {574, 240}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -915,8 +901,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {834, 186}}</string>
-											<string>{{0, 186}, {834, 349}}</string>
+											<string>{{0, 0}, {834, 240}}</string>
+											<string>{{0, 240}, {834, 295}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -946,10 +932,10 @@
 										<string>Value</string>
 										<real>85</real>
 										<string>Summary</string>
-										<real>301</real>
+										<real>302</real>
 									</array>
 									<key>Frame</key>
-									<string>{{261, 0}, {573, 186}}</string>
+									<string>{{260, 0}, {574, 240}}</string>
 									<key>RubberWindowFrame</key>
 									<string>529 302 834 576 0 0 1440 878 </string>
 								</dict>
@@ -977,13 +963,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>2C1A90AE147E56AD00B486C5</string>
+				<string>2C1A910D147F4E8600B486C5</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>2C1A90AF147E56AD00B486C5</string>
-				<string>2C1A90B0147E56AD00B486C5</string>
-				<string>2C1A90B1147E56AD00B486C5</string>
-				<string>2C1A90B2147E56AD00B486C5</string>
-				<string>2C1A90B3147E56AD00B486C5</string>
+				<string>2C1A910E147F4E8600B486C5</string>
+				<string>2C1A910F147F4E8600B486C5</string>
+				<string>2C1A9110147F4E8600B486C5</string>
+				<string>2C1A9111147F4E8600B486C5</string>
+				<string>2C1A9112147F4E8600B486C5</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1010,12 +996,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string></string>
+										<string>PDFMerger.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -1036,8 +1024,6 @@
 							<string>429pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
