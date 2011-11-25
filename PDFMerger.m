@@ -75,6 +75,7 @@ bail:
 	}
 	out_context = CGPDFContextCreate(data_consumer, NULL, NULL);
 	img_count = CGImageSourceGetCount(image_source);
+	CFNumberRef dpi = NULL;
 	for (size_t i = 0; i<img_count; i++) {
 		CFDictionaryRef image_info = CGImageSourceCopyPropertiesAtIndex(image_source, i, NULL );
 		CGImageRef image = CGImageSourceCreateImageAtIndex( image_source, i, NULL );
@@ -85,12 +86,17 @@ bail:
 		 CFShow(CFDictionaryGetValue(image_info, kCGImagePropertyPixelHeight));
 		 CFShow(CFDictionaryGetValue(image_info, kCGImagePropertyPixelWidth));
 #endif
-		float dpi_w;
-		CFNumberGetValue(CFDictionaryGetValue(image_info, kCGImagePropertyDPIWidth), 
-						 kCFNumberFloat32Type, &dpi_w);
-		float dpi_h;
-		CFNumberGetValue(CFDictionaryGetValue(image_info, kCGImagePropertyDPIHeight), 
-						 kCFNumberFloat32Type, &dpi_h);
+		float dpi_w = DEFAULT_DPI;
+		dpi = CFDictionaryGetValue(image_info, kCGImagePropertyDPIWidth);
+		if (dpi) {
+			CFNumberGetValue(dpi, kCFNumberFloat32Type, &dpi_w);
+		}
+			
+		float dpi_h = DEFAULT_DPI;
+		dpi = CFDictionaryGetValue(image_info, kCGImagePropertyDPIHeight);
+		if (dpi) {
+			CFNumberGetValue(dpi, kCFNumberFloat32Type, &dpi_h);
+		}
 		
 		int size_w;
 		CFNumberGetValue(CFDictionaryGetValue(image_info, kCGImagePropertyPixelWidth), 
