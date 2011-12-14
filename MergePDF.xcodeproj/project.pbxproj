@@ -92,6 +92,15 @@
 		2C77B9640CFD576A00C4E9D3 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
+		2CA839221498681A0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		2CA839231498682B0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CA83924149868410020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CA83927149868A10020DF9E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		2CA8395E14986F620020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		2CA8396414986F8C0020DF9E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ProgressWindow.strings; sourceTree = SOURCE_ROOT; };
+		2CA8396614986FAF0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ProgressWindow.strings; sourceTree = SOURCE_ROOT; };
+		2CA839841498700F0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
+		2CA83985149870200020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2CAC67A11356C620001D05E8 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CB1697A0711703000A527B5 /* MergePDF.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MergePDF.icns; sourceTree = "<group>"; };
 		2CB36E120D3F541E003C516E /* SmartActivate.c */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.c; path = SmartActivate.c; sourceTree = "<group>"; };
@@ -189,6 +198,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CA8396314986F8C0020DF9E /* ProgressWindow.strings */,
 				2CAC67A01356C620001D05E8 /* ServicesMenu.strings */,
 				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
 				2C4545951071820A00AD3397 /* Credits.rtf */,
@@ -199,6 +209,7 @@
 				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
 				2C7BDAB6071183220032351D /* ColumnDirection.png */,
 				2C7BDAB7071183220032351D /* RowDirection.png */,
+				2CA83926149868A10020DF9E /* MainMenu.strings */,
 				2CB1697A0711703000A527B5 /* MergePDF.icns */,
 				2C3F668F0F700C9900C42308 /* ProgressWindow.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
@@ -259,6 +270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C5981FB098712B2003D230C /* Build configuration list for PBXNativeTarget "MergePDF" */;
 			buildPhases = (
+				2CA8397714986FF00020DF9E /* ShellScript */,
 				2C5981EC098712B2003D230C /* Headers */,
 				2C5981ED098712B2003D230C /* AppleScript */,
 				2C5981EF098712B2003D230C /* Resources */,
@@ -315,6 +327,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CA8397714986FF00020DF9E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/English.lproj/MainMenu.nib",
+				"$(SRCROOT)/English.lproj/ProgressWindow.nib",
+			);
+			outputPaths = (
+				"$(SRCROOT)/Japanese.lproj/MainMenu.nib",
+				"$(SRCROOT)/Japanese.lproj/ProgressWindow.nib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n#ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/#English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\n\nnib_basename=`basename target_nib .nib` \nibtool --strings-file ${target_lang}.lproj/${nib_basename}.strings --write ${target_lang}.lproj/${target_nib} ${base_lang}.lproj/${target_nib}\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese ProgressWindow.nib\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C5981F6098712B2003D230C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -336,6 +368,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CB36E870D3F8DB4003C516E /* English */,
+				2CA83985149870200020DF9E /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -344,6 +377,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CB36E830D3F8C7E003C516E /* English */,
+				2CA83924149868410020DF9E /* Japanese */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -352,14 +386,35 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C3F66900F700C9900C42308 /* English */,
+				2CA839841498700F0020DF9E /* Japanese */,
 			);
 			name = ProgressWindow.nib;
+			sourceTree = "<group>";
+		};
+		2CA83926149868A10020DF9E /* MainMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA83927149868A10020DF9E /* English */,
+				2CA8395E14986F620020DF9E /* Japanese */,
+			);
+			name = MainMenu.strings;
+			sourceTree = "<group>";
+		};
+		2CA8396314986F8C0020DF9E /* ProgressWindow.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA8396414986F8C0020DF9E /* English */,
+				2CA8396614986FAF0020DF9E /* Japanese */,
+			);
+			name = ProgressWindow.strings;
+			path = SmartActivateLib;
 			sourceTree = "<group>";
 		};
 		2CAC67A01356C620001D05E8 /* ServicesMenu.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2CAC67A11356C620001D05E8 /* English */,
+				2CA839221498681A0020DF9E /* Japanese */,
 			);
 			name = ServicesMenu.strings;
 			sourceTree = "<group>";
@@ -368,6 +423,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CB36E6F0D3F8C4A003C516E /* English */,
+				2CA839231498682B0020DF9E /* Japanese */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -379,7 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -420,7 +476,7 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -452,7 +508,7 @@
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
