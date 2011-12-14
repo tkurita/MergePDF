@@ -283,6 +283,8 @@
 								<string>2CB36E110D3F541E003C516E</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>2CA8396314986F8C0020DF9E</string>
+								<string>2CD9CDE00711A295001CBF53</string>
+								<string>2C31A20509874594003BE6E4</string>
 								<string>2CA83926149868A10020DF9E</string>
 								<string>2C3F668F0F700C9900C42308</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
@@ -290,19 +292,21 @@
 								<string>1C37FBAC04509CD000000102</string>
 								<string>2CA839D814987CA80020DF9E</string>
 								<string>2CA839DA14987CCA0020DF9E</string>
+								<string>2CD9CDE00711A295001CBF53</string>
+								<string>2C31A20509874594003BE6E4</string>
 								<string>2C3F668F0F700C9900C42308</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
-									<integer>17</integer>
-									<integer>0</integer>
+									<integer>49</integer>
+									<integer>48</integer>
+									<integer>47</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 174}, {250, 645}}</string>
+							<string>{{0, 548}, {250, 645}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -502,7 +506,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ProgressWindow.strings</string>
+								<string>Localizable.strings</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -510,11 +514,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ProgressWindow.strings</string>
+										<string>Localizable.strings</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CA839DF14987CCA0020DF9E</string>
+										<string>2CA839F5149887430020DF9E</string>
 										<key>history</key>
 										<array>
 											<string>2CB36E290D3F54EF003C516E</string>
@@ -533,16 +537,16 @@
 											<string>2C1A90BA147E596900B486C5</string>
 											<string>2C1A90CF147E5CDC00B486C5</string>
 											<string>2CA83929149868C60020DF9E</string>
-											<string>2CA8392A149868C60020DF9E</string>
-											<string>2CA8392B149868C60020DF9E</string>
 											<string>2CA8392C149868C60020DF9E</string>
 											<string>2CA8392D149868C60020DF9E</string>
-											<string>2CA8392E149868C60020DF9E</string>
 											<string>2CA8392F149868C60020DF9E</string>
 											<string>2CA83930149868C60020DF9E</string>
-											<string>2CA839BD14987C550020DF9E</string>
 											<string>2CA839DB14987CCA0020DF9E</string>
-											<string>2CA839DC14987CCA0020DF9E</string>
+											<string>2CA839EA149887430020DF9E</string>
+											<string>2CA839EB149887430020DF9E</string>
+											<string>2CA839EC149887430020DF9E</string>
+											<string>2CA839ED149887430020DF9E</string>
+											<string>2CA839EE149887430020DF9E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -576,6 +580,12 @@
 											<string>2CA8397E149870020020DF9E</string>
 											<string>2CA839DD14987CCA0020DF9E</string>
 											<string>2CA839DE14987CCA0020DF9E</string>
+											<string>2CA839EF149887430020DF9E</string>
+											<string>2CA839F0149887430020DF9E</string>
+											<string>2CA839F1149887430020DF9E</string>
+											<string>2CA839F2149887430020DF9E</string>
+											<string>2CA839F3149887430020DF9E</string>
+											<string>2CA839F4149887430020DF9E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -779,6 +789,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/tkurita/Dev/Projects/MergePDF/MergePDF/trunk/MergePDF.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -905,8 +916,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {260, 263}}</string>
-											<string>{{260, 0}, {574, 263}}</string>
+											<string>{{0, 0}, {260, 274}}</string>
+											<string>{{260, 0}, {574, 274}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -921,8 +932,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {834, 263}}</string>
-											<string>{{0, 263}, {834, 272}}</string>
+											<string>{{0, 0}, {834, 274}}</string>
+											<string>{{0, 274}, {834, 261}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -955,7 +966,7 @@
 										<real>302</real>
 									</array>
 									<key>Frame</key>
-									<string>{{260, 0}, {574, 263}}</string>
+									<string>{{260, 0}, {574, 274}}</string>
 									<key>RubberWindowFrame</key>
 									<string>529 302 834 576 0 0 1440 878 </string>
 								</dict>
@@ -983,13 +994,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>2CA8393F149868C60020DF9E</string>
+				<string>2CA839F6149887430020DF9E</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>2CA83940149868C60020DF9E</string>
-				<string>2CA83941149868C60020DF9E</string>
-				<string>2CA83942149868C60020DF9E</string>
-				<string>2CA83943149868C60020DF9E</string>
-				<string>2CA83944149868C60020DF9E</string>
+				<string>2CA839F7149887430020DF9E</string>
+				<string>2CA839F8149887430020DF9E</string>
+				<string>2CA839F9149887430020DF9E</string>
+				<string>2CA839FA149887430020DF9E</string>
+				<string>2CA839FB149887430020DF9E</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
