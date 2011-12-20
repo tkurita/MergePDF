@@ -28,7 +28,7 @@
 	<key>CFBundleExecutable</key>
 	<string>MergePDF</string>
 	<key>CFBundleVersion</key>
-	<string>13</string>
+	<string>14</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.0.7</string>
 	<key>CFBundleGetInfoString</key>
@@ -58,7 +58,7 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>DonationURL</key>
-	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
+	<string>http://www.script-factory.net/donationproxy.html</string>
 	<key>NSServices</key>
 	<array>
 		<dict>
@@ -78,6 +78,6 @@
 		</dict>
 	</array>
 	<key>SUFeedURL</key>
-	<string>http://homepage.mac.com/tkurita/scriptfactory/appcast/MergePDF.xml</string>
+	<string>http://www.script-factory.net/appcast/MergePDF.xml</string>
 </dict>
 </plist>
