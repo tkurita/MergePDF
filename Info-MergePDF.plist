@@ -34,7 +34,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>2.0.8 copyright 1998-2012, Tetsuro KURITA</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© Tetsuro KURITA, 1998-2018</string>
+	<string>© Tetsuro KURITA, 1998-2012</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>MergePDFHelp</string>
 	<key>CFBundleIconFile</key>
