@@ -28,13 +28,13 @@
 	<key>CFBundleExecutable</key>
 	<string>MergePDF</string>
 	<key>CFBundleVersion</key>
-	<string>14</string>
+	<string>15</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.7</string>
+	<string>2.0.8</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.0.7 copyright 1998-2011, Tetsuro KURITA</string>
+	<string>2.0.8 copyright 1998-2012, Tetsuro KURITA</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© Tetsuro KURITA, 1998-2011</string>
+	<string>© Tetsuro KURITA, 1998-2018</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>MergePDFHelp</string>
 	<key>CFBundleIconFile</key>

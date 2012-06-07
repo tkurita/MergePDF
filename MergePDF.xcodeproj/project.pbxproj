@@ -95,9 +95,7 @@
 		2CA839221498681A0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CA839231498682B0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CA83924149868410020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2CA83927149868A10020DF9E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		2CA8395E14986F620020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		2CA8396414986F8C0020DF9E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ProgressWindow.strings; sourceTree = SOURCE_ROOT; };
 		2CA8396614986FAF0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ProgressWindow.strings; sourceTree = SOURCE_ROOT; };
 		2CA839841498700F0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
 		2CA83985149870200020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2CA8396314986F8C0020DF9E /* ProgressWindow.strings */,
 				2CAC67A01356C620001D05E8 /* ServicesMenu.strings */,
 				2CD9CDE00711A295001CBF53 /* Localizable.strings */,
 				2C4545951071820A00AD3397 /* Credits.rtf */,
@@ -209,8 +206,9 @@
 				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
 				2C7BDAB6071183220032351D /* ColumnDirection.png */,
 				2C7BDAB7071183220032351D /* RowDirection.png */,
-				2CA83926149868A10020DF9E /* MainMenu.strings */,
 				2CB1697A0711703000A527B5 /* MergePDF.icns */,
+				2CA8396314986F8C0020DF9E /* ProgressWindow.strings */,
+				2CA83926149868A10020DF9E /* MainMenu.strings */,
 				2C3F668F0F700C9900C42308 /* ProgressWindow.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
@@ -277,6 +275,7 @@
 				2C5981F6098712B2003D230C /* Sources */,
 				2C5981F8098712B2003D230C /* Frameworks */,
 				2CD12A830D40A4A2004BF0C5 /* CopyFiles */,
+				2CF84035158049E2004E5E20 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -343,6 +342,8 @@
 			inputPaths = (
 				"$(SRCROOT)/English.lproj/MainMenu.nib",
 				"$(SRCROOT)/English.lproj/ProgressWindow.nib",
+				"$(SRCROOT)/Japanese.lproj/MainMenu.strings",
+				"$(SRCROOT)/Japanese.lproj/ProgressWindow.strings",
 			);
 			outputPaths = (
 				"$(SRCROOT)/Japanese.lproj/MainMenu.nib",
@@ -350,7 +351,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n#ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/#English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\n\nnib_basename=`basename target_nib .nib` \nibtool --strings-file ${target_lang}.lproj/${nib_basename}.strings --write ${target_lang}.lproj/${target_nib} ${base_lang}.lproj/${target_nib}\nrm -rf ${target_lang}.lproj/${target_nib}/.svn\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese ProgressWindow.nib\n\n\n";
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\nnib_basename=`basename ${target_nib} .nib` \n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nrm -rf ${target_lang_nib}/.svn\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese ProgressWindow.nib\n";
+		};
+		2CF84035158049E2004E5E20 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$BUILD_STYLE\" = 'Release' ]; then\ncd $BUILT_PRODUCTS_DIR\nSetupHelpBook $FULL_PRODUCT_NAME\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -401,7 +415,6 @@
 		2CA83926149868A10020DF9E /* MainMenu.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2CA83927149868A10020DF9E /* English */,
 				2CA8395E14986F620020DF9E /* Japanese */,
 			);
 			name = MainMenu.strings;
@@ -410,7 +423,6 @@
 		2CA8396314986F8C0020DF9E /* ProgressWindow.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2CA8396414986F8C0020DF9E /* English */,
 				2CA8396614986FAF0020DF9E /* Japanese */,
 			);
 			name = ProgressWindow.strings;
@@ -442,7 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -479,18 +491,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
+					x86_64,
 					ppc,
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/..\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MergePDF.plist";
@@ -515,7 +526,7 @@
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
