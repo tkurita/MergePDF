@@ -146,7 +146,7 @@ on opened theObject
 	call method "setSourceLocation:" of my _window_controller with parameter source_location
 	set dest_location to target_folder's parent_folder()
 	set my _destination to target_folder's change_path_extension("pdf")
-	set string value of my _new_file_field to _destination's posix_path()
+	set string value of my _new_file_field to _destination's normalized_posix_path()
 end opened
 
 on panel ended theObject with result withResult

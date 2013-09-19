@@ -3,6 +3,9 @@ MergePDF
 == To Do
 イメージを PDF に変換するサービスメニューで、同名のPDFがある場合のエラー処理。
 ファイルダイアログを開くようにする。
+白黒画像のときは、JBIG2 を使えないか。
+PDFPage's initWithImage を使ったらどうにかならないか？
+AppleScriptObjC に移行する。
 
 == 2011-04-15
 * Convert Images to PDFs をとりあえず実装。

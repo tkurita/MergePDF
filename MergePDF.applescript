@@ -8,7 +8,7 @@ on open a_list
 			tell application "Finder"
 				open an_item
 			end tell
-			process_location(an_item)
+			process_location(an_item's POSIX path)
 		end if
 	end repeat
 	return true
