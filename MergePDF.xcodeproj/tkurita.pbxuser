@@ -2,7 +2,7 @@
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = i386;
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 2C598201098712B3003D230C /* MergePDF */;
 		activeTarget = 2C5981EB098712B2003D230C /* MergePDF */;
 		addToTargets = (
@@ -317,6 +317,8 @@
 			2CC7603C17EAD9FB00BAB539 = 2CC7603C17EAD9FB00BAB539 /* PBXTextBookmark */;
 			2CC7603F17EADF3100BAB539 = 2CC7603F17EADF3100BAB539 /* PBXTextBookmark */;
 			2CC7604017EADF3100BAB539 = 2CC7604017EADF3100BAB539 /* PBXTextBookmark */;
+			2CC7606717EAE45100BAB539 /* PBXBookmark */ = 2CC7606717EAE45100BAB539 /* PBXBookmark */;
+			2CC7606817EAE45100BAB539 /* PBXTextBookmark */ = 2CC7606817EAE45100BAB539 /* PBXTextBookmark */;
 			2CF168E417DA307200B0E9C9 = 2CF168E417DA307200B0E9C9 /* PBXTextBookmark */;
 			2CF168E517DA307200B0E9C9 = 2CF168E517DA307200B0E9C9 /* PBXTextBookmark */;
 			2CF168E617DA307200B0E9C9 = 2CF168E617DA307200B0E9C9 /* PBXTextBookmark */;
@@ -358,7 +360,7 @@
 		ignoreCount = 0;
 		lineNumber = 36;
 		location = MergePDF;
-		modificationTime = 401266884.641794;
+		modificationTime = 401269841.491185;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -376,7 +378,7 @@
 		ignoreCount = 0;
 		lineNumber = 25;
 		location = MergePDF;
-		modificationTime = 401266884.6419139;
+		modificationTime = 401269841.491289;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -394,7 +396,7 @@
 		ignoreCount = 0;
 		lineNumber = 168;
 		location = MergePDF;
-		modificationTime = 401266884.6420299;
+		modificationTime = 401269841.491409;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -436,7 +438,7 @@
 		ignoreCount = 0;
 		lineNumber = 189;
 		location = MergePDF;
-		modificationTime = 401266884.637353;
+		modificationTime = 401269841.490195;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -454,7 +456,7 @@
 		ignoreCount = 0;
 		lineNumber = 227;
 		location = MergePDF;
-		modificationTime = 401266884.6375991;
+		modificationTime = 401269841.490606;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -472,7 +474,7 @@
 		ignoreCount = 0;
 		lineNumber = 161;
 		location = MergePDF;
-		modificationTime = 401266884.637813;
+		modificationTime = 401269841.490714;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -490,7 +492,7 @@
 		ignoreCount = 0;
 		lineNumber = 67;
 		location = MergePDF;
-		modificationTime = 401266884.637996;
+		modificationTime = 401269841.490816;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -508,7 +510,7 @@
 		ignoreCount = 0;
 		lineNumber = 126;
 		location = MergePDF;
-		modificationTime = 401266884.638193;
+		modificationTime = 401269841.49093;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -541,7 +543,7 @@
 		ignoreCount = 0;
 		lineNumber = 114;
 		location = MergePDF;
-		modificationTime = 401266884.640334;
+		modificationTime = 401269841.491035;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -566,7 +568,7 @@
 		ignoreCount = 0;
 		lineNumber = 213;
 		location = MergePDF;
-		modificationTime = 401266884.64266;
+		modificationTime = 401269841.491847;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -618,7 +620,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 26;
-		modificationTime = 401266884.63718;
+		modificationTime = 401269841.490029;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
@@ -711,7 +713,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 26;
-		modificationTime = 401266884.636225;
+		modificationTime = 401269841.489916;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
@@ -726,9 +728,9 @@
 	};
 	2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1065, 2567}}";
-			sepNavSelRange = "{6182, 0}";
-			sepNavVisRange = "{5093, 1077}";
+			sepNavIntBoundsRect = "{{0, 0}, {1065, 2424}}";
+			sepNavSelRange = "{6193, 0}";
+			sepNavVisRange = "{3483, 1052}";
 			sepNavVisRect = "{{0, 281}, {761, 612}}";
 			sepNavWindowFrame = "{{232, 179}, {949, 699}}";
 		};
@@ -746,7 +748,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 26;
-		modificationTime = 401266884.635859;
+		modificationTime = 401269841.489596;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
@@ -763,7 +765,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 26;
-		modificationTime = 401266884.6360329;
+		modificationTime = 401269841.489705;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
@@ -876,7 +878,7 @@
 		ignoreCount = 0;
 		lineNumber = 180;
 		location = MergePDF;
-		modificationTime = 401266884.6428229;
+		modificationTime = 401269841.491994;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -893,7 +895,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 6;
-		modificationTime = 401266884.642954;
+		modificationTime = 401269841.492118;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
@@ -1039,7 +1041,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 178";
 		rLen = 0;
-		rLoc = 6182;
+		rLoc = 6193;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 2694;
@@ -1049,7 +1051,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 178";
 		rLen = 0;
-		rLoc = 6182;
+		rLoc = 6193;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 2694;
@@ -1059,7 +1061,7 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 178";
 		rLen = 0;
-		rLoc = 6182;
+		rLoc = 6193;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 2694;
@@ -1079,10 +1081,24 @@
 		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
 		name = "ProgressWindowController.applescript: 178";
 		rLen = 0;
-		rLoc = 6182;
+		rLoc = 6193;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 5473;
+	};
+	2CC7606717EAE45100BAB539 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
+	};
+	2CC7606817EAE45100BAB539 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */;
+		name = "ProgressWindowController.applescript: 178";
+		rLen = 0;
+		rLoc = 6193;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 3483;
 	};
 	2CD127F80D408450004BF0C5 /* MergePDF.applescript:26 */ = {
 		isa = PBXFileBreakpoint;
@@ -1097,7 +1113,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 26;
-		modificationTime = 401266884.6347979;
+		modificationTime = 401269841.483159;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
@@ -1114,7 +1130,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 26;
-		modificationTime = 401266884.635631;
+		modificationTime = 401269841.489116;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
@@ -1138,7 +1154,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 165;
-		modificationTime = 401266884.6422459;
+		modificationTime = 401269841.491625;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};

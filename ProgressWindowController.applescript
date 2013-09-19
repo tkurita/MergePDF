@@ -122,7 +122,7 @@ on merge_pdf(a_pdf_sorter)
 	set _destination to check_destination(_destination)
 	if check_canceled() then return false
 	if _destination is not missing value then
-		call method "processFiles:to:" of my _window_controller with parameters {_target_files, _destination's posix_path()}
+		call method "processFiles:to:" of my _window_controller with parameters {_target_files, _destination's normalized_posix_path()}
 		set a_result to true
 	else
 		set a_result to false
