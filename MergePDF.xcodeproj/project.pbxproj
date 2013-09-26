@@ -37,7 +37,6 @@
 		2C5981F5098712B2003D230C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9CDE00711A295001CBF53 /* Localizable.strings */; };
 		2C5981F7098712B2003D230C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		2C5981F9098712B2003D230C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		2C5981FA098712B2003D230C /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */; };
 		2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */; settings = {ATTRIBUTES = (); }; };
 		2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */; settings = {ATTRIBUTES = (); }; };
 		2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C77B9640CFD576A00C4E9D3 /* Quartz.framework */; };
@@ -138,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5981F9098712B2003D230C /* Cocoa.framework in Frameworks */,
-				2C5981FA098712B2003D230C /* AppleScriptKit.framework in Frameworks */,
 				2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */,
 				2CD128D10D40A437004BF0C5 /* DonationReminder.framework in Frameworks */,
 				2CD405350F75CB9100B96300 /* Sparkle.framework in Frameworks */,
@@ -502,7 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -544,7 +542,7 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -574,7 +572,7 @@
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",

@@ -160,7 +160,7 @@ void saveImageAsPDF(NSString *path)
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
 #if useLog
-	NSLog([NSString stringWithFormat:@"start application:openFiles: for :%@",[filenames description]]);
+	NSLog(@"start application:openFiles: for :%@",[filenames description]);
 #endif	
 	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSString *filename = nil;
@@ -188,11 +188,11 @@ void saveImageAsPDF(NSString *path)
 OSType getLauchedMethod()
 {
 #if useLog
-	NSLog(@"start getLauchedMethod");
+	NSLog(@"%@", @"start getLauchedMethod");
 #endif	
 	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
 #if useLog
-	NSLog([ev description]);
+	NSLog(@"%@", [ev description]);
 #endif
 	if (!ev) {
 		return typeNull;
@@ -223,7 +223,7 @@ OSType getLauchedMethod()
 #if useLog
 	NSLog(@"start applicationDidFinishLaunching");
 	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
-	NSLog([NSString stringWithFormat:@"event :%@\n", [ev description]]);
+	NSLog(@"event :%@\n", [ev description]);
 #endif	
 	OSType evid = getLauchedMethod();
 	if (kAEOpenApplication == evid) {
