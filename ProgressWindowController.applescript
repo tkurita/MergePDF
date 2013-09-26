@@ -15,6 +15,7 @@ property _window_controller : missing value
 property _pdf_sorter : missing value
 property _target_files : missing value
 property _source_location : missing value
+property _default_dest : missing value
 property _destination : missing value
 
 on import_script(a_name)
@@ -119,7 +120,7 @@ on merge_pdf(a_pdf_sorter)
 	end if
 	if check_canceled() then return false
 	set target_folder to XFile's make_with(a_pdf_sorter's resolve_container())
-	set _destination to check_destination(_destination)
+	set _destination to check_destination(_default_dest)
 	if check_canceled() then return false
 	if _destination is not missing value then
 		call method "processFiles:to:" of my _window_controller with parameters {_target_files, _destination's normalized_posix_path()}
@@ -145,13 +146,14 @@ on opened theObject
 	set string value of my _source_location_field to source_location
 	call method "setSourceLocation:" of my _window_controller with parameter source_location
 	set dest_location to target_folder's parent_folder()
-	set my _destination to target_folder's change_path_extension("pdf")
-	set string value of my _new_file_field to _destination's normalized_posix_path()
+	set my _default_dest to target_folder's change_path_extension("pdf")
+	set string value of my _new_file_field to _default_dest's normalized_posix_path()
 end opened
 
 on panel ended theObject with result withResult
 	if withResult is 1 then
-		set dest_path to path name of save panel
+		set dest_path to path name of theObject
+		close panel theObject
 		call method "processFiles:to:" of my _window_controller with parameters {_target_files, dest_path}
 	else
 		call method "cancelAction:" of my _window_controller with parameter my _window_controller
