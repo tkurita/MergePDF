@@ -6,5 +6,6 @@
 {
 }
 - (void)processFolder:(NSString *)path;
+- (IBAction)chooseFolder:(id)sender;
 - (IBAction)makeDonation:(id)sender;
 @end

@@ -56,6 +56,21 @@ static id sharedObj;
 	[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:path]];
 }
 
+#pragma mark actions
+
+- (IBAction)chooseFolder:(id)sender
+{
+	NSOpenPanel *open_panel = [NSOpenPanel openPanel];
+	[open_panel setCanChooseDirectories:YES];
+	[open_panel setCanChooseFiles:NO];
+	[open_panel setTitle:@"Choose a folder containing PDF/image files"];
+	NSInteger result = [open_panel runModal];
+	if (NSFileHandlingPanelCancelButton == result) return;
+	
+	NSArray *array = [open_panel URLs];
+	[self processFolder:[[array lastObject] path]];
+}
+
 - (IBAction)makeDonation:(id)sender
 {
 	[DonationReminder goToDonation];

@@ -1,11 +1,10 @@
-#import <mach-o/dyld.h>
+#import <Cocoa/Cocoa.h>
+#import <AppleScriptObjC/AppleScriptObjC.h>
 
-extern void ASKInitialize();
-extern int NSApplicationMain(int argc, const char *argv[]);
-
-int main(int argc, const char *argv[])
+int main(int argc, char *argv[])
 {
-	ASKInitialize();
+	[[NSBundle mainBundle] loadAppleScriptObjectiveCScripts];
 	
-	return NSApplicationMain(argc, argv);
+	return NSApplicationMain(argc, (const char **) argv);
 }
+

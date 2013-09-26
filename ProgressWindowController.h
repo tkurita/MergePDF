@@ -5,9 +5,9 @@
 	IBOutlet NSTextField *statusField;
 	IBOutlet NSTextView *errorTextView;
 	IBOutlet NSProgressIndicator *progressIndicator;
-	IBOutlet NSTextField *sourceLocationField;
 	IBOutlet NSTextField *newFileField;
 	IBOutlet NSWindow *directionChooserWindow;
+	IBOutlet id worker;
 	
 	NSArray *progressStatuses;
 	NSUInteger statusLevel;
@@ -26,4 +26,6 @@
 @property (readwrite) BOOL canceled;
 
 - (IBAction)cancelAction:(id)sender;
+- (IBAction)closeDirectionChooser:(id)sender;
+
 @end
