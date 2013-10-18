@@ -42,7 +42,7 @@ on awake from nib theObject
 		set my _direction_chooser_window to theObject
 	else if a_name is "row direction" then
 		set my _row_direction_button to theObject
-	else if a_name is "column direction " then
+	else if a_name is "column direction" then
 		set my _column_direction_button to theObject
 	end if
 end awake from nib
