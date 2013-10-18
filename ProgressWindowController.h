@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "PDFMerger.h"
 
-@interface ProgressWindowController : NSWindowController {
+@interface ProgressWindowController : NSWindowController <NSAlertDelegate> {
 	IBOutlet NSTextField *statusField;
 	IBOutlet NSTextView *errorTextView;
 	IBOutlet NSProgressIndicator *progressIndicator;
