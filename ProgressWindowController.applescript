@@ -28,8 +28,8 @@ script ProgressWindowWorker
 	end import_script
 	
 	on awakeFromNib()
+		-- log "start awakeFromNib in ProgressWindowController"
 		set SorterDelegate to import_script("SorterDelegate")
-		
 		set a_container to my _window_controller's sourceLocation() as text
 		try
 			set my _pdf_sorter to FileSorter's make_with_delegate(SorterDelegate's make_with(a_container))
@@ -44,18 +44,20 @@ script ProgressWindowWorker
 		set dest_location to target_folder's parent_folder()
 		set my _default_dest to target_folder's change_path_extension("pdf")
 		my _new_file_field's setStringValue_(my _default_dest's normalized_posix_path())
+		-- log "end awakeFromNib"
 	end awakeFromNib
 	
 	
 	on set_chooser_button(a_direction)
 		if a_direction is "row direction" then
-			my _direction_chooser_window's setFirstResponder_(my _row_direction_button)
+			my _direction_chooser_window's makeFirstResponder_(my _row_direction_button)
 		else
-			my _direction_chooser_window's setFirstResponder_(my _column_direction_button)
+			my _direction_chooser_window's makeFirstResponder_(my _column_direction_button)
 		end if
 	end set_chooser_button
 	
 	on will_position_sort(a_sorter)
+		--log "start will_position_sort"
 		set a_container to a_sorter's resolve_container()
 		tell application "Finder"
 			set a_window to container window of a_container
