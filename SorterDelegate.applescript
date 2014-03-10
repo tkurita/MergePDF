@@ -18,10 +18,11 @@ on is_image(info_record)
 end is_image
 
 on resolve_container()
+	-- log "start resolve_container in SorterDelegate"
 	if my _target_container is "Insertion Location" then
-		error number -1708 -- continue FileSorter's resolve_container()
+		return missing value -- continue FileSorter's resolve_container()
 	else
-		return (POSIX file (my _target_container)) as alias
+		return ((my _target_container) as POSIX file) as alias
 	end if
 end resolve_container
 

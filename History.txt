@@ -1,11 +1,46 @@
 MergePDF
 
 == To Do
-イメージを PDF に変換するサービスメニューで、同名のPDFがある場合のエラー処理。
-ファイルダイアログを開くようにする。
-白黒画像のときは、JBIG2 を使えないか。
-PDFPage's initWithImage を使ったらどうにかならないか？
-AppleScriptObjC に移行する。
+* イメージを PDF に変換するサービスメニューで、同名のPDFがある場合のエラー処理。
+* ファイルダイアログを開くようにする。
+* 白黒画像のときは、JBIG2 を使えないか。
+  - PDFPage's initWithImage を使ったらどうにかならないか？
+
+== AppleScriptObjC に移行する。
+
+
+
+== 2013-09-26
+* AppleScriptKit へのリンクをやめる。-- 済み
+* nib から AppleScript Info の削除 -- 済み
+* SM に登録する。-- 済み
+* MergePDF(31472,0xb04b1000) malloc: reference count underflow for 0x1a25580, break on auto_refcount_underflow_error to debug.
+  - GC に関連したメモリ管理周りに原因があるのかも
+  - PDFMerger.m/(void)stat: のなかに [PDFDocument writeToFile:] を実行すると発生する。
+  - PDFDocument のインスタンス化と writeToFile の間の処理を極力削除したが、上記のエラーは変わらず。
+  - PDFDocument のバグと判断して、対応をあきらめる。
+  - クラッシュすることはなさそう。
+* 以下の手順でエラーが発生する。-- 済み
+  - Progress window で OK ボタン
+  - direction chooser window
+  - save panel が表示され cancel
+  - progress window で OK ボタン
+  - エラー
+  - list 表示にして、direction chooser が無くてもエラー
+
+== 2013-09-25
+* NSURL+NDCarbonUtilities の導入
+  - URLWithFSRef を使えるようにする。
+* ProgressWindow.nib 内に ProgressWindowController.applescript をインスタンス化 -- 済み
+* ProgressWindow.nib の AppleScript コネクションを外す。 -- 済み
+* MergePDF.applescript の内容は、AppController に移行する。 -- 済み
+* メニュー/Open... の実装 -- 済み
+* MainMenu.nib から AppleScript へのコネクションを外す。-- 済み
+* main.m の変更 -- 済み
+* ガーベージコレクションを有効にする。（必須にする）-- 済み
+* Linked Framework に AppleScriptObjC.framework を追加。
+* デプロイメントターゲット を Mac OS X 10.6 にする。 -- 済み
+* SDK を Mac OS X 10.6 にする。 -- 済み
 
 == 2011-04-15
 * Convert Images to PDFs をとりあえず実装。

@@ -32,23 +32,25 @@ ImageKind image_type(NSString *path)
 	status = LSCopyItemAttribute(&fileref, kLSRolesAll, kLSItemContentType, (CFTypeRef *)&a_uti );
 	if (status != noErr) {
 		NSLog(@"Fail to LSCopyItemAttribute for %@", path);
-		goto bail;
+		goto finish;
 	}
 	if (UTTypeConformsTo(a_uti, CFSTR("com.adobe.pdf"))){
 		result = PDFImage;
-		goto bail;
+		goto finish;
 	}
 	if ([(NSString *)a_uti isEqualToString:@"com.adobe.illustrator.ai-image"]) {
 		result = PDFImage;
-		goto bail;
+		goto finish;
 	}
 		
 	if (UTTypeConformsTo(a_uti, CFSTR("public.jpeg"))) {
 		result = JpegImage;
-		goto bail;
+		goto finish;
 	}
 
 	if (UTTypeConformsTo(a_uti, CFSTR("public.image"))) result = GenericImage;
+finish:
+	CFRelease(a_uti);
 bail:
 #if useLog	
 	NSLog(@"image type : %d", result); 
@@ -133,6 +135,7 @@ bail:
 + (PDFDocument *)pdfDocumentWithPath:(NSString *)path
 {
 	PDFDocument *result = NULL;
+
 	switch (image_type(path)) {
 		case JpegImage:
 			result = [PDFDocument pdfDocumentWithImageFile:path];
@@ -158,7 +161,6 @@ bail:
 			result = [[[PDFDocument alloc] initWithURL: [NSURL fileURLWithPath: path]] autorelease];
 			break;
 	}
-
 	return result;
 }
 
@@ -285,7 +287,7 @@ bail:
 	if ([self checkCanceled]) goto bail;
 	double incstep = 85.0/[targetFiles count];
 	NSEnumerator *enumerator = [targetFiles objectEnumerator];
-	NSString *path = [enumerator nextObject];
+	NSString *path = [[[enumerator nextObject] URL] path];
 	[self postProgressNotificationWithFile:path increment:incstep];
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithPath:path];
 	if (!pdf_doc) {
@@ -307,9 +309,8 @@ bail:
 	} else {
 		[pdf_doc appendBookmark:label atPageIndex:0];
 	}
-	
 
-	while (path = [enumerator nextObject]) {
+	while (path = [[[enumerator nextObject] URL] path]) {
 		if ([self checkCanceled]) goto bail;
 		[self postProgressNotificationWithFile:path increment:incstep];
 		if (![pdf_doc mergeFile:path error:&error] ) {

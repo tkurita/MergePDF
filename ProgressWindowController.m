@@ -15,7 +15,7 @@
 	[super dealloc];
 }
 
-- (void)closeDirectionChooser
+- (IBAction)closeDirectionChooser:(id)sender
 {
 	[NSApp endSheet:directionChooserWindow];
 }
@@ -176,6 +176,8 @@
 	[textStorage endEditing];
 }
 
+#pragma mark window delegate
+
 - (void)windowWillClose:(NSNotification *)aNotification
 {
 	[[aNotification object] saveFrameUsingName:frameName];
@@ -196,5 +198,34 @@
 	processStarted = NO;
 	canceled = NO;
 }
+
+#pragma mark choose new PDF location
+
+- (void)chooseSaveLocation:(NSString *)defaultPath
+{
+	NSSavePanel *save_panel = [NSSavePanel savePanel];
+	[save_panel setDirectoryURL:[NSURL fileURLWithPath:
+						[defaultPath stringByDeletingLastPathComponent]]];
+	[save_panel setNameFieldStringValue:[defaultPath lastPathComponent]];
+	
+	void (^cohandler)(NSInteger) = ^(NSInteger result_code) {
+		
+		if (NSFileHandlingPanelOKButton == result_code) {
+			NSString *new_path = [[save_panel URL] path];
+			NSArray *target_files = [worker targetFiles];
+			[save_panel orderOut:self];
+			[self processFiles:target_files to:new_path];
+		} else {
+			[self cancelAction:self];
+			if (![self canceled]) return;
+				
+			[self cancelTask];
+			[self setProcessStarted:NO];
+		}
+	};
+	
+	[save_panel beginSheetModalForWindow:[self window] completionHandler:cohandler];
+}
+
 
 @end

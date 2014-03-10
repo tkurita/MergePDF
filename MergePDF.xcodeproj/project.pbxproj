@@ -12,9 +12,6 @@
 			buildActionMask = 2147483647;
 			contextName = "";
 			files = (
-				2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */,
-				2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in AppleScript */,
-				2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in AppleScript */,
 			);
 			isSharedContext = 0;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +30,6 @@
 		2C4740A80A5E71B000096E8A /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4740A60A5E71B000096E8A /* AppController.h */; };
 		2C4740A90A5E71B000096E8A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740A70A5E71B000096E8A /* AppController.m */; };
 		2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */; };
-		2C5981EE098712B2003D230C /* MergePDF.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = DA206CF3015C4E8B03C91932 /* MergePDF.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5981F0098712B2003D230C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		2C5981F2098712B2003D230C /* MergePDF.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CB1697A0711703000A527B5 /* MergePDF.icns */; };
 		2C5981F3098712B2003D230C /* ColumnDirection.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7BDAB6071183220032351D /* ColumnDirection.png */; };
@@ -41,10 +37,12 @@
 		2C5981F5098712B2003D230C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9CDE00711A295001CBF53 /* Localizable.strings */; };
 		2C5981F7098712B2003D230C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		2C5981F9098712B2003D230C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		2C5981FA098712B2003D230C /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */; };
-		2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
-		2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */; settings = {ATTRIBUTES = (); }; };
+		2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */; settings = {ATTRIBUTES = (); }; };
 		2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C77B9640CFD576A00C4E9D3 /* Quartz.framework */; };
+		2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */; };
+		2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BE72517F355D6003DA783 /* AppleEventExtra.m */; };
+		2C9BE78917F36132003DA783 /* NSURL+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BE77F17F36121003DA783 /* NSURL+NDCarbonUtilities.m */; };
 		2CAC67A21356C620001D05E8 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CAC67A01356C620001D05E8 /* ServicesMenu.strings */; };
 		2CB36E1D0D3F5442003C516E /* SmartActivate.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB36E120D3F541E003C516E /* SmartActivate.c */; };
 		2CB36E200D3F5448003C516E /* SmartActivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB36E140D3F541E003C516E /* SmartActivate.m */; };
@@ -92,6 +90,25 @@
 		2C77B9640CFD576A00C4E9D3 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
+		2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		2C9BE72417F355D6003DA783 /* AppleEventExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleEventExtra.h; sourceTree = "<group>"; };
+		2C9BE72517F355D6003DA783 /* AppleEventExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleEventExtra.m; sourceTree = "<group>"; };
+		2C9BE77817F36121003DA783 /* DropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropBox.h; sourceTree = "<group>"; };
+		2C9BE77917F36121003DA783 /* DropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropBox.m; sourceTree = "<group>"; };
+		2C9BE77A17F36121003DA783 /* FrontAppMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrontAppMonitor.h; sourceTree = "<group>"; };
+		2C9BE77B17F36121003DA783 /* FrontAppMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontAppMonitor.m; sourceTree = "<group>"; };
+		2C9BE77C17F36121003DA783 /* HFSTypeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSTypeUtils.h; sourceTree = "<group>"; };
+		2C9BE77D17F36121003DA783 /* HFSTypeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSTypeUtils.m; sourceTree = "<group>"; };
+		2C9BE77E17F36121003DA783 /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
+		2C9BE77F17F36121003DA783 /* NSURL+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NDCarbonUtilities.m"; sourceTree = "<group>"; };
+		2C9BE78017F36121003DA783 /* PaletteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteWindowController.h; sourceTree = "<group>"; };
+		2C9BE78117F36121003DA783 /* PaletteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteWindowController.m; sourceTree = "<group>"; };
+		2C9BE78217F36121003DA783 /* PathExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathExtra.h; sourceTree = "<group>"; };
+		2C9BE78317F36121003DA783 /* PathExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathExtra.m; sourceTree = "<group>"; };
+		2C9BE78417F36121003DA783 /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
+		2C9BE78517F36121003DA783 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
+		2C9BE78617F36121003DA783 /* WindowVisibilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowVisibilityController.h; sourceTree = "<group>"; };
+		2C9BE78717F36121003DA783 /* WindowVisibilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowVisibilityController.m; sourceTree = "<group>"; };
 		2CA839221498681A0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CA839231498682B0020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CA83924149868410020DF9E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -111,7 +128,6 @@
 		2CD405340F75CB9100B96300 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle.framework; sourceTree = SOURCE_ROOT; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
-		DA206CF3015C4E8B03C91932 /* MergePDF.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MergePDF.applescript; sourceTree = "<group>"; wrapsLines = 1; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -121,10 +137,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5981F9098712B2003D230C /* Cocoa.framework in Frameworks */,
-				2C5981FA098712B2003D230C /* AppleScriptKit.framework in Frameworks */,
 				2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */,
 				2CD128D10D40A437004BF0C5 /* DonationReminder.framework in Frameworks */,
 				2CD405350F75CB9100B96300 /* Sparkle.framework in Frameworks */,
+				2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */,
-				DA206CF3015C4E8B03C91932 /* MergePDF.applescript */,
 				2C6242ED0D4983BF002F2745 /* SorterDelegate.applescript */,
 			);
 			name = Scripts;
@@ -148,6 +163,7 @@
 				2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */,
+				2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -176,6 +192,7 @@
 				2C473ECF0A5E65D400096E8A /* History.txt */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
+				2C9BE77717F36121003DA783 /* CocoaLib */,
 				2CB36E110D3F541E003C516E /* SmartActivateLib */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -228,14 +245,39 @@
 		2C3F62B30F6E6DD400C42308 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2C9BE72417F355D6003DA783 /* AppleEventExtra.h */,
+				2C9BE72517F355D6003DA783 /* AppleEventExtra.m */,
 				2C3F62B80F6E6E6600C42308 /* PDFMerger.h */,
 				2C3F62B90F6E6E6600C42308 /* PDFMerger.m */,
-				2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */,
-				2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */,
 				2C4740A60A5E71B000096E8A /* AppController.h */,
 				2C4740A70A5E71B000096E8A /* AppController.m */,
+				2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */,
+				2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		2C9BE77717F36121003DA783 /* CocoaLib */ = {
+			isa = PBXGroup;
+			children = (
+				2C9BE77817F36121003DA783 /* DropBox.h */,
+				2C9BE77917F36121003DA783 /* DropBox.m */,
+				2C9BE77A17F36121003DA783 /* FrontAppMonitor.h */,
+				2C9BE77B17F36121003DA783 /* FrontAppMonitor.m */,
+				2C9BE77C17F36121003DA783 /* HFSTypeUtils.h */,
+				2C9BE77D17F36121003DA783 /* HFSTypeUtils.m */,
+				2C9BE77E17F36121003DA783 /* NSURL+NDCarbonUtilities.h */,
+				2C9BE77F17F36121003DA783 /* NSURL+NDCarbonUtilities.m */,
+				2C9BE78017F36121003DA783 /* PaletteWindowController.h */,
+				2C9BE78117F36121003DA783 /* PaletteWindowController.m */,
+				2C9BE78217F36121003DA783 /* PathExtra.h */,
+				2C9BE78317F36121003DA783 /* PathExtra.m */,
+				2C9BE78417F36121003DA783 /* StringExtra.h */,
+				2C9BE78517F36121003DA783 /* StringExtra.m */,
+				2C9BE78617F36121003DA783 /* WindowVisibilityController.h */,
+				2C9BE78717F36121003DA783 /* WindowVisibilityController.m */,
+			);
+			path = CocoaLib;
 			sourceTree = "<group>";
 		};
 		2CB36E110D3F541E003C516E /* SmartActivateLib */ = {
@@ -373,12 +415,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in Sources */,
+				2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in Sources */,
 				2C5981F7098712B2003D230C /* main.m in Sources */,
 				2C4740A90A5E71B000096E8A /* AppController.m in Sources */,
 				2CB36E1D0D3F5442003C516E /* SmartActivate.c in Sources */,
 				2CB36E200D3F5448003C516E /* SmartActivate.m in Sources */,
 				2C3F62BB0F6E6E6600C42308 /* PDFMerger.m in Sources */,
 				2C3F658F0F6FBCFC00C42308 /* ProgressWindowController.m in Sources */,
+				2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */,
+				2C9BE78917F36132003DA783 /* NSURL+NDCarbonUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -496,7 +542,7 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -526,7 +572,7 @@
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -556,8 +602,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Debug;
 		};
@@ -565,8 +612,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Release;
 		};
@@ -574,7 +622,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				GCC_ENABLE_OBJC_GC = required;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Default;
 		};

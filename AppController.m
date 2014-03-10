@@ -59,6 +59,21 @@ static id sharedObj;
 	[[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:[NSURL fileURLWithPath:path]];
 }
 
+#pragma mark actions
+
+- (IBAction)chooseFolder:(id)sender
+{
+	NSOpenPanel *open_panel = [NSOpenPanel openPanel];
+	[open_panel setCanChooseDirectories:YES];
+	[open_panel setCanChooseFiles:NO];
+	[open_panel setTitle:@"Choose a folder containing PDF/image files"];
+	NSInteger result = [open_panel runModal];
+	if (NSFileHandlingPanelCancelButton == result) return;
+	
+	NSArray *array = [open_panel URLs];
+	[self processFolder:[[array lastObject] path]];
+}
+
 - (IBAction)makeDonation:(id)sender
 {
 	[DonationReminder goToDonation];
@@ -176,11 +191,11 @@ void saveImageAsPDF(NSString *path)
 OSType getLauchedMethod()
 {
 #if useLog
-	NSLog(@"start getLauchedMethod");
+	NSLog(@"%@", @"start getLauchedMethod");
 #endif	
 	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
 #if useLog
-	NSLog([ev description]);
+	NSLog(@"%@", [ev description]);
 #endif
 	if (!ev) {
 		return typeNull;
