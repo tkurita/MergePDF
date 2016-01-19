@@ -5,12 +5,21 @@ MergePDF
 * ファイルダイアログを開くようにする。
 * 白黒画像のときは、JBIG2 を使えないか。
   - PDFPage's initWithImage を使ったらどうにかならないか？
-
-== AppleScriptObjC に移行する。
-
+* eps ファイルを pdf ファイルに変換できるようにする。
+  - ビットマップデータが含まれる時にちゃんと圧縮することができるか。
+* deprecated API を replace
+* DropBox を導入して、ソースの場所を設定できるようにする。
+* Sparkle の登録
+* DonationReminder のサブプロジェクト化
+* ライブラリスクリプトのサブモジュール化
+* SmartActivateLib への依存を無くす。
+* git に移行
+* AppleScriptKit 関係を削除する。
+* XCode4.6 と 10.8 SDK に移行
 
 
 == 2013-09-26
+AppleScriptObjC に移行する。 -- 済み
 * AppleScriptKit へのリンクをやめる。-- 済み
 * nib から AppleScript Info の削除 -- 済み
 * SM に登録する。-- 済み
