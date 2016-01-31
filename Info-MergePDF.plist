@@ -30,11 +30,11 @@
 	<key>CFBundleVersion</key>
 	<string>21</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2</string>
+	<string>2.3</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.2 copyright 1998-2014, Tetsuro KURITA</string>
+	<string>2.3 copyright 1998-2016, Tetsuro KURITA</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© Tetsuro KURITA, 1998-2014</string>
+	<string>© Tetsuro KURITA, 1998-2016</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>MergePDFHelp</string>
 	<key>CFBundleIconFile</key>
