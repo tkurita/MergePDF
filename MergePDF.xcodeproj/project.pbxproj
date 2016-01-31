@@ -24,6 +24,7 @@
 		2C3F3B6C1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F3B6A1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h */; };
 		2C3F3B6D1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F3B6B1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m */; };
 		2C3F3B761C5E550600C940BD /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3F3B731C5E547E00C940BD /* DonationReminder.framework */; };
+		2C3F3B791C5E578900C940BD /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3F3B771C5E56D100C940BD /* Sparkle.framework */; };
 		2C3F62BA0F6E6E6600C42308 /* PDFMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */; };
 		2C3F62BB0F6E6E6600C42308 /* PDFMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */; };
 		2C3F658E0F6FBCFC00C42308 /* ProgressWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */; };
@@ -47,8 +48,6 @@
 		2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BE72517F355D6003DA783 /* AppleEventExtra.m */; };
 		2CAC67A21356C620001D05E8 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CAC67A01356C620001D05E8 /* ServicesMenu.strings */; };
 		2CD128D10D40A437004BF0C5 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */; };
-		2CD405350F75CB9100B96300 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD405340F75CB9100B96300 /* Sparkle.framework */; };
-		2CD405380F75CBA300B96300 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CD405340F75CB9100B96300 /* Sparkle.framework */; };
 		2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CD4055D0F75D11100B96300 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +76,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2C3F3B761C5E550600C940BD /* DonationReminder.framework in CopyFiles */,
-				2CD405380F75CBA300B96300 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +91,7 @@
 		2C3F3B6A1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRunningApplication+SmartActivate.h"; sourceTree = "<group>"; };
 		2C3F3B6B1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRunningApplication+SmartActivate.m"; sourceTree = "<group>"; };
 		2C3F3B6E1C5E547D00C940BD /* DonationReminder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DonationReminder.xcodeproj; path = DonationReminder/DonationReminder.xcodeproj; sourceTree = "<group>"; };
+		2C3F3B771C5E56D100C940BD /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		2C3F62B80F6E6E6600C42308 /* PDFMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFMerger.h; sourceTree = "<group>"; };
 		2C3F62B90F6E6E6600C42308 /* PDFMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFMerger.m; sourceTree = "<group>"; };
 		2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWindowController.h; sourceTree = "<group>"; };
@@ -125,7 +124,6 @@
 		2CB36E830D3F8C7E003C516E /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CB36E870D3F8DB4003C516E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
-		2CD405340F75CB9100B96300 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle.framework; sourceTree = SOURCE_ROOT; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -138,8 +136,8 @@
 				2C5981F9098712B2003D230C /* Cocoa.framework in Frameworks */,
 				2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */,
 				2CD128D10D40A437004BF0C5 /* DonationReminder.framework in Frameworks */,
-				2CD405350F75CB9100B96300 /* Sparkle.framework in Frameworks */,
 				2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */,
+				2C3F3B791C5E578900C940BD /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +156,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CD405340F75CB9100B96300 /* Sparkle.framework */,
 				2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */,
@@ -233,6 +230,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C3F3B771C5E56D100C940BD /* Sparkle.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -507,6 +505,7 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"\"$(SRCROOT)\"",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/..\"";
@@ -535,17 +534,14 @@
 		2C5981FD098712B2003D230C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 21;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"\"$(SRCROOT)\"",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
 				HEADER_SEARCH_PATHS = "";
@@ -575,6 +571,7 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"\"$(SRCROOT)\"",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/..\"";
