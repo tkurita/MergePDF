@@ -1,7 +1,7 @@
 #import "AppController.h"
 #import "DonationReminder/DonationReminder.h"
 #import "ProgressWindowController.h"
-#import "SmartActivate.h"
+#import "NSRunningApplication+SmartActivate.h"
 #import "PDFMerger.h"
 
 #import <Quartz/Quartz.h>
@@ -176,7 +176,7 @@ void saveImageAsPDF(NSString *path)
 		if (! [[NSWorkspace sharedWorkspace] openFile:filename]) continue;
 		[self processFolder:filename];
 	}
-	[SmartActivate activateSelf];
+	[NSRunningApplication activateSelf];
 	
 #if useLog
 	NSLog(@"end application:openFiles:");

@@ -12,10 +12,10 @@ MergePDF
 * Sparkle の登録
 * DonationReminder のサブプロジェクト化
 * ライブラリスクリプトのサブモジュール化
-* SmartActivateLib への依存を無くす。
-* git に移行
 
 == 2016-01-31
+* SmartActivateLib への依存を無くす。
+* git に移行
 * AppleEventExtra.h から NDCarbonUtiliteis への依存性を無くす
   - typeAlias から NSURL をえる。
   - typeFileURL に[NSAppleEventDescriptor coerceToDescriptorType:] 
