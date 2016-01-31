@@ -1,0 +1,21 @@
+[submodule "LibraryScripts/FileSorter.scptd"]
+	path = LibraryScripts/FileSorter.scptd
+	url = https://github.com/tkurita/FileSorter.scptd.git
+[submodule "LibraryScripts/PathInfo.scptd"]
+	path = LibraryScripts/PathInfo.scptd
+	url = https://github.com/tkurita/PathInfo.scptd.git
+[submodule "LibraryScripts/SortEngine.scptd"]
+	path = LibraryScripts/SortEngine.scptd
+	url = https://github.com/tkurita/SortEngine.scptd.git
+[submodule "LibraryScripts/XCharacterSet.scptd"]
+	path = LibraryScripts/XCharacterSet.scptd
+	url = https://github.com/tkurita/XCharacterSet.scptd.git
+[submodule "LibraryScripts/XFile.scptd"]
+	path = LibraryScripts/XFile.scptd
+	url = https://github.com/tkurita/XFile.scptd.git
+[submodule "LibraryScripts/XList.scptd"]
+	path = LibraryScripts/XList.scptd
+	url = https://github.com/tkurita/XList.scptd.git
+[submodule "LibraryScripts/XText.scptd"]
+	path = LibraryScripts/XText.scptd
+	url = https://github.com/tkurita/XText.scptd.git
