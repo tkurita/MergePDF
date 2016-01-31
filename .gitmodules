@@ -19,3 +19,6 @@
 [submodule "LibraryScripts/XText.scptd"]
 	path = LibraryScripts/XText.scptd
 	url = https://github.com/tkurita/XText.scptd.git
+[submodule "DonationReminder"]
+	path = DonationReminder
+	url = https://github.com/tkurita/DonationReminder.git

@@ -99,7 +99,7 @@
 								   alternateButton:nil
 									   otherButton:nil
 						 informativeTextWithFormat:
-					  [NSString stringWithFormat:NSLocalizedString(@"Location :",nil), aPath]];
+					  [NSString stringWithFormat:NSLocalizedString(@"Location :",@""), aPath]];
 	[alert setShowsHelp:YES];
 	[alert setDelegate:self];
 	
