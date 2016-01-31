@@ -128,7 +128,6 @@
 		2CD405340F75CB9100B96300 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle.framework; sourceTree = SOURCE_ROOT; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
-		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +227,6 @@
 				2CA83926149868A10020DF9E /* MainMenu.strings */,
 				2C3F668F0F700C9900C42308 /* ProgressWindow.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
-				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -553,7 +551,6 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				OTHER_OSAFLAGS = "-x";
 				PRODUCT_NAME = MergePDF;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";

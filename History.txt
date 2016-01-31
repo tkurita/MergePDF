@@ -14,9 +14,16 @@ MergePDF
 * ライブラリスクリプトのサブモジュール化
 * SmartActivateLib への依存を無くす。
 * git に移行
+
+== 2016-01-31
+* AppleEventExtra.h から NDCarbonUtiliteis への依存性を無くす
+  - typeAlias から NSURL をえる。
+  - typeFileURL に[NSAppleEventDescriptor coerceToDescriptorType:] 
+  - [NSAppleEventDescriptor data] から、theURLValue = (NSURL *)CFBridgingRelease(CFURLCreateWithBytes(NULL, [urlData bytes], [urlData length], kCFStringEncodingUTF8, NULL));
+
+== 2016-01-19
 * AppleScriptKit 関係を削除する。
 * XCode4.6 と 10.8 SDK に移行
-
 
 == 2013-09-26
 AppleScriptObjC に移行する。 -- 済み

@@ -1,5 +1,4 @@
 #import "AppleEventExtra.h"
-#import "NSURL+NDCarbonUtilities.h"
 
 @implementation NSAppleEventDescriptor (AppleEventExtra)
 
@@ -63,21 +62,11 @@
 	{
 		case typeAlias:							//	alias record
 		{
-			Handle			alias_handle;
-			FSRef			fs_ref;
-			Boolean			was_changed;
-			
-			data_size = AEGetDescDataSize([self aeDesc]);
-			alias_handle = NewHandle(data_size);
-			HLock(alias_handle);
-			err = AEGetDescData([self aeDesc], *alias_handle, data_size);
-			HUnlock(alias_handle);
-			if( err == noErr  && FSResolveAlias(NULL, (AliasHandle)alias_handle, &fs_ref, &was_changed ) == noErr )
-			{
-				file_url = [NSURL URLWithFSRef:&fs_ref];
-			}
-			
-			DisposeHandle(alias_handle);
+            NSAppleEventDescriptor *ae_type_url = [self coerceToDescriptorType:typeFileURL];
+            NSData *url_data = [ae_type_url data];
+            
+            file_url = (NSURL *)CFBridgingRelease(CFURLCreateWithBytes(NULL, [url_data bytes],
+                                                        [url_data length], kCFStringEncodingUTF8, NULL));
 			break;
 		}
 		case typeFileURL:
