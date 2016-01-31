@@ -11,9 +11,9 @@ MergePDF
 * DropBox を導入して、ソースの場所を設定できるようにする。
 * Sparkle の登録
 * DonationReminder のサブプロジェクト化
-* ライブラリスクリプトのサブモジュール化
 
 == 2016-01-31
+* ライブラリスクリプトのサブモジュール化
 * SmartActivateLib への依存を無くす。
 * git に移行
 * AppleEventExtra.h から NDCarbonUtiliteis への依存性を無くす
