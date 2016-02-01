@@ -7,12 +7,12 @@ MergePDF
   - PDFPage's initWithImage を使ったらどうにかならないか？
 * eps ファイルを pdf ファイルに変換できるようにする。
   - ビットマップデータが含まれる時にちゃんと圧縮することができるか。
-* deprecated API を replace
 * DropBox を導入して、ソースの場所を設定できるようにする。
-* Sparkle の登録
-* DonationReminder のサブプロジェクト化
+* deprecated API を replace
 
 == 2016-01-31
+* Sparkle の登録
+* DonationReminder のサブプロジェクト化
 * ライブラリスクリプトのサブモジュール化
 * SmartActivateLib への依存を無くす。
 * git に移行

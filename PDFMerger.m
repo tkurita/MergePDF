@@ -20,42 +20,27 @@
 	
 ImageKind image_type(NSString *path)
 {
-	CFStringRef a_uti = nil;
-	OSStatus status = noErr;
-	FSRef fileref;
-	ImageKind result = NotImage;
-    status = FSPathMakeRef((UInt8 *)[path fileSystemRepresentation], &fileref, NULL); 
-	if (status != noErr) {
-		NSLog(@"Fail to FSPathMakeRef for %@", path);
-		goto bail;
-	}
-	status = LSCopyItemAttribute(&fileref, kLSRolesAll, kLSItemContentType, (CFTypeRef *)&a_uti );
-	if (status != noErr) {
-		NSLog(@"Fail to LSCopyItemAttribute for %@", path);
-		goto finish;
-	}
-	if (UTTypeConformsTo(a_uti, CFSTR("com.adobe.pdf"))){
-		result = PDFImage;
-		goto finish;
-	}
-	if ([(NSString *)a_uti isEqualToString:@"com.adobe.illustrator.ai-image"]) {
-		result = PDFImage;
-		goto finish;
-	}
-		
-	if (UTTypeConformsTo(a_uti, CFSTR("public.jpeg"))) {
-		result = JpegImage;
-		goto finish;
-	}
-
-	if (UTTypeConformsTo(a_uti, CFSTR("public.image"))) result = GenericImage;
-finish:
-	CFRelease(a_uti);
-bail:
-#if useLog	
-	NSLog(@"image type : %d", result); 
-#endif	
-	return result;
+    NSWorkspace *ws = [NSWorkspace sharedWorkspace];
+    NSError *err = nil;
+    NSString *uti = [ws typeOfFile:path error:&err];
+    if (err) {
+        [NSApp presentError:err];
+        return NotImage;
+    }
+    
+    if ([ws type:uti conformsToType:@"com.adobe.pdf"]) {
+        return PDFImage;
+        
+    } else if ([uti isEqualToString:@"com.adobe.illustrator.ai-image"]) {
+        return PDFImage;
+        
+    } else if ([ws type:uti conformsToType:@"public.jpeg"]) {
+        return JpegImage;
+    } else if ([ws type:uti conformsToType:@"public.image"]) {
+        return GenericImage;
+    }
+    
+    return NotImage;
 }
 
 
@@ -310,7 +295,8 @@ bail:
 		[pdf_doc appendBookmark:label atPageIndex:0];
 	}
 
-	while (path = [[[enumerator nextObject] URL] path]) {
+    path = [[[enumerator nextObject] URL] path];
+	while (path) {
 		if ([self checkCanceled]) goto bail;
 		[self postProgressNotificationWithFile:path increment:incstep];
 		if (![pdf_doc mergeFile:path error:&error] ) {

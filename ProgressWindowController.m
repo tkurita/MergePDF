@@ -98,8 +98,7 @@
 									 defaultButton:@"OK"
 								   alternateButton:nil
 									   otherButton:nil
-						 informativeTextWithFormat:
-					  [NSString stringWithFormat:NSLocalizedString(@"Location :",@""), aPath]];
+						 informativeTextWithFormat:NSLocalizedString(@"Location :",@""), aPath];
 	[alert setShowsHelp:YES];
 	[alert setDelegate:self];
 	
@@ -145,7 +144,7 @@
 										 defaultButton:NSLocalizedString(@"Open", @"")
 									   alternateButton:NSLocalizedString(@"Cancel", @"")
 										   otherButton:NSLocalizedString(@"Reveal", @"")
-							 informativeTextWithFormat:mergeProcessor.destination];
+							 informativeTextWithFormat:@"%@", mergeProcessor.destination];
 		BOOL is_key = [self.window isKeyWindow];
 		[alert beginSheetModalForWindow:self.window
 						  modalDelegate:self didEndSelector:@selector(finishAlertDidEnd:returnCode:contextInfo:)

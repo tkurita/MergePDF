@@ -25,6 +25,7 @@
 		2C3F3B6D1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F3B6B1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m */; };
 		2C3F3B761C5E550600C940BD /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3F3B731C5E547E00C940BD /* DonationReminder.framework */; };
 		2C3F3B791C5E578900C940BD /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3F3B771C5E56D100C940BD /* Sparkle.framework */; };
+		2C3F3B7C1C5E590E00C940BD /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3F3B731C5E547E00C940BD /* DonationReminder.framework */; };
 		2C3F62BA0F6E6E6600C42308 /* PDFMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */; };
 		2C3F62BB0F6E6E6600C42308 /* PDFMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F62B90F6E6E6600C42308 /* PDFMerger.m */; };
 		2C3F658E0F6FBCFC00C42308 /* ProgressWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */; };
@@ -47,7 +48,6 @@
 		2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */; };
 		2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BE72517F355D6003DA783 /* AppleEventExtra.m */; };
 		2CAC67A21356C620001D05E8 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CAC67A01356C620001D05E8 /* ServicesMenu.strings */; };
-		2CD128D10D40A437004BF0C5 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */; };
 		2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CD4055D0F75D11100B96300 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
@@ -135,8 +135,8 @@
 			files = (
 				2C5981F9098712B2003D230C /* Cocoa.framework in Frameworks */,
 				2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */,
-				2CD128D10D40A437004BF0C5 /* DonationReminder.framework in Frameworks */,
 				2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */,
+				2C3F3B7C1C5E590E00C940BD /* DonationReminder.framework in Frameworks */,
 				2C3F3B791C5E578900C940BD /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

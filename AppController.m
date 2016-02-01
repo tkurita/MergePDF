@@ -127,13 +127,18 @@ void saveImageAsPDF(NSString *path)
 						@"message of save panel")];
 		[sp setTitle:NSLocalizedString(@"Convert an image to a PDF.",
 						@"title of save panel")];
+        [sp setDirectoryURL:[NSURL fileURLWithPath:[pdfpath stringByDeletingLastPathComponent]]];
+        [sp setNameFieldStringValue:[pdfpath lastPathComponent]];
 		[NSApp activateIgnoringOtherApps:YES];
-		if (NSFileHandlingPanelCancelButton == 
-				[sp runModalForDirectory:[pdfpath stringByDeletingLastPathComponent] 
-									file:[pdfpath lastPathComponent]]) {
-			return;
-		}
-		pdfpath = [sp filename];
+        if (NSFileHandlingPanelCancelButton == [NSApp runModalForWindow:sp]) {
+            return;
+        }
+//		if (NSFileHandlingPanelCancelButton == 
+//				[sp runModalForDirectory:[pdfpath stringByDeletingLastPathComponent]
+//									file:[pdfpath lastPathComponent]]) {
+//			return;
+//		}
+		pdfpath = [[sp URL] path];
 	}
 	
 	[pdfdoc writeToFile:pdfpath];
