@@ -14,10 +14,16 @@ ImageKind image_type(NSString *path);
 @end
 
 @interface PDFDocument (MergePDF)
+- (PDFOutline *)appendBookmark:(NSString *)label atPageIndex:(NSUInteger)index;
++ (PDFDocument *)pdfDocumentWithURL:(NSURL *)fURL;
++ (PDFDocument *)pdfDocumentWithImageURL:(NSURL *)fURL;
+- (BOOL)mergeFileAtURL:(NSURL *)path error:(NSError **)error;
+
+//deprecated
+- (BOOL)mergeFile:(NSString *)path error:(NSError **)error;
 + (PDFDocument *)pdfDocumentWithPath:(NSString *)path;
 + (PDFDocument *)pdfDocumentWithImageFile:(NSString *)path;
-- (PDFOutline *)appendBookmark:(NSString *)label atPageIndex:(NSUInteger)index;
-- (BOOL)mergeFile:(NSString *)path error:(NSError **)error;
+
 @end
 
 @interface PDFMerger : NSObject {
