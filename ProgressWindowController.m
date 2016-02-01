@@ -75,10 +75,10 @@
 
 - (void)updateStatus
 {
-	NSDictionary *dict = [progressStatuses objectAtIndex:statusLevel];
-	NSString *msg = NSLocalizedString([dict objectForKey:@"status"], nil);
+	NSDictionary *dict = progressStatuses[statusLevel];
+	NSString *msg = NSLocalizedString(dict[@"status"], nil);
 	[statusField setStringValue:msg];
-	[progressIndicator incrementBy:[[dict objectForKey:@"levelIncrement"] doubleValue]];
+	[progressIndicator incrementBy:[dict[@"levelIncrement"] doubleValue]];
 	statusLevel++;
 }
 
@@ -135,7 +135,7 @@
 - (void)updateProgressMessage:(NSNotification *)notification
 {
 	NSDictionary *info = [notification userInfo];
-	NSString *message = [info objectForKey:@"message"];
+	NSString *message = info[@"message"];
 	if ([message isEqualToString:@"Success"]) {
 		message = NSLocalizedString(message, @"");
 		[progressIndicator setDoubleValue:[progressIndicator maxValue]];
@@ -156,7 +156,7 @@
 		[self cancelTask];
 		return;
 	} else {
-		[progressIndicator incrementBy:[[info objectForKey:@"levelIncrement"] doubleValue]];
+		[progressIndicator incrementBy:[info[@"levelIncrement"] doubleValue]];
 		[statusField setStringValue:NSLocalizedString(message, @"")];
 	}
 	
@@ -164,7 +164,7 @@
 
 - (void)appendErrorMessage:(NSNotification *)notification
 {
-	NSString *msg = [[[[notification userInfo] objectForKey:@"error"] localizedDescription] stringByAppendingString:@"\n"];
+	NSString *msg = [[[notification userInfo][@"error"] localizedDescription] stringByAppendingString:@"\n"];
 #if useLog
 	NSLog(msg);
 #endif
