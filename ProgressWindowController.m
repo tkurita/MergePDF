@@ -8,7 +8,6 @@
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[_progressStatuses release];
 	[_sourceLocation release];
 	[_frameName release];
 	[super dealloc];
@@ -72,15 +71,6 @@
 	return [progressIndicator doubleValue];
 }
 
-- (void)updateStatus
-{
-	NSDictionary *dict = _progressStatuses[statusLevel];
-	NSString *msg = NSLocalizedString(dict[@"status"], nil);
-	[statusField setStringValue:msg];
-	[progressIndicator incrementBy:[dict[@"levelIncrement"] doubleValue]];
-	statusLevel++;
-}
-
 - (BOOL)alertShowHelp:(NSAlert *)alert {
 	[NSApp showHelp:self];
 	return YES;
@@ -129,6 +119,13 @@
 	[statusField setStringValue:message];
 	self.processStarted = NO;
 	statusLevel = 0;	
+}
+
+- (void)setStatusMessage:(NSString *)message indicatorIncrement:(double)delta
+{
+    [statusField setStringValue:NSLocalizedString(message, @"")];
+    [progressIndicator incrementBy:delta];
+    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow: 0.1]];
 }
 
 - (void)updateProgressMessage:(NSNotification *)notification
@@ -190,8 +187,6 @@
 	[a_window center];
 	[a_window setFrameUsingName:_frameName];
 	
-	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
-	self.progressStatuses = [user_defaults arrayForKey:@"ProgressMessages"];
 	statusLevel = 0;
 	self.processStarted = NO;
 	self.canceled = NO;

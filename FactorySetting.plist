@@ -2,21 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ProgressMessages</key>
-	<array>
-		<dict>
-			<key>levelIncrement</key>
-			<integer>5</integer>
-			<key>status</key>
-			<string>Checking files</string>
-		</dict>
-		<dict>
-			<key>levelIncrement</key>
-			<integer>5</integer>
-			<key>status</key>
-			<string>Finish</string>
-		</dict>
-	</array>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>
