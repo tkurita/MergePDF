@@ -9,21 +9,15 @@
 	IBOutlet NSWindow *directionChooserWindow;
 	IBOutlet id worker;
 	
-	NSArray *progressStatuses;
 	NSUInteger statusLevel;
-	NSString *sourceLocation;
-	NSString *frameName;
-	PDFMerger *mergeProcessor;
-	BOOL processStarted;
-	BOOL canceled;
 }
 
 @property (retain) NSArray *progressStatuses;
 @property (retain) NSString *sourceLocation;
 @property (retain) NSString *frameName;
 @property (retain) PDFMerger *mergeProcessor;
-@property (readwrite) BOOL processStarted;
-@property (readwrite) BOOL canceled;
+@property (assign) BOOL processStarted;
+@property (assign) BOOL canceled;
 
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)closeDirectionChooser:(id)sender;

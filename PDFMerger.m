@@ -293,18 +293,17 @@ bail:
 
 
 @implementation PDFMerger
-@synthesize targetFiles, destination, canceled;
 
 - (id)init {
     if (self = [super init]) {
-		canceled = NO;
+		self.canceled = NO;
     }
     return self;
 }
 - (void)dealloc
 {
-	[targetFiles release];
-	[destination release];
+	[_targetFiles release];
+	[_destination release];
 	[super dealloc];
 }
 
@@ -341,7 +340,7 @@ bail:
 
 - (BOOL)checkCanceled
 {
-	if (!canceled) {
+	if (!_canceled) {
 #if useLog		
 		NSLog(@"Not canceled");
 #endif
@@ -356,8 +355,8 @@ bail:
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSError *error;
 	if ([self checkCanceled]) goto bail;
-	double incstep = 85.0/[targetFiles count];
-	NSEnumerator *enumerator = [targetFiles objectEnumerator];
+	double incstep = 85.0/[_targetFiles count];
+	NSEnumerator *enumerator = [_targetFiles objectEnumerator];
 	//NSString *path = [[[enumerator nextObject] URL] path];
     NSURL *fURL = [[enumerator nextObject] URL];
 	[self postProgressNotificationWithFile:[fURL path] increment:incstep];
@@ -391,7 +390,7 @@ bail:
 	}
 	if ([self checkCanceled]) goto bail;
 	[self postProgressNotificationWithMessage:NSLocalizedString(@"Saving a new PDF file", @"") increment:5];
-	[pdf_doc writeToFile:destination];
+	[pdf_doc writeToFile:_destination];
 	[self postProgressNotificationWithMessage:@"Success" increment:5];
 bail:
 	[pool release];

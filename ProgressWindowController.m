@@ -3,15 +3,14 @@
 #define useLog 0
 
 @implementation ProgressWindowController
-@synthesize progressStatuses, sourceLocation, frameName, mergeProcessor, processStarted, canceled;
 
 
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[progressStatuses release];
-	[sourceLocation release];
-	[frameName release];
+	[_progressStatuses release];
+	[_sourceLocation release];
+	[_frameName release];
 	[super dealloc];
 }
 
@@ -34,15 +33,15 @@
 
 - (IBAction)cancelAction:(id)sender
 {
-	if (processStarted) {
+	if (_processStarted) {
 #if useLog		
 		NSLog(@"cancel merge processor");
 #endif
-		if (mergeProcessor) {
-			mergeProcessor.canceled = YES;
-			canceled = YES;
+		if (_mergeProcessor) {
+			self.mergeProcessor.canceled = YES;
+			self.canceled = YES;
 		} else {
-			canceled = YES;
+			self.canceled = YES;
 		}
 	} else {
 		[self close];
@@ -51,7 +50,7 @@
 
 - (void)markProcessStarted
 {
-	processStarted = YES;
+	self.processStarted = YES;
 }
 
 - (void)processFiles:(NSArray *)array to:(NSString *)destination
@@ -60,12 +59,12 @@
 	self.mergeProcessor = [[PDFMerger new] autorelease];
 	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	[noticenter addObserver:self selector:@selector(updateProgressMessage:) 
-					   name:@"UpdateProgressMessage" object:mergeProcessor];
+					   name:@"UpdateProgressMessage" object:_mergeProcessor];
 	[noticenter addObserver:self selector:@selector(appendErrorMessage:)
-					   name:@"AppendErrorMessage" object:mergeProcessor];
-	mergeProcessor.targetFiles = array;
-	mergeProcessor.destination = destination;
-	[NSThread detachNewThreadSelector:@selector(start:) toTarget:mergeProcessor withObject:self];
+					   name:@"AppendErrorMessage" object:_mergeProcessor];
+	self.mergeProcessor.targetFiles = array;
+	self.mergeProcessor.destination = destination;
+	[NSThread detachNewThreadSelector:@selector(start:) toTarget:_mergeProcessor withObject:self];
 }
 
 - (double)currentProgressValue
@@ -75,7 +74,7 @@
 
 - (void)updateStatus
 {
-	NSDictionary *dict = progressStatuses[statusLevel];
+	NSDictionary *dict = _progressStatuses[statusLevel];
 	NSString *msg = NSLocalizedString(dict[@"status"], nil);
 	[statusField setStringValue:msg];
 	[progressIndicator incrementBy:[dict[@"levelIncrement"] doubleValue]];
@@ -112,10 +111,10 @@
 {
 	switch (returnCode) {
 		case NSAlertDefaultReturn:
-			[[NSWorkspace sharedWorkspace] openFile:mergeProcessor.destination];
+			[[NSWorkspace sharedWorkspace] openFile:_mergeProcessor.destination];
 			break;
 		case NSAlertOtherReturn:
-			[[NSWorkspace sharedWorkspace] selectFile:mergeProcessor.destination inFileViewerRootedAtPath:nil];
+			[[NSWorkspace sharedWorkspace] selectFile:_mergeProcessor.destination inFileViewerRootedAtPath:nil];
 			break;
 		default:
 			break;
@@ -128,7 +127,7 @@
 	[progressIndicator setDoubleValue:[progressIndicator minValue]];
 	NSString *message = NSLocalizedString(@"Canceled", @"");
 	[statusField setStringValue:message];
-	processStarted = NO;
+	self.processStarted = NO;
 	statusLevel = 0;	
 }
 
@@ -144,13 +143,13 @@
 										 defaultButton:NSLocalizedString(@"Open", @"")
 									   alternateButton:NSLocalizedString(@"Cancel", @"")
 										   otherButton:NSLocalizedString(@"Reveal", @"")
-							 informativeTextWithFormat:@"%@", mergeProcessor.destination];
+							 informativeTextWithFormat:@"%@", _mergeProcessor.destination];
 		BOOL is_key = [self.window isKeyWindow];
 		[alert beginSheetModalForWindow:self.window
 						  modalDelegate:self didEndSelector:@selector(finishAlertDidEnd:returnCode:contextInfo:)
 							contextInfo:nil];
 		if (is_key) [self.window makeKeyWindow]; // to make sheet key-window.
-		processStarted = NO;
+		self.processStarted = NO;
 		return;
 	} else if ([message isEqualToString:@"Canceled"]) {
 		[self cancelTask];
@@ -179,7 +178,7 @@
 
 - (void)windowWillClose:(NSNotification *)aNotification
 {
-	[[aNotification object] saveFrameUsingName:frameName];
+	[[aNotification object] saveFrameUsingName:_frameName];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	[self release];
 }
@@ -189,13 +188,13 @@
 	self.frameName = @"ProgressWindow";
 	NSWindow *a_window = self.window;
 	[a_window center];
-	[a_window setFrameUsingName:frameName];
+	[a_window setFrameUsingName:_frameName];
 	
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	self.progressStatuses = [user_defaults arrayForKey:@"ProgressMessages"];
 	statusLevel = 0;
-	processStarted = NO;
-	canceled = NO;
+	self.processStarted = NO;
+	self.canceled = NO;
 }
 
 #pragma mark choose new PDF location
