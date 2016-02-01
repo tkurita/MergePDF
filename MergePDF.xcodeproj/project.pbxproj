@@ -19,6 +19,7 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
+		2C0E49DA1C5F1DD9008B1DD4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3F3B771C5E56D100C940BD /* Sparkle.framework */; };
 		2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */; };
 		2C31A20709874594003BE6E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A20509874594003BE6E4 /* InfoPlist.strings */; };
 		2C3F3B6C1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F3B6A1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h */; };
@@ -76,6 +77,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2C3F3B761C5E550600C940BD /* DonationReminder.framework in CopyFiles */,
+				2C0E49DA1C5F1DD9008B1DD4 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +502,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -532,10 +534,9 @@
 		2C5981FD098712B2003D230C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -563,7 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -591,31 +592,31 @@
 		2CAA8C6D0933698B009EC6A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
 		2CAA8C6E0933698B009EC6A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
 		2CAA8C6F0933698B009EC6A1 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Default;
 		};

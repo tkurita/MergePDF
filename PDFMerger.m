@@ -1,4 +1,5 @@
 #import "PDFMerger.h"
+#import "AppleEventExtra.h"
 
 #define useLog 0
 
@@ -243,7 +244,13 @@ bail:
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
 						  message, @"message", 
 						  [NSNumber numberWithDouble:increment], @"levelIncrement", nil];
-	[noticenter postNotificationName:@"UpdateProgressMessage" object:self userInfo:dict];
+	//[noticenter postNotificationName:@"UpdateProgressMessage" object:self userInfo:dict];
+    
+    [noticenter performSelectorOnMainThread:@selector(postNotification:)
+                                 withObject:[NSNotification notificationWithName:@"UpdateProgressMessage"
+                                                                          object:self
+                                                                        userInfo:dict]
+                              waitUntilDone:NO];
 }
 
 - (void)postErrorNotification:(NSError *)error
@@ -295,8 +302,8 @@ bail:
 		[pdf_doc appendBookmark:label atPageIndex:0];
 	}
 
-    path = [[[enumerator nextObject] URL] path];
-	while (path) {
+    for (NSAppleEventDescriptor *aedesc in enumerator) {
+        path = [[aedesc URL] path];
 		if ([self checkCanceled]) goto bail;
 		[self postProgressNotificationWithFile:path increment:incstep];
 		if (![pdf_doc mergeFile:path error:&error] ) {
