@@ -221,8 +221,7 @@ bail:
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithPath:path];
 	if (!pdf_doc) {
 		//NSLog(@"Fail to get PDF for %@", path);
-		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-							  [NSString stringWithFormat:@"Fail to get PDF for %@.",path], NSLocalizedDescriptionKey, nil];
+		NSDictionary *dict = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Fail to get PDF for %@.",path]};
 		*error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
 		return NO;
 	}
@@ -260,8 +259,7 @@ bail:
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
 	if (!pdf_doc) {
 		//NSLog(@"Fail to get PDF for %@", path);
-		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-							  [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]], NSLocalizedDescriptionKey, nil];
+		NSDictionary *dict = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]]};
 		*error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
 		return NO;
 	}
@@ -315,18 +313,16 @@ bail:
 	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Processing %@", @""), 
 							[path lastPathComponent]];
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-							  message, @"message", 
-							  [NSNumber numberWithDouble:increment], @"levelIncrement", nil];
+	NSDictionary *dict = @{@"message": message, 
+							  @"levelIncrement": @(increment)};
 	[noticenter postNotificationName:@"UpdateProgressMessage" object:self userInfo:dict];
 }
 
 - (void)postProgressNotificationWithMessage:(NSString *)message increment:(double)increment
 {
 	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-						  message, @"message", 
-						  [NSNumber numberWithDouble:increment], @"levelIncrement", nil];
+	NSDictionary *dict = @{@"message": message, 
+						  @"levelIncrement": @(increment)};
 	//[noticenter postNotificationName:@"UpdateProgressMessage" object:self userInfo:dict];
     
     [noticenter performSelectorOnMainThread:@selector(postNotification:)
@@ -340,7 +336,7 @@ bail:
 {
 	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	[noticenter postNotificationName:@"AppendErrorMessage" object:self userInfo:
-		[NSDictionary dictionaryWithObject:error forKey:@"error"]];
+		@{@"error": error}];
 }
 
 - (BOOL)checkCanceled
@@ -367,8 +363,7 @@ bail:
 	[self postProgressNotificationWithFile:[fURL path] increment:incstep];
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
 	if (!pdf_doc) {
-		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-						  [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]], NSLocalizedDescriptionKey, nil];
+		NSDictionary *dict = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]]};
 		error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
 		[self postErrorNotification:error];
 		return;
