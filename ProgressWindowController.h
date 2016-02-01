@@ -12,7 +12,6 @@
 	NSUInteger statusLevel;
 }
 
-@property (retain) NSArray *progressStatuses;
 @property (retain) NSString *sourceLocation;
 @property (retain) NSString *frameName;
 @property (retain) PDFMerger *mergeProcessor;
@@ -21,5 +20,6 @@
 
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)closeDirectionChooser:(id)sender;
+- (void)setStatusMessage:(NSString *)message indicatorIncrement:(double)delta;
 
 @end

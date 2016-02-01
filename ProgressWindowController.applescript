@@ -112,7 +112,7 @@ script ProgressWindowWorker
 		tell my _window_controller
 			setProcessStarted_(true)
 			setCanceled_(false)
-			updateStatus()
+			setStatusMessage_indicatorIncrement_("Checking files",5)
 		end tell
 		set _target_files to a_pdf_sorter's sorted_items()
 		if check_canceled() then return false

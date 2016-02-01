@@ -10,7 +10,11 @@ MergePDF
 * ARC
 * DropBox を導入して、ソースの場所を設定できるようにする。
 
+    
 == 2016-01-31
+* runloop に戻らないと、すべてのNSTextField の値が変更されない。
+  - [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow: 0.1]];
+    を挿入する。
 * HelpBook のフォルダレイアウトを更新する。
 * modern Obj-C
 * PDFMerge.m を refactoring

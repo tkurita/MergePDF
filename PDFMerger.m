@@ -309,7 +309,8 @@ bail:
 
 - (void)postProgressNotificationWithFile:(NSString *)path increment:(double)increment
 {
-	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
+	NSLog(@"postProgressNotificationWithFile:%@", path);
+    NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Processing %@", @""), 
 							[path lastPathComponent]];
 	NSDictionary *dict = @{@"message": message, 
@@ -357,7 +358,6 @@ bail:
 	if ([self checkCanceled]) goto bail;
 	double incstep = 85.0/[_targetFiles count];
 	NSEnumerator *enumerator = [_targetFiles objectEnumerator];
-	//NSString *path = [[[enumerator nextObject] URL] path];
     NSURL *fURL = [[enumerator nextObject] URL];
 	[self postProgressNotificationWithFile:[fURL path] increment:incstep];
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
