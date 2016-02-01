@@ -8,9 +8,10 @@ MergePDF
 * eps ファイルを pdf ファイルに変換できるようにする。
   - ビットマップデータが含まれる時にちゃんと圧縮することができるか。
 * DropBox を導入して、ソースの場所を設定できるようにする。
-* deprecated API を replace
+* HelpBook のフォルダレイアウトを更新する。
 
 == 2016-01-31
+* deprecated API を replace
 * Sparkle の登録
 * DonationReminder のサブプロジェクト化
 * ライブラリスクリプトのサブモジュール化
