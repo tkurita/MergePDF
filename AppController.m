@@ -119,29 +119,24 @@ void saveImageAsPDF(NSString *path)
 		return;
 	}
 	
-	NSString *pdfpath = [[path stringByDeletingPathExtension] stringByAppendingPathExtension:@"pdf"];
+    NSURL *pdfurl = [NSURL fileURLWithPath:[[path stringByDeletingPathExtension] stringByAppendingPathExtension:@"pdf"]];
 	NSFileManager *fm = [NSFileManager defaultManager];
-	if ([fm fileExistsAtPath:pdfpath]) {
+	if ([fm fileExistsAtPath:[pdfurl path]]) {
 		NSSavePanel *sp = [NSSavePanel savePanel];
 		[sp setMessage:NSLocalizedString(@"Choose location to save a PDF file.",
 						@"message of save panel")];
 		[sp setTitle:NSLocalizedString(@"Convert an image to a PDF.",
 						@"title of save panel")];
-        [sp setDirectoryURL:[NSURL fileURLWithPath:[pdfpath stringByDeletingLastPathComponent]]];
-        [sp setNameFieldStringValue:[pdfpath lastPathComponent]];
+        [sp setDirectoryURL:[pdfurl URLByDeletingLastPathComponent]];
+        [sp setNameFieldStringValue:[pdfurl lastPathComponent]];
 		[NSApp activateIgnoringOtherApps:YES];
         if (NSFileHandlingPanelCancelButton == [NSApp runModalForWindow:sp]) {
             return;
         }
-//		if (NSFileHandlingPanelCancelButton == 
-//				[sp runModalForDirectory:[pdfpath stringByDeletingLastPathComponent]
-//									file:[pdfpath lastPathComponent]]) {
-//			return;
-//		}
-		pdfpath = [[sp URL] path];
+		pdfurl = [sp URL];
 	}
 	
-	[pdfdoc writeToFile:pdfpath];
+    [pdfdoc writeToURL:pdfurl];
 }
 
 - (void)imageToPDF:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
