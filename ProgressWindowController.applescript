@@ -7,20 +7,24 @@ script ProgressWindowWorker
 	
 	property SorterDelegate : missing value
 	
-	property _window : missing value
-	property _source_location_field : missing value
-	property _new_file_field : missing value
-	property _direction_chooser_window : missing value
-	property _row_direction_button : missing value
-	property _column_direction_button : missing value
 	
-	property _window_controller : missing value
+	property _source_location_field : missing value
+	
+
 	property _pdf_sorter : missing value
 	property _target_files : missing value
 	property _source_location : missing value
 	property _default_dest : missing value
 	property _destination : missing value
 	
+    (* IB Outlets *)
+    property _window : missing value
+	property _window_controller : missing value
+	property _column_direction_button : missing value
+	property _row_direction_button : missing value
+	property _direction_chooser_window : missing value
+	property _new_file_field : missing value
+    
 	on import_script(a_name)
 		--log "start import_script"
 		set a_script to load script (path to resource a_name & ".scpt")

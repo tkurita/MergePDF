@@ -26,14 +26,10 @@ ImageKind image_type(NSString *path);
 
 @end
 
-@interface PDFMerger : NSObject {
-	NSArray *targetFiles;
-	NSString *destination;
-	BOOL canceled;
-}
+@interface PDFMerger : NSObject
 
 @property(retain) NSArray *targetFiles;
 @property(retain) NSString* destination;
-@property(readwrite) BOOL canceled;
+@property(assign) BOOL canceled;
 
 @end
