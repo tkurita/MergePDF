@@ -2,13 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AppleIcon</key>
-	<string>MergePDF16.png</string>
 	<key>IsLocalized</key>
 	<true/>
 	<key>ManualFolder</key>
 	<string>/Users/tkurita/Factories/Websites/scriptfactory/web-content/software/misc/MergePDF/manual</string>
-	<key>ManualPage</key>
-	<string>index.html</string>
+	<key>NewLayout</key>
+	<true/>
 </dict>
 </plist>

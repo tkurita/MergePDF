@@ -7,10 +7,12 @@ MergePDF
   - PDFPage's initWithImage を使ったらどうにかならないか？
 * eps ファイルを pdf ファイルに変換できるようにする。
   - ビットマップデータが含まれる時にちゃんと圧縮することができるか。
+* ARC
 * DropBox を導入して、ソースの場所を設定できるようにする。
-* HelpBook のフォルダレイアウトを更新する。
 
 == 2016-01-31
+* HelpBook のフォルダレイアウトを更新する。
+* modern Obj-C
 * PDFMerge.m を refactoring
 * deprecated API を replace
 * Sparkle の登録
