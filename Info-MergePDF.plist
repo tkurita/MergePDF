@@ -31,6 +31,8 @@
 	<string>2.3 copyright 1998-2016, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>MergePDFHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Scriptfactory.MergePDF.help</string>
 	<key>CFBundleIconFile</key>
 	<string>MergePDF.icns</string>
 	<key>CFBundleIdentifier</key>
