@@ -44,7 +44,7 @@ ImageKind image_type(NSString *path)
     return NotImage;
 }
 
-
+//deprecated use pdfDocumentWithImageURL:
 // it looks PDFPage's initWithImage cause same result in almost
 // But CGPDFContext help to keep file size of jpeg in Mac OS X 10.5
 // In Mac OS X 10.6, initWithImage does not increse data size of jpeg.
@@ -118,6 +118,7 @@ bail:
 	return [doc autorelease];	
 }
 
+//deprecated use pdfDocumentWithImageURL
 + (PDFDocument *)pdfDocumentWithPath:(NSString *)path
 {
 	PDFDocument *result = NULL;
@@ -150,6 +151,48 @@ bail:
 	return result;
 }
 
++ (PDFDocument *)pdfDocumentWithImageURL:(NSURL *)fURL
+{
+    PDFDocument *result = [[PDFDocument alloc] init];
+    NSImage *image = [[NSImage alloc] initWithContentsOfURL:fURL];
+    NSArray *image_reps = [image representations];
+    if ([image_reps count] > 1) {
+        //support for multipage tiff
+        NSUInteger ind = 0;
+        for (NSImageRep *imgrep in image_reps) {
+            NSImage *single_image = [[NSImage new] autorelease];
+            [single_image addRepresentation:imgrep];
+             PDFPage *page = [[PDFPage alloc] initWithImage:single_image];
+             [result insertPage:[page autorelease] atIndex:ind++];
+        }
+    } else {
+        PDFPage *page = [[PDFPage alloc] initWithImage:image];
+        [result insertPage:[page autorelease] atIndex:0];
+    }
+    
+    
+    [image autorelease];
+    return [result autorelease];
+}
+
++ (PDFDocument *)pdfDocumentWithURL:(NSURL *)fURL
+{
+    PDFDocument *result = NULL;
+    
+	switch (image_type([fURL path])) {
+		case JpegImage:
+			result = [PDFDocument pdfDocumentWithImageURL:fURL];
+			break;
+		case GenericImage:
+            result = [PDFDocument pdfDocumentWithImageURL:fURL];
+			break;
+		default:
+			result = [[[PDFDocument alloc] initWithURL: fURL] autorelease];
+			break;
+	}
+	return result;
+}
+
 - (void)appendOutline:(PDFOutline *)outline
 {
 	[[self outlineRoot] insertChild:outline atIndex:[[self outlineRoot] numberOfChildren]];	
@@ -169,6 +212,7 @@ bail:
 	return newoutline;
 }
 
+// deprecated use mergeFileAtURL:
 - (BOOL)mergeFile:(NSString *)path error:(NSError **)error
 {
 #if useLog
@@ -204,6 +248,45 @@ bail:
 	} else {
 		[self appendBookmark:[[path lastPathComponent] stringByDeletingPathExtension]
 										   atPageIndex:destpage_index];
+	}
+	return YES;
+}
+
+- (BOOL)mergeFileAtURL:(NSURL *)fURL error:(NSError **)error
+{
+#if useLog
+	NSLog(@"start mergeFile for %@", fURL);
+#endif
+	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
+	if (!pdf_doc) {
+		//NSLog(@"Fail to get PDF for %@", path);
+		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+							  [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]], NSLocalizedDescriptionKey, nil];
+		*error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
+		return NO;
+	}
+	NSInteger npages = [pdf_doc pageCount];
+#if useLog
+	NSLog(@"number of pages before appending : %d", [self pageCount]);
+	NSLog(@"number of pages to append : %d", npages);
+#endif
+	for (int n = 0; n < npages; n++) {
+		[self insertPage:[pdf_doc pageAtIndex:n] atIndex:[self pageCount]];
+	}
+#if useLog
+	NSLog(@"number of pages after appending : %d", [self pageCount]);
+#endif
+	PDFOutline *outline = [[pdf_doc outlineRoot] retain];
+	NSString *label = [[fURL lastPathComponent] stringByDeletingPathExtension];
+	NSUInteger destpage_index = [self pageCount]-npages;
+	if (outline) {
+		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[self pageAtIndex: destpage_index]];
+		[outline setDestination:pdfdest];
+		[outline setLabel:label];
+		[self appendOutline:[outline autorelease]];
+	} else {
+		[self appendBookmark:[[fURL lastPathComponent] stringByDeletingPathExtension]
+                 atPageIndex:destpage_index];
 	}
 	return YES;
 }
@@ -279,12 +362,13 @@ bail:
 	if ([self checkCanceled]) goto bail;
 	double incstep = 85.0/[targetFiles count];
 	NSEnumerator *enumerator = [targetFiles objectEnumerator];
-	NSString *path = [[[enumerator nextObject] URL] path];
-	[self postProgressNotificationWithFile:path increment:incstep];
-	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithPath:path];
+	//NSString *path = [[[enumerator nextObject] URL] path];
+    NSURL *fURL = [[enumerator nextObject] URL];
+	[self postProgressNotificationWithFile:[fURL path] increment:incstep];
+	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
 	if (!pdf_doc) {
 		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-						  [NSString stringWithFormat:@"Fail to get PDF for %@.",path], NSLocalizedDescriptionKey, nil];
+						  [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]], NSLocalizedDescriptionKey, nil];
 		error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
 		[self postErrorNotification:error];
 		return;
@@ -292,7 +376,7 @@ bail:
 	
 	PDFOutline *outline = [[pdf_doc outlineRoot] retain];
 	[pdf_doc setOutlineRoot:[[[PDFOutline alloc] init] autorelease]];
-	NSString *label = [[path lastPathComponent] stringByDeletingPathExtension];
+	NSString *label = [[fURL lastPathComponent] stringByDeletingPathExtension];
 	if (outline) {
 		[outline setLabel:label];
 		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[pdf_doc pageAtIndex:0]];
@@ -303,10 +387,10 @@ bail:
 	}
 
     for (NSAppleEventDescriptor *aedesc in enumerator) {
-        path = [[aedesc URL] path];
+        fURL = [aedesc URL];
 		if ([self checkCanceled]) goto bail;
-		[self postProgressNotificationWithFile:path increment:incstep];
-		if (![pdf_doc mergeFile:path error:&error] ) {
+		[self postProgressNotificationWithFile:[fURL path] increment:incstep];
+		if (![pdf_doc mergeFileAtURL:fURL error:&error] ) {
 			[self postErrorNotification:error];
 		}
 	}

@@ -11,6 +11,7 @@ MergePDF
 * HelpBook のフォルダレイアウトを更新する。
 
 == 2016-01-31
+* PDFMerge.m を refactoring
 * deprecated API を replace
 * Sparkle の登録
 * DonationReminder のサブプロジェクト化
