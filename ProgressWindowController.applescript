@@ -33,7 +33,7 @@ script ProgressWindowWorker
 	
     
     on setupDefaultDestination() -- must be camelCase to call from Obj-C
-        log "start setupDefaultDestination"
+        --log "start setupDefaultDestination"
   		set a_container to my _window_controller's sourceLocation() as text
 		try
 			set my _pdf_sorter to FileSorter's make_with_delegate(SorterDelegate's make_with(a_container))
