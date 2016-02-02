@@ -131,10 +131,10 @@
 		2CBDC6AA1C607A580048384C /* PathExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathExtra.h; sourceTree = "<group>"; };
 		2CBDC6AB1C607A580048384C /* PathExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathExtra.m; sourceTree = "<group>"; };
 		2CBDC6B11C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2CBDC6B31C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CBDC6B31C60BB9A0048384C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBDC6B51C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2CBDC6B71C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
-		2CBDC6B91C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		2CBDC6B91C60BB9A0048384C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CBDC6BF1C60BBA50048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CBDC6C01C60BBAB0048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBDC6C11C60BBB90048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/MainMenu.nib; sourceTree = "<group>"; };
@@ -421,18 +421,12 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/English.lproj/MainMenu.nib",
-				"$(SRCROOT)/English.lproj/ProgressWindow.nib",
-				"$(SRCROOT)/Japanese.lproj/MainMenu.strings",
-				"$(SRCROOT)/Japanese.lproj/ProgressWindow.strings",
 			);
 			outputPaths = (
-				"$(SRCROOT)/Japanese.lproj/MainMenu.nib",
-				"$(SRCROOT)/Japanese.lproj/ProgressWindow.nib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\nnib_basename=`basename ${target_nib} .nib` \n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nrm -rf ${target_lang_nib}/.svn\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese ProgressWindow.nib\n";
+			shellScript = "make -f LocalizeTools/localize.mk target_lang=ja nibs='MainMenu.nib ProgressWindow.nib'\n";
 		};
 		2CF84035158049E2004E5E20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
