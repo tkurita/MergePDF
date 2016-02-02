@@ -1,4 +1,5 @@
 #import "ProgressWindowController.h"
+#import "DropBox.h"
 
 #define useLog 0
 
@@ -171,6 +172,14 @@
 	[textStorage endEditing];
 }
 
+#pragma mark DropBox
+- (BOOL)dropBox:(NSView *)dbv acceptDrop:(id <NSDraggingInfo>)info item:(id)item
+{
+	self.sourceLocation = item;
+	[worker setupDefaultDestination];
+	return YES;
+}
+
 #pragma mark window delegate
 
 - (void)windowWillClose:(NSNotification *)aNotification
@@ -190,6 +199,8 @@
 	statusLevel = 0;
 	self.processStarted = NO;
 	self.canceled = NO;
+    
+    [saveToBox setAcceptFileInfo:@[@{@"FileType": NSFileTypeDirectory}]];
 }
 
 #pragma mark choose new PDF location

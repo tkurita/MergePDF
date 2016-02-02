@@ -31,13 +31,13 @@ script ProgressWindowWorker
 		return a_script
 	end import_script
 	
-	on awakeFromNib()
-		-- log "start awakeFromNib in ProgressWindowController"
-		set SorterDelegate to import_script("SorterDelegate")
-		set a_container to my _window_controller's sourceLocation() as text
+    
+    on setupDefaultDestination() -- must be camelCase to call from Obj-C
+        log "start setupDefaultDestination"
+  		set a_container to my _window_controller's sourceLocation() as text
 		try
 			set my _pdf_sorter to FileSorter's make_with_delegate(SorterDelegate's make_with(a_container))
-		on error msg number 777
+            on error msg number 777
 			activate
 			display dialog msg buttons {"OK"} default button "OK" with icon note
 			return false
@@ -48,6 +48,12 @@ script ProgressWindowWorker
 		set dest_location to target_folder's parent_folder()
 		set my _default_dest to target_folder's change_path_extension("pdf")
 		my _new_file_field's setStringValue_(my _default_dest's normalized_posix_path())
+    end setup_default_destination
+    
+	on awakeFromNib()
+		-- log "start awakeFromNib in ProgressWindowController"
+		set SorterDelegate to import_script("SorterDelegate")
+        setupDefaultDestination()
 		-- log "end awakeFromNib"
 	end awakeFromNib
 	

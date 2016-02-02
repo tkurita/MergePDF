@@ -49,6 +49,13 @@
 		2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */; };
 		2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BE72517F355D6003DA783 /* AppleEventExtra.m */; };
 		2CAC67A21356C620001D05E8 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CAC67A01356C620001D05E8 /* ServicesMenu.strings */; };
+		2CBDC6A01C6075270048384C /* DropBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBDC69C1C6075270048384C /* DropBox.h */; };
+		2CBDC6A11C6075270048384C /* DropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDC69D1C6075270048384C /* DropBox.m */; };
+		2CBDC6A21C6075270048384C /* HFSTypeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBDC69E1C6075270048384C /* HFSTypeUtils.h */; };
+		2CBDC6A31C6075270048384C /* HFSTypeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDC69F1C6075270048384C /* HFSTypeUtils.m */; };
+		2CBDC6AC1C607A580048384C /* PathExtra_Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6A71C607A580048384C /* PathExtra_Localizable.strings */; };
+		2CBDC6AD1C607A580048384C /* PathExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBDC6AA1C607A580048384C /* PathExtra.h */; };
+		2CBDC6AE1C607A580048384C /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDC6AB1C607A580048384C /* PathExtra.m */; };
 		2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CD4055D0F75D11100B96300 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +133,14 @@
 		2CB36E6F0D3F8C4A003C516E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CB36E830D3F8C7E003C516E /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CB36E870D3F8DB4003C516E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		2CBDC69C1C6075270048384C /* DropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropBox.h; sourceTree = "<group>"; };
+		2CBDC69D1C6075270048384C /* DropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropBox.m; sourceTree = "<group>"; };
+		2CBDC69E1C6075270048384C /* HFSTypeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSTypeUtils.h; sourceTree = "<group>"; };
+		2CBDC69F1C6075270048384C /* HFSTypeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSTypeUtils.m; sourceTree = "<group>"; };
+		2CBDC6A81C607A580048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PathExtra_Localizable.strings; sourceTree = "<group>"; };
+		2CBDC6A91C607A580048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/PathExtra_Localizable.strings; sourceTree = "<group>"; };
+		2CBDC6AA1C607A580048384C /* PathExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathExtra.h; sourceTree = "<group>"; };
+		2CBDC6AB1C607A580048384C /* PathExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathExtra.m; sourceTree = "<group>"; };
 		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
@@ -189,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				2C473ECF0A5E65D400096E8A /* History.txt */,
+				2CBDC6A61C607A580048384C /* PathExtra */,
+				2CBDC69B1C6075270048384C /* DropBox */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -266,6 +283,27 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		2CBDC69B1C6075270048384C /* DropBox */ = {
+			isa = PBXGroup;
+			children = (
+				2CBDC69C1C6075270048384C /* DropBox.h */,
+				2CBDC69D1C6075270048384C /* DropBox.m */,
+				2CBDC69E1C6075270048384C /* HFSTypeUtils.h */,
+				2CBDC69F1C6075270048384C /* HFSTypeUtils.m */,
+			);
+			path = DropBox;
+			sourceTree = "<group>";
+		};
+		2CBDC6A61C607A580048384C /* PathExtra */ = {
+			isa = PBXGroup;
+			children = (
+				2CBDC6A71C607A580048384C /* PathExtra_Localizable.strings */,
+				2CBDC6AA1C607A580048384C /* PathExtra.h */,
+				2CBDC6AB1C607A580048384C /* PathExtra.m */,
+			);
+			path = PathExtra;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -277,6 +315,9 @@
 				2C3F62BA0F6E6E6600C42308 /* PDFMerger.h in Headers */,
 				2C3F658E0F6FBCFC00C42308 /* ProgressWindowController.h in Headers */,
 				2C3F3B6C1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h in Headers */,
+				2CBDC6A01C6075270048384C /* DropBox.h in Headers */,
+				2CBDC6A21C6075270048384C /* HFSTypeUtils.h in Headers */,
+				2CBDC6AD1C607A580048384C /* PathExtra.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +365,8 @@
 				Japanese,
 				French,
 				German,
+				en,
+				ja,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			projectDirPath = "";
@@ -367,6 +410,7 @@
 				2C4545961071820A00AD3397 /* Credits.rtf in Resources */,
 				2CAC67A21356C620001D05E8 /* ServicesMenu.strings in Resources */,
 				2C812C701C5F7E3D005399C2 /* MergePDFHelp in Resources */,
+				2CBDC6AC1C607A580048384C /* PathExtra_Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +464,9 @@
 				2C3F658F0F6FBCFC00C42308 /* ProgressWindowController.m in Sources */,
 				2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */,
 				2C3F3B6D1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m in Sources */,
+				2CBDC6A11C6075270048384C /* DropBox.m in Sources */,
+				2CBDC6A31C6075270048384C /* HFSTypeUtils.m in Sources */,
+				2CBDC6AE1C607A580048384C /* PathExtra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +532,15 @@
 				2CA839221498681A0020DF9E /* Japanese */,
 			);
 			name = ServicesMenu.strings;
+			sourceTree = "<group>";
+		};
+		2CBDC6A71C607A580048384C /* PathExtra_Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CBDC6A81C607A580048384C /* en */,
+				2CBDC6A91C607A580048384C /* ja */,
+			);
+			name = PathExtra_Localizable.strings;
 			sourceTree = "<group>";
 		};
 		2CD9CDE00711A295001CBF53 /* Localizable.strings */ = {
