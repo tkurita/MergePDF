@@ -8,7 +8,8 @@
 	IBOutlet NSTextField *newFileField;
 	IBOutlet NSWindow *directionChooserWindow;
 	IBOutlet id worker;
-	
+	IBOutlet id saveToBox;
+    
 	NSUInteger statusLevel;
 }
 
