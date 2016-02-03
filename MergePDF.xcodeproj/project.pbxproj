@@ -107,7 +107,7 @@
 		2C3F658C0F6FBCFC00C42308 /* ProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWindowController.h; sourceTree = "<group>"; };
 		2C3F658D0F6FBCFC00C42308 /* ProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressWindowController.m; sourceTree = "<group>"; };
 		2C4545951071820A00AD3397 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		2C473ECF0A5E65D400096E8A /* History.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = History.txt; sourceTree = "<group>"; };
+		2C473ECF0A5E65D400096E8A /* History.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = History.txt; path = ../History.txt; sourceTree = "<group>"; };
 		2C4740A60A5E71B000096E8A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C4740A70A5E71B000096E8A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C4740B20A5E773500096E8A /* FactorySetting.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = FactorySetting.plist; sourceTree = "<group>"; };
@@ -140,6 +140,12 @@
 		2CBDC6C11C60BBB90048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2CBDC6C21C60BBBD0048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
 		2CBDC6C31C60BBC40048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		2CBDC6C81C60CF690048384C /* localize.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = localize.mk; sourceTree = "<group>"; };
+		2CBDC6C91C60CF690048384C /* localize_ib.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = localize_ib.mk; sourceTree = "<group>"; };
+		2CBDC6CA1C60CF690048384C /* localize_ib.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = localize_ib.sh; sourceTree = "<group>"; };
+		2CBDC6CB1C60CF690048384C /* require_strings_file.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = require_strings_file.sh; sourceTree = "<group>"; };
+		2CBDC6CE1C60D3590048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		2CBDC6D01C60D3590048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ProgressWindow.strings; sourceTree = "<group>"; };
 		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
@@ -210,6 +216,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				2CBDC6C71C60CF690048384C /* LocalizeTools */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				2C3F3B6E1C5E547D00C940BD /* DonationReminder.xcodeproj */,
 			);
@@ -227,6 +234,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CBDC6CD1C60D3590048384C /* MainMenu.strings */,
+				2CBDC6CF1C60D3590048384C /* ProgressWindow.strings */,
 				2CBDC6B01C60BB9A0048384C /* InfoPlist.strings */,
 				2CBDC6B21C60BB9A0048384C /* Localizable.strings */,
 				2CBDC6B41C60BB9A0048384C /* MainMenu.nib */,
@@ -299,6 +308,17 @@
 				2CBDC6AB1C607A580048384C /* PathExtra.m */,
 			);
 			path = PathExtra;
+			sourceTree = "<group>";
+		};
+		2CBDC6C71C60CF690048384C /* LocalizeTools */ = {
+			isa = PBXGroup;
+			children = (
+				2CBDC6C81C60CF690048384C /* localize.mk */,
+				2CBDC6C91C60CF690048384C /* localize_ib.mk */,
+				2CBDC6CA1C60CF690048384C /* localize_ib.sh */,
+				2CBDC6CB1C60CF690048384C /* require_strings_file.sh */,
+			);
+			path = LocalizeTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,12 +547,29 @@
 			name = ServicesMenu.strings;
 			sourceTree = "<group>";
 		};
+		2CBDC6CD1C60D3590048384C /* MainMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CBDC6CE1C60D3590048384C /* ja */,
+			);
+			name = MainMenu.strings;
+			sourceTree = "<group>";
+		};
+		2CBDC6CF1C60D3590048384C /* ProgressWindow.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CBDC6D01C60D3590048384C /* ja */,
+			);
+			name = ProgressWindow.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2C5981FC098712B2003D230C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 22;
@@ -542,7 +579,6 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 					"\"$(SRCROOT)\"",
 				);
-				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -568,6 +604,7 @@
 		2C5981FD098712B2003D230C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 22;
@@ -598,6 +635,7 @@
 		2C5981FE098712B2003D230C /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 22;
 				FRAMEWORK_SEARCH_PATHS = (

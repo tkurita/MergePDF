@@ -13,9 +13,9 @@
 	NSUInteger statusLevel;
 }
 
-@property (retain) NSString *sourceLocation;
-@property (retain) NSString *frameName;
-@property (retain) PDFMerger *mergeProcessor;
+@property (strong) NSString *sourceLocation;
+@property (strong) NSString *frameName;
+@property (strong) PDFMerger *mergeProcessor;
 @property (assign) BOOL processStarted;
 @property (assign) BOOL canceled;
 

@@ -28,8 +28,8 @@ ImageKind image_type(NSString *path);
 
 @interface PDFMerger : NSObject
 
-@property(retain) NSArray *targetFiles;
-@property(retain) NSString* destination;
+@property(strong) NSArray *targetFiles;
+@property(strong) NSString* destination;
 @property(assign) BOOL canceled;
 
 @end
