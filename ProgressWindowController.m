@@ -3,15 +3,15 @@
 
 #define useLog 0
 
-@implementation ProgressWindowController
+@interface ProgressWindowWorker : NSObject
+    - (void)setupDefaultDestination;
+@end
 
+@implementation ProgressWindowController
 
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[_sourceLocation release];
-	[_frameName release];
-	[super dealloc];
 }
 
 - (IBAction)closeDirectionChooser:(id)sender
@@ -56,7 +56,7 @@
 - (void)processFiles:(NSArray *)array to:(NSString *)destination
 {
 	[newFileField setStringValue:destination];
-	self.mergeProcessor = [[PDFMerger new] autorelease];
+	self.mergeProcessor = [PDFMerger new];
 	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	[noticenter addObserver:self selector:@selector(updateProgressMessage:) 
 					   name:@"UpdateProgressMessage" object:_mergeProcessor];
@@ -168,7 +168,7 @@
 	NSTextStorage *textStorage;
 	textStorage = [errorTextView textStorage];
 	[textStorage beginEditing];
-	[textStorage appendAttributedString:[[[NSAttributedString alloc] initWithString:msg] autorelease]];
+	[textStorage appendAttributedString:[[NSAttributedString alloc] initWithString:msg]];
 	[textStorage endEditing];
 }
 
@@ -186,7 +186,6 @@
 {
 	[[aNotification object] saveFrameUsingName:_frameName];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	[self release];
 }
 
 - (void)windowDidLoad

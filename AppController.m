@@ -88,7 +88,7 @@ void saveImageAsPDF(NSString *path)
 			pdfdoc = [PDFDocument pdfDocumentWithImageFile:path];
 			break;
 		case GenericImage:
-			pdfdoc = [[PDFDocument new] autorelease];
+			pdfdoc = [PDFDocument new];
 			NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
 			NSEnumerator *enumerator = [[image representations] objectEnumerator];
 			NSImageRep *imagerep;
@@ -98,13 +98,10 @@ void saveImageAsPDF(NSString *path)
 			while (imagerep = [enumerator nextObject]) { //support for multipage tiff
 				single_image = [NSImage new];
 				[single_image addRepresentation:imagerep];
-				page = [[PDFPage alloc] initWithImage:[single_image autorelease]];
-				[pdfdoc insertPage:[page autorelease] atIndex:ind];
+				page = [[PDFPage alloc] initWithImage:single_image];
+				[pdfdoc insertPage:page atIndex:ind];
 				ind++;
 			}
-			[image autorelease];
-			break;
-		default:
 			break;
 	}
 	

@@ -12,7 +12,7 @@
 	NSRect rect = [page boundsForBox:kPDFDisplayBoxMediaBox];
 	NSPoint point = NSMakePoint(kPDFDestinationUnspecifiedValue, rect.size.height);
 	PDFDestination *dest = [[PDFDestination alloc] initWithPage:page atPoint:point];
-	return [dest autorelease];
+	return dest;
 }
 
 @end
@@ -54,7 +54,7 @@ ImageKind image_type(NSString *path)
 	CGContextRef out_context = NULL;
 	size_t img_count;
 	NSURL *url = [NSURL fileURLWithPath:path];
-	CGImageSourceRef image_source =  CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+	CGImageSourceRef image_source =  CGImageSourceCreateWithURL((__bridge CFURLRef)url, NULL);
 	CFMutableDataRef data = CFDataCreateMutable(NULL, 0);
 	CGDataConsumerRef data_consumer = CGDataConsumerCreateWithCFData(data);
 	if (data_consumer == NULL) {
@@ -109,13 +109,13 @@ ImageKind image_type(NSString *path)
 	CGPDFContextClose(out_context);
 	CGContextRelease(out_context);
 	if (CFDataGetLength(data)) {
-		doc = [[PDFDocument alloc] initWithData:(NSData *)data];
+		doc = [[PDFDocument alloc] initWithData:(NSData *)CFBridgingRelease(data)];
 	}
 bail:
 	CFRelease(image_source);
 	CGDataConsumerRelease(data_consumer);
 	CFRelease(data);	
-	return [doc autorelease];	
+	return doc;	
 }
 
 //deprecated use pdfDocumentWithImageURL
@@ -128,7 +128,8 @@ bail:
 			result = [PDFDocument pdfDocumentWithImageFile:path];
 			break;
 		case GenericImage:
-			result = [[[PDFDocument alloc] init] autorelease];
+        {
+			result = [[PDFDocument alloc] init];
 			NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
 			NSEnumerator *enumerator = [[image representations] objectEnumerator];
 			NSImageRep *imagerep;
@@ -138,14 +139,14 @@ bail:
 			while (imagerep = [enumerator nextObject]) { //support for multipage tiff
 				single_image = [NSImage new];
 				[single_image addRepresentation:imagerep];
-				page = [[PDFPage alloc] initWithImage:[single_image autorelease]];
-				[result insertPage:[page autorelease] atIndex:ind];
+				page = [[PDFPage alloc] initWithImage:single_image];
+				[result insertPage:page atIndex:ind];
 				ind++;
 			}
-			[image autorelease];
 			break;
+        }
 		default:
-			result = [[[PDFDocument alloc] initWithURL: [NSURL fileURLWithPath: path]] autorelease];
+			result = [[PDFDocument alloc] initWithURL: [NSURL fileURLWithPath: path]];
 			break;
 	}
 	return result;
@@ -160,19 +161,17 @@ bail:
         //support for multipage tiff
         NSUInteger ind = 0;
         for (NSImageRep *imgrep in image_reps) {
-            NSImage *single_image = [[NSImage new] autorelease];
+            NSImage *single_image = [NSImage new];
             [single_image addRepresentation:imgrep];
              PDFPage *page = [[PDFPage alloc] initWithImage:single_image];
-             [result insertPage:[page autorelease] atIndex:ind++];
+             [result insertPage:page atIndex:ind++];
         }
     } else {
         PDFPage *page = [[PDFPage alloc] initWithImage:image];
-        [result insertPage:[page autorelease] atIndex:0];
+        [result insertPage:page atIndex:0];
     }
     
-    
-    [image autorelease];
-    return [result autorelease];
+    return result;
 }
 
 + (PDFDocument *)pdfDocumentWithURL:(NSURL *)fURL
@@ -187,7 +186,7 @@ bail:
             result = [PDFDocument pdfDocumentWithImageURL:fURL];
 			break;
 		default:
-			result = [[[PDFDocument alloc] initWithURL: fURL] autorelease];
+			result = [[PDFDocument alloc] initWithURL: fURL];
 			break;
 	}
 	return result;
@@ -200,7 +199,7 @@ bail:
 	
 - (PDFOutline *) appendBookmark:(NSString *)label atPageIndex:(NSUInteger)index
 {
-	PDFOutline *newoutline = [[[PDFOutline alloc] init] autorelease];
+	PDFOutline *newoutline = [[PDFOutline alloc] init];
 	[newoutline setLabel:label];
 #if useLog	
 	NSLog(@"pageCount: %d, index:%d", [self pageCount], index);
@@ -236,14 +235,14 @@ bail:
 #if useLog
 	NSLog(@"number of pages after appending : %d", [self pageCount]);
 #endif
-	PDFOutline *outline = [[pdf_doc outlineRoot] retain];
+	PDFOutline *outline = [pdf_doc outlineRoot];
 	NSString *label = [[path lastPathComponent] stringByDeletingPathExtension];
 	NSUInteger destpage_index = [self pageCount]-npages;
 	if (outline) {
 		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[self pageAtIndex: destpage_index]];
 		[outline setDestination:pdfdest];
 		[outline setLabel:label];
-		[self appendOutline:[outline autorelease]];
+		[self appendOutline:outline];
 	} else {
 		[self appendBookmark:[[path lastPathComponent] stringByDeletingPathExtension]
 										   atPageIndex:destpage_index];
@@ -274,14 +273,14 @@ bail:
 #if useLog
 	NSLog(@"number of pages after appending : %d", [self pageCount]);
 #endif
-	PDFOutline *outline = [[pdf_doc outlineRoot] retain];
+	PDFOutline *outline = [pdf_doc outlineRoot];
 	NSString *label = [[fURL lastPathComponent] stringByDeletingPathExtension];
 	NSUInteger destpage_index = [self pageCount]-npages;
 	if (outline) {
 		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[self pageAtIndex: destpage_index]];
 		[outline setDestination:pdfdest];
 		[outline setLabel:label];
-		[self appendOutline:[outline autorelease]];
+		[self appendOutline:outline];
 	} else {
 		[self appendBookmark:[[fURL lastPathComponent] stringByDeletingPathExtension]
                  atPageIndex:destpage_index];
@@ -299,12 +298,6 @@ bail:
 		self.canceled = NO;
     }
     return self;
-}
-- (void)dealloc
-{
-	[_targetFiles release];
-	[_destination release];
-	[super dealloc];
 }
 
 - (void)postProgressNotificationWithFile:(NSString *)path increment:(double)increment
@@ -353,47 +346,47 @@ bail:
 
 - (void)start:(id)sender
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	NSError *error;
-	if ([self checkCanceled]) goto bail;
-	double incstep = 85.0/[_targetFiles count];
-	NSEnumerator *enumerator = [_targetFiles objectEnumerator];
-    NSURL *fURL = [[enumerator nextObject] URL];
-	[self postProgressNotificationWithFile:[fURL path] increment:incstep];
-	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
-	if (!pdf_doc) {
-		NSDictionary *dict = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]]};
-		error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
-		[self postErrorNotification:error];
-		return;
-	}
-	
-	PDFOutline *outline = [[pdf_doc outlineRoot] retain];
-	[pdf_doc setOutlineRoot:[[[PDFOutline alloc] init] autorelease]];
-	NSString *label = [[fURL lastPathComponent] stringByDeletingPathExtension];
-	if (outline) {
-		[outline setLabel:label];
-		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[pdf_doc pageAtIndex:0]];
-		[outline setDestination:pdfdest];
-		[pdf_doc appendOutline:[outline autorelease]];	
-	} else {
-		[pdf_doc appendBookmark:label atPageIndex:0];
-	}
+	@autoreleasepool {
+        NSError *error = nil;
+        if ([self checkCanceled]) return;
+        double incstep = 85.0/[_targetFiles count];
+        NSEnumerator *enumerator = [_targetFiles objectEnumerator];
+        NSURL *fURL = [[enumerator nextObject] URL];
+        [self postProgressNotificationWithFile:[fURL path] increment:incstep];
+        PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
+        if (!pdf_doc) {
+            NSDictionary *dict = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]]};
+            error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
+            [self postErrorNotification:error];
+            return;
+        }
+        
+        PDFOutline *outline = [pdf_doc outlineRoot];
+        [pdf_doc setOutlineRoot:[[PDFOutline alloc] init]];
+        NSString *label = [[fURL lastPathComponent] stringByDeletingPathExtension];
+        if (outline) {
+            [outline setLabel:label];
+            PDFDestination *pdfdest = [PDFDestination destinationWithPage:[pdf_doc pageAtIndex:0]];
+            [outline setDestination:pdfdest];
+            [pdf_doc appendOutline:outline];	
+        } else {
+            [pdf_doc appendBookmark:label atPageIndex:0];
+        }
 
-    for (NSAppleEventDescriptor *aedesc in enumerator) {
-        fURL = [aedesc URL];
-		if ([self checkCanceled]) goto bail;
-		[self postProgressNotificationWithFile:[fURL path] increment:incstep];
-		if (![pdf_doc mergeFileAtURL:fURL error:&error] ) {
-			[self postErrorNotification:error];
-		}
-	}
-	if ([self checkCanceled]) goto bail;
-	[self postProgressNotificationWithMessage:NSLocalizedString(@"Saving a new PDF file", @"") increment:5];
-	[pdf_doc writeToFile:_destination];
-	[self postProgressNotificationWithMessage:@"Success" increment:5];
-bail:
-	[pool release];
+        for (NSAppleEventDescriptor *aedesc in enumerator) {
+            fURL = [aedesc URL];
+            if ([self checkCanceled]) return;
+            [self postProgressNotificationWithFile:[fURL path] increment:incstep];
+            if (![pdf_doc mergeFileAtURL:fURL error:&error] ) {
+                [self postErrorNotification:error];
+            }
+        }
+        if ([self checkCanceled]) return;
+        [self postProgressNotificationWithMessage:NSLocalizedString(@"Saving a new PDF file", @"") increment:5];
+        [pdf_doc writeToFile:_destination];
+        [self postProgressNotificationWithMessage:@"Success" increment:5];
+    }
+
 }
 
 @end

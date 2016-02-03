@@ -74,13 +74,12 @@
 			data_ptr = malloc(data_size);
 			err = AEGetDescData([self aeDesc], data_ptr, data_size);
 			if (noErr != err) {
-				file_url = (NSURL *)CFURLCreateAbsoluteURLWithBytes(NULL,
+				file_url = (NSURL *)CFBridgingRelease(CFURLCreateAbsoluteURLWithBytes(NULL,
 														   (const UInt8 *)data_ptr,
 														   data_size,
 														   kCFStringEncodingUTF8,
 														   NULL,
-														   false);
-				file_url = [file_url autorelease];
+														   false));
 			}
 			free(data_ptr);
 			break;
