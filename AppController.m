@@ -85,24 +85,13 @@ void saveImageAsPDF(NSString *path)
 	PDFDocument *pdfdoc = NULL;
 	switch (image_type(path)) {
 		case JpegImage:
-			pdfdoc = [PDFDocument pdfDocumentWithImageFile:path];
+			pdfdoc = [PDFDocument pdfDocumentWithImageURL:[NSURL fileURLWithPath:path]];
 			break;
 		case GenericImage:
-			pdfdoc = [PDFDocument new];
-			NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
-			NSEnumerator *enumerator = [[image representations] objectEnumerator];
-			NSImageRep *imagerep;
-			NSUInteger ind = 0;
-			PDFPage *page = NULL;
-			NSImage *single_image = NULL;
-			while (imagerep = [enumerator nextObject]) { //support for multipage tiff
-				single_image = [NSImage new];
-				[single_image addRepresentation:imagerep];
-				page = [[PDFPage alloc] initWithImage:single_image];
-				[pdfdoc insertPage:page atIndex:ind];
-				ind++;
-			}
+			pdfdoc = [PDFDocument pdfDocumentWithImageURL:[NSURL fileURLWithPath:path]];
 			break;
+        default:
+            break;
 	}
 	
 	if (!pdfdoc) {
@@ -147,9 +136,7 @@ void saveImageAsPDF(NSString *path)
         return;
     }
 	
-	NSEnumerator *enumerator = [file_names objectEnumerator];
-	NSString *a_path;
-	while (a_path = [enumerator nextObject]) {
+    for (NSString *a_path in file_names) {
 		saveImageAsPDF(a_path);
 	}
 }
