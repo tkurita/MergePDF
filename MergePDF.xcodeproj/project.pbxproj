@@ -146,7 +146,6 @@
 		2CBDC6CB1C60CF690048384C /* require_strings_file.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = require_strings_file.sh; sourceTree = "<group>"; };
 		2CBDC6CE1C60D3590048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		2CBDC6D01C60D3590048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ProgressWindow.strings; sourceTree = "<group>"; };
-		2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -179,7 +178,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CD128CC0D40A437004BF0C5 /* DonationReminder.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */,
 				2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */,
@@ -582,7 +580,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
@@ -613,7 +610,6 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"\"$(SRCROOT)\"",
 				);
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
@@ -644,7 +640,6 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 					"\"$(SRCROOT)\"",
 				);
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "English.lproj/Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
