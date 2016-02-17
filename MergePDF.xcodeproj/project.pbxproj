@@ -43,6 +43,8 @@
 		2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C6244D10D49A4CD002F2745 /* ProgressWindowController.applescript */; settings = {ATTRIBUTES = (); }; };
 		2C77B96A0CFD576A00C4E9D3 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C77B9640CFD576A00C4E9D3 /* Quartz.framework */; };
 		2C812C701C5F7E3D005399C2 /* MergePDFHelp in Resources */ = {isa = PBXBuildFile; fileRef = 2C812C6F1C5F7E3D005399C2 /* MergePDFHelp */; };
+		2C88BD121C743F3A00290358 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C88BD0E1C743F3A00290358 /* MainMenu.xib */; };
+		2C88BD131C743F3A00290358 /* ProgressWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C88BD101C743F3A00290358 /* ProgressWindow.xib */; };
 		2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */; };
 		2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BE72517F355D6003DA783 /* AppleEventExtra.m */; };
 		2CBDC6A01C6075270048384C /* DropBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBDC69C1C6075270048384C /* DropBox.h */; };
@@ -54,8 +56,6 @@
 		2CBDC6AE1C607A580048384C /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDC6AB1C607A580048384C /* PathExtra.m */; };
 		2CBDC6BA1C60BB9A0048384C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6B01C60BB9A0048384C /* InfoPlist.strings */; };
 		2CBDC6BB1C60BB9A0048384C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6B21C60BB9A0048384C /* Localizable.strings */; };
-		2CBDC6BC1C60BB9A0048384C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6B41C60BB9A0048384C /* MainMenu.nib */; };
-		2CBDC6BD1C60BB9A0048384C /* ProgressWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6B61C60BB9A0048384C /* ProgressWindow.nib */; };
 		2CBDC6BE1C60BB9A0048384C /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6B81C60BB9A0048384C /* ServicesMenu.strings */; };
 		2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CD4055D0F75D11100B96300 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
@@ -118,6 +118,10 @@
 		2C7BDAB6071183220032351D /* ColumnDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColumnDirection.png; sourceTree = "<group>"; };
 		2C7BDAB7071183220032351D /* RowDirection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RowDirection.png; sourceTree = "<group>"; };
 		2C812C6F1C5F7E3D005399C2 /* MergePDFHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MergePDFHelp; sourceTree = "<group>"; };
+		2C88BD0F1C743F3A00290358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2C88BD111C743F3A00290358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ProgressWindow.xib; sourceTree = "<group>"; };
+		2C88BD141C743F4600290358 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		2C88BD151C743F4A00290358 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ProgressWindow.strings; sourceTree = "<group>"; };
 		2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		2C9BE72417F355D6003DA783 /* AppleEventExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleEventExtra.h; sourceTree = "<group>"; };
 		2C9BE72517F355D6003DA783 /* AppleEventExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleEventExtra.m; sourceTree = "<group>"; };
@@ -132,13 +136,9 @@
 		2CBDC6AB1C607A580048384C /* PathExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathExtra.m; sourceTree = "<group>"; };
 		2CBDC6B11C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CBDC6B31C60BB9A0048384C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2CBDC6B51C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		2CBDC6B71C60BB9A0048384C /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
 		2CBDC6B91C60BB9A0048384C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CBDC6BF1C60BBA50048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CBDC6C01C60BBAB0048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2CBDC6C11C60BBB90048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		2CBDC6C21C60BBBD0048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/ProgressWindow.nib; sourceTree = "<group>"; };
 		2CBDC6C31C60BBC40048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CBDC6C81C60CF690048384C /* localize.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = localize.mk; sourceTree = "<group>"; };
 		2CBDC6C91C60CF690048384C /* localize_ib.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = localize_ib.mk; sourceTree = "<group>"; };
@@ -232,12 +232,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C88BD0E1C743F3A00290358 /* MainMenu.xib */,
+				2C88BD101C743F3A00290358 /* ProgressWindow.xib */,
 				2CBDC6CD1C60D3590048384C /* MainMenu.strings */,
 				2CBDC6CF1C60D3590048384C /* ProgressWindow.strings */,
 				2CBDC6B01C60BB9A0048384C /* InfoPlist.strings */,
 				2CBDC6B21C60BB9A0048384C /* Localizable.strings */,
-				2CBDC6B41C60BB9A0048384C /* MainMenu.nib */,
-				2CBDC6B61C60BB9A0048384C /* ProgressWindow.nib */,
 				2CBDC6B81C60BB9A0048384C /* ServicesMenu.strings */,
 				2C812C6F1C5F7E3D005399C2 /* MergePDFHelp */,
 				2C4545951071820A00AD3397 /* Credits.rtf */,
@@ -382,6 +382,7 @@
 				German,
 				en,
 				ja,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			projectDirPath = "";
@@ -424,9 +425,9 @@
 				2CBDC6AC1C607A580048384C /* PathExtra_Localizable.strings in Resources */,
 				2CBDC6BA1C60BB9A0048384C /* InfoPlist.strings in Resources */,
 				2CBDC6BB1C60BB9A0048384C /* Localizable.strings in Resources */,
-				2CBDC6BC1C60BB9A0048384C /* MainMenu.nib in Resources */,
-				2CBDC6BD1C60BB9A0048384C /* ProgressWindow.nib in Resources */,
 				2CBDC6BE1C60BB9A0048384C /* ServicesMenu.strings in Resources */,
+				2C88BD121C743F3A00290358 /* MainMenu.xib in Resources */,
+				2C88BD131C743F3A00290358 /* ProgressWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "make -f LocalizeTools/localize.mk target_lang=ja nibs='MainMenu.nib ProgressWindow.nib'\n";
+			shellScript = "#make -f LocalizeTools/localize.mk target_lang=ja nibs='MainMenu.nib ProgressWindow.nib'\n";
 		};
 		2CF84035158049E2004E5E20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -491,6 +492,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2C88BD0E1C743F3A00290358 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C88BD0F1C743F3A00290358 /* Base */,
+				2C88BD141C743F4600290358 /* ja */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2C88BD101C743F3A00290358 /* ProgressWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C88BD111C743F3A00290358 /* Base */,
+				2C88BD151C743F4A00290358 /* ja */,
+			);
+			name = ProgressWindow.xib;
+			sourceTree = "<group>";
+		};
 		2CBDC6A71C607A580048384C /* PathExtra_Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -516,24 +535,6 @@
 				2CBDC6C01C60BBAB0048384C /* ja */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		2CBDC6B41C60BB9A0048384C /* MainMenu.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CBDC6B51C60BB9A0048384C /* en */,
-				2CBDC6C11C60BBB90048384C /* ja */,
-			);
-			name = MainMenu.nib;
-			sourceTree = "<group>";
-		};
-		2CBDC6B61C60BB9A0048384C /* ProgressWindow.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CBDC6B71C60BB9A0048384C /* en */,
-				2CBDC6C21C60BBBD0048384C /* ja */,
-			);
-			name = ProgressWindow.nib;
 			sourceTree = "<group>";
 		};
 		2CBDC6B81C60BB9A0048384C /* ServicesMenu.strings */ = {
@@ -583,6 +584,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MergePDF;
@@ -613,6 +615,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MergePDF;
@@ -643,6 +646,7 @@
 				INFOPLIST_FILE = "English.lproj/Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MergePDF;
