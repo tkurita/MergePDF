@@ -351,7 +351,7 @@ bail:
         if ([self checkCanceled]) return;
         double incstep = 85.0/[_targetFiles count];
         NSEnumerator *enumerator = [_targetFiles objectEnumerator];
-        NSURL *fURL = [[enumerator nextObject] URL];
+        NSURL *fURL = [enumerator nextObject];
         [self postProgressNotificationWithFile:[fURL path] increment:incstep];
         PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
         if (!pdf_doc) {
@@ -373,8 +373,7 @@ bail:
             [pdf_doc appendBookmark:label atPageIndex:0];
         }
 
-        for (NSAppleEventDescriptor *aedesc in enumerator) {
-            fURL = [aedesc URL];
+        for (NSURL *fURL in enumerator) {
             if ([self checkCanceled]) return;
             [self postProgressNotificationWithFile:[fURL path] increment:incstep];
             if (![pdf_doc mergeFileAtURL:fURL error:&error] ) {

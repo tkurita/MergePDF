@@ -105,7 +105,8 @@
 			[[NSWorkspace sharedWorkspace] openFile:_mergeProcessor.destination];
 			break;
 		case NSAlertOtherReturn:
-			[[NSWorkspace sharedWorkspace] selectFile:_mergeProcessor.destination inFileViewerRootedAtPath:nil];
+			[[NSWorkspace sharedWorkspace] selectFile:_mergeProcessor.destination
+                             inFileViewerRootedAtPath:@""];
 			break;
 		default:
 			break;

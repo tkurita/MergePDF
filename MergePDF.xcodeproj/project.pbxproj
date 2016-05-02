@@ -19,11 +19,11 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
-		2C0E49DA1C5F1DD9008B1DD4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3F3B771C5E56D100C940BD /* Sparkle.framework */; };
+		2C0E49DA1C5F1DD9008B1DD4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3F3B771C5E56D100C940BD /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */; };
 		2C3F3B6C1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F3B6A1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.h */; };
 		2C3F3B6D1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F3B6B1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m */; };
-		2C3F3B761C5E550600C940BD /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3F3B731C5E547E00C940BD /* DonationReminder.framework */; };
+		2C3F3B761C5E550600C940BD /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3F3B731C5E547E00C940BD /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2C3F3B791C5E578900C940BD /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3F3B771C5E56D100C940BD /* Sparkle.framework */; };
 		2C3F3B7C1C5E590E00C940BD /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3F3B731C5E547E00C940BD /* DonationReminder.framework */; };
 		2C3F62BA0F6E6E6600C42308 /* PDFMerger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3F62B80F6E6E6600C42308 /* PDFMerger.h */; };
@@ -369,7 +369,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = 2CAA8C6C0933698B009EC6A1 /* Build configuration list for PBXProject "MergePDF" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -587,6 +587,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
 				PRODUCT_NAME = MergePDF;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
@@ -618,6 +619,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
 				PRODUCT_NAME = MergePDF;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
@@ -649,6 +651,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
 				PRODUCT_NAME = MergePDF;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
@@ -665,31 +668,29 @@
 		2CAA8C6D0933698B009EC6A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		2CAA8C6E0933698B009EC6A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		2CAA8C6F0933698B009EC6A1 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Default;
 		};

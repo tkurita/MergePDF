@@ -44,13 +44,6 @@
 									   length:sizeof(a_value)];
 }
 
-+ (NSAppleEventDescriptor *)descriptorWithDouble:(double)a_value
-{
-	return [self descriptorWithDescriptorType:typeIEEE32BitFloatingPoint 
-										bytes:&a_value
-									   length:sizeof(a_value)];
-}
-
 - (NSURL *)URL
 {
 	id file_url = nil;
