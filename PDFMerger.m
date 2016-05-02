@@ -302,13 +302,18 @@ bail:
 
 - (void)postProgressNotificationWithFile:(NSString *)path increment:(double)increment
 {
-	NSLog(@"postProgressNotificationWithFile:%@", path);
+#if useLog
+    NSLog(@"postProgressNotificationWithFile:%@", path);
+#endif
     NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Processing %@", @""), 
 							[path lastPathComponent]];
 	NSDictionary *dict = @{@"message": message, 
 							  @"levelIncrement": @(increment)};
-	[noticenter postNotificationName:@"UpdateProgressMessage" object:self userInfo:dict];
+    [noticenter performSelectorOnMainThread:@selector(postNotification:)
+                                 withObject:[NSNotification notificationWithName:@"UpdateProgressMessage"
+                                                    object:self userInfo:dict]
+                              waitUntilDone:NO];
 }
 
 - (void)postProgressNotificationWithMessage:(NSString *)message increment:(double)increment
@@ -316,8 +321,6 @@ bail:
 	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	NSDictionary *dict = @{@"message": message, 
 						  @"levelIncrement": @(increment)};
-	//[noticenter postNotificationName:@"UpdateProgressMessage" object:self userInfo:dict];
-    
     [noticenter performSelectorOnMainThread:@selector(postNotification:)
                                  withObject:[NSNotification notificationWithName:@"UpdateProgressMessage"
                                                                           object:self
