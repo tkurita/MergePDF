@@ -44,11 +44,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3</string>
+	<string>2.3.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>23</string>
 	<key>DonationURL</key>
 	<string>http://www.script-factory.net/donationproxy.html</string>
 	<key>LSApplicationCategoryType</key>
