@@ -28,6 +28,3 @@
 [submodule "PathExtra"]
 	path = PathExtra
 	url = https://github.com/tkurita/PathExtra
-[submodule "LocalizeTools"]
-	path = LocalizeTools
-	url = https://github.com/tkurita/LocalizeTools.git
