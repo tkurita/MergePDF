@@ -140,10 +140,6 @@
 		2CBDC6BF1C60BBA50048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CBDC6C01C60BBAB0048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBDC6C31C60BBC40048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
-		2CBDC6C81C60CF690048384C /* localize.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = localize.mk; sourceTree = "<group>"; };
-		2CBDC6C91C60CF690048384C /* localize_ib.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = localize_ib.mk; sourceTree = "<group>"; };
-		2CBDC6CA1C60CF690048384C /* localize_ib.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = localize_ib.sh; sourceTree = "<group>"; };
-		2CBDC6CB1C60CF690048384C /* require_strings_file.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = require_strings_file.sh; sourceTree = "<group>"; };
 		2CBDC6CE1C60D3590048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		2CBDC6D01C60D3590048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ProgressWindow.strings; sourceTree = "<group>"; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -214,7 +210,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				2CBDC6C71C60CF690048384C /* LocalizeTools */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				2C3F3B6E1C5E547D00C940BD /* DonationReminder.xcodeproj */,
 			);
@@ -306,17 +301,6 @@
 				2CBDC6AB1C607A580048384C /* PathExtra.m */,
 			);
 			path = PathExtra;
-			sourceTree = "<group>";
-		};
-		2CBDC6C71C60CF690048384C /* LocalizeTools */ = {
-			isa = PBXGroup;
-			children = (
-				2CBDC6C81C60CF690048384C /* localize.mk */,
-				2CBDC6C91C60CF690048384C /* localize_ib.mk */,
-				2CBDC6CA1C60CF690048384C /* localize_ib.sh */,
-				2CBDC6CB1C60CF690048384C /* require_strings_file.sh */,
-			);
-			path = LocalizeTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,7 +568,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
@@ -616,7 +600,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
@@ -648,7 +632,7 @@
 				INFOPLIST_FILE = "English.lproj/Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
