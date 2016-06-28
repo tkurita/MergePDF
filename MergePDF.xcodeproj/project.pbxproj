@@ -46,7 +46,6 @@
 		2C88BD121C743F3A00290358 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C88BD0E1C743F3A00290358 /* MainMenu.xib */; };
 		2C88BD131C743F3A00290358 /* ProgressWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C88BD101C743F3A00290358 /* ProgressWindow.xib */; };
 		2C9BE5AB17F306D1003DA783 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */; };
-		2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BE72517F355D6003DA783 /* AppleEventExtra.m */; };
 		2CBDC6A01C6075270048384C /* DropBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBDC69C1C6075270048384C /* DropBox.h */; };
 		2CBDC6A11C6075270048384C /* DropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDC69D1C6075270048384C /* DropBox.m */; };
 		2CBDC6A21C6075270048384C /* HFSTypeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBDC69E1C6075270048384C /* HFSTypeUtils.h */; };
@@ -58,6 +57,8 @@
 		2CBDC6BB1C60BB9A0048384C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6B21C60BB9A0048384C /* Localizable.strings */; };
 		2CBDC6BE1C60BB9A0048384C /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDC6B81C60BB9A0048384C /* ServicesMenu.strings */; };
 		2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CD4055D0F75D11100B96300 /* dsa_pub.pem */; };
+		2CD75DF81D22A693007FB66D /* AppleEventExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CD75DF61D22A693007FB66D /* AppleEventExtra.h */; };
+		2CD75DF91D22A693007FB66D /* AppleEventExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD75DF71D22A693007FB66D /* AppleEventExtra.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,8 +124,6 @@
 		2C88BD141C743F4600290358 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		2C88BD151C743F4A00290358 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ProgressWindow.strings; sourceTree = "<group>"; };
 		2C9BE5AA17F306D1003DA783 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
-		2C9BE72417F355D6003DA783 /* AppleEventExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleEventExtra.h; sourceTree = "<group>"; };
-		2C9BE72517F355D6003DA783 /* AppleEventExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleEventExtra.m; sourceTree = "<group>"; };
 		2CB1697A0711703000A527B5 /* MergePDF.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MergePDF.icns; sourceTree = "<group>"; };
 		2CBDC69C1C6075270048384C /* DropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropBox.h; sourceTree = "<group>"; };
 		2CBDC69D1C6075270048384C /* DropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropBox.m; sourceTree = "<group>"; };
@@ -141,6 +140,8 @@
 		2CBDC6C01C60BBAB0048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBDC6C31C60BBC40048384C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CD4055D0F75D11100B96300 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		2CD75DF61D22A693007FB66D /* AppleEventExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleEventExtra.h; sourceTree = "<group>"; };
+		2CD75DF71D22A693007FB66D /* AppleEventExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleEventExtra.m; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +206,7 @@
 				2CBDC69B1C6075270048384C /* DropBox */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
+				2CD75DF51D22A693007FB66D /* AppleEventExtra */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -264,8 +266,6 @@
 		2C3F62B30F6E6DD400C42308 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2C9BE72417F355D6003DA783 /* AppleEventExtra.h */,
-				2C9BE72517F355D6003DA783 /* AppleEventExtra.m */,
 				2C3F62B80F6E6E6600C42308 /* PDFMerger.h */,
 				2C3F62B90F6E6E6600C42308 /* PDFMerger.m */,
 				2C4740A60A5E71B000096E8A /* AppController.h */,
@@ -299,6 +299,15 @@
 			path = PathExtra;
 			sourceTree = "<group>";
 		};
+		2CD75DF51D22A693007FB66D /* AppleEventExtra */ = {
+			isa = PBXGroup;
+			children = (
+				2CD75DF61D22A693007FB66D /* AppleEventExtra.h */,
+				2CD75DF71D22A693007FB66D /* AppleEventExtra.m */,
+			);
+			path = AppleEventExtra;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -313,6 +322,7 @@
 				2CBDC6A01C6075270048384C /* DropBox.h in Headers */,
 				2CBDC6A21C6075270048384C /* HFSTypeUtils.h in Headers */,
 				2CBDC6AD1C607A580048384C /* PathExtra.h in Headers */,
+				2CD75DF81D22A693007FB66D /* AppleEventExtra.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,13 +457,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD75DF91D22A693007FB66D /* AppleEventExtra.m in Sources */,
 				2C6244D20D49A4CD002F2745 /* ProgressWindowController.applescript in Sources */,
 				2C6242EE0D4983BF002F2745 /* SorterDelegate.applescript in Sources */,
 				2C5981F7098712B2003D230C /* main.m in Sources */,
 				2C4740A90A5E71B000096E8A /* AppController.m in Sources */,
 				2C3F62BB0F6E6E6600C42308 /* PDFMerger.m in Sources */,
 				2C3F658F0F6FBCFC00C42308 /* ProgressWindowController.m in Sources */,
-				2C9BE72717F355D6003DA783 /* AppleEventExtra.m in Sources */,
 				2C3F3B6D1C5DEE8600C940BD /* NSRunningApplication+SmartActivate.m in Sources */,
 				2CBDC6A11C6075270048384C /* DropBox.m in Sources */,
 				2CBDC6A31C6075270048384C /* HFSTypeUtils.m in Sources */,
