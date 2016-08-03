@@ -1,6 +1,7 @@
 #import "PDFMerger.h"
 #import "AppleEventExtra.h"
 
+
 #define useLog 0
 
 #define DEFAULT_DPI 72
@@ -16,6 +17,7 @@
 }
 
 @end
+
 
 @implementation PDFDocument (MergePDF)
 	
@@ -195,7 +197,7 @@ bail:
 - (void)appendOutline:(PDFOutline *)outline
 {
 	[[self outlineRoot] insertChild:outline atIndex:[[self outlineRoot] numberOfChildren]];	
-}	
+}
 	
 - (PDFOutline *) appendBookmark:(NSString *)label atPageIndex:(NSUInteger)index
 {
@@ -209,45 +211,6 @@ bail:
 	[newoutline setDestination:bookmark_destination];
 	[self appendOutline:newoutline];	
 	return newoutline;
-}
-
-// deprecated use mergeFileAtURL:
-- (BOOL)mergeFile:(NSString *)path error:(NSError **)error
-{
-#if useLog
-	NSLog(@"start mergeFile for %@", path);
-#endif
-	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithPath:path];
-	if (!pdf_doc) {
-		//NSLog(@"Fail to get PDF for %@", path);
-		NSDictionary *dict = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Fail to get PDF for %@.",path]};
-		*error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
-		return NO;
-	}
-	NSInteger npages = [pdf_doc pageCount];
-#if useLog
-	NSLog(@"number of pages before appending : %d", [self pageCount]);
-	NSLog(@"number of pages to append : %d", npages);
-#endif
-	for (int n = 0; n < npages; n++) {
-		[self insertPage:[pdf_doc pageAtIndex:n] atIndex:[self pageCount]];
-	}
-#if useLog
-	NSLog(@"number of pages after appending : %d", [self pageCount]);
-#endif
-	PDFOutline *outline = [pdf_doc outlineRoot];
-	NSString *label = [[path lastPathComponent] stringByDeletingPathExtension];
-	NSUInteger destpage_index = [self pageCount]-npages;
-	if (outline) {
-		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[self pageAtIndex: destpage_index]];
-		[outline setDestination:pdfdest];
-		[outline setLabel:label];
-		[self appendOutline:outline];
-	} else {
-		[self appendBookmark:[[path lastPathComponent] stringByDeletingPathExtension]
-										   atPageIndex:destpage_index];
-	}
-	return YES;
 }
 
 - (BOOL)mergeFileAtURL:(NSURL *)fURL error:(NSError **)error
@@ -280,7 +243,7 @@ bail:
 		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[self pageAtIndex: destpage_index]];
 		[outline setDestination:pdfdest];
 		[outline setLabel:label];
-		[self appendOutline:outline];
+        [self appendOutline:[PDFOutline outlineWithCopying:outline]];
 	} else {
 		[self appendBookmark:[[fURL lastPathComponent] stringByDeletingPathExtension]
                  atPageIndex:destpage_index];
@@ -290,6 +253,32 @@ bail:
 
 @end
 
+@implementation PDFOutline (MergePDF)
+
++ (PDFOutline *)outlineWithCopying:(PDFOutline *)outline
+{
+    PDFOutline *newoutline = [[PDFOutline alloc] init];
+    [newoutline setLabel:[outline label]];
+    [newoutline setIsOpen:[outline isOpen]];
+    PDFDestination *dest =[outline destination];
+    if (dest) {
+        [newoutline setDestination:[dest copy]];
+    } else {
+        PDFAction *act = [outline action];
+        if (act) {
+            [newoutline setAction:[act copy]];
+        }
+    }
+    
+    for (NSUInteger n=0; n < [outline numberOfChildren]; n++) {
+        [newoutline insertChild:
+         [PDFOutline outlineWithCopying:[outline childAtIndex:n]]
+                        atIndex:n];
+    }
+    return newoutline;
+}
+
+@end
 
 @implementation PDFMerger
 
@@ -349,7 +338,7 @@ bail:
 
 - (void)start:(id)sender
 {
-	@autoreleasepool {
+    @autoreleasepool {
         NSError *error = nil;
         if ([self checkCanceled]) return;
         double incstep = 85.0/[_targetFiles count];
@@ -369,7 +358,8 @@ bail:
         NSString *label = [[fURL lastPathComponent] stringByDeletingPathExtension];
         if (outline) {
             [outline setLabel:label];
-            PDFDestination *pdfdest = [PDFDestination destinationWithPage:[pdf_doc pageAtIndex:0]];
+            PDFDestination *pdfdest = [PDFDestination destinationWithPage:
+                                        [pdf_doc pageAtIndex:0]];
             [outline setDestination:pdfdest];
             [pdf_doc appendOutline:outline];	
         } else {
@@ -387,7 +377,7 @@ bail:
         [self postProgressNotificationWithMessage:NSLocalizedString(@"Saving a new PDF file", @"") increment:5];
         [pdf_doc writeToFile:_destination];
         [self postProgressNotificationWithMessage:@"Success" increment:5];
-    }
+        }
 
 }
 

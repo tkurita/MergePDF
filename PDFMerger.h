@@ -20,10 +20,13 @@ ImageKind image_type(NSString *path);
 - (BOOL)mergeFileAtURL:(NSURL *)path error:(NSError **)error;
 
 //deprecated
-- (BOOL)mergeFile:(NSString *)path error:(NSError **)error;
 + (PDFDocument *)pdfDocumentWithPath:(NSString *)path;
 + (PDFDocument *)pdfDocumentWithImageFile:(NSString *)path;
 
+@end
+
+@interface PDFOutline (MergePDF)
++ (PDFOutline *)outlineWithCopying:(PDFOutline *)outline;
 @end
 
 @interface PDFMerger : NSObject
