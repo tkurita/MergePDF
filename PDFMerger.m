@@ -221,7 +221,8 @@ bail:
 	PDFDocument *pdf_doc = [PDFDocument pdfDocumentWithURL:fURL];
 	if (!pdf_doc) {
 		//NSLog(@"Fail to get PDF for %@", path);
-		NSDictionary *dict = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]]};
+		NSDictionary *dict = @{NSLocalizedDescriptionKey:
+                                   [NSString stringWithFormat:@"Fail to get PDF for %@.",[fURL path]]};
 		*error = [NSError errorWithDomain:@"MergePDFErrorDomain" code:0 userInfo:dict];
 		return NO;
 	}
@@ -243,7 +244,7 @@ bail:
 		PDFDestination *pdfdest = [PDFDestination destinationWithPage:[self pageAtIndex: destpage_index]];
 		[outline setDestination:pdfdest];
 		[outline setLabel:label];
-        [self appendOutline:[PDFOutline outlineWithCopying:outline]];
+        [self appendOutline:[outline copy]];
 	} else {
 		[self appendBookmark:[[fURL lastPathComponent] stringByDeletingPathExtension]
                  atPageIndex:destpage_index];
@@ -255,27 +256,26 @@ bail:
 
 @implementation PDFOutline (MergePDF)
 
-+ (PDFOutline *)outlineWithCopying:(PDFOutline *)outline
+- (id)copyWithZone:(NSZone *)zone
 {
-    PDFOutline *newoutline = [[PDFOutline alloc] init];
-    [newoutline setLabel:[outline label]];
-    [newoutline setIsOpen:[outline isOpen]];
-    PDFDestination *dest =[outline destination];
+    PDFOutline *clone = [[[self class] allocWithZone:zone] init];
+    [clone setLabel:[self label]];
+    [clone setIsOpen:[self isOpen]];
+    PDFDestination *dest =[self destination];
     if (dest) {
-        [newoutline setDestination:[dest copy]];
+        [clone setDestination:[dest copy]];
     } else {
-        PDFAction *act = [outline action];
+        PDFAction *act = [self action];
         if (act) {
-            [newoutline setAction:[act copy]];
+            [clone setAction:[act copy]];
         }
     }
     
-    for (NSUInteger n=0; n < [outline numberOfChildren]; n++) {
-        [newoutline insertChild:
-         [PDFOutline outlineWithCopying:[outline childAtIndex:n]]
-                        atIndex:n];
+    for (NSUInteger n=0; n < [self numberOfChildren]; n++) {
+        [clone insertChild:[[self childAtIndex:n] copy]
+                            atIndex:n];
     }
-    return newoutline;
+    return  clone;
 }
 
 @end

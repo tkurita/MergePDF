@@ -26,7 +26,6 @@ ImageKind image_type(NSString *path);
 @end
 
 @interface PDFOutline (MergePDF)
-+ (PDFOutline *)outlineWithCopying:(PDFOutline *)outline;
 @end
 
 @interface PDFMerger : NSObject
