@@ -96,12 +96,11 @@ void saveImageAsPDF(NSString *path)
 	
 	if (!pdfdoc) {
 		[NSApp activateIgnoringOtherApps:YES];
-		[[NSAlert alertWithMessageText:NSLocalizedString(@"Not image files", @"message of alert")
-				defaultButton:@"OK" alternateButton:nil otherButton:nil 
-				informativeTextWithFormat:NSLocalizedString(@"Passed files to MergePDF are not images files.",
-				@"invomative text of alert")]
-		 runModal];
-		
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:NSLocalizedString(@"Not image files", @"message of alert")];
+        [alert setInformativeText:NSLocalizedString(@"Passed files to MergePDF are not images files.",
+                                                    @"invomative text of alert")];
+        [alert runModal];
 		return;
 	}
 	

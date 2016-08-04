@@ -16,7 +16,7 @@
 
 - (IBAction)closeDirectionChooser:(id)sender
 {
-	[NSApp endSheet:directionChooserWindow];
+    [self.window endSheet:directionChooserWindow];
 }
 
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
@@ -26,9 +26,11 @@
 
 - (void)showDirectionChooser
 {
-	[NSApp beginSheet:directionChooserWindow modalForWindow:self.window
-			modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-		  contextInfo:nil];
+    [self.window beginSheet:directionChooserWindow
+          completionHandler:^(NSInteger result)
+     {
+         [directionChooserWindow orderOut:self];
+     }];
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -77,41 +79,21 @@
 	return YES;
 }
 
-- (void) noPDFAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	[self close];
-}
-
 - (void)noPDFAlert:(NSString *)aPath
 {
-	NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"notFoundPDFs",nil)
-									 defaultButton:@"OK"
-								   alternateButton:nil
-									   otherButton:nil
-						 informativeTextWithFormat:NSLocalizedString(@"Location :",@""), aPath];
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:NSLocalizedString(@"notFoundPDFs", @"")];
+    [alert setInformativeText:
+            [NSString stringWithFormat:NSLocalizedString(@"Location :",@""), aPath]];
 	[alert setShowsHelp:YES];
 	[alert setDelegate:self];
 	
-	[alert beginSheetModalForWindow:self.window 
-						modalDelegate:self didEndSelector:@selector(noPDFAlertDidEnd:returnCode:contextInfo:) 
-						contextInfo:nil];
+    [alert beginSheetModalForWindow:self.window
+                  completionHandler:^(NSModalResponse returnCode)
+     {
+         [self close];
+     }];
 	[[alert window] makeKeyWindow];
-}
-
-- (void)finishAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	switch (returnCode) {
-		case NSAlertDefaultReturn:
-			[[NSWorkspace sharedWorkspace] openFile:_mergeProcessor.destination];
-			break;
-		case NSAlertOtherReturn:
-			[[NSWorkspace sharedWorkspace] selectFile:_mergeProcessor.destination
-                             inFileViewerRootedAtPath:@""];
-			break;
-		default:
-			break;
-	}
-	[self close];
 }
 
 - (void)cancelTask
@@ -138,15 +120,32 @@
 		message = NSLocalizedString(message, @"");
 		[progressIndicator setDoubleValue:[progressIndicator maxValue]];
 		[statusField setStringValue:NSLocalizedString(message, @"")];
-		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Success to merge files into a PDF file.", @"")
-										 defaultButton:NSLocalizedString(@"Open", @"")
-									   alternateButton:NSLocalizedString(@"Cancel", @"")
-										   otherButton:NSLocalizedString(@"Reveal", @"")
-							 informativeTextWithFormat:@"%@", _mergeProcessor.destination];
+
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:NSLocalizedString(@"Success to merge files into a PDF file.", @"")];
+        [alert setInformativeText:_mergeProcessor.destination];
+        [alert addButtonWithTitle:NSLocalizedString(@"Open", @"")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Reveal", @"")];
+        
 		BOOL is_key = [self.window isKeyWindow];
 		[alert beginSheetModalForWindow:self.window
-						  modalDelegate:self didEndSelector:@selector(finishAlertDidEnd:returnCode:contextInfo:)
-							contextInfo:nil];
+                      completionHandler:^(NSModalResponse returnCode)
+         {
+             switch (returnCode) {
+                 case NSAlertFirstButtonReturn:
+                     [[NSWorkspace sharedWorkspace] openFile:_mergeProcessor.destination];
+                     break;
+                 case NSAlertThirdButtonReturn:
+                     [[NSWorkspace sharedWorkspace] selectFile:_mergeProcessor.destination
+                                      inFileViewerRootedAtPath:@""];
+                     break;
+                 default:
+                     break;
+             }
+             [self close];
+         }];
+
 		if (is_key) [self.window makeKeyWindow]; // to make sheet key-window.
 		self.processStarted = NO;
 		return;

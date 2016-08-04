@@ -192,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				2C473ECF0A5E65D400096E8A /* History.txt */,
-				2CA709901D52307500A7597F /* README.md */,
 				2CBDC6A61C607A580048384C /* PathExtra */,
 				2CBDC69B1C6075270048384C /* DropBox */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
@@ -204,6 +203,7 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				2C3F3B6E1C5E547D00C940BD /* DonationReminder.xcodeproj */,
 				BF485909E9DAE298DCB0E6AF /* Pods */,
+				2CA709901D52307500A7597F /* README.md */,
 			);
 			name = Application;
 			sourceTree = "<group>";

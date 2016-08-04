@@ -151,7 +151,7 @@ script ProgressWindowWorker
 		end if
 	end okButtonClicked_
 	
-	on coloumnDirectionClicked_(sender)
+	on columnDirectionClicked_(sender)
 		my _window_controller's closeDirectionChooser_(me)
 		_pdf_sorter's delegate()'s set_direction_for_position("column direction")
 		merge_pdf(_pdf_sorter)
