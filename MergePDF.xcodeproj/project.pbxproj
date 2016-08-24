@@ -364,6 +364,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					2C5981EB098712B2003D230C = {
+						DevelopmentTeam = 5VBC6385DN;
+					};
+				};
 			};
 			buildConfigurationList = 2CAA8C6C0933698B009EC6A1 /* Build configuration list for PBXProject "MergePDF" */;
 			compatibilityVersion = "Xcode 6.3";
@@ -593,6 +598,7 @@
 			baseConfigurationReference = 4BB6E4DF7337801042548731 /* Pods-MergePDF.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
 				COPY_PHASE_STRIP = NO;
@@ -609,7 +615,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
 				PRODUCT_VERSION = 2.4;
 				SDKROOT = macosx;
@@ -629,6 +635,7 @@
 			baseConfigurationReference = F15CE80FF07CAFC891A60BC6 /* Pods-MergePDF.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
@@ -641,7 +648,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
 				PRODUCT_VERSION = 2.4;
 				SDKROOT = macosx;
@@ -661,6 +668,7 @@
 			baseConfigurationReference = 6CE72CC5BA3B6B3C40B43039 /* Pods-MergePDF.default.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
 				CURRENT_PROJECT_VERSION = 24;
@@ -673,7 +681,7 @@
 				INFOPLIST_FILE = "English.lproj/Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = MergePDF;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
 				PRODUCT_VERSION = 2.4;
 				SDKROOT = macosx;
