@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en_US</string>
 	<key>CFBundleIdentifier</key>
-	<string>Scriptfactory.MergePDF.help</string>
+	<string>net.script-factory.MergePDF.help</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
