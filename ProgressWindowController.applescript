@@ -1,9 +1,9 @@
 script ProgressWindowWorker
 	property parent : class "NSObject"
 	
-	property FileSorter : module
-	property XFile : module
-	property loader : boot (module loader of application (get "MergePDFLib")) for me
+	property FileSorter : "@module"
+	property XFile : "@module"
+	property loader : application (get "MergePDFLib")'s loader()'s setup(me)
 	
 	property SorterDelegate : missing value
 	
