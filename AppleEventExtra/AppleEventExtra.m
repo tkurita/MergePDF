@@ -106,10 +106,19 @@
 	else if(strcmp(type, @encode(unsigned int)) == 0)
 		return [NSAppleEventDescriptor descriptorWithUnsignedLong:[self unsignedIntValue]];
 	else if(strcmp(type, @encode(long)) == 0)
+#if __LP64__
+        // No 64bit integer for AppleEvent Descriptor
+        return [NSAppleEventDescriptor descriptorWithDouble:[self longValue]];
+#else
 		return [NSAppleEventDescriptor descriptorWithInt32:[self longValue]];
+#endif
 	else if(strcmp(type, @encode(unsigned long)) == 0)
+#if __LP64__
+        return [NSAppleEventDescriptor descriptorWithDouble:[self unsignedLongValue]];
+#else
 		return [NSAppleEventDescriptor descriptorWithInt32:[self unsignedLongValue]];
-	else if(strcmp(type, @encode(float)) == 0)
+#endif
+    else if(strcmp(type, @encode(float)) == 0)
 		return [NSAppleEventDescriptor descriptorWithFloat:[self floatValue]];
 	else if(strcmp(type, @encode(double)) == 0)
 		return [NSAppleEventDescriptor descriptorWithDouble:[self doubleValue]];

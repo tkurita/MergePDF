@@ -29,7 +29,7 @@
     [self.window beginSheet:directionChooserWindow
           completionHandler:^(NSInteger result)
      {
-         [directionChooserWindow orderOut:self];
+         [self->directionChooserWindow orderOut:self];
      }];
 }
 
@@ -134,10 +134,10 @@
          {
              switch (returnCode) {
                  case NSAlertFirstButtonReturn:
-                     [[NSWorkspace sharedWorkspace] openFile:_mergeProcessor.destination];
+                     [[NSWorkspace sharedWorkspace] openFile:self.mergeProcessor.destination];
                      break;
                  case NSAlertThirdButtonReturn:
-                     [[NSWorkspace sharedWorkspace] selectFile:_mergeProcessor.destination
+                     [[NSWorkspace sharedWorkspace] selectFile:self.mergeProcessor.destination
                                       inFileViewerRootedAtPath:@""];
                      break;
                  default:
@@ -215,7 +215,7 @@
 		
 		if (NSFileHandlingPanelOKButton == result_code) {
 			NSString *new_path = [[save_panel URL] path];
-			NSArray *target_files = [worker targetFiles];
+			NSArray *target_files = [self->worker targetFiles];
 			[save_panel orderOut:self];
 			[self processFiles:target_files to:new_path];
 		} else {
