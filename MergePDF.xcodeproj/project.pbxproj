@@ -20,6 +20,8 @@
 		2C4740A80A5E71B000096E8A /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4740A60A5E71B000096E8A /* AppController.h */; };
 		2C4740A90A5E71B000096E8A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4740A70A5E71B000096E8A /* AppController.m */; };
 		2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4740B20A5E773500096E8A /* FactorySetting.plist */; };
+		2C494662240125FA0009B45A /* ColumnDirection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C494661240125F90009B45A /* ColumnDirection@2x.png */; };
+		2C4946642401260B0009B45A /* RowDirection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4946632401260B0009B45A /* RowDirection@2x.png */; };
 		2C5981F2098712B2003D230C /* MergePDF.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CB1697A0711703000A527B5 /* MergePDF.icns */; };
 		2C5981F3098712B2003D230C /* ColumnDirection.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7BDAB6071183220032351D /* ColumnDirection.png */; };
 		2C5981F4098712B2003D230C /* RowDirection.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7BDAB7071183220032351D /* RowDirection.png */; };
@@ -97,6 +99,9 @@
 		2C4740A60A5E71B000096E8A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C4740A70A5E71B000096E8A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C4740B20A5E773500096E8A /* FactorySetting.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = FactorySetting.plist; sourceTree = "<group>"; };
+		2C494661240125F90009B45A /* ColumnDirection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColumnDirection@2x.png"; sourceTree = "<group>"; };
+		2C4946632401260B0009B45A /* RowDirection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RowDirection@2x.png"; sourceTree = "<group>"; };
+		2C49466D24012B350009B45A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		2C55B79123FF997100519329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/PathExtra_Localizable.strings; sourceTree = "<group>"; };
 		2C55B79323FF9B3800519329 /* MergePDF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MergePDF.entitlements; sourceTree = "<group>"; };
 		2C598200098712B3003D230C /* MergePDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MergePDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +199,7 @@
 			children = (
 				2C55B79323FF9B3800519329 /* MergePDF.entitlements */,
 				2C473ECF0A5E65D400096E8A /* History.txt */,
+				2C49466D24012B350009B45A /* Makefile */,
 				2CBDC6A61C607A580048384C /* PathExtra */,
 				2CBDC69B1C6075270048384C /* DropBox */,
 				2C3F62B30F6E6DD400C42308 /* Classes */,
@@ -232,6 +238,8 @@
 				2C16DF520A8354C800B4D6E3 /* HelpSetup.plist */,
 				2C4740B20A5E773500096E8A /* FactorySetting.plist */,
 				2C31A2000987453E003BE6E4 /* Info-MergePDF.plist */,
+				2C494661240125F90009B45A /* ColumnDirection@2x.png */,
+				2C4946632401260B0009B45A /* RowDirection@2x.png */,
 				2C7BDAB6071183220032351D /* ColumnDirection.png */,
 				2C7BDAB7071183220032351D /* RowDirection.png */,
 				2CB1697A0711703000A527B5 /* MergePDF.icns */,
@@ -413,12 +421,14 @@
 			files = (
 				2C5981F2098712B2003D230C /* MergePDF.icns in Resources */,
 				2C5981F3098712B2003D230C /* ColumnDirection.png in Resources */,
+				2C494662240125FA0009B45A /* ColumnDirection@2x.png in Resources */,
 				2C5981F4098712B2003D230C /* RowDirection.png in Resources */,
 				2C4740B30A5E773500096E8A /* FactorySetting.plist in Resources */,
 				2C16DF530A8354C900B4D6E3 /* HelpSetup.plist in Resources */,
 				2CD4055E0F75D11100B96300 /* dsa_pub.pem in Resources */,
 				2C4545961071820A00AD3397 /* Credits.rtf in Resources */,
 				2C812C701C5F7E3D005399C2 /* MergePDFHelp in Resources */,
+				2C4946642401260B0009B45A /* RowDirection@2x.png in Resources */,
 				2CBDC6AC1C607A580048384C /* PathExtra_Localizable.strings in Resources */,
 				2CBDC6BA1C60BB9A0048384C /* InfoPlist.strings in Resources */,
 				2CBDC6BB1C60BB9A0048384C /* Localizable.strings in Resources */,
@@ -443,6 +453,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#make -f LocalizeTools/localize.mk target_lang=ja nibs='MainMenu.nib ProgressWindow.nib'\n";
+			showEnvVarsInLog = 0;
 		};
 		2CF84035158049E2004E5E20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -456,6 +467,7 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\n\ncd \"$BUILT_PRODUCTS_DIR\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n\n";
+			showEnvVarsInLog = 0;
 		};
 		82B9A1DE4D3D9B4C52FF70E6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
