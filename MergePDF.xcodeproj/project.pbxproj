@@ -606,7 +606,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,6 +618,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
 				PRODUCT_VERSION = 2.4;
@@ -643,7 +644,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -652,6 +653,7 @@
 				INFOPLIST_FILE = "Info-MergePDF.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
 				PRODUCT_VERSION = 2.4;
@@ -676,7 +678,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -685,6 +687,7 @@
 				INFOPLIST_FILE = "English.lproj/Info-MergePDF.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
 				PRODUCT_VERSION = 2.4;
