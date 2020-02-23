@@ -28,7 +28,7 @@
 	<key>CFBundleExecutable</key>
 	<string>MergePDF</string>
 	<key>CFBundleGetInfoString</key>
-	<string>${PRODUCT_VERSION} ${COPYRIGHT}</string>
+	<string>$(MARKETING_VERSION) ${COPYRIGHT}</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>MergePDFHelp</string>
 	<key>CFBundleHelpBookName</key>
@@ -48,7 +48,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>25</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>DonationURL</key>
 	<string>http://www.script-factory.net/donationproxy.html</string>
 	<key>LSApplicationCategoryType</key>
@@ -59,7 +59,7 @@
 		<true/>
 	</dict>
 	<key>NSAppleEventsUsageDescription</key>
-	<string>TeXBridge require to control other applications mi, Finder, Terminal and so on via AppleScript to run.</string>
+	<string>MergePDF require to control other applications via AppleScript to run.</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSHumanReadableCopyright</key>
@@ -87,7 +87,7 @@
 		</dict>
 	</array>
 	<key>SUFeedURL</key>
-	<string>http://www.script-factory.net/appcast/MergePDF.xml</string>
+	<string>https://www.script-factory.net/appcast/MergePDF.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>

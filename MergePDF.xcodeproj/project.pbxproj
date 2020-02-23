@@ -354,6 +354,7 @@
 				2CD12A830D40A4A2004BF0C5 /* CopyFiles */,
 				2CF84035158049E2004E5E20 /* ShellScript */,
 				82B9A1DE4D3D9B4C52FF70E6 /* [CP] Embed Pods Frameworks */,
+				2C49467724016C1C0009B45A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -441,6 +442,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2C49467724016C1C0009B45A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "codesign --verbose --force --deep -o runtime \\\n--sign \"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\" \\\n\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Frameworks/Sparkle.framework/Versions/A/Resources/AutoUpdate.app\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2CA8397714986FF00020DF9E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,7 +484,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
+			shellPath = "/bin/zsh -l";
 			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\n\ncd \"$BUILT_PRODUCTS_DIR\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n\n";
 			showEnvVarsInLog = 0;
 		};
@@ -604,9 +623,9 @@
 				CODE_SIGN_ENTITLEMENTS = MergePDF.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
+				COPYRIGHT = "Copyright 1998-2020, Kurita Tetsuro";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 27;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,7 +640,6 @@
 				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
-				PRODUCT_VERSION = 2.4;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -642,9 +660,9 @@
 				CODE_SIGN_ENTITLEMENTS = MergePDF.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
+				COPYRIGHT = "Copyright 1998-2020, Kurita Tetsuro";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 27;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,7 +674,6 @@
 				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
-				PRODUCT_VERSION = 2.4;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -677,8 +694,8 @@
 				CODE_SIGN_ENTITLEMENTS = MergePDF.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPYRIGHT = "Copyright 1998-2016, Tetsuro KURITA";
-				CURRENT_PROJECT_VERSION = 25;
+				COPYRIGHT = "Copyright 1998-2020, Kurita Tetsuro";
+				CURRENT_PROJECT_VERSION = 27;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -690,7 +707,6 @@
 				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.MergePDF";
 				PRODUCT_NAME = MergePDF;
-				PRODUCT_VERSION = 2.4;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
